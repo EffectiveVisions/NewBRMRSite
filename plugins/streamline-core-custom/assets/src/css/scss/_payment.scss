@@ -1,0 +1,75 @@
+#payment-wrapper{
+  .add-payment-body{
+    margin-top:12px;
+  }
+  .add-payment-top .col-md-12 {
+    text-align: center;
+  }
+
+  .add-payment-top .add-payment-reservation
+  /*no existe la clase, agregarla "Confirmation #: 897"*/
+
+    {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  .add-payment-top .col-md-4 {
+    border-right: 1px solid #ccc;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .add-payment-top .col-md-4:last-child {
+    border-right: none;
+  }
+
+  .col-sm-4 .form-group:last-child, .add-payment-reservation p:last-child{
+    margin-bottom:0;
+  }
+
+  .form-checkout #step3b .col-md-4.col-md-push-8 .resortpro-reservation-details {
+    background-color:#eee;	
+    padding:12px;
+  }
+
+  .fee_name{
+    font-size:0.7em;
+    text-indent:12px;
+  }
+
+  .form-checkout #step3b .col-md-4.col-md-push-8 .resortpro-reservation-details .table:last-child{
+    margin-bottom:0;
+  }
+
+  @media (min-width: 992px){
+    .form-checkout .css-form .col-md-4 .resortpro-reservation-details:before {
+      content: ' ';
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: -10px;
+      top: 10px;
+      border-right: 10px solid #eee;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+    }
+  }
+}
+#payment-login-wrapper{
+  #login-payment-form .col-md-6.col-md-push-3 {
+    background: #eee;
+    padding: 40px;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 20px rgba(0,0,0,.15);
+  }
+
+  #login-payment-form .form-control {
+    height: 50px;
+  }
+
+  .alert{
+    margin-top:12px;
+  }
+}

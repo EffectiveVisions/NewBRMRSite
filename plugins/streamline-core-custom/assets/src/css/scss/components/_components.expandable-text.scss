@@ -1,0 +1,64 @@
+/* ==========================================================================
+   #EXPANDABLE TEXT
+   ========================================================================== */
+
+   .c-expandable-text {
+    overflow: hidden;
+    position: relative;
+
+
+    // E: Link wrapper
+    &__link-wrapper {
+
+      @include mq($until: tablet) {
+        text-align: center;
+      }
+    }
+  
+  
+    // E: More link
+    &__link {
+      margin-top: 10px;
+
+      .fa {
+        @include size(1.25em);
+        border: 1px solid;
+        border-color: inherit;
+        border-radius: 50%;
+        font-size: (17 / 16) * 1em;
+        line-height: (20 / 17);
+        margin-left: 3px;
+        vertical-align: top;
+      }
+
+      &:hover {
+
+        .fa {
+          border-color: #fff;
+        }
+      }
+    }
+  
+  
+    // S: Is collapsed
+    &.is-collapsed {
+  
+      &:before {
+        @include position(absolute,  null 0 0 0);
+        background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,1) 100%);
+        content: '';
+        display: inline-block;
+        height: 35px;
+        z-index: 1;
+      }
+    }
+  
+  
+    // S: Is expanded
+    &.is-expanded {
+  
+      + .c-expandable-text__link {
+        margin-top: 5px;
+      }
+    }
+  }

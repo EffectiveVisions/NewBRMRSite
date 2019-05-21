@@ -1,0 +1,48 @@
+// Compare bar
+.compare-bar {
+	@include position(fixed, 0 0 null 0);
+	@include prefixer(transform, translateY(-100%), ("webkit", "ms"));
+	@include prefixer(transition, all 0.25s linear, ("webkit", "o"));
+	background-color: #fff;
+	box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.2);
+	visibility: hidden;
+	z-index: 98;
+
+	&.is-sticky {
+		@include prefixer(transform, translateY(0), ("webkit", "ms"));
+		@include prefixer(transition, all 0.25s linear, ("webkit", "o"));
+		visibility: visible;
+	}
+
+	.c-property__header {
+		padding-bottom: 0;
+	}
+
+	.c-property__cta-btn {
+		padding: 8px;
+	}
+}
+
+
+.compare {
+
+	.c-property__cta-btn {
+
+		@include mq($from: tablet, $until: desktop) {
+			padding: 7px;
+		}
+	}
+
+	.amenityYes,
+	.amenityNo {
+		font-weight: bold;
+	}
+
+	.amenityYes {
+			color: #008000;
+	}
+
+	.amenityNo {
+		color: #B20000;
+	}
+}

@@ -1,0 +1,184 @@
+/* Guests dropdown */
+.search_widget{
+    .c-guests-dropdown__btn {
+        color: #999;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        border: 1px solid #ccc;
+        font-weight: 300;
+        vertical-align: initial;
+    }
+
+    .c-guests-dropdown__btn-group {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 0;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .c-guests-dropdown__btn-label {
+        overflow: hidden;
+        padding-left: 5px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .c-guests-dropdown__btn-item {
+        display: block;
+        min-width: 36px;
+        padding-left: 22px;
+        position: relative;
+        text-align: left;
+    }
+
+    .c-guests-dropdown__btn-item--room:before,
+    .c-guests-dropdown__btn-item--guests:before {
+        display: inline-block;
+        font-family: "FontAwesome";
+        left: 0;
+        position: absolute;
+        top: 0;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+    }
+
+    .c-guests-dropdown__btn-item--room:before {
+        content: "\f236";
+        /*color: #f15d5f;*/
+    }
+
+    .c-guests-dropdown__btn-item--guests:before {
+        content: "\f007";
+        /*color: #f15d5f;*/
+    }
+
+    .c-guests-dropdown__btn-item--guests {
+        min-width: 30px;
+        padding-left: 16px;
+    }
+
+    .resortpro-search-location-resort-block .twitter-typeahead:before {
+        content: "\f041";
+        /*color: #f15d5f;*/
+        display: inline-block;
+        font-family: "FontAwesome";
+        right: 10px;
+        position: absolute;
+        top: 4px;
+        z-index: 1;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .c-guests-dropdown__row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+
+    }
+
+    .c-guests-dropdown__row--cta {
+        display: block;
+    }
+
+    .c-guests-dropdown__body {
+        border-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+        min-width: 270px;
+        padding: 0;
+        top: 124%;
+        z-index: auto;
+    }
+
+    .c-guests-dropdown__body-inner {
+        background-color: #fff;
+        padding: 25px 0 10px;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .c-guests-dropdown__body:before,
+    .c-guests-dropdown__body:after {
+        background-color: #fff;
+        content: '';
+    	width: 16px;
+    	height: 16px;
+        position: absolute;
+        left: 16px;
+        top: -7px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .c-guests-dropdown__body:before {
+        box-shadow: 0 0 3px rgba(0,0,0,0.25);
+        z-index: -1;
+    }
+
+    .c-guests-dropdown__label {
+        font-size: 16px;
+    }
+
+    .c-guests-dropdown__row .form-control {
+        text-align: center;
+    }
+
+    .c-guests-dropdown__input {
+        max-width: 125px;
+    }
+    .input-group-btn button {
+        /*border: solid 1px #f15d5f;*/
+        border-radius: 10px !important;
+    }
+    .input-group-btn button:hover,
+    .input-group-btn button:active {
+        /*border: solid 1px #f15d5f;*/
+        /*background: #fb898b !important;*/
+    }
+    .input-group-btn button:focus {
+        /*border: solid 1px #f15d5f;*/
+        /*background: #f15d5f !important;*/
+    }
+    .input-group-btn button:hover span:before {
+        color: #fff !important;
+    }
+    .c-guests-dropdown__body-inner input {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    .c-guests-dropdown__row {
+        margin-bottom: 15px;
+        padding: 5px 15px;
+    }
+
+    .c-guests-dropdown__row--cta {
+        margin-bottom: 5px;
+    }
+
+    .c-guests-dropdown__row .dropdown-header {
+        margin-bottom: 5px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+
+    #resortpro-listings {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: solid 1px #ececec
+    }
+    .c-guests-dropdown .form-control::-moz-placeholder{
+        color: #333 !important;
+    }
+}

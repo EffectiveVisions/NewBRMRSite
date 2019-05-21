@@ -1,0 +1,68 @@
+/* ==========================================================================
+   #DETAIL TABS
+   ========================================================================== */
+
+  .c-detail-tabs {
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+
+    &.nav-justified {
+      display: table;
+      margin-bottom: 12px;
+      table-layout: fixed;
+
+      > .c-detail-tabs__item {
+        width: 100%;
+      }
+    }
+
+    // E: Item
+    &__item {
+
+      @include mq($until: tablet) {
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #ccc;
+        }
+      }
+
+      @include mq($from: tablet) {
+
+        &:not(:last-child) {
+          border-right: 1px solid #ccc;
+        }
+      }
+    }
+
+
+    // M: Layout 1
+    &--layout-1 {
+
+      .c-detail-tabs__item {
+
+        > a {
+          border-radius: 0;
+          color: #cb9e4b;
+          font-weight: 700;
+          margin-bottom: 0;
+          white-space: nowrap;
+        }
+      }
+    }
+
+
+    // M: Wide
+    &--wide {
+      background-color: #333;
+      border: 0;
+      margin-bottom: 0;
+
+      .c-detail-tabs__item {
+        border-color: transparent;
+
+        a {
+          border-radius: 0;
+        }
+      }
+    }
+  }

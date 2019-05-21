@@ -1,0 +1,29 @@
+/* ==========================================================================
+   #INPUT GROUP
+   ========================================================================== */
+
+   .c-input-group {
+    display: flex;
+    
+
+    // E: Button
+    &__btn {
+      width: auto;
+      z-index: 1;
+      
+      .btn {
+        height: 100%;
+        min-width: 40px;
+        position: relative;
+
+        .glyphicon {
+          @include position(absolute, 50% null null 50%);
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    .form-control {
+      min-width: 0;
+    }
+  }

@@ -1,0 +1,60 @@
+/* ==========================================================================
+   #REVIEW
+   ========================================================================== */
+
+  .c-review {
+
+    &:not(:last-child) {
+      border-bottom: dotted 1px #ccc;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+    }
+
+
+    // E: Title
+    &__title {
+      font-size: 1.2em;
+      margin-top: 0;
+    }
+
+
+    // E: Meta
+    &__meta {
+
+    }
+
+    // E: Author
+    &__author {
+      
+    }
+
+
+    // E: Date
+    &__date {
+      
+    }
+
+
+    // E: Body
+    &__body {
+
+
+      // M: Lightbox
+      &--lightbox {
+        line-height: 1.5;
+        padding-top: 5px;
+
+        &.is-collapsed {
+
+          &:before {
+            @include position(absolute,  null 0 0 0);
+            background: -moz-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.1) 100%); 
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.1) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.1) 100%);
+            content: '';
+            height: 15px;
+          }
+        }
+      }
+    }
+  }

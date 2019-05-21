@@ -1,0 +1,45 @@
+/* ==========================================================================
+   #PROPERTY TABLE
+   ========================================================================== */
+
+  .c-property-table {
+    
+
+    // M: Flat
+    &--flat {
+      font-size: 15px;
+
+      .table {
+        border-color: #ccc;
+
+        thead {
+
+          tr {
+
+            th {
+              @include border-width(null 0 1px 0);
+              border-color: #ccc;
+              font-weight: normal;
+              padding: 13px 15px;
+            }
+          }
+        }
+
+        tbody {
+
+          tr {
+
+            &:not(:hover):nth-of-type(2n+1) {
+              background-color: transparent;
+            }
+          }
+
+          td {
+            border: 0;
+            font-weight: normal;
+            padding: 11px 14px;
+          }
+        }
+      }
+    }
+  }

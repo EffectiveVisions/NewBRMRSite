@@ -1,0 +1,711 @@
+/*premium search template*/
+
+.breadcrumb_area ol { border-radius: 0}
+.breadcrumb_area ol li a {
+  text-transform: uppercase;}
+.breadcrumb_area .breadcrumb > li + li::before {
+  content: "| ";
+  padding: 0 5px;
+}
+.last_itm {
+  font-size: 22px;
+  text-transform: uppercase;
+  width: 100%;
+}
+.breadcrumb_area .breadcrumb .last_itm::before {
+  padding: 0;
+}
+.breadcrumb_area .breadcrumb {
+  /*background: #333 none repeat scroll 0 0;*/
+  padding: 5px 15px;
+  height: 68px;
+}
+.view_type_menu.breadcrumb {
+  text-align: right;
+}
+.breadcrumb_area .view_type_menu.breadcrumb li::before, .breadcrumb_area .breadcrumb .last_itm::before  {
+  content: "";
+}
+.premium_sidebar .has-feedback label ~ .form-control-feedback {
+    top: 32px;
+}
+@media all and (max-width: 991px){
+  .col-md-9.premium {
+    float: none !important;
+  }
+}
+.view_type_menu li i {
+  font-size: 38px;
+  left: -3px;
+  padding: 5px 0 10px;
+  position: relative;
+  top: 3px;
+}
+.view_type_menu span {
+  position: relative;
+  top: -10px;
+}
+.view_type_menu.breadcrumb li {
+  padding: 3.7px 5px 5px;
+}
+.view_type_menu.breadcrumb {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.selected_view {
+  border-bottom: 3px solid #fff;
+  border-top: 3px solid #fff;
+}
+.breadcrumb_area li, .breadcrumb_area li.active, .breadcrumb_area span {
+    color: #fff;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .breadcrumb>li+li:before {
+      padding: 0 !important;
+  }
+}
+.grid_view_container .unit_grid_container {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #d3dde5;
+}
+.grid_view_container .listing {
+  padding: 0 5px;
+}
+.price_per_night {
+  min-height: 35px;
+}
+.breadcrumb_area .col-md-12 > .row {
+  margin-right: -25px;
+}
+.grid_view_container .listing-name {
+  padding: 10px 0;
+}
+.grid_view_container .rating.grid {
+  height: 35px;
+  margin-top: 10px;
+}
+.buttons_area .col-xs-12 {
+  margin-bottom: 10px;
+  padding: 0 5px;
+}
+.premium .row-sort .col-lg-4.col-md-4 {
+  padding: 0 5px;
+}
+.grid_view_container .unit_grid_container:hover{
+  box-shadow: #ccc 1px 1px 2px;
+}
+.premium_sidebar .side_search_widget {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px 5px 0;
+}
+.grid_view_container .petFriendly, .listing-5 .property-outer.petFriendly{
+    right: 0;
+}
+.grid_view_container .listing-img .btn-fav, .grid_view_container .petFriendly, .listing-5 .btn-fav{
+  padding: 5px 0 0 5px;
+  position: absolute;
+  z-index: 9;
+}
+.listing-5 .petFriendly {
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  text-decoration: none;
+  text-shadow: 0 2px 2px #232323;
+  top: 5px;
+  z-index: 1;
+}
+.grid_view_container .petFriendly i, .grid_view_container .listing-img .btn-fav, .listing-5 .property-outer .btn-fav {
+  font-size: 28px;
+}
+.premium .count_units {
+  padding-left: 5px;
+}
+.listing.custom_search_results.list_view_container {
+  background: #fff;
+  border: 1px solid #ccc;
+  float: left;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px 5px 0;
+}
+.container_list_img {
+  height: 470px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.list_view_container h3.listing-name {
+  font-size: 16px;
+  margin-top: 0;
+}
+.list_view_container .secondary_info_unit {
+  margin: 10px 0;
+}
+.list_view_container .btn-fav {
+  font-size: 28px;
+}
+.petFriendly.list_view_pet {
+  float: right;
+  font-size: 28px !important;
+}
+.list_view_buttons .col-xs-12 {
+  padding: 0 0 0 5px;
+}
+.sc_img .sm_img img {
+  padding: 0 0 5px 5px;
+}
+.main_img img {
+    min-height: 470px;
+}
+.map-container-wrapper {
+  padding: 0 5px;
+  margin-bottom: 10px;
+}
+.streamline-pagination-wrapper {
+    margin-top: 10px;
+}
+.sc_img > .container_sc_images {
+    height: 470px;
+}
+.sc_img .sm_img {
+    height: 33.6%;
+}
+.sc_img .sm_img .row {
+    height: 100%;
+}
+
+/*premium detail template*/
+.unit_info_box {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  float: left;
+  padding: 0 0 10px;
+  width: 100%;
+}
+.section-title {
+    position: relative;
+    z-index: 9;
+}
+.border_line {
+    border: 1px solid #f5f5f5;
+    position: relative;
+    top: -20px;
+}
+/*.layout-4 h3.section-title {
+    border-bottom: medium none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+}*/
+.section-title > span {
+    background: #fff none repeat scroll 0 0;
+    padding-right: 8px;
+}
+.container_p_description > h4 {
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+.property_description ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+.property_description ul li {
+    display: inline;
+}
+.d_house_id {
+    float: right;
+    font-size: 12px;
+    text-align: right;
+}
+.r_more {
+    margin: 10px 0;
+}
+.photos_section .col-md-6 {
+    padding: 2.5px;
+}
+.layout-4 .photos_container {
+    float: left;
+    margin-bottom: 10px;
+}
+.photo_itm {
+    display: none;
+}
+.photo_itm:nth-child(-n+4){
+    display: block;
+}
+.availability-calendar .ui-datepicker-group{
+  display: none;
+}
+.availability-calendar .ui-datepicker-group:nth-child(-n+3){
+  display: block;
+}
+@media all and (min-width: 992px){
+  .layout-4  #resortpro-book-unit{
+    padding-right: 0;
+    padding-top: 0;
+  }
+}
+.guest_check {
+    padding: 5px 0;
+    cursor: pointer;
+}
+.container_background {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    clear: both;
+    float: left;
+    margin-bottom: 10px;
+    padding: 15px;
+    width: 100%;
+}
+@media all and (min-width: 992px){
+  .layout-4 .step_btn_area .col-md-4, .layout-4 .step_btn_area .col-md-8 {
+    padding: 0;
+  }
+  .layout-4 .step_btn_area .col-md-4, .layout-4 #step0 .col-md-6:nth-child(2n+1){
+      padding-right: 5px;
+  }
+  .layout-4 .step_btn_area .col-md-8, .layout-4 #step0 .col-md-6:nth-child(2n) {
+      padding-left: 5px;
+  }
+}
+.step_btn_area {
+    margin-bottom: 0 !important;
+    margin-top: 15px;
+}
+.site-main .layout-4 .ui-datepicker-group {
+    border: 1px solid #0b4283;
+}
+.layout-4 .ui-widget-content {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+}
+@media all and (min-width: 992px){
+  .site-main .ui-datepicker-group {
+    height: 327px;
+    margin-bottom: 5px;
+    margin-right: 1%;
+    width: 32.33% !important;
+  }
+  .layout-4 .ui-datepicker-group:nth-child(3n) {
+    margin-right: 0;
+    width: 33.34%;
+  }
+
+}
+.step_1_total_price_value{
+  font-weight: 700;
+  font-size: 18px;
+}
+#resortpro-book-unit{
+  position: relative;
+}
+.fixed_price_table{
+  position: fixed;
+  top: 15px;
+  background: #fff;
+  z-index: 999;
+}
+.price_table {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    float: left;
+    height: auto;
+    padding: 10px;
+    z-index: 9;
+    width: 100%;
+}
+.view_breakdown_days table {
+    float: left;
+    margin: 10px 0;
+}
+#resortpro-book-unit .price_sticky table, .ad_extras table {
+    margin-bottom: 0;
+}
+@media all and (max-width: 991px){
+  .layout-4 #resortpro-book-unit {
+    float: left;
+    margin-top: 15px;
+    padding: 0;
+    width: 100%;
+  }
+}
+#scrollArea {
+    height: 100%;
+    overflow: auto;
+}
+@media all and (min-width: 992px){
+    .layout-4 .ekko-lightbox.modal.fade.in {
+      height: 740px;
+      margin: 50px auto;
+      overflow: hidden;
+      width: 950px;
+    }
+    .layout-4 {
+      float: left;
+      /*width: 100%;*/
+    }
+}
+.photos_container .photo_itm {
+    height: 240px;
+    position: relative;
+}
+.photo_itm_container {
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.secondary_button.to_top_btn {
+  border-radius: 0;
+  bottom: 0;
+  position: fixed;
+  right: 5px;
+  z-index: 99;
+}
+
+.layout-4 {
+  .nav-pills > li + li {
+    margin-left: 0;
+  }
+  .active.lst_list_itm {
+    margin-top: 0;
+  }
+  .ad_extras table.ad_extras_tx td {
+    padding: 0;
+  }
+  .ad_extras {
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
+  }
+  .main_cnt_step_4 .checkbox {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  #expand_extras {
+    cursor: pointer;
+  }
+  .nav.nav-pills li a {
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+   .nav-pills {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .nav-pills li {
+  border: solid 1px #ccc;
+  }
+  .error {
+    color: red;
+    margin-bottom: 10px;
+  }
+  .entry-header{
+    display: none;
+  }
+  #resortpro-book-unit table td, #resortpro-book-unit table {
+    border: medium none;
+    vertical-align: middle;
+  }
+  #resortpro-book-unit .table-striped > tbody > tr:nth-of-type(2n+1) {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  }
+  #resortpro-book-unit .unit-rating {
+    float: left;
+    margin: 15px 0 0;
+  }
+  .unit-rating span {
+    font-size: 1.2em;
+    margin-top: 3px;
+  }
+  .total_price {
+    font-size: 20px;
+  }
+  #step3 label {
+    margin-top: 15px;
+  }
+  input, select {
+      border-radius: 0;
+  }
+  input, select {
+    background: transparent none repeat scroll 0 0 !important;
+    border-radius: 0;
+    height: 38px;
+  }
+  #step0 .col-md-6 .form-group {
+      position: relative;
+  }
+  #step0 .glyphicon.glyphicon-calendar {
+      position: absolute;
+      top: 35px;
+  }
+  .step_btn_area button {
+      height: 38px;
+      width: 100%;
+  }
+  input[type="checkbox"] {
+      height: auto;
+  }
+  #property-amenities .amenity_item {
+      display: none;
+  }
+
+  #property-amenities .amenity_item:nth-child(-n+10){
+      display:block;
+  }
+  .ms-slide {
+    background: #000 none repeat scroll 0 0;
+  }
+  .amenity_item i {
+    font-size: 25px;
+    padding-right: 15px;
+    position: relative;
+    top: 4px;
+  }
+  #property-amenities .amenity_item {
+    line-height: 26px;
+  }
+  .container_p_amenity {
+    margin-bottom: 25px;
+  }
+  .secondary_button {
+    float: left;
+    border-radius: 0;
+  }
+  .breadcrumb_area {
+    float: left;
+    margin: 0 0 5px;
+    width: 100%;
+  }
+  .breadcrumb {
+    margin-right: 10px;
+  }
+  .main_cnt_step_4 .checkbox input{
+    position: initial;
+  }
+  .breakdown-taxes-hidden, .breakdown-days-hidden {
+    font-size: 13px;
+  }
+  @media all and (max-width: 991px) and (min-width: 768px){
+    .availability-calendar .ui-datepicker-group {
+      min-height: 330px;
+      width: 48%;
+      margin-bottom: 5px;
+    }
+    .availability-calendar .ui-datepicker-group:nth-child(2n) {
+      margin-left: 2%;
+    }
+  }
+  @media all and (max-width: 767px){
+    .availability-calendar .ui-datepicker-group {
+      margin-bottom: 5px;
+      width: 100%;
+    }
+  }
+  @media all and (max-width: 550px){
+    .photo_itm{
+      width: 100%
+    }
+  }
+}
+#wrapper #contentarea {
+  padding-bottom: 20px;
+}
+@media all and (max-width: 991px){
+  .search_breadcrumb.breadcrumb_area .col-md-12 > .row {
+    margin-left: -25px;
+  } 
+}
+.premium_sidebar{
+  .radio-list label {
+    font-weight: 500;
+    padding: 0;
+    background: none;
+    color: inherit;
+    font-size: 14px;
+    text-indent: 10px;
+  }
+  label {
+    color: #fff;
+    /*float: left;*/
+    padding: 0 10px;
+    font-weight: 500;
+    width: 100%;
+  }
+  .radio-list input{
+    width: 16px;
+    height: 16px;
+  }
+  input, select {
+    border-radius: 0;
+  }
+  .amenity_group input {
+    height: 16px;
+    width: 16px;
+  }
+  .amenity_group{
+    font-size: 14px;
+  }
+  .form-control[readonly] {
+    background: transparent none repeat scroll 0 0;
+  }
+}
+.grid_view_container, .list_view_container{
+  .text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+  } 
+
+  .panel-image {
+    position: relative
+  } 
+
+  .listing {
+    margin-bottom: 12px;
+    padding-bottom: 12px
+  } 
+
+  .listing-img {
+    overflow: hidden;
+    padding-bottom: 67%
+  } 
+
+  .listing-img .media-photo.media-cover {
+    z-index: 0
+  }
+
+  .listing-img-container {
+    z-index: 1
+  } 
+
+  .media-cover,
+  .media-cover-dark::after {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0
+  }
+
+  .media h3 {
+    margin-top: 0
+  } 
+
+  .panel-overlay-bottom-left,
+  .panel-overlay-bottom-right,
+  .panel-overlay-top-left,
+  .panel-overlay-top-right {
+    position: absolute
+  } 
+
+  .panel-overlay-label {
+    background-color: rgba(60, 63, 64, .9);
+    padding: 10px
+  } 
+
+  .panel-overlay-listing-label {
+    bottom: 30px;
+    left: 0;
+    padding: 7px 10px
+  } 
+
+  .panel-overlay-label {
+    color: #fff
+  } 
+
+  h3.section-title{
+    margin-top: 12px !important;
+    border-bottom: solid 2px #ccc;
+    margin-bottom: 12px !important;
+    padding-bottom: 12px;
+  } 
+
+  .booknow-widget strong, .booknow-widget span {
+    font-size: 24px;
+  } 
+
+  .booknow-widget .price{
+    border-bottom: solid 1px #666;
+    margin-bottom: 12px;
+  } 
+
+  .booknow-widget .price .concluding_text {    
+    font-size: 0.9em
+  } 
+
+  .form-book-now .form-control[disabled], .form-book-now .form-control[readonly], .form-book-now fieldset[disabled] .form-control{
+    background-color: #ffffff;
+  } 
+
+  .listing-view .listing {
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: dotted 1px #ccc
+  } 
+
+  .price_wrapper {
+    background-color: #ff9a00;
+    color: #fff;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px
+  } 
+
+  .listing-view .listing h3.listing-name {
+    margin-top: 0;
+    margin-bottom: 6px
+  } 
+
+   .listing-view .listing h4.location-name {
+    color: #ccc;
+    margin-top: 0;
+    font-size: 14px
+  } 
+
+  .propertyButtons {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    color: #fff;
+    text-align: center
+  } 
+
+  .propertyButtons:hover {
+    text-decoration: none
+  } 
+
+  .propertyButtons.inquiry, .propertyButtons.book {
+    color: #fff;
+  } 
+
+  .img-responsive-height {
+    height: 100% !important;
+    width: 100%
+  }
+}
+.view_type_menu li i, .search_breadcrumb li a, .breadcrumb_area li a{
+    color: #fff !important;
+  }
+@media all and (min-width: 1540px){
+  .grid_view_container .container-fluid-layout {
+    height: 295px !important;
+  }
+}
+@media all and (min-width:992px) and (max-width: 1539px){
+  .grid_view_container .container-fluid-layout {
+    height: 200px !important;
+  }
+}
+.layout-4{
+  .anchor {
+    visibility: hidden;
+  }
+} 

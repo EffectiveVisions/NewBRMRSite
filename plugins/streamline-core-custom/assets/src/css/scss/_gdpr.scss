@@ -1,0 +1,87 @@
+.container_input {
+	position: relative;
+	
+    .g_tooltip {
+		@include position(absolute, 36px 1px null null);
+
+		@include mq($from: tablet) {
+			right: -5px;
+			top: 37px;
+		}
+		
+	    i {
+			font-size: 16px;
+			
+			@include mq($from: tablet) {
+				font-size: 18px;
+			}
+		}
+	}
+
+	.tooltip.fade.right{
+		background: transparent !important;
+		color: #000 !important;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+	}
+
+	.g_tooltip + .tooltip > .tooltip-inner {
+		 background-color: #fff;
+	    border: 2px solid #ddd;
+	    color: #000;
+	    line-height: 20px;
+	    opacity: 1;
+	    padding: 10px 15px;
+	}
+	
+	.g_tooltip + .tooltip.right .tooltip-arrow {
+   		border-right-color: #dedede;
+	}
+	  
+  	.tooltip.right{
+    	padding: 0 0 0 5px;
+	}
+	
+    .tooltip.in {
+	    opacity: 1;
+	}
+
+	.tooltip-inner {
+	    max-width: 280px;
+	    /* If max-width does not work, try using width instead */
+		width: 180px;
+		
+		@include mq($until: tablet) {
+			position: relative;
+			right: 15px;
+		}
+	}
+}
+
+.inquiry_container_input{
+	
+    .g_tooltip {
+	    right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+
+		~ .form-control {
+			padding-right: 26px;
+		}
+	}
+}
+
+.g_checkbox:nth-child(1){
+    margin: 0 !important;
+}
+
+.g_checkbox {
+    input {
+	    position: initial !important;
+	}
+}
+
+.modal-content{
+	padding: 0 10px;
+}

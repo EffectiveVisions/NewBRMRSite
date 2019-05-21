@@ -1,0 +1,30 @@
+/* ==========================================================================
+   #RANGE SLIDER
+   ========================================================================== */
+
+   .c-range-slider {
+
+
+    // E: Label
+    &__label {
+
+    }
+
+
+    .ui-slider-horizontal {
+      background: #fff;
+      
+      .ui-slider-handle {
+        margin-left: -1px;
+
+        &:last-child {
+          margin-left: -1em;
+        }
+
+        &.ui-state-default,
+        &.ui-state-hover {
+          background: #fff;
+        }
+      }
+    }
+  }

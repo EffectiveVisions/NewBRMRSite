@@ -1,0 +1,13 @@
+<wpml-config>
+    <admin-texts>
+        <key name="vpt_option">
+            <key name="header_phone" />
+            <key name="header_feature_txt" />
+            <key name="footer_copyright" />
+            <key name="latest_art_head" />
+            <key name="latest_art_shead" />
+            <key name="latest_art_cat" />
+            <key name="error_404" />
+        </key>
+    </admin-texts>
+</wpml-config>

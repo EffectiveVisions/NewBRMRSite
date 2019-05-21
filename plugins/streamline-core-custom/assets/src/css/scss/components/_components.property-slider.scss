@@ -1,0 +1,338 @@
+/* ==========================================================================
+   #PROPERTY SLIDER
+   ========================================================================== */
+
+   $horizThumbHeight: 84px;
+   $horizThumbHeightMobile: 54px;
+   
+  .c-property-slider {
+    margin-bottom: 10px;
+
+    // E: Inner
+    &__inner {
+
+      &[data-slider-controls="thumblist"] {
+        padding-bottom: 68px;
+
+        @include mq($from: mobileLandscape) {
+          padding-bottom: 100px;
+        }
+      }
+
+      &[data-slider-controls="bullets"],
+      &[data-slider-controls="none"] {
+      
+        .ms-thumb {
+          display: none;
+        }
+      }
+
+      .ms-lightbox-btn {
+        @include position(absolute, null 15px 15px null);
+  
+        @include mq($from: tablet) {
+          bottom: 20px;
+          right: 20px;
+        }
+      }
+  
+      .ms-lightbox {
+        @include size(45px);
+        background: rgba(0, 0, 0, 0)url(../../images/lightbox-btn.png) no-repeat scroll center center/103%;
+        border-radius: 50%;
+        display: block;
+        text-indent: 9999px;
+  
+        @include mq(mobileLandscape, tablet) {
+          @include size(50px);
+        }
+  
+        @include mq($from: tablet) {
+          @include size(55px);
+        }
+      }
+  
+      .ms-caption {
+        @include position(absolute, auto 0 null);
+        background: rgba(0,0,0,0.7);
+        padding: 10px;
+        color: #fff;
+        z-index: 2;
+      }
+  
+      .ms-view {
+        background: transparent;
+      }
+  
+      .ms-thumb-list {
+  
+        &.ms-dir-h {
+          @include size(100%, $horizThumbHeightMobile);
+          margin-top: 8px;
+  
+          @include mq($from: mobileLandscape) {
+            @include size(100%, $horizThumbHeight);
+          }
+  
+          .ms-thumb-frame {
+            margin-right: 10px;
+          }
+        }
+  
+        &.ms-dir-v {
+          @include size(64px, 100%);
+          right: -70px;
+          top: 0;
+  
+          @include mq($from: mobileLandscape) {
+            right: -140px;
+            width: 130px;
+          }
+  
+          .ms-thumb-frame {
+            margin-bottom: 10px;
+          }
+        }
+      }
+  
+      .ms-thumb-frame {
+        @include size(64px, $horizThumbHeightMobile);
+        opacity: 0.5;
+        transition: opacity 300ms;
+  
+        @include mq($from: mobileLandscape) {
+          @include size(127px, $horizThumbHeight);
+        }
+  
+        &.ms-thumb-frame-selected {
+          opacity: 1;
+        }
+      }
+
+      .ms-bullets {
+        max-width: 180px;
+
+        @include mq(mobileLandscape, tablet) {
+          max-width: 300px;
+        }
+
+        @include mq($from: tablet) {
+          max-width: 500px;
+        }
+      }
+
+      .ms-bullets-count {
+        overflow-x: hidden;
+        white-space: nowrap;
+      }
+
+      .ms-bullet {
+        border-radius: 50%;
+        display: inline-block;
+        float: none;
+      }
+    }
+
+
+    // M: Layout 1
+    &--layout-1 {
+      
+    }
+
+
+    // M: Layout 2
+    &--layout-2 {
+      margin-bottom: 20px;
+    }
+
+
+    // M: Layout 4
+    &--layout-4 {
+      border: 1px solid #ccc;
+      padding: 5px;
+
+      .c-property-slider__inner {
+
+        &.ms-skin-default {
+
+          &[data-slider-controls="thumblist"] {
+            padding-bottom: 68px;
+    
+            @include mq($from: mobileLandscape) {
+              padding-bottom: 90px;
+            }
+          }
+
+          .ms-nav-next,
+          .ms-nav-prev {
+            background: transparentize(#fff, 0.25);
+            display: block !important;
+            height: auto;
+            margin-top: 0;
+            opacity: 1 !important;
+            text-align: center;
+            transform: translateY(-50%);
+
+            &:before {
+              font-family: 'FontAwesome';
+              font-size: 32px;
+              line-height: (40 / 32) * 1em;
+              vertical-align: text-bottom;
+  
+              @include mq($from: tablet) {
+                font-size: 46px;
+                line-height: (90 / 46) * 1em;
+              }
+            }
+          }
+
+          .ms-nav-next {
+            right: 0;
+  
+            &:before {
+              content: '\f105';
+            }
+          }
+  
+          .ms-nav-prev {
+            left: 0;
+  
+            &:before {
+              content: '\f104';
+            }
+          }
+  
+          .ms-thumb-list.ms-dir-h {
+            margin-top: 5px;
+    
+            .ms-thumb-frame {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+
+
+    // M: Partial view
+    &--partial-view {
+
+      .ms-slide {
+
+        &:not(.ms-sl-selected) .ms-lightbox-btn {
+          visibility: hidden;
+        }
+      }
+    }
+
+
+    // Wide
+    &--wide {
+
+      .ms-skin-default {
+
+        .ms-slide {
+
+          &:not(.ms-sl-selected) .ms-lightbox-btn {
+            visibility: hidden;
+          }
+        }
+
+        .ms-inner-controls-cont {
+          position: static;
+        }
+
+        .ms-nav-next,
+        .ms-nav-prev {
+          background: none;
+          height: auto;
+          margin-top: 0;
+          min-width: 45px;
+          text-align: center;
+          transform: translateY(-50%);
+          width: auto;
+
+          &:before {
+            color: transparentize(#fff, 0.25);
+            font-family: 'FontAwesome';
+            font-size: 70px;
+            line-height: 1;
+
+            @include mq($from: tablet) {
+              font-size: 90px;
+            }
+          }
+        }
+
+        .ms-nav-next {
+
+          @include mq($until: tablet) {
+            right: 10px;
+          }
+
+          &:before {
+            content: '\f105';
+          }
+        }
+
+        .ms-nav-prev {
+          left: 10px;
+
+          @include mq($from: tablet) {
+            left: 30px;
+          }
+
+          &:before {
+            content: '\f104';
+          }
+        }
+  
+        .ms-bullet {
+          background: transparentize(#fff, 0.25);
+
+          &.ms-bullet-selected {
+            background: darken(#fff, 60%);
+          }
+        }
+      }
+    }
+
+
+    // M: Avangarde
+    &--avangarde {
+      margin-bottom: 0;
+
+      .ms-skin-default {
+
+        .ms-slide {
+
+          &:not(.ms-sl-selected) .ms-lightbox-btn {
+            visibility: initial;
+          }
+        }
+
+        .ms-bullet {
+          background: darken(#fff, 60%);
+          border: 2px solid transparentize(#fff, 0.25);
+          
+          &.ms-bullet-selected,
+          &:hover {
+            background: darken(#fff, 25%);
+          }
+        }
+
+        .ms-lightbox-btn {
+          @include position(relative, null 0 0 null);
+          height: 100%;
+        }
+
+        .ms-lightbox {
+          @include position(absolute, 0);
+          @include size(auto);
+          @include hide-text;
+          background: none;
+          border-radius: 0;
+        }
+      }
+    }
+  }

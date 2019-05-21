@@ -1,0 +1,40 @@
+/* ==========================================================================
+   #SELECT LIST
+   ========================================================================== */
+
+   .c-select-list {
+    display: block;
+    outline: 0;
+    padding: 0 !important;
+    position: relative;
+  
+    &::before {
+      @include position(absolute, 50% 12px null null);
+      content: '\f107';
+      display: inline-block;
+      font-family: 'FontAwesome';
+      font-size: 17px;
+      line-height: 1;
+      pointer-events: none;
+      transform: translateY(-50%);
+    }
+  
+    select {
+      -webkit-appearance: none;
+      -moz-appearance:    none;
+      appearance:         none;
+      background-color: transparent;
+      border: 0;
+      box-shadow: none;
+      height: 100%;
+      line-height: (20 / 14);
+      outline: 0;
+      padding: 0 30px 0 12px;
+      width: 100%;
+
+      &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+      }
+    }
+  }

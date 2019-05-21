@@ -1,0 +1,66 @@
+/* ==========================================================================
+   #HEADINGS
+   ========================================================================== */
+
+   .c-main-heading {
+
+    @include mq($until: tablet) {
+      font-size: 30px;
+      margin-top: 10px;
+    }
+
+
+    // M: Margin top none
+    &--mt-none {
+      margin-top: 0;
+    }
+
+
+    // M: Margin vertical none
+    &--mv-none {
+      margin-bottom: 0 !important;
+      margin-top: 0;
+    }
+
+
+    // Bordered
+    &--bordered {
+
+      a {
+        @include padding(null 28px);
+        display: inline-block;
+        position: relative;
+
+        @include mq($from: tablet) {
+          @include padding(null 35px);
+        }
+
+        &:before,
+        &:after {
+          @include size(20px, 4px);
+          background-color: #999;
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+
+          @include mq($from: tablet) {
+            width: 25px;
+          }
+        }
+
+        &:before {
+          left: 0;
+        }
+
+        &:after {
+          right: 0;
+        }
+      }
+      margin-top: 0;
+
+      @include mq($until: tablet) {
+        font-size: 31px;
+      }
+    }
+  }

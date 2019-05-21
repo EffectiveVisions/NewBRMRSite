@@ -1,0 +1,108 @@
+/* ==========================================================================
+   #SIDEBAR
+   ========================================================================== */
+
+  .c-sidebar {
+    z-index: 2;
+
+    @include mq($until: wide) {
+      margin-top: 15px;
+    }
+    
+    
+    // E: Inner
+    &__inner {
+      background-color: #fff;
+
+
+      // M: Bordered
+      &--bordered {
+        border: 1px solid #ccc;
+        padding: 15px;
+      }
+
+
+      // S: Is sticky
+      &.sticky {
+
+        @include mq($until: wide) {
+          position:  relative !important;
+          top: auto !important;
+        }
+      }
+    }
+
+
+    // E: Heading
+    &__heading {
+      @include margin(0 null 12px);
+
+
+      // M: Inquiry
+      &--inquiry {
+        margin-bottom: 20px;
+      }
+    }
+
+
+    // E: Section
+    &__section {
+
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+
+
+      // M: Bordered
+      &--bordered {
+        border: 1px solid #ccc;
+        padding: 15px 15px 4px;
+      }
+
+      // M: Phone
+      &--phone {
+
+        .call {
+
+          .fa {
+            font-size: 45px;
+          }
+
+          a {
+            font-size: (24 / 16) * 1em;
+          }
+
+          p {
+            line-height: 1.1;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+
+    // E: Inquiry button
+    &__inquiry-btn {
+      
+    }
+
+
+    // M: Inquiry
+    &--inquiry {
+      
+      .c-sidebar__section--bordered {
+        @include padding(null 20px);
+      }
+    }
+    
+    
+    // S: Is focused
+			&.is-focused {
+
+        .c-sidebar__inner {
+          box-shadow: -1px 0px 16px -1px rgba(186,222,109,1);
+          -moz-box-shadow: -1px 0px 16px -1px rgba(186,222,109,1);
+          -webkit-box-shadow: -1px 0px 16px -1px rgba(186,222,109,1);
+        }
+			}
+  }

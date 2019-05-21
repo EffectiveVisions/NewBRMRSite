@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #TABS
+   ========================================================================== */
+
+  .c-tabs {
+    
+
+    // E: Item
+    .c-tabs__item {
+      font-size: 15px;
+      margin-top: 2px;
+
+      > a {
+        background-color: #cb9e4b;
+        color: #fff;
+        outline: 0;
+        text-transform: uppercase;
+
+        &:hover {
+          background-color: #cb9e4b;
+        }
+      }
+
+      // S: Active
+      &.active {
+
+       > a,
+       > a:hover {
+        color: #cb9e4b;
+       }
+      }
+    }
+  }

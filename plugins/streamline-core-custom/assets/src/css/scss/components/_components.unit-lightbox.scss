@@ -1,0 +1,281 @@
+/* ==========================================================================
+  #UNIT LIGHTBOX
+	========================================================================== */
+
+$flexItemsMargin: 30; // pixels
+
+.c-unit-lightbox {
+	background-color: transparentize(#000000, 0.1);
+
+	.modal-header {
+		border-bottom: 0;
+		text-align: right;
+
+		.close {
+			color: #717171;
+			font-weight: 300;
+			float: none;
+			font-size: 50px;
+			opacity: 1;
+			text-shadow: unset;
+		}
+
+		.modal-title {
+			display: none;
+		}
+	}
+	
+	.modal-dialog {
+		max-width: 1140px !important;
+ 
+    @include mq($until: tablet) {
+			margin: 0;
+		}
+
+    @include mq($from: desktop) {
+			width: 100% !important;
+		}
+	}
+
+	.modal-content {
+		background: none;
+		border: 0;
+		box-shadow: none;
+	}
+
+
+	// E: Header
+	&__header {
+		align-items: center;
+		@include prefixer(display, flex, ("webkit", "moz"));
+		flex-basis: 100%;
+		padding-bottom: 10px;
+
+		@include mq($until: desktop) {
+			flex-wrap: wrap;
+		}
+
+		.c-section-title {
+			color: #fff;
+			flex-grow: 1;
+			margin-bottom: 0;
+
+			@include mq($until: desktop) {
+				margin-bottom: 15px;
+				text-align: center;
+			}
+		}
+
+		.c-unit-lightbox__btn {
+			flex-basis: 100%;
+			flex-shrink: 0;
+
+			@include mq($from: desktop) {
+				flex-basis: 25%;
+			}
+		}
+
+		.c-unit-lightbox__btn--expand {
+			display: none;
+		}
+	}
+
+
+	// E: Header item
+	&__header-item {
+		
+		@include mq($from: desktop) {
+			margin-right: $flexItemsMargin * 1px;
+		}
+	}
+
+
+	// E: Wrapper
+	&__wrapper {
+		flex-wrap: wrap;
+
+		@include prefixer(display, flex, ("webkit", "moz"));
+		justify-content: center;
+
+		@include mq($from: desktop) {
+			margin-right: calc(-#{$flexItemsMargin} * 1px);
+		}
+	}
+
+
+	// E: Item
+	&__item {
+		flex: 0 1 100%;
+
+		@include mq($from: desktop) {
+			flex-basis: auto;
+			margin-right: $flexItemsMargin * 1px;
+			min-height: 528px;
+		}
+
+
+		// M: Image
+		&--img {
+			@include prefixer(display, flex, ("webkit", "moz"));
+			align-items: center;
+			display: flex;
+			flex-grow: 1;
+			justify-content: center;
+			overflow: hidden;
+
+			@include mq($until: desktop) {
+				margin-bottom: 20px;
+				min-height: 61vw;
+			}
+
+			@include mq($from: desktop) {
+				flex-basis: calc(75% - (2 * #{$flexItemsMargin} * 1px));
+			}
+
+			div:first-child {
+				@include position(absolute, 0);
+
+				img {
+					@include position(absolute, 50% 50%);
+					transform: translate(-50%, -50%);
+				}
+			}
+
+			.ekko-lightbox-nav-overlay {
+
+				> a {
+
+					&:focus {
+						color: #fff;
+						text-decoration: none;
+					}
+				}
+			}
+
+
+			// S: Is narrow
+			&.is-narrow {
+
+				div:first-child {
+
+					img {
+						height: 100%;
+						max-width: none;
+					}
+				}
+			}
+		}
+
+
+		// M: Reviews
+		&--reviews {
+			position: relative;
+
+			@include mq($from: desktop) {
+				flex-basis: 25%;
+				flex-shrink: 0;
+			}
+		}
+	}
+
+
+	// E: Reviews
+	&__reviews {
+		@include prefixer(display, flex, ("webkit", "moz"));
+		color: #77787a;
+		flex-direction: column;
+
+		@include mq($from: desktop) {
+			@include position(absolute, 0 0 0 0);
+		}
+
+		.c-review__meta,
+		.c-review__body {
+			font-size: 14px;
+		}
+
+		.c-review__title {
+			color: #ceced0;
+			font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 0;
+		}
+  }
+  
+
+  // E: Reviews heading
+  &__reviews-heading {
+      color: #ceced0;
+			font-size: 17px;
+			margin-top: 35px;
+			position: relative;
+
+			&:after {
+
+				@include mq($from: desktop) {
+					@include position(absolute, null 0 -18px 0);
+					background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+					background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.1) 100%);
+					background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.1) 100%);
+					content: '';
+					display: inline-block;
+					height: 18px;
+				}
+			}
+  }
+
+
+	// E:  Button
+	&__btn {
+
+
+		// M: Expand
+		&--expand {
+
+			@include mq($from: desktop) {
+				display: none !important;
+			}
+		}
+	}
+
+
+	// E: Expandable
+	&__expandable {
+
+		@include mq($until: desktop) {
+			display: none;
+		}
+
+		@include mq($from: desktop) {
+			@include prefixer(display, flex, ("webkit", "moz"));
+			flex-direction: column;
+			overflow: hidden;
+		}
+	}
+
+
+	// E: Reviews inner
+	&__reviews-inner {
+		flex: 0 1 auto;
+		overflow: hidden;
+		overflow-y: scroll;
+		padding-top: 5px;
+
+		&:after {
+
+			@include mq($from: desktop) {
+				@include position(absolute, null 0 0 0);
+				background: -moz-linear-gradient(top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%); 
+				background: -webkit-linear-gradient(top, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.3) 100%);
+				background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.3) 100%);
+				content: '';
+				display: inline-block;
+				height: 18px;
+			}
+    }
+    
+    .c-expandable-text__link {
+      font-size: 14px;
+    }
+	}
+}

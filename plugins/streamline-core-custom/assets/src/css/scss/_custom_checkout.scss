@@ -1,0 +1,203 @@
+#checkout-container-custom{
+	.container-progress-bar{
+		h2 {
+		    line-height: 20px;
+		    margin: 0 !important;
+		}
+		.bar_area{
+			background: #ebebeb none repeat scroll 0 0;
+		    border: 1px solid #cccccc;
+		    border-radius: 8px;
+		    height: 55px;
+		    text-transform: uppercase;
+		    margin: 0 15px 30px;
+		    > div {
+			    height: 55px;
+    			padding: 15px;
+			}
+			> .col-md-3{
+				-webkit-border-top-left-radius: 8px;
+				-webkit-border-bottom-left-radius: 8px;
+				-moz-border-radius-topleft: 8px;
+				-moz-border-radius-bottomleft: 8px;
+				border-top-left-radius: 8px;
+				border-bottom-left-radius: 8px;
+			}
+		}
+		.dots_title{
+			text-transform: uppercase;
+			.col-md-3, .col-md-4{
+				padding: 0;
+				position: relative;
+			}
+			.dot{
+				i{
+					color: #fff;
+				    font-size: 18px;
+				    left: 12px;
+				    position: absolute;
+				    top: 10px;
+				}
+			}
+		}
+		.col-md-4.r_payment, .col-md-4.r_confirmation {
+			text-align: center;
+		}
+		.circle{
+		    border-radius: 100%;
+		    display: inline-block;
+		    height: 40px;
+		    left: 0;
+		    padding: 12px;
+		    position: absolute;
+		    top: 35px;
+		    width: 40px;
+		    z-index: 9;
+		}
+		.dots_container {
+		    text-align: center;
+		    .r_info{
+		    	text-align: left;
+		    }
+		}
+		.r_protection{
+			.circle {
+		    	left: 22% !important;
+			}
+		} 
+		.r_payment{
+			.circle {
+		    	left: 40% !important;
+			}
+		} 
+		.r_confirmation{
+			.circle {
+		    	left: 67% !important;
+			}
+		}
+	}
+	.two_steps{
+		.r_confirmation{
+			.circle {
+	    		left: 77% !important;
+			}
+		}
+	}
+	.panel-body {
+		.col-md-4.col-md-push-8 {
+		    background: #959595 none repeat scroll 0 0;
+		    padding: 40px 15px 40px 80px;
+		    -webkit-border-bottom-right-radius: 8px;
+			-moz-border-radius-bottomright: 8px;
+			border-bottom-right-radius: 8px;
+		}
+		.c_arrow{
+			display: block;
+		    height: 100%;
+		    left: -1px;
+    		max-width: 115px;
+		    position: absolute;
+		    top: 0;
+		}
+		.c_step1_image{
+			background: #fff none repeat scroll 0 0;
+		    -webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		    float: right;
+		    max-width: 350px;
+		    padding: 9px;
+		    position: relative;
+		}
+		.form_step_1 {
+		    padding: 20px 0 0;
+		    .g_tooltip{
+				top: 35px;
+			}
+			.icon-checkout{
+				top: 40px;
+			}
+		}
+	}
+	.resortpro-reservation-details{
+		color: #fff;
+		.glyphicon-menu-down, .glyphicon-menu-up{
+			color: #fff;
+			border: 1px solid #fff;
+		}
+	}
+	.resortpro-reservation-details tr:hover{
+		color: #666;
+		.glyphicon-menu-down, .glyphicon-menu-up{
+			color: #666;
+			border: 1px solid #666;
+		}
+		.border-bottom-primary tr{
+			color: #fff !important;
+		}
+	}
+	.btn-primary, .btn-secondary{
+		text-transform: uppercase;
+		transition: background-color 0.4s linear 0s;
+		padding: 14px 30px;
+		-webkit-border-radius: 50px;
+		-moz-border-radius: 50px;
+		border-radius: 50px;
+		color: #fff;
+		font-weight: 500;
+		font-size: 18px;
+	}
+	.input-group-btn {
+		.btn-primary{
+			-webkit-border-radius: 0;
+			-moz-border-radius: 0;
+			border-radius: 0;
+			font-size: 14px;
+			padding: 6px 12px;
+		}
+	}
+	.panel-heading{
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+		.step{
+			-webkit-border-top-left-radius: 8px;
+			-webkit-border-bottom-left-radius: 8px;
+			-moz-border-radius-topleft: 8px;
+			-moz-border-radius-bottomleft: 8px;
+			border-top-left-radius: 8px;
+			border-bottom-left-radius: 8px;
+		}
+	}
+	.panel-heading.open{
+		-webkit-border-radius: 8px;
+		-webkit-border-bottom-right-radius: 0px;
+		-webkit-border-bottom-left-radius: 0px;
+		-moz-border-radius: 8px;
+		-moz-border-radius-bottomright: 0px;
+		-moz-border-radius-bottomleft: 0px;
+		border-radius: 8px;
+		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 0px;
+		.step{
+			-webkit-border-top-left-radius: 8px;
+			-moz-border-radius-topleft: 8px;
+			border-top-left-radius: 8px;
+		}
+	}
+	.panel.panel-default{
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+	}
+	.panel-heading{
+		padding: 20px 15px;
+		.step{
+			padding: 15px 20px;
+		}
+	} 
+}
+.c_progress{
+	background-color: #ccc;
+	transition: background-color 1s ease 0s;
+}

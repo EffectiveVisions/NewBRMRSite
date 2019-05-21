@@ -1,0 +1,56 @@
+.frm-property-inquiry{
+	.modal-title {
+	    text-align: center;
+	}
+	.form-icon {
+		padding-left: 35px;
+
+		~ i {
+			@include position(absolute, 50% null null 15px);
+			display: block;
+			transform: translateY(-50%);
+		}
+	}
+
+	textarea.form-icon {
+
+		~ i {
+			top: 8px;
+			transform: none;
+		}
+	}
+
+	input.ng-invalid.ng-touched, 
+	.ng-submitted input.ng-invalid{
+	  border-right: solid 4px #9e0b0f;
+	}
+
+	input.ng-not-empty.ng-valid{
+	  border-right: solid 4px green;
+	}
+	span.error.ng-binding::before {
+	    background: rgba(0, 0, 0, 0) url("../../images/sprite-inquiry.png") no-repeat scroll -120px -20px;
+	    bottom: 24px;
+	    color: #fff;
+	    content: "";
+	    display: block;
+	    height: 6px;
+	    left: 30px;
+	    position: absolute;
+	    width: 10px;
+	}
+	.modal-footer {
+	    border-top: medium none;
+	    padding-top: 0;
+	}
+}
+.frm-property-inquiry.ng-invalid{
+	.error {
+	    background: #f15d5f none repeat scroll 0 0;
+	    border-radius: 2px;
+	    color: #fff;
+	    font-size: 12px;
+	    margin-top: 20px;
+	    padding: 5px 10px;
+	}
+}

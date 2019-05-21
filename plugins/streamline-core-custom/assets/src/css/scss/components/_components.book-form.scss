@@ -1,0 +1,71 @@
+/* ==========================================================================
+   #BOOK FORM
+   ========================================================================== */
+
+  .c-book-form {
+    
+    .form-control[disabled], 
+    .form-control[readonly], 
+    fieldset[disabled] .form-control{
+      background-color: #fff;
+    }
+
+
+    // E: Widget
+    &__widget {
+
+    }
+
+
+    // E: Widget price
+    &__widget-price {
+      border-bottom: 1px solid #666;
+      margin-bottom: 12px;
+    }
+
+
+    // E: Widget total
+    &__widget-total {
+      color: #ff9803;
+      font-size: 24px;
+    }
+
+
+    // E: Widget text
+    &__widget-text {
+      font-size: (14 / 16) * 1em;
+    }
+
+
+    // E: Fields
+    &__fields {
+      
+    }
+
+
+    // E: Submit button
+    &__submit-btn {
+      
+    }
+
+
+    // M: Bordered
+    &--bordered {
+
+      .c-book-form__widget-price {
+        border-bottom-color: #ccc;
+        line-height: 1.5;
+        padding-bottom: 16px;
+      }
+
+      .c-book-form__widget-total {
+        font-size: 30px;
+      }
+    }
+
+    .breakdown-days-hidden,
+    .breakdown-fees-hidden, 
+    .breakdown-taxes-hidden {
+      display: none;
+    }
+  }

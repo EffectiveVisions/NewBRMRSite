@@ -1,0 +1,151 @@
+.fajar_vc_list_items {
+    background: url("list_items.png") no-repeat !important;
+}
+.fajar_vc_slider_overlay {
+    background: url("slider_overlay.png") no-repeat !important;
+}
+.fajar_vc_creative_numbers {
+    background: url("creative_number.png") no-repeat !important;
+}
+.fajar_vc_popup_video {
+    background: url("pop_up_video.png") no-repeat !important;
+}
+.fajar_vc_alerts {
+    background: url("alert-box.png") no-repeat !important;
+}
+.fajar_vc_pricing_table {
+    background: url("pricing-table.png") no-repeat !important;
+}
+.fajar_vc_awesome {
+    background: url("awesome.png") no-repeat !important;
+}
+.fajar_vc_toggle {
+    background: url("toggle.png") no-repeat !important;
+}
+.fajar_vc_img_process {
+    background: url("image-process.png") no-repeat !important;
+}
+.fajar_vc_feature_boxes {
+    background: url("feature_box.png") no-repeat !important;
+}
+.fajar_vc_partners_carousel {
+    background: url("work-carousel.png") no-repeat !important;
+}
+.fajar_vc_slide_thumbnail_thumbs {
+    background: url("img2.png") no-repeat !important;
+}
+.fajar_vc_slide_thumbnail {
+    background: url("thumbmail-slider.png") no-repeat !important;
+}
+.fajar_vc_scroll_button {
+    background: url("scroll-button.png") no-repeat !important;
+}
+.fajar_vc_career_tabs {
+    background: url("career-tabs.png") no-repeat !important;
+}
+.fajar_vc_history_slider_pagination {
+    background: url("slider-pagination.png") no-repeat !important;
+}
+.fajar_vc_history_slider {
+    background: url("histroy-slider.png") no-repeat !important;
+}
+.fajar_vc_feature_list {
+    background: url("features-list.png") no-repeat !important;
+}
+.fajar_vc_recent_work {
+    background: url("portoflio.png") no-repeat !important;
+}
+.fajar_vc_tooltip {
+    background: url("tooltip.png") no-repeat !important;
+}
+.fajar_vc_faq {
+    background: url("faq.png") no-repeat !important;
+}
+.fajar_vc_contact_widget {
+    background: url("contact-widget.png") no-repeat !important;
+}
+.fajar_vc_contact_info {
+    background: url("contact-info.png") no-repeat !important;
+}
+.fajar_vc_call_to_action {
+    background: url("call-action.png") no-repeat !important;
+}
+.fajar_vc_fancy_slider {
+    background: url("fancy-image-slide.png") no-repeat !important;
+}
+.fajar_vc_rotating_logo {
+    background: url("rotating-logo.png") no-repeat !important;
+}
+.fajar_vc_rotating_text {
+    background: url("rotating-text.png") no-repeat !important;
+}
+.fajar_vc_skills {
+    background: url("skills-bar.png") no-repeat !important;
+}
+.fajar_vc_title {
+    background: url("heading.png") no-repeat !important;
+}
+.fajar_vc_counters1 {
+    background: url("counters.png") no-repeat !important;
+}
+.fajar_vc_team2 {
+    background: url("team-members.png") no-repeat !important;
+}
+.fajar_vc_section {
+    background: url("section.png") no-repeat !important;
+}
+.fajar_vc_container {
+    background: url("container.png") no-repeat !important;
+}
+.fajar_vc_porfolio {
+    background: url("portoflio.png") no-repeat !important;
+}
+.fajar_vc_heading {
+    background: url("heading_block.png") no-repeat !important;
+}
+.fajar_vc_testimonials {
+    background: url("testimonials.png") no-repeat !important;
+}
+.fajar_vc_team {
+    background: url("team.png") no-repeat !important;
+}
+.fajar_vc_features {
+    background: url("feature_box.png") no-repeat !important;
+}
+.fajar_vc_services1 {
+    background: url("services1.png") no-repeat !important;
+}
+.fajar_vc_services2 {
+    background: url("services2.png") no-repeat !important;
+}
+.fajar_vc_services3 {
+    background: url("services3.png") no-repeat !important;
+}
+.fajar_vc_services4 {
+    background: url("services4.png") no-repeat !important;
+}
+.fajar_vc_buttons {
+    background: url("buttons.png") no-repeat !important;
+}
+.fajar_vc_img1 {
+    background: url("img1.png") no-repeat !important;
+}
+.fajar_vc_img2 {
+    background: url("img2.png") no-repeat !important;
+}
+.fajar_vc_blog {
+    background: url("blog.png") no-repeat !important;
+}
+.vc_add-element-container .wpb-content-layouts li {
+    height: 85px !important;
+    border: 2px solid #fff !important;
+}
+#visual_composer_content img {
+    max-width: 100% !important;
+}
+.vc_edit_form_elements .textarea_raw_html {
+    height: 100px !important;
+}
+.vc_checkbox-label span.none {
+    display: none !important;
+}

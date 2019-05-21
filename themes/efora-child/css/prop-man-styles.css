@@ -1,0 +1,33 @@
+.prop-man-wrap { position: relative; clear: both; }
+.prop-man-bg { position: relative; background: url('/wp-content/themes/efora-child/includes/img/prop-man-bg-top-right.jpg'); background-repeat: no-repeat; background-position: top right;  }
+.prop-man-content { position: relative; z-index: 2; padding: 40px 0 50px; }
+.prop-man-content article { margin: 0; padding: 0; float: none; width: auto; }
+.prop-man-content h1,
+.prop-man-content h2 { font-size: 40px; font-weight: bold; color: #303d51; font-family: 'Montserrat', sans-serif; margin-top: 0; }
+.prop-man-content p,
+.prop-man-content ul { font-family: 'Open Sans', sans-serif; font-size: 18px; color: #303e50; line-height: 30px; }
+.prop-man-content ul { margin: 1em 2em; padding: 0; font-size: 21px; font-weight: bold; }
+.prop-man-content article .entry-header,
+.prop-man-content .entry-footer { display: none; }
+.prop-man-callouts { padding: 0; position: relative; }
+.prop-man-callouts .row { margin: 0 -5px; }
+.prop-man-callouts [class^=col] { padding-left: 5px; padding-right: 5px; }
+.prop-man-callout { min-height: 300px; position: relative; padding-bottom: 60%; background-size: cover !important; background-position: center center !important; background-repeat: no-repeat; }
+.prop-man-callout:before { content: ""; display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100; background: rgba(0,0,0,0.45); }
+.prop-man-callout-info { line-height: normal; letter-spacing: -0.03em; width: 100%; font-family: 'Montserrat', sans-serif; font-weight: bold; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: #fff; text-align: center; }
+.prop-man-callout-title { display: block; }
+.prop-man-callout-title span { font-size: 40px; display: block; }
+.prop-man-callout-title em { font-size: 20px; font-style: normal; display: block; }
+.prop-man-callout-price { display: block; margin-top: 25px; }
+.prop-man-callout-price span { font-size: 40px; display: block; }
+.prop-man-callout-price em { font-size: 16px; font-style: normal; display: block; }
+.prop-man-feedback { padding: 75px 0; }
+.prop-man-feedback blockquote { display: block; padding: 20px 0; border: none; }
+.prop-man-feedback blockquote span { font-size: 24px; font-family: 'Montserrat', sans-serif; font-weight: bold; }
+.prop-man-contact { padding: 100px 0; background: url('/wp-content/themes/efora-child/includes/img/prop-man-contact-bg.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; }
+.prop-man-contact h2 { font-size: 50px; letter-spacing: -0.03em; color: #fff; font-weight: bold; margin-bottom: 50px !important; }
+.prop-man-contact .form-control { border-radius: 0; box-shadow: none; border: none !important; background: #fff; font-weight: bold; font-size: 24px; margin-bottom: 15px; padding: 10px !important; height: auto; }
+.prop-man-contact .btn { float: none; font-weight: bold; font-size: 30px; background: #273f69; border-radius: 0; padding: 18px 90px; margin-top: 10px; }
+@media (max-width: 992px) {
+  .prop-man-bg { background: #fff; }
+}
