@@ -122,7 +122,7 @@
   <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
          <div data-aos="fade-down" data-aos-duration="500" class="col-12 py-sm-4 pt-4 pb-3 text-center">
-            <h2 class="text-white mb-0 f-property-heading">Featured Properties</h2>
+            <h2 class="text-white mb-0 f-property-heading"> Properties Running Discouns and Specials</h2>
          </div>
       </div>
       <div class="row" ng-init="search.amenities_filter='129951';sortBy='random';availabilitySearch();">
