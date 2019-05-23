@@ -204,13 +204,13 @@ $popular_places_desc = get_field('elk_popular_places_desc',$page->ID); ?>
         jQuery(document).on("click",".topmenulink",function(){
               jQuery('html, body').animate({
                    scrollTop: jQuery("#explore").offset().top-150
-              });
+              },1000);
         });
 
         jQuery(document).on("click",".featuredhomes",function(){
             jQuery('html, body').animate({
                    scrollTop: jQuery("#featured").offset().top-150
-              });
+              },1000);
         });
         jQuery('.slider4').slick({
          dots: false,

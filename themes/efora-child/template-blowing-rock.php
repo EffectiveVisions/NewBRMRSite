@@ -154,13 +154,13 @@ $top_amenities = get_field('blowing_top_amenities',$page->ID); ?>
        jQuery(document).on("click",".topmenulink",function(){
               jQuery('html, body').animate({
                    scrollTop: jQuery("#explore").offset().top-150
-              });
+              },1000);
         });
 
         jQuery(document).on("click",".featuredhomes",function(){
             jQuery('html, body').animate({
                    scrollTop: jQuery("#featured").offset().top-150
-              });
+              },1000);
         });
        jQuery('.slider-amenities').slick({
          dots: false,

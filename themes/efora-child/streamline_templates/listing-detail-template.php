@@ -272,7 +272,7 @@
                       ?>
                     </h3>
                     <div class="ml-sm-auto my-sm-0 mb-3 mt-2  order-sm-2 order-1">
-                     <a href="javascript:history.go(-1)" class="btn theme-btn font-Nunito text-uppercase font-13 text-white position-relative font-weight-light-bold text-uppercase align-items-center">Back To search results</a>
+                     <a  href="javascript:history.go(-1)" class="btn theme-btn font-Nunito text-uppercase font-13 text-white position-relative font-weight-light-bold text-uppercase align-items-center backtosearch">Back To search results</a>
                      </div>
                       <a href="javascript:void(0)" class="d-none d-md-block d-xl-none toggle-filter">
                         <div class="mb-0 rounded ml-sm-3 ml-4 text-center theme-bg-color  filter-tool">
@@ -646,6 +646,10 @@
 <script>
 
 jQuery(document).ready(function(){
+  if (history.length == 1 || history.length == 0) {  
+    jQuery(".backtosearch").hide();
+  }
+  
   jQuery("#booknowbtn").click(function(){
         jQuery('html, body').animate({
            scrollTop: jQuery("#book_now_mobile").offset().top-320

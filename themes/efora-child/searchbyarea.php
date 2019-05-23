@@ -290,6 +290,8 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
 <!-- here javscript code text -->
 <script>
    jQuery(document).ready(function(){
+    jQuery('input[name="pets"]').removeAttr("checked"); 
+    document.getElementsByClassName("searchform")[0].reset();  
     jQuery("#vacationarea").bind("paste", function(e){
       setTimeout(() => {
         var all =  document.querySelectorAll(".dropdown-menu li");

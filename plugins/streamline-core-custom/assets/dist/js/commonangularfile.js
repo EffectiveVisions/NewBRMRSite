@@ -277,6 +277,7 @@
 
         $scope.goToStepTwoA = function() {
         	jQuery("form[name='formStep1']")[0].reset();
+        	$scope.checkout.country = "US"
             $scope.getStates();
             if (typeof jQuery("#btn-step1").attr("disabled") == "undefined") {
                 jQuery("#step0").hide();
@@ -1015,16 +1016,6 @@
                 $scope.book.checkout = date.format("mm/dd/yyyy")
             }
         };
-        
-        $scope.redeemCode = function(use_default){
-        	Alert.clear();
-        	if(!$scope.checkout.promo_code){
-               Alert.add(Alert.errorType, "Please input coupon code to redeem");
-        	}else{
-        		$scope.getPreReservation();
-        	}
-        }
-
         $scope.getPreReservation = function(use_default) {
             use_default = use_default || 0;
             var params = {
@@ -1066,12 +1057,9 @@
             run_waitMe(".form-checkout-wrapper", "bounce", "Updating Information...");
             run_waitMe("#step0", "bounce", "Updating Price");
             rpapi.getWithParams(method, params).success(function(obj) {
-            	hide_waitMe(".form-checkout-wrapper");
+                hide_waitMe(".form-checkout-wrapper");
                 hide_waitMe("#step0");
                 hide_waitMe(".price_sticky");
-                if(obj.status){
-                   Alert.add(Alert.errorType, obj.status.description);
-                }else{
                 var arr_amenities = [];
                 if (obj.data.optional_fees.id) {
                     resultData = [];
@@ -1181,7 +1169,6 @@
                     })
                 }
                 $scope.securityDeposit = totalDeposits
-              }
             })
         };
         $scope.getTermsAndConditions = function() {
@@ -2495,9 +2482,7 @@
                        $scope.search.pets = ""; 
                     }else{
                     	$scope.search.pets--
-                    }
-
-                    
+                    }    
                 }
             }
             if (type == "modal_pets") {
@@ -2539,8 +2524,7 @@
                        $scope.search.num_bedrooms--
                        $scope.isMinusDisabled = false
                        $scope.isPlusDisabled = false;
-                    }
-                   
+                    } 
                 }
             }
         };
@@ -2945,7 +2929,6 @@
         $scope.saveUnitId = function() {
             var saveUnitId = $cookies.getObject("unit_id")
         };
-        
         $scope.loadMore = function() {
             $scope.loadMoreShow = "true";
             var size = $rootScope.searchSettings.propertyPagination;
@@ -6229,8 +6212,6 @@
             }
         }
     });
-
-
     app.factory("rpuri", function($http, $rootScope) {
         return {
             getQueryStringParam: function(sParam) {
@@ -6246,9 +6227,3 @@
         }
     })
 })();
-
-
-
-
-
-

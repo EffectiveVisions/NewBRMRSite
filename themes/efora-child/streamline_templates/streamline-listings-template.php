@@ -273,8 +273,8 @@
   var backurl = document.referrer;
   var index = 0;
   jQuery(document).ready(function(){
-     var checkin = "<?php echo date("d/m/Y") ?>";
-     var checkout = "<?php echo date('d/m/Y', mktime(0, 0, 0, date('m'), date('d') + 2, date('Y'))); ?>"
+     var checkin = "<?php //echo date("d/m/Y") ?>";
+     var checkout = "<?php //echo date('d/m/Y', mktime(0, 0, 0, date('m'), date('d') + 2, date('Y'))); ?>"
 
      if(jQuery('#search_start_date_single').val()!=""){
         jQuery(".checkinspan").html(jQuery('#search_start_date_single').val());
@@ -331,9 +331,8 @@
     if(allamenties.length>0){
       jQuery(".custom-checkbox").each(function(){
          if(jQuery.inArray(jQuery(this).children("input").val(), allamenties) !== -1){
-             
-         }
-         
+             jQuery(this).children().prop('checked', true);
+         }   
       });
     }
     beds = parseInt(beds);
@@ -354,9 +353,14 @@
     if(childguest!=0){
       jQuery(".count-single-child").html(childguest);
     }
+
     if(adultguest!=0 || childguest!=0 || sd || ed || pets || resort_area_id || beds){
        jQuery("#updatesearch").click();
        //jQuery('.update_search').click();
+    }
+
+    if(pets){
+      jQuery("input[value=121865]").prop('checked',true);
     }
 
     jQuery(".filter-menu-show").animate({right: "0px"});

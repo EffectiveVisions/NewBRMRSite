@@ -78,10 +78,8 @@
           if(jQuery(this).text()=="Read More"){
             jQuery(this).text("Less");
           }else{
+          	jQuery('html, body').animate({scrollTop: "0px"}, 800);
             jQuery(this).text("Read More");
-
-           
-
 
           }
         })
