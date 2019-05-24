@@ -1,7 +1,7 @@
 <section ng-controller="PropertyController as pCtrl" ng-cloak class="featureProperty py-md-5 py-4 bg-light">
     <button class="btn theme-btn filter-btn filter-tool d-md-block d-none" type="button">Filter</button>
     <div>
-        <div class="container" ng-init="<?php echo apply_filters('streamline-search-results-params', $str_params); ?>;sortBy='<?php echo $sorted_by; ?>'">
+        <div class="container" ng-init="<?php echo apply_filters('streamline-search-results-params', $str_params); ?>;sortBy='<?php echo $sorted_by; ?>'; loadBtn = true;">
            <div ng-init="availabilitySearch();">
 
               <div class="row  align-items-center mx-0 border py-2 px-sm-3 px-2 bg-white my-2">
@@ -171,7 +171,7 @@
            <?php if ($search_layout === '6') : ?>
              <div class="row">
                  <div class="col-md-12 text-center mt-md-5 my-4 pt-2 px-3">
-                   <button   ng-if="total_units > 0 && !noResults && propertiesObj.length==0"
+                   <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && !propertiesObj.length<12"
                           ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?> 
                    </button>
                  </div>
@@ -192,7 +192,7 @@
                           
                     </div>
                     <div ng-if="loadingShow != 'true'" class="col-md-12 text-center mt-md-5 my-4 px-3">
-                        <button   ng-if="total_units > 0 && !noResults && currentView !='mapview' && propertiesObj.length>0"
+                        <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && !propertiesObj.length<12"
                           ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?>
 
                         </button>

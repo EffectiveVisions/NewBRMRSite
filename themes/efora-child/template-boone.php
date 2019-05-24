@@ -103,8 +103,8 @@ $town_desc = get_field('town_description',$page->ID); ?>
             <p class="text-white mb-md-0 f-property-discription font-Nunito font-18">Your dream mountain home is here. In the heart of the high country.</p>
          </div>
       </div>
-      <div class="row" ng-init="search.resort_area_id=6459;sortBy='random';availabilitySearch();">
-         <div data-aos="fade-down" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 12" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
+      <div class="row" ng-init="search.resort_area_id=6459;sortBy='random';availabilitySearch(); limit = searchSettings.propertyPagination; loadBtn = true">
+         <div data-aos="fade-down" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
           <div class="inner-div p-lg-1 d-inline-block w-100">
               <div class="property bg-white">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
@@ -135,8 +135,20 @@ $town_desc = get_field('town_description',$page->ID); ?>
               </div>
           </div>
          </div>
+         <div class="col-md-12 text-center">
+                <!-- <i ng-if="loadMoreShow == 'true'" class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i> -->
+                <div ng-if="loadMoreShow == 'true'" class="cards-loader-cutome">
+                    <div class="lds-ellipsis">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                </div>
+                          
+          </div>
          <div class="col-md-12 text-center mt-5 mb-4">
-            <a href="/search-results/?resort_area_id=6459" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold">Search Properties in This Area</a>
+            <a ng-if="total_units > 0 && loadBtn && !propertiesObj.length<12" ng-click="loadMore();" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?></a>
          </div>
       </div>
   </div>

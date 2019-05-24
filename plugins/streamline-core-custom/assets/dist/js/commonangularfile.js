@@ -3004,6 +3004,8 @@
                 params['amenities_filter'] = ammentiesid.join(",");
             }
 
+
+
             $scope.loadMoreProperties(params, size, $scope.currentPage, false);
 
             if ($rootScope.searchSettings.enable_save_unit_place == 1) {
@@ -4322,10 +4324,11 @@
                    
                     //$scope.loadMarkers(tempProperties, false)
                 } else {
+                	$scope.loadBtn = false;
                     //$scope.noResults = true
                     hide_waitMe(".map-container-wrapper");
                 }
-                $scope.searchMap(params, $scope.total_units, 1, true)
+                //$scope.searchMap(params, $scope.total_units, 1, true)
             });
             $scope.loading = false
         }
