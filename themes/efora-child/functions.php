@@ -22,6 +22,7 @@ function efora_child_scripts_footer() {
     wp_enqueue_script('chosen-js', get_stylesheet_directory_uri() . '/js/chosen.jquery.min.js', array('jquery'), '', true);
     wp_enqueue_script('aos-js', get_stylesheet_directory_uri() . '/js/aos.js', '', '', true);
     wp_enqueue_script('custom-js', get_stylesheet_directory_uri() . '/js/custom.js', '', '', true);
+     wp_enqueue_script('efora-main', get_stylesheet_directory_uri() . '/js/main.js','', '', true  );
 }
 
 add_action('wp_enqueue_scripts', 'efora_child_scripts_footer');
