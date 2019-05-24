@@ -212,9 +212,9 @@
             </div>
           </div>
           
-          <div class="alert alert-{[alert.type]} animate" ng-repeat="alert in alerts">
+          <!--<div class="alert alert-{[alert.type]} animate" ng-repeat="alert in alerts">
             <div ng-bind-html="alert.message | trustedHtml"></div>
-          </div>
+          </div>-->
           <?php if($is_modal): ?>
         </div>
       </div>

@@ -949,7 +949,10 @@
             }
             return [false, "booked", ""]
         };
+        
+
         $scope.getPreReservationPrice2 = function(booking, res) {
+        	Alert.clear();
             if (booking.checkin && booking.checkout) {
                 $scope.startDate = booking.checkin;
                 $scope.endDate = booking.checkout;
@@ -1016,7 +1019,23 @@
                 $scope.book.checkout = date.format("mm/dd/yyyy")
             }
         };
+
+        $scope.checkCode = function(){
+        	if($scope.checkout.promo_code){
+        		$scope.isCodeDisabled = false;
+        	}else{
+        		$scope.isCodeDisabled = true;
+        	}
+        }
+        
+        $scope.redeemCode = function(){
+        	$scope.getPreReservation();
+        }
+
+
         $scope.getPreReservation = function(use_default) {
+        	Alert.clear();
+
             use_default = use_default || 0;
             var params = {
                 startdate: $scope.startDate,
@@ -1061,6 +1080,9 @@
                 hide_waitMe("#step0");
                 hide_waitMe(".price_sticky");
                 var arr_amenities = [];
+                if(obj.status){
+                	 Alert.add(Alert.errorType, obj.status.description);
+                }else{
                 if (obj.data.optional_fees.id) {
                     resultData = [];
                     resultData.push(obj.data.optional_fees);
@@ -1169,6 +1191,7 @@
                     })
                 }
                 $scope.securityDeposit = totalDeposits
+              }
             })
         };
         $scope.getTermsAndConditions = function() {
@@ -3243,6 +3266,7 @@
             })
         };
         $scope.getPreReservationPrice = function(booking, res) {
+        	Alert.clear();
             if (booking.checkin && booking.checkout) {
                 var checkin = new Date(booking.checkin);
                 var checkout = new Date(booking.checkout);

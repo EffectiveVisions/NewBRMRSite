@@ -97,9 +97,9 @@
       <?php if($use_promo): ?>
       <div class="col-md-12 coupon_code" ng-if="!reservationDetails.coupon_discount > 0">
          <div class="input-group redeem-promo-code">
-            <input type="text" class="form-control" placeholder="<?php	_e('Enter Promo Code',	'streamline-core');	?>" ng-model="checkout.promo_code" />
+            <input ng-change="checkCode()" type="text" class="form-control" placeholder="<?php	_e('Enter Promo Code',	'streamline-core');	?>" ng-model="checkout.promo_code" />
             <span class="input-group-btn">
-            <button class="btn btn-primary" type="button" ng-click="redeemCode()">
+            <button ng-disabled="isCodeDisabled" class="btn btn-primary" type="button" ng-click="redeemCode()">
             <i class="glyphicon glyphicon-ok"></i>
             <?php	_e('Redeem',	'streamline-core');	?>
             </button>

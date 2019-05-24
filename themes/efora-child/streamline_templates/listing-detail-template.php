@@ -78,7 +78,7 @@
                 <?php endif; ?>
              </div>
             <div  ng-controller="CheckoutController as cCtrl" class="checkout-controller d-inline-block w-100 filtersearch">
-               <div ng-init="maxOccupants='<?php echo $max_children; ?>'; isDisabled=true; total_reservation=0; book.unit_id=<?php echo $property['id'] ?>; book.occupants_small='<?php echo $occupants_small; ?>'; book.checkin='<?php echo $start_date; ?>';book.checkout='<?php echo $end_date ?>';hash='<?php echo $hash; ?>';referrer_url='<?php echo $checkout_url; ?>'; checkout.country='US';unit=<?php echo $property['id'] ?>;getPreReservationPrice2(book, 0)">
+               <div ng-init="maxOccupants='<?php echo $max_children; ?>'; isDisabled=true; isCodeDisabled=true; total_reservation=0; book.unit_id=<?php echo $property['id'] ?>; book.occupants_small='<?php echo $occupants_small; ?>'; book.checkin='<?php echo $start_date; ?>';book.checkout='<?php echo $end_date ?>';hash='<?php echo $hash; ?>';referrer_url='<?php echo $checkout_url; ?>'; checkout.country='US';unit=<?php echo $property['id'] ?>;getPreReservationPrice2(book, 0)">
                 <button class="bookvacation" style="display:none" ng-click="setNights()"></button>
                  <div ng-init="initCheckout()">
                       <div class="main_cnt_step_1 container_background">
