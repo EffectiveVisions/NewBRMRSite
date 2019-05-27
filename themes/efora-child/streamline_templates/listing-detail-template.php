@@ -653,7 +653,7 @@ jQuery(document).ready(function(){
   jQuery("#booknowbtn").click(function(){
         jQuery('html, body').animate({
            scrollTop: jQuery("#book_now_mobile").offset().top-320
-        });
+        },2000);
   });
   var height = 200;
   jQuery('.description-content').css({"max-height":height+"px","overflow-y":"hidden"})
@@ -717,7 +717,7 @@ jQuery(document).ready(function(){
 
      jQuery('html, body').animate({
         scrollTop: jQuery("#overview").offset().top-320
-    });
+    },1500);
 
       
 
@@ -726,26 +726,26 @@ jQuery(document).ready(function(){
   jQuery('.amenities').click(function(){
      jQuery('html, body').animate({
         scrollTop: jQuery("#amenities").offset().top-200
-    });
+    },1500);
     
     
   })
   jQuery('.description').click(function(){
      jQuery('html, body').animate({
         scrollTop: jQuery("#description").offset().top-200
-    });
+    },1500);
        
   })
   jQuery('.rates').click(function(){
     jQuery('html, body').animate({
         scrollTop: jQuery("#rates").offset().top-150
-    });
+    },1500);
     
   });
   jQuery('.reviews').click(function(){
     jQuery('html, body').animate({
         scrollTop: jQuery("#reviews").offset().top-200
-    });
+    },1500);
     
     
   });
@@ -753,21 +753,21 @@ jQuery(document).ready(function(){
   jQuery('.availabilitylink').click(function(){
      jQuery('html, body').animate({
         scrollTop: jQuery("#availability").offset().top-150
-    });
+    },1500);
     
   });
 
   jQuery('.photos').click(function(){
      jQuery('html, body').animate({
         scrollTop: jQuery("#gallery").offset().top-150
-    });
+    },1500);
     
   });
 
   jQuery('.virtualtour').click(function(){
     jQuery('html, body').animate({
         scrollTop: jQuery("#virtualtour").offset().top-150
-    });
+    },1500);
   });
 
   jQuery('.galleryopen').click(function(){

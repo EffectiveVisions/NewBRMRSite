@@ -248,13 +248,13 @@ $slider_places_image = get_field('en_slider_places_image',$page->ID); ?>
        jQuery(document).on("click",".topmenulink",function(){
               jQuery('html, body').animate({
                    scrollTop: jQuery("#explore").offset().top-150
-              },1000);
+              },1500);
         });
 
         jQuery(document).on("click",".featuredhomes",function(){
             jQuery('html, body').animate({
                    scrollTop: jQuery("#featured").offset().top-150
-              },1000);
+              },1500);
         });
         jQuery('.slider4').slick({
          dots: false,
