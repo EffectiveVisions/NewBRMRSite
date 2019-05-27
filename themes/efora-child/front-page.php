@@ -238,21 +238,29 @@
             <?php } ?>
          </div>
          <div class="col-md-4 col-12 pb-md-0 pb-5 mb-3 mb-md-0">
+           <a class="text-white" href="mailto:<?php echo $email[0]; ?>">
             <i class="icon icon-email-outline-dark text-white mb-3 d-block"></i>
             <?php $email = get_post_custom_values("home_page_contact_email",$page->ID);
-                        if(!empty($email[0])){ ?>
-            <h6 class="text-white font-weight-normal font-Nunito">
-              <a class="text-white" href="mailto:<?php echo $email[0]; ?>"><?php echo $email[0]; ?></a>
-            </h6>
+            if(!empty($email[0])){ ?>
+           
+              <h6 class="text-white font-weight-normal font-Nunito">
+                <?php echo $email[0]; ?>
+              </h6>
+           
             <?php } ?>
+             </a>
            
          </div>
          <div class="col-md-4  col-12 pb-md-0 pb-5 mb-3 mb-md-0">
+           <a href="tel:<?php echo $phoneno[0]; ?>" class="text-white">
             <i class="icon icon-telephone text-white mb-3 d-block"></i>
             <?php $phoneno = get_post_custom_values("home_page_contact_number",$page->ID);
                         if(!empty($phoneno[0])){ ?>
-            <h6 class="font-weight-normal font-Nunito"><a href="tel:<?php echo $phoneno[0]; ?>" class="text-white"><?php echo $phoneno[0]; ?></a></h6>
+                       
+            <h6 class="font-weight-normal font-Nunito text-white"><?php echo $phoneno[0]; ?></h6>
+            
             <?php } ?>
+            </a>
            
          </div>
       </div>
