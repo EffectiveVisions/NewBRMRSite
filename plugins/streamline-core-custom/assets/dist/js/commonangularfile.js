@@ -3912,26 +3912,23 @@
             	jQuery('.petsquant').html("");
             	jQuery('.petsquant').parent().addClass("d-none");
             }
-            if(start_date){
+            if(start_date && end_date){
             	jQuery("#chekinhidden").val(start_date);
                 jQuery('.checkindate').html(start_date);
                 jQuery('.checkindate').parent().removeClass("d-none");
+                jQuery("#checkouthidden").val(end_date);
+                jQuery('.checkoutdate').html(end_date);
+                jQuery('.checkoutdate').parent().removeClass("d-none");
                 $scope.showclearbtn = true
             }else{
             	jQuery("#chekinhidden").val("");
                 jQuery('.checkindate').html("");
                 jQuery('.checkindate').parent().addClass("d-none");
-            }
-            if(end_date){
-            	jQuery("#checkouthidden").val(end_date);
-                jQuery('.checkoutdate').html(end_date);
-                jQuery('.checkoutdate').parent().removeClass("d-none");
-                $scope.showclearbtn = true
-            }else{
-            	jQuery("#checkouthidden").val("");
+                jQuery("#checkouthidden").val("");
                 jQuery('.checkoutdate').html("");
                 jQuery('.checkoutdate').parent().addClass("d-none");
             }
+           
             if(location){
             	jQuery("#locationhidden").val(location);
             	if(location_text.length>10){
@@ -4073,23 +4070,19 @@
             	jQuery('.petsquant').html("");
             	jQuery('.petsquant').parent().addClass("d-none");
             }
-            if(start_date){
+            if(start_date && end_date){
             	jQuery("#chekinhidden").val(start_date);
                 jQuery('.checkindate').html(start_date);
                 jQuery('.checkindate').parent().removeClass("d-none");
+                jQuery("#checkouthidden").val(end_date);
+                jQuery('.checkoutdate').html(end_date);
+                jQuery('.checkoutdate').parent().removeClass("d-none");
                 $scope.showclearbtn = true
             }else{
             	jQuery("#chekinhidden").val("");
                 jQuery('.checkindate').html("");
                 jQuery('.checkindate').parent().addClass("d-none");
-            }
-            if(end_date){
-            	jQuery("#checkouthidden").val(end_date);
-                jQuery('.checkoutdate').html(end_date);
-                jQuery('.checkoutdate').parent().removeClass("d-none");
-                $scope.showclearbtn = true
-            }else{
-            	jQuery("#checkouthidden").val("");
+                jQuery("#checkouthidden").val("");
                 jQuery('.checkoutdate').html("");
                 jQuery('.checkoutdate').parent().addClass("d-none");
             }
@@ -4157,11 +4150,9 @@
 
                 queryparams =$scope.addQueryParam(queryparams,'beds',parseInt(beds));
             }
-            if(start_date){
+            if(start_date && end_date){
                 params['startdate'] = start_date
                 queryparams = $scope.addQueryParam(queryparams,'sd',start_date);
-            }
-            if(end_date){
                 params['enddate'] = end_date
                 queryparams = $scope.addQueryParam(queryparams,'ed',end_date);
             }
