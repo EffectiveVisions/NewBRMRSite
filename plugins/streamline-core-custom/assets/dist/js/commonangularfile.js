@@ -5646,6 +5646,7 @@
             jQuery(".sorting").removeClass("d-none");
             jQuery('.filtersec').removeClass("d-none");
             jQuery(".sorting").addClass("d-inline-flex");
+            jQuery(".fixed-checkin-out-sec").removeClass("d-none");
             jQuery(".show_list_name").show();
             jQuery(".show_grid_name").hide();
             jQuery(".show_map_name").hide();
@@ -5668,6 +5669,7 @@
             jQuery('.filtersec').removeClass("d-none");
             jQuery(".sorting").removeClass("d-none");
             jQuery(".sorting").addClass("d-inline-flex");
+            jQuery(".fixed-checkin-out-sec").removeClass("d-none");
             jQuery(".show_list_name").hide();
             jQuery(".show_map_name").hide();
             jQuery(".show_grid_name").show();
@@ -5686,6 +5688,7 @@
             jQuery('.filtersec').addClass("d-none");
             jQuery(".sorting").addClass("d-none");
             jQuery(".sorting").removeClass("d-inline-flex");
+            jQuery(".fixed-checkin-out-sec").addClass("d-none");
             jQuery(".map-container-wrapper").show();
             jQuery(".listings_wrapper_box").hide();
             jQuery(".list-container-wrapper").hide();
