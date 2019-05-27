@@ -31,3 +31,9 @@
 @media (max-width: 992px) {
   .prop-man-bg { background: #fff; }
 }
+
+@media (max-width: 731px) {
+	.prop-man-content ul{
+		margin:0em;
+	}
+}
