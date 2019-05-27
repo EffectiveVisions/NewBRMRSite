@@ -233,7 +233,7 @@ Steven Griffin: Owner / General Manager / Broker
 		</div>
 	</div>
 </section>
-<div class="prop-man-content prop-man-contact text-center">
+<div id="contactus" class="prop-man-content prop-man-contact text-center">
   	<div class="container" style="max-width: 800px;">
 	<?php echo do_shortcode('[formidable id=10]'); ?>
     </div>
