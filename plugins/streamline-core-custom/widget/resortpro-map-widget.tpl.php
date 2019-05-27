@@ -15,7 +15,7 @@ if(isset($_GET['zoom']) && is_numeric($_GET['zoom'])){
          on-zoom-changed="dragEnd(search)"
          ng-init="initializeMap(); autoZoom='<?php echo $autozoom; ?>'"
          map-type-id="<?php echo $type; ?>"
-         scrollwheel="false"
+         scrollwheel="true"
          map-type-control-options="{
             mapTypeIds: ['ROADMAP','SATELLITE'],
             style: 'DROPDOWN_MENU'
