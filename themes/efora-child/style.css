@@ -3568,6 +3568,7 @@ border-radius: 10px;
 #tg-search.top-bar-serach .close-search {
     top: 10px;
     right: 10px;
+    z-index:200;
 }
 .top-bar-serach.tg-search .search .dropdown-menu {
     width: 100%;
@@ -3847,6 +3848,7 @@ border-radius: 10px;
     .home-contact-sec.contactus{
        height: 652px; 
     }
+
 }
 @media only screen and (max-width: 767px) {
   .home-contact-form .contact-form-detail.map iframe{
@@ -5396,3 +5398,4 @@ border-radius: 10px;
     font-size:14px;
     font-family: 'Nunito',sans-serif;
 }
+
