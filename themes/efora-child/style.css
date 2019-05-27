@@ -5391,3 +5391,8 @@ border-radius: 10px;
 .slash-end a, .slash-end span {
     background: linear-gradient(to right bottom,#223b70 50%,#fff 50%)!important;
 }
+
+#description h1,#description h2,#description h3,#description h4,#description h5,#description span ,#description p, #description strong{
+    font-size:14px;
+    font-family: 'Nunito',sans-serif;
+}
