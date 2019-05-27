@@ -25,7 +25,7 @@
                   </a>
                   <?php endif; ?>
                   <label for="inquiry_first_name" class="font-13 font-weight-semi-bold text-black">First Name</label>
-                  <input type="text" class="form-control form-icon border-primary-color" name="inquiry_first_name" id="inquiry_first_name" placeholder="<?php _e( 'First Name*', 'streamline-core' ) ?>"
+                  <input maxlength="20" type="text" class="form-control form-icon border-primary-color" name="inquiry_first_name" id="inquiry_first_name" placeholder="<?php _e( 'First Name*', 'streamline-core' ) ?>"
                     ng-required="true" ng-model="inquiry.first_name" />
                   
                 </div>
@@ -44,7 +44,7 @@
                   </a>
                   <?php endif; ?>
                   <label for="inquiry_last_name" class="font-13 font-weight-semi-bold text-black">Last Name</label>
-                  <input type="text" class="form-control form-icon border-primary-color" name="inquiry_last_name" id="inquiry_last_name" placeholder="<?php _e( 'Last Name*', 'streamline-core' ) ?>"
+                  <input maxlength="20" type="text" class="form-control form-icon border-primary-color" name="inquiry_last_name" id="inquiry_last_name" placeholder="<?php _e( 'Last Name*', 'streamline-core' ) ?>"
                     ng-required="true" ng-model="inquiry.last_name" />
                   
                 </div>
@@ -84,7 +84,7 @@
                   </a>
                   <?php endif; ?>     
                   <label for="inquiry_phone" class="font-13 font-weight-semi-bold text-black">Phone No.</label>           
-                  <input type="text" class="form-control form-icon border-primary-color" name="inquiry_phone"  
+                  <input maxlength="10" type="text" class="form-control form-icon border-primary-color" name="inquiry_phone"  
                     ng-pattern="/^-?\d*$/" id="inquiry_phone" placeholder="<?php _e( 'Phone*', 'streamline-core' ) ?>"
                     ng-model="inquiry.phone" ng-required="true" />
                  
