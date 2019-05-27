@@ -3963,6 +3963,7 @@
 
 
         $scope.updateSearch = function(e){
+        	console.log($scope.total_units);
             jQuery("html, body").animate({ scrollTop: 0 }, "slow");
         	$scope.noResults = false;
             $scope.isDataShow = "false";
@@ -4135,6 +4136,14 @@
             }
             var params = $scope.getParams();
 
+            if(params.hasOwnProperty("skip_units")){
+                delete params.skip_units;
+            }
+
+            if(params.hasOwnProperty("page_results_number")){
+                delete params.page_results_number;
+            }
+
             if(adults && adults!=0){
             	params['occupants'] = parseInt(adults);
             	queryparams =$scope.addQueryParam(queryparams,'oc',parseInt(adults));
@@ -4227,6 +4236,7 @@
         }
 
         $scope.loadMoreProperties = function(params, size, page, clearUnits){
+
         	$scope.noResults = false
             $scope.loadingShow = "true"
             $scope.showBtn = false
@@ -4334,6 +4344,8 @@
         }
 
         $scope.searchProperties = function(params, size, page, clearUnits) {
+        	console.log("Params while loading");
+        	console.log(params);
             $scope.noResults = false
             $scope.loadingShow = "true"
             $scope.showBtn = false
@@ -5631,7 +5643,9 @@
             jQuery(".listings_wrapper_box").hide();
             jQuery(".map-container-wrapper").hide();
             jQuery(".list-container-wrapper").show();
+            jQuery(".sorting").removeClass("d-none");
             jQuery('.filtersec').removeClass("d-none");
+            jQuery(".sorting").addClass("d-inline-flex");
             jQuery(".show_list_name").show();
             jQuery(".show_grid_name").hide();
             jQuery(".show_map_name").hide();
@@ -5652,6 +5666,8 @@
             jQuery(".list-container-wrapper").hide();
             jQuery(".map-container-wrapper").hide();
             jQuery('.filtersec').removeClass("d-none");
+            jQuery(".sorting").removeClass("d-none");
+            jQuery(".sorting").addClass("d-inline-flex");
             jQuery(".show_list_name").hide();
             jQuery(".show_map_name").hide();
             jQuery(".show_grid_name").show();
@@ -5668,6 +5684,8 @@
             $scope.setCookie("view", "mapview", 1);
             jQuery('.loadmore').hide();
             jQuery('.filtersec').addClass("d-none");
+            jQuery(".sorting").addClass("d-none");
+            jQuery(".sorting").removeClass("d-inline-flex");
             jQuery(".map-container-wrapper").show();
             jQuery(".listings_wrapper_box").hide();
             jQuery(".list-container-wrapper").hide();
