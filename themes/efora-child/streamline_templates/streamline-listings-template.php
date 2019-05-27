@@ -172,7 +172,7 @@
              <div class="row">
                  <div class="col-md-12 text-center mt-md-5 my-4 pt-2 px-3">
                    <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && !propertiesObj.length<12"
-                          ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?> 
+                          ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?> {[propertiesObj.length]}
                    </button>
                  </div>
              </div>
@@ -192,7 +192,7 @@
                           
                     </div>
                     <div ng-if="loadingShow != 'true'" class="col-md-12 text-center mt-md-5 my-4 px-3">
-                        <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && !propertiesObj.length<12"
+                        <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && propertiesObj.length>11"
                           ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?>
 
                         </button>
@@ -466,6 +466,14 @@
            jQuery('#resortpro-search-amenities-block-idclass-homeless').removeClass('ammentiesmore');
         }
 
+    });
+
+    jQuery(document).on('click','.arrow_box',function(){
+        setTimeout(function(){
+              jQuery('html, body').animate({
+                  scrollTop: jQuery(".map-container-wrapper").offset().top-100
+              });
+        },1000);
     });
 
    jQuery('#resortpro-search-viewall-button-block-idclass-homeless').removeClass('col-lg-6 col-md-6 col-sm-6 col-xs-6');
