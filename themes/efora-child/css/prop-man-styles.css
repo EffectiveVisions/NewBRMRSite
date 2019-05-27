@@ -36,4 +36,8 @@
 	.prop-man-content ul{
 		margin:0em;
 	}
+
+	.prop-man-content ul li{
+		font-size:18px;
+	}
 }
