@@ -104,7 +104,7 @@
                </ul>
             </div>
 
-            <div id="contactsec" class="comment contact-form-detail blog-single contactForm bg-light shadow-none p-sm-5 p-3">
+            <div id="contactus" class="comment contact-form-detail blog-single contactForm bg-light shadow-none p-sm-5 p-3">
               <div class="contact-form-home p-md-2">
                 <h6 class="font-weight-semi-bold mb-4 pb-1">Send a Message</h6>
                  <?php echo do_shortcode('[formidable id="12"]'); ?>
