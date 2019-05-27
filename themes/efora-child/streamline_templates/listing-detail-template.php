@@ -377,14 +377,12 @@
                         </div>
                           <p ng-bind-html="review.comments | trustedHtml" class="font-Nunito f-14 mb-0 mt-2 text-muted"></p>
                       </div>
-                      
-                       
                     </div>
-                    <div class="ament-read text-center mb-5 read-more-review">
+                    <div ng-if="reviews.length>3" class="ament-read text-center mb-5 read-more-review">
                         <a href="javascript:void(0)" class="btn theme-btn px-5 font-Nunito f-14 text-white position-relative font-weight-bold text-uppercase">
                           <span class="px-2">Read More</span>
                         </a>  
-                      </div> 
+                    </div> 
                 </div>
 
                 </div>
@@ -689,7 +687,7 @@ jQuery(document).ready(function(){
      
   })
 
-  jQuery('.read-more-review').click(function(){
+  jQuery(document).on('click','.read-more-review',function(){
        if(jQuery(this).find('span').html() == "Less") {
           jQuery('.review-mein').find('.review-box').removeClass('d-block')
           jQuery(this).find('span').html("Read More");
