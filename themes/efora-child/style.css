@@ -5426,5 +5426,7 @@ border-radius: 10px;
     z-index:1 !important;
 }
 
-
+#fiterbar-sidebar .ui-widget-content .ui-state-default{
+    outline:none;
+}
 
