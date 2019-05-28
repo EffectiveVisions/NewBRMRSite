@@ -74,14 +74,14 @@
                   <?php if($options['enable_gdpr'] == 1 && !empty($options['gdpr_first_name'])):?>
                   <a href="#" title="<?php echo $options['gdpr_first_name']; ?>" class="g_tooltip"><i class="fa fa-question-circle"></i></a>
                   <?php endif; ?>
-                  <input type="text" name="fname"
+                  <input type="text" maxlength="20" name="fname"
                      placeholder="<?php _e('First Name',  'streamline-core'); ?>"
                      class="form-control"
                      ng-model="checkout.fname"
                      ng-change="validateStepOne(checkout)"
                      required>
                   <div ng-show="formStep1.$submitted || formStep1.fname.$touched">
-                     <span class="error" ng-show="formStep1.fname.$error.required" ng-bind="'<?php  _e('First name is required.', 'streamline-core'); ?>'"></span>
+                     <span id="firname" class="error" ng-show="formStep1.fname.$error.required" ng-bind="'<?php  _e('First name is required.', 'streamline-core'); ?>'"></span>
                   </div>
                </div>
                <div class="form-group col-sm-6 container_input pl-md-2">
@@ -89,13 +89,13 @@
                   <?php if($options['enable_gdpr'] == 1 && !empty($options['gdpr_last_name'])):?>
                   <a href="#" title="<?php echo $options['gdpr_last_name']; ?>" class="g_tooltip"><i class="fa fa-question-circle"></i></a>
                   <?php endif; ?>
-                  <input type="text" name="lname" class="form-control"
+                  <input maxlength="20" type="text" name="lname" class="form-control"
                      placeholder="<?php _e('Last Name', 'streamline-core'); ?>"
                      ng-model="checkout.lname"
                      ng-change="validateStepOne(checkout)"
                      required>
                   <div ng-show="formStep1.$submitted || formStep1.lname.$touched">
-                     <span class="error" ng-show="formStep1.lname.$error.required" ng-bind="'<?php  _e('Last name is required.',  'streamline-core'); ?>'"></span>
+                     <span id="lname" class="error" ng-show="formStep1.lname.$error.required" ng-bind="'<?php  _e('Last name is required.',  'streamline-core'); ?>'"></span>
                   </div>
                </div>
             </div>
@@ -109,8 +109,8 @@
                      placeholder="<?php _e('Where to send your booking confirmation', 'streamline-core'); ?>"
                      ng-model="checkout.email" required />
                   <div ng-show="formStep1.$submitted || formStep1.email.$touched">
-                     <span class="error" ng-show="formStep1.email.$error.required" ng-bind="'<?php  _e('Tell us your email.', 'streamline-core'); ?>'"></span>
-                     <span class="error" ng-show="formStep1.email.$error.email" ng-bind="'<?php _e('This is not a valid email.',  'streamline-core'); ?>'"></span>
+                     <span id="emailerr" class="error" ng-show="formStep1.email.$error.required" ng-bind="'<?php  _e('Tell us your email.', 'streamline-core'); ?>'"></span>
+                     <span id="emailerr1" class="error" ng-show="formStep1.email.$error.email" ng-bind="'<?php _e('This is not a valid email.',  'streamline-core'); ?>'"></span>
                   </div>
                </div>
                <div class="form-group col-sm-12 container_input">
@@ -126,10 +126,10 @@
                      required
                      placeholder="To get in touch with you" />
                   <div ng-show="formStep1.$submitted || formStep1.phone.$touched">
-                     <span class="error" ng-show="formStep1.phone.$error.required" ng-bind="'<?php  _e('Phone is required.',  'streamline-core'); ?>'"></span>
-                     <span class="error" ng-show="formStep1.phone.$error.pattern" ng-bind="'<?php _e('Invalid phone number.',  'streamline-core'); ?>'"></span>
-                     <span class="error" ng-show="formStep1.phone.$error['maxlength']" ng-bind="'<?php _e('Invalid phone number. max length is 15.',  'streamline-core'); ?>'"></span>
-                     <span class="error" ng-show="formStep1.phone.$error['minlength']" ng-bind="'<?php _e('Invalid phone number. min length is 10.',  'streamline-core'); ?>'"></span>
+                     <span id="phoneerror1" class="error" ng-show="formStep1.phone.$error.required" ng-bind="'<?php  _e('Phone is required.',  'streamline-core'); ?>'"></span>
+                     <span id="phoneerror2" class="error" ng-show="formStep1.phone.$error.pattern" ng-bind="'<?php _e('Invalid phone number.',  'streamline-core'); ?>'"></span>
+                     <span id="phoneerror3" class="error" ng-show="formStep1.phone.$error['maxlength']" ng-bind="'<?php _e('Invalid phone number. max length is 15.',  'streamline-core'); ?>'"></span>
+                     <span id="phoneerror4" class="error" ng-show="formStep1.phone.$error['minlength']" ng-bind="'<?php _e('Invalid phone number. min length is 10.',  'streamline-core'); ?>'"></span>
 
                   </div>
                </div>
@@ -143,7 +143,7 @@
                      ng-model="checkout.address"
                      required/>
                   <div ng-show="formStep1.$submitted || formStep1.address.$touched">
-                     <span class="error" ng-show="formStep1.address.$error.required"><?php _e('Address is required.',  'streamline-core'); ?></span>
+                     <span id="addrerror" class="error" ng-show="formStep1.address.$error.required"><?php _e('Address is required.',  'streamline-core'); ?></span>
                   </div>
                </div>
                <div class="form-group col-sm-12 container_input">

@@ -644,6 +644,15 @@
 <script>
 
 jQuery(document).ready(function(){
+  
+  jQuery(document).on("click","#btn-step2",function() {
+     if(jQuery("#firname").html() || jQuery("#lname").html() || jQuery("#emailerr").html() || jQuery("#emailerr1").html() || jQuery("#phoneerror1").html() || jQuery("#addrerror").html()){
+
+          document.querySelector("#book_now_mobile").scrollTop = 400;
+         //jQuery("#book_now_mobile").get(0).scrollIntoView();
+     }
+  });
+
   if (history.length == 1 || history.length == 0) {  
     jQuery(".backtosearch").hide();
   }
