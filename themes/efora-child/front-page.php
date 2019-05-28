@@ -89,14 +89,17 @@
       <div class="row">
          <div class="col-md-12 py-2">
             <figure class="mb-sm-0">
-               <a href="<?php echo esc_url(home_url('/')); ?>" class="d-inline-block w-100">
                   <?php $default_logo = efora_option('default_logo');
                   if(!empty($default_logo)){ ?>
+                   <a href="<?php echo esc_url(home_url('/')); ?>" class="d-inline-block">
                       <img class="img-fluid" alt="logo" src="<?php echo esc_url(efora_option('default_logo')); ?>" alt="<?php bloginfo('name'); ?>">
+                    </a>
                   <?php } else{ ?>
+                  <a href="<?php echo esc_url(home_url('/')); ?>" class="d-inline-block">
                       <img class="img-fluid" alt="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
+                   </a>
                   <?php } ?>
-                </a>
+                
             </figure>
             <?php if($come_stay_heading[0]!=""){ ?>
                <p class="f-500 mt-sm-4 line-height-normal mb-0 text-black"><?php echo $come_stay_heading[0] ?></p>
