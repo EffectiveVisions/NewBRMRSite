@@ -1835,17 +1835,23 @@
                         step: 10,
                         values: [scope.minPrice, scope.maxPrice],
                         slide: function(event, ui) {
+                        	//console.log("Hello");
                         	scope.showAvailability({
                                 minPrice: ui.values[0],
                                 maxPrice: ui.values[1]
                             });
                         },
                         change: function(event, ui) {
+                            /*scope.showAvailability({
+                                minPrice: ui.values[0],
+                                maxPrice: ui.values[1]
+                            });
+                            scope.$apply()*/ 
                             scope.showAvailability({
                                 minPrice: ui.values[0],
                                 maxPrice: ui.values[1]
                             });
-                            scope.$apply()   
+                            scope.$apply()
                         }
                     });
                     jQuery("#amount").val("$" + scope.minPrice + " - $" + scope.maxPrice)
@@ -3960,7 +3966,6 @@
 
 
         $scope.updateSearch = function(e){
-        	console.log($scope.total_units);
             jQuery("html, body").animate({ scrollTop: 0 }, "slow");
         	$scope.noResults = false;
             $scope.isDataShow = "false";
@@ -4214,7 +4219,7 @@
                     }
                     $scope.loadMarkers(tempProperties, false)
                 } else {
-                    $scope.noResults = true
+                    //$scope.noResults = true
                 }
             });
             $scope.loading = false
@@ -4335,8 +4340,7 @@
         }
 
         $scope.searchProperties = function(params, size, page, clearUnits) {
-        	console.log("Params while loading");
-        	console.log(params);
+        	//jQuery(".noresult").addClass("d-none");
             $scope.noResults = false
             $scope.loadingShow = "true"
             $scope.showBtn = false
@@ -4361,6 +4365,7 @@
             //run_waitMe(".list-container-wrapper", "bounce", "Searching The Best Places For You...");
             $scope.enableInfinitiScroll = false;
             rpapi.getWithParams(method, params).success(function(obj) {
+
                 $scope.showBtn = true
                 $scope.loadingShow = "false"
                 $scope.loadMoreShow = "false"
@@ -4434,17 +4439,19 @@
                    
                     //$scope.loadMarkers(tempProperties, false)
                 } else {
-                	var newparams= {};
-		            newparams["sort_by"] = "random";
-		            newparams["use_room_type_logic"] = 0;
-		            newparams["extra_charges"] = 1;
-		            newparams["use_description"] = "no";
-		            newparams["use_amenities"] = "no";
-		            newparams["use_description"] = "no";
-		            newparams["use_room_type_logic"] = 0;
-		            $scope.noResult(newparams, size, 1, true)
-                    //$scope.noResults = true
-                    hide_waitMe(".map-container-wrapper");
+                	//console.log("Hello World no result");
+                	//var newparams= {};
+		            //newparams["sort_by"] = "random";
+		            //newparams["use_room_type_logic"] = 0;
+		            //newparams["extra_charges"] = 1;
+		            //newparams["use_description"] = "no";
+		            //newparams["use_amenities"] = "no";
+		            //newparams["use_description"] = "no";
+		            //newparams["use_room_type_logic"] = 0;
+		            //$scope.noResult(newparams, size, 1, true)
+		            //jQuery(".noresult").removeClass("d-none");
+                    $scope.noResults = true
+                    //hide_waitMe(".map-container-wrapper");
                 }
                 $scope.searchMap(params, $scope.total_units, 1, true)
             });
@@ -4767,7 +4774,6 @@
             return result
         };
         $scope.priceRange = function(item) {
-
             $scope.amenities = [];
             angular.forEach($scope.selected, function(amenity) {
                 if (amenity != false) {
@@ -4790,18 +4796,21 @@
                     $scope.showBtn = true;
                 }
             }
-            setInterval(function(){ 
+            /*setInterval(function(){ 
                 if(jQuery('.propertydtl').length == 0){
+                   $scope.show
                    jQuery('.load-more').addClass("d-none");
                    if(jQuery('.noresultprimary').length==0 && jQuery('.loading').length == 0){
                       jQuery(".noresult").removeClass("d-none");
+                      console.log("Hello World show text");
                    } 
                 }else{
+
                     jQuery('.load-more').removeClass("d-none");
                     jQuery(".noresult").addClass("d-none");
                 }
 
-            }, 500);
+            }, 500);*/
             return result           
             
         };

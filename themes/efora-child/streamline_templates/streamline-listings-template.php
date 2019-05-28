@@ -105,25 +105,21 @@
               <!--Grid View Start -->
               <div ng-if="isDataShow == 'true' && view == 'gridview'" class="row listings_wrapper_box" ng-init="limit = searchSettings.propertyPagination">
                    <div class="col-lg-12 col-sm-12 p-sm-3 px-3 pt-3">
-                      <!--<div ng-if="noResults || propertiesObj.length==0" ng-cloak>
-                        <div class="alert alert-danger noresultprimary">
-                          <p><?php echo $noinv_msg ?></p>
-                        </div>
-                      </div>-->
-                      <div class="d-none noresult">
+                      <div class="noresult" ng-if="noResults || propertiesObj.length==0 || filteredItems.length==0" ng-cloak>
                         <div class="alert alert-danger">
                           <p><?php echo $noinv_msg ?></p>
                         </div>
                       </div>
                    </div>
 
-                   <div ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter" class="col-lg-4 col-sm-6 p-sm-3 px-3 pt-3 propertydtl" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" >
+                   <div ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter  as filteredItems" class="col-lg-4 col-sm-6 p-sm-3 px-3 pt-3 propertydtl" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" >
                       
                       <div>
                           <?php include($template); ?>
                       </div>
                       
                    </div>
+
              </div>
             
              <!--Grid View End -->
@@ -132,18 +128,18 @@
             <?php if($search_layout == 5): ?>
              <div  class="row list-container-wrapper" ng-init="limit = searchSettings.propertyPagination" style="display:none">
                   <div class="col-lg-12 col-sm-12">
-                    <!--<div ng-if="noResults || propertiesObj.length==0" ng-cloak>
-                      <div class="alert alert-danger noresultprimary">
+                    <div class="noresult" ng-if="noResults || propertiesObj.length==0 || filteredItems.length==0" ng-cloak>
+                      <div class="alert alert-danger">
                         <p><?php echo $noinv_msg ?></p>
                       </div>
-                    </div>-->
-                    <div class="d-none noresult">
-                        <div class="alert alert-danger noresultfound">
-                          <p><?php echo $noinv_msg ?></p>
-                        </div>
+                    </div>
+                    <div class="noresult" ng-show="filteredItems.length==0">
+                      <div class="alert alert-danger">
+                        <p><?php echo $noinv_msg ?></p>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-lg-12 col-sm-12 propertydtl" ng-repeat="property in propertiesObj | orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter"  data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" >
+                  <div class="col-lg-12 col-sm-12 propertydtl" ng-repeat="property in propertiesObj | orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter as filteredItems "  data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" >
                      <div>
                       <?php
                       include($listTemplate);
@@ -171,8 +167,8 @@
            <?php if ($search_layout === '6') : ?>
              <div class="row">
                  <div class="col-md-12 text-center mt-md-5 my-4 pt-2 px-3">
-                   <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && !propertiesObj.length<12"
-                          ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?> {[propertiesObj.length]}
+                   <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && !propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11"
+                          ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?>
                    </button>
                  </div>
              </div>
@@ -192,7 +188,7 @@
                           
                     </div>
                     <div ng-if="loadingShow != 'true'" class="col-md-12 text-center mt-md-5 my-4 px-3">
-                        <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && propertiesObj.length>11"
+                        <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11"
                           ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?>
 
                         </button>
