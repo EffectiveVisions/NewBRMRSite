@@ -3789,6 +3789,7 @@
             newparams["use_amenities"] = "no";
             newparams["use_description"] = "no";
             newparams["use_room_type_logic"] = 0;
+            newparams['page_number'] = 1;
             $scope.searchProperties(newparams, size, 1, true)
         }
 
@@ -4178,6 +4179,8 @@
                 params['amenities_filter'] = ammentiesid.join(",");
                 queryparams = $scope.addQueryParam(queryparams,'amenities',ammentiesid.join(","));
             }
+
+            params['page_number'] = 1;
 
             var newRelativePathQuery = queryparams;
             history.pushState(null, '', newRelativePathQuery);
