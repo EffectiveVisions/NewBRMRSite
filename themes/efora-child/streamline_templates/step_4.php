@@ -83,7 +83,7 @@
                </div>
             </div>
             <div ng-show="formStep3.$submitted || formStep3.CardChargeUnderstand.$touched">
-               <span class="error" ng-show="!formStep3.CardChargeUnderstand.$valid" ng-bind="'<?php _e('You must agree that you understand your credit card information will be securely held and not charged until Blue Ridge Mountain Rentals verbally confirms the reservation and has received my signed rental agreement.', 'streamline-core'); ?>'">
+               <span id="creditaccepterr" class="error" ng-show="!formStep3.CardChargeUnderstand.$valid" ng-bind="'<?php _e('You must agree that you understand your credit card information will be securely held and not charged until Blue Ridge Mountain Rentals verbally confirms the reservation and has received my signed rental agreement.', 'streamline-core'); ?>'">
                </span>
             </div>
             <div class="clearfix"></div>
@@ -113,7 +113,7 @@
                         <?php  endif;  ?>
                      </select>
                      <div ng-show="formStep3.$submitted || formStep3.card_type.$touched">
-                        <span class="error" ng-show="formStep3.card_type.$error.required" ng-bind="'<?php  _e('Card Type is required.',  'streamline-core'); ?>'"></span>
+                        <span id="cardtypeerr" class="error" ng-show="formStep3.card_type.$error.required" ng-bind="'<?php  _e('Card Type is required.',  'streamline-core'); ?>'"></span>
                      </div>
                   </div>
                </div>
@@ -127,7 +127,7 @@
                         autocomplete="off"
                         required>
                      <div ng-show="formStep3.$submitted || formStep3.card_number.$touched">
-                        <span class="error" ng-show="formStep3.card_number.$error.required" ng-bind="'<?php  _e('Card Number is required.',  'streamline-core'); ?>'"></span>
+                        <span id="cardnumerr" class="error" ng-show="formStep3.card_number.$error.required" ng-bind="'<?php  _e('Card Number is required.',  'streamline-core'); ?>'"></span>
                      </div>
                   </div>
                   <div class="col-sm-6 form-group pr-md-2">
@@ -150,7 +150,7 @@
                         <option value="12"><?php _e('Dec', 'streamline-core'); ?></option>
                      </select>
                      <div ng-show="formStep3.$submitted || formStep3.expire_month.$touched">
-                        <span class="error" ng-show="formStep3.expire_month.$error.required" ng-bind="'<?php _e('Expiration month is required.', 'streamline-core'); ?>'"></span>
+                        <span id="cardmontherr" class="error" ng-show="formStep3.expire_month.$error.required" ng-bind="'<?php _e('Expiration month is required.', 'streamline-core'); ?>'"></span>
                      </div>
                   </div>
                   <div class="col-sm-6 form-group pl-md-2">
@@ -161,7 +161,7 @@
                         <option value="">Select Year</option>
                      </select>
                      <div ng-show="formStep3.$submitted || formStep3.expire_year.$touched">
-                        <span class="error" ng-show="formStep3.expire_year.$error.required" ng-bind="'<?php  _e('Expiration year is required.',  'streamline-core'); ?>'"></span>
+                        <span id="cardyearerr" class="error" ng-show="formStep3.expire_year.$error.required" ng-bind="'<?php  _e('Expiration year is required.',  'streamline-core'); ?>'"></span>
                      </div>
                   </div>
                   <div class="col-sm-6 form-group">
@@ -170,7 +170,7 @@
                         class="form-control cvv"
                         ng-model="checkout.card_cvv" required>
                      <div ng-show="formStep3.$submitted || formStep3.card_cvv.$touched">
-                        <span class="error" ng-show="formStep3.card_cvv.$error.required" ng-bind="'<?php _e('CVV is required.',  'streamline-core'); ?>'"></span>
+                        <span id="cardcvverr" class="error" ng-show="formStep3.card_cvv.$error.required" ng-bind="'<?php _e('CVV is required.',  'streamline-core'); ?>'"></span>
                      </div>
                   </div>
                </div>
@@ -184,7 +184,7 @@
                         autocomplete="off"
                         required>
                      <div ng-show="formStep3.$submitted || formStep3.bank_account_number.$touched">
-                        <span class="error" ng-show="formStep3.bank_account_number.$error.required" ng-bind="'<?php  _e('Bank Account Number is required.',  'streamline-core'); ?>'"></span>
+                        <span id="bankaccerr" class="error" ng-show="formStep3.bank_account_number.$error.required" ng-bind="'<?php  _e('Bank Account Number is required.',  'streamline-core'); ?>'"></span>
                      </div>
                   </div>
                   <div class="col-sm-12">
@@ -270,7 +270,7 @@
                      </div>
                      <?php endif; ?>
                      <div ng-show="formStep3.$submitted || formStep3.termsConditions.$touched">
-                        <span class="error" ng-show="!formStep3.terms.$valid" ng-bind="'<?php _e('You have not read the terms and conditions',  'streamline-core'); ?>'"></span>                                 
+                        <span id="termerr" class="error" ng-show="!formStep3.terms.$valid" ng-bind="'<?php _e('You have not read the terms and conditions',  'streamline-core'); ?>'"></span>                                 
                      </div>
                   </div>
                </div>
