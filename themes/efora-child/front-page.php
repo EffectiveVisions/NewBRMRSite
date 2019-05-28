@@ -300,7 +300,7 @@
          jQuery(this).click();
     });
      jQuery('input[name="pets"]').removeAttr("checked"); 
-     jQuery(document).prop('title', 'The Best Boone NC Cabin Rentals and Blowing Rock NC Cabin Rentals');
+     //jQuery(document).prop('title', 'The Best Boone NC Cabin Rentals and Blowing Rock NC Cabin Rentals');
      document.getElementsByClassName("searchform")[0].reset();     
  });
 </script>
