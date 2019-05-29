@@ -2562,7 +2562,8 @@
             $scope.search.occupants_small = "";
             $scope.search.pets = "";
             $scope.search.num_bedrooms = "";
-            jQuery('input[name="pets"]').removeAttr("checked");  
+            jQuery('input[name="pets"]').removeAttr("checked");
+            jQuery(".guests-sum-label").addClass("pl-2");  
         };
 
         $scope.closeGuests = function() {
@@ -3690,6 +3691,10 @@
             $scope.mapSearch = map_search;
             $scope.loading = true;
             var params = $scope.getParams();
+            if(params.hasOwnProperty("pets")){
+            	delete params.pets;
+            	params.amenities_filter = "121865"
+            }
             params.page_number = $scope.currentPage;
             params.page_results_number = size;
             angular.forEach(arrMarkers, function(item, i) {
@@ -3725,19 +3730,13 @@
 			}
 
 			jQuery("input[name=resortpro_sw_children]").val("");
-            jQuery("input[name=resortpro_sw_children]").trigger('input');
             jQuery("input[name=resortpro_sw_adults]").val("");
-            jQuery("input[name=resortpro_sw_adults]").trigger('input');
             jQuery("input[name=resortpro_sw_bedrooms_number]").val("");
-            jQuery("input[name=resortpro_sw_bedrooms_number]").trigger('input');
-
             jQuery("#checkouthidden").val("");
             jQuery("#adulthidden").val("");
             jQuery("#childhidden").val("");
             jQuery("#bedhidden").val("");
             jQuery("#pethidden").val("");
-
-
 			jQuery("#resortpro_sw_ra_id").prop('selectedIndex',0);
 			jQuery('.custom-control-input').attr('checked', false);
             jQuery('#resortpro-widget-form')[0].reset();
@@ -3758,7 +3757,6 @@
             },500)
 
             setTimeout(function(){
-
                 jQuery('.label-single-adult').html("Adult");
                 jQuery('.label-single-child').html("Child");
                 jQuery('.label-single-bed').html("Bed");
@@ -3775,11 +3773,6 @@
             $scope.isDataShow = "false";
             $scope.showfilter = false;
             $scope.showclearbtn = false;
-            if ($rootScope.searchSettings.enable_save_unit_place == 1 && cookiePageObject.selector != "") {
-                size = pagination_search_number
-            } else {
-                size = $rootScope.searchSettings.propertyPagination
-            }
             var params = $scope.getParams();
             var newparams= {};
             newparams["sort_by"] = "random";
@@ -3788,7 +3781,6 @@
             newparams["use_description"] = "no";
             newparams["use_amenities"] = "no";
             newparams["use_description"] = "no";
-            newparams["use_room_type_logic"] = 0;
             newparams['page_number'] = 1;
             $scope.searchProperties(newparams, size, 1, true)
         }
@@ -3906,13 +3898,17 @@
             }
             
             if(pets!=0 && pets!=""){
-            	jQuery("#pethidden").val(pets);
+            	ammenties.push({
+                       id:jQuery("input[value=121865]").val(),
+                       name:jQuery("input[value=121865]").next('label').html()
+                   });
+            	/*jQuery("#pethidden").val(pets);
             	if(pets == 1){
             		jQuery('.petsquant').html(pets+" "+"pet");
             	}else{
             		jQuery('.petsquant').html(pets+" "+"pets");
             	}
-                jQuery('.petsquant').parent().removeClass("d-none");
+                jQuery('.petsquant').parent().removeClass("d-none");*/
                 $scope.showclearbtn = true
             }else{
             	jQuery("#pethidden").val("");
@@ -3986,6 +3982,10 @@
             	pets = parseInt($scope.getParameterByName('pets'))
             }else{
             	pets = ""
+            }
+
+            if(jQuery("input[value=121865]").prop("checked")==false){
+            	pets = "";
             }
 
             var uri = window.location.href.toString();
@@ -4134,6 +4134,10 @@
                 size = $rootScope.searchSettings.propertyPagination
             }
             var params = $scope.getParams();
+
+            if(params.hasOwnProperty("pets")){
+            	delete params.pets;
+            }
 
             if(params.hasOwnProperty("skip_units")){
                 delete params.skip_units;
@@ -5653,7 +5657,8 @@
             jQuery(".show_list_name").show();
             jQuery(".show_grid_name").hide();
             jQuery(".show_map_name").hide();
-            jQuery(".streamline-pagination-wrapper").show()
+            jQuery(".streamline-pagination-wrapper").show();
+            jQuery("#mainfooter").removeAttr("style");
         };
         $scope.changeToGridView = function() {
         	jQuery("body").removeClass("headerfixed");
@@ -5677,6 +5682,7 @@
             jQuery(".show_map_name").hide();
             jQuery(".show_grid_name").show();
             jQuery(".streamline-pagination-wrapper").show()
+            jQuery("#mainfooter").removeAttr("style");
         };
         $scope.changeToMapView = function() {
             $scope.enabledlistview = "false";
@@ -5699,6 +5705,7 @@
             jQuery(".show_grid_name").hide();
             jQuery(".show_map_name").show();
             jQuery(".streamline-pagination-wrapper").hide();
+            jQuery("#mainfooter").css("padding-bottom","0px");
             window.dispatchEvent(new Event('resize'));
         };
         $scope.loadRecents = function() {
