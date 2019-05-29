@@ -4574,10 +4574,14 @@
 
         $scope.showAll = function() {
             var params = $scope.getParams();
+            console.log(params);
             $scope.showAllProperties(params, $scope.total_units, 1, false);
         };
 
         $scope.showAllProperties = function(params, size, page, clearUnits) {
+        	jQuery(".showall").addClass("d-none");
+        	jQuery(".load-more").addClass("d-none");
+
             $scope.showAllClicked = true
             $scope.showBtn = false;
             params.page_number = page;
@@ -4597,12 +4601,14 @@
                 method = "GetPropertyListWordPress"
             }
             $scope.method = method;
-            run_waitMe(".listings_wrapper_box", "roundBounce", "Searching The Best Places For You...");
+            $scope.loadMoreShow = "true";
+            //run_waitMe(".listings_wrapper_box", "roundBounce", "Searching The Best Places For You...");
             $scope.enableInfinitiScroll = false;
             rpapi.getWithParams(method, params).success(function(obj) {
+            	$scope.loadMoreShow = "false";
                 $scope.showbuttons = false;
                 jQuery(".col-md-4.search-sidebar #sticky-wrapper").addClass("sticky-wrapper");
-                hide_waitMe(".listings_wrapper_box");
+                //hide_waitMe(".listings_wrapper_box");
                 if (clearUnits) {
                     $rootScope.propertiesObj = [];
                     $rootScope.properties = [];
@@ -4612,7 +4618,7 @@
                         $scope.skipUnits = ""
                     }
                 }
-                if (!obj.status && obj.data.available_properties && obj.data.available_properties.pagination.total_units > 0) {
+                if(!obj.status && obj.data.available_properties && obj.data.available_properties.pagination.total_units > 0) {
                     if (obj.data.available_properties.pagination.total_pages > $scope.currentPage) {
                         $scope.enableInfinitiScroll = true
                     }

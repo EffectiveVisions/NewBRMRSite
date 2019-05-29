@@ -161,10 +161,22 @@
            <!--Pagination Start -->
            <?php if ($search_layout === '6') : ?>
              <div class="row">
-                 <div class="col-md-12 text-center mt-md-5 my-4 pt-2 px-3">
+                <div class="col-md-12 text-center">
+                        <!-- <i ng-if="loadMoreShow == 'true'" class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i> -->
+                      <div ng-if="loadMoreShow == 'true'" class="cards-loader-cutome">
+                          <div class="lds-ellipsis">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                          </div>
+                      </div>    
+                  </div>
+                 <div ng-if="loadingShow != 'true'" class="col-md-12 text-center mt-md-5 my-4 pt-2 px-3">
                    <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && !propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11"
                           ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?>
                    </button>
+                   <button  ng-click="showAll();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold ml-3 showall"><?php _e('Show All Result', 'streamline-core') ?></button>
                  </div>
              </div>
             <?php else: ?>
@@ -185,6 +197,9 @@
                     <div ng-if="loadingShow != 'true'" class="col-md-12 text-center mt-md-5 my-4 px-3">
                         <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11"
                           ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?>
+
+                        </button>
+                        <button  ng-click="showAll();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold ml-3 showall"><?php _e('Show All Result', 'streamline-core') ?>
 
                         </button>
                     </div>                   
