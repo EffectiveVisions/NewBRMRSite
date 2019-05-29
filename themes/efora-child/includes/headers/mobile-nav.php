@@ -23,3 +23,30 @@
        <?php } ?>
     </ul>
 </nav>
+<div class="row">
+                  <div class="col-md-12 col-lg-11 m-auto">
+                    <div class="row">
+                        <div class="col-12">
+                          <a href="#" class="custom-tooltip-info">
+                            <i class="icon icon-information-circle text-white font-24"></i>
+                            <div class="custom-tooltip theme-bg-color text-white font-13 position-absolute px-3 py-2 z-index">All selections are optional. Just Click Search to browse all properties.</div>
+                          </a>
+                           <ul class="list-unstyled mb-0 pl-md-4 pr-md-4 mt-sm-3 text-center text-sm-left vacation-listing mb-4 mb-sm-0">
+                              <li class="list-inline-item mr-sm-4 mr-0 active-item d-block d-sm-inline-block vacation-listing-item">
+                               <a href="/" class="f-600 tabby text-uppercase font-13 text-white position-relative"> Vacation homes by date</a> 
+                               </li>
+                               <li class="list-inline-item d-block d-sm-inline-block vacation-listing-item">
+                                  <a href="/vacation-homes-by-area" class="f-600 tabby text-uppercase font-13 text-white position-relative">Vacation homes by Area</a>
+                               </li> 
+                           </ul>
+                        </div>
+                        <div class="col-12 mt-2  propertyBanner py-3 rounded">
+                            
+                           <?php if ( is_active_sidebar( 'home-hero-widgets' ) ) { ?>
+                                   <?php dynamic_sidebar( 'home-hero-widgets' ); ?>
+                            <?php } ?>
+                            
+                        </div>
+                      </div> 
+                  </div>
+               </div>
