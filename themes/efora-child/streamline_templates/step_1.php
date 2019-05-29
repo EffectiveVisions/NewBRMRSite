@@ -21,6 +21,7 @@
          <div class="form-group mb-2 pb-1 ">
             <label class="d-none"><?php echo _e($arrive_label ,'streamline-core') ?></label>
             <div class=" input-calender-icon position-relative">
+            <input type="hidden" class="datepicker" data-checkin-days="<?php echo $checkin_days ?>"/> 
             <input type="text" ng-model="book.checkin" id="book_start_date" name="book_start_date" class="form-control rouned" show-days="renderCalendarNew(date, true, 'checkin')" update-price="getPreReservationPrice2(book,1)" update-checkout="setCheckoutDate(date)" bookcheckin readonly="readonly" placeholder="Check In*" data-min-stay="<?php echo $min_stay ?>" data-checkin-days="<?php echo $checkin_days ?>" />
             </div>
             <span class="glyphicon glyphicon-calendar form-control-feedback"></span>

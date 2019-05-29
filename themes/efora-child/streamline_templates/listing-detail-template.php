@@ -484,11 +484,11 @@
                   </div>
                   <span style="display:none;" class="count"><?php echo count($property_gallery); ?></span>
 
-                   <div class="col-12 text-center position-relative d-md-none">
+                   <!--<div class="col-12 text-center position-relative d-md-none">
                         <button id="booknowbtn" class="btn theme-btn px-5 font-Nunito f-14 text-white position-relative font-weight-bold text-uppercase mt-4 text-uppercase cutome-btn-width-mob">
                           <span class="px-2">Book Now</span>
                         </button>
-                  </div>
+                  </div>-->
 
              </div>
 
@@ -651,6 +651,12 @@ jQuery(document).ready(function(){
           document.querySelector("#book_now_mobile").scrollTop = 400;
          //jQuery("#book_now_mobile").get(0).scrollIntoView();
      }
+  });
+
+  jQuery(document).on("click","#btn-checkout",function() {
+      if(jQuery("#creditaccepterr").html() || jQuery("#cardtypeerr").html() || jQuery("#cardnumerr").html() || jQuery("#cardmontherr").html() || jQuery("#cardyearerr").html() || jQuery("#cardcvverr").html() || jQuery("#termerr").html() ){
+           document.querySelector("#book_now_mobile").scrollTop = 400;
+      }
   });
 
   if (history.length == 1 || history.length == 0) {  
@@ -931,7 +937,7 @@ jQuery(document).ready(function(){
         var totallen = top - footer;
        
         if(jQuery('#virtualtour').length > 0){
-           var padtop = totallen - 900
+           var padtop = totallen - 780
            if (window.matchMedia('(max-width: 1679px)').matches) {
                jQuery(".filter-single-property").css({"top":padtop+"px","height":"500px","overflow":"auto"});
             }
@@ -939,7 +945,7 @@ jQuery(document).ready(function(){
            //jQuery(".filter-single-property").addClass("tobottom");
 
         }else{
-           var padtop   = totallen - 880
+           var padtop   = totallen - 760
             if (window.matchMedia('(max-width: 1679px)').matches) {
                jQuery(".filter-single-property").css({"top":padtop+"px","height":"500px","overflow":"auto"});
             }
