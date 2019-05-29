@@ -3,7 +3,7 @@ jQuery(window).load(function() {
 
 setTimeout(function(){
 if(navigator.userAgent.indexOf("Speed Insights") == -1) { 
-      var js = ["/wp-content/themes/efora-child/js/tp.widget.bootstrap.min.js",'https://maps.googleapis.com/maps/api/js'];
+      var js = ["/wp-content/themes/efora-child/js/tp.widget.bootstrap.min.js"];
       var $head = jQuery("head");
       for (var i = 0; i < js.length; i++) {
 	$head.append("<script defer='true' src=\"" + js[i] + "\"></scr" + "ipt>");
