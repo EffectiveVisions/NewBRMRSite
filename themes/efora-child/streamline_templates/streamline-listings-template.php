@@ -96,7 +96,7 @@
                     <!-- close here -->
 
 
-               <div  ng-if="loadingShow == 'true' && enabledlistview == 'true' && loadMoreShow=='false'" class="row loading">
+               <div  ng-if="loadingShow == 'true' && enabledlistview == 'true' && loadMoreShow=='false'" class="row loading pt-3">
                       <?php include('listviewloading.php'); ?>
                  </div>
                  <div ng-if="loadingShow == 'true' && enabledlistview == 'false' && currentView !='mapview' && loadMoreShow=='false'" class="row listings_wrapper_box loading">
@@ -104,8 +104,8 @@
                  </div>
               <!--Grid View Start -->
               <div ng-if="isDataShow == 'true' && view == 'gridview'" class="row listings_wrapper_box" ng-init="limit = searchSettings.propertyPagination">
-                   <div class="col-lg-12 col-sm-12 p-sm-3 px-3 pt-3">
-                      <div class="noresult" ng-if="noResults || propertiesObj.length==0 || filteredItems.length==0" ng-cloak>
+                   <div ng-if="loadingShow != 'true'" class="col-lg-12 col-sm-12 p-sm-3 px-3 pt-3">
+                      <div class="noresult" ng-if="noResults ||  filteredItems.length==0" ng-cloak>
                         <div class="alert alert-danger">
                           <p><?php echo $noinv_msg ?></p>
                         </div>
@@ -127,19 +127,14 @@
              <!--List View Start -->
             <?php if($search_layout == 5): ?>
              <div  class="row list-container-wrapper" ng-init="limit = searchSettings.propertyPagination" style="display:none">
-                  <div class="col-lg-12 col-sm-12">
-                    <div class="noresult" ng-if="noResults || propertiesObj.length==0 || filteredItems.length==0" ng-cloak>
-                      <div class="alert alert-danger">
-                        <p><?php echo $noinv_msg ?></p>
-                      </div>
-                    </div>
-                    <div class="noresult" ng-show="filteredItems.length==0">
+                  <div ng-if="loadingShow != 'true'" class="col-lg-12 col-sm-12 pt-3 p-sm-3 px-3">
+                    <div class="noresult" ng-if="noResults" ng-cloak>
                       <div class="alert alert-danger">
                         <p><?php echo $noinv_msg ?></p>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-12 col-sm-12 propertydtl" ng-repeat="property in propertiesObj | orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter as filteredItems "  data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" >
+                  <div class="col-lg-12 col-sm-12 p-sm-3 px-3 pt-3 propertydtl" ng-repeat="property in propertiesObj | orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter as filteredItems "  data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" >
                      <div>
                       <?php
                       include($listTemplate);
