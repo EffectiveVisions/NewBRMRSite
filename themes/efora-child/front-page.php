@@ -162,7 +162,7 @@
           </div>
          </div>
          <div  class="col-md-12 text-center mt-5 mb-4">
-            <a href="/search-results/?amenities=129950?" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold">See All Properties Running Specials</a>
+            <a href="/search-results/?amenities=129950" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold">See All Properties Running Specials</a>
          </div>
       </div>
   </div>
