@@ -346,6 +346,10 @@
     beds = parseInt(beds);
     adultguest = parseInt(adultguest);
     childguest = parseInt(childguest);
+    if(sd){
+      jQuery("#search_start_date_single").trigger("change");
+      //jQuery(".datepicker-single").datepicker("hide");
+    }
     if(adultguest > 1){
       jQuery(".label-single-adult").html("Adults");
     }
