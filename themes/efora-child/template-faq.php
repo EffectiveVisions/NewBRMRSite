@@ -105,6 +105,8 @@
            });
 		  });
 
+		  jQuery(".menu-item-home").addClass("current-menu-item");
+
 	})
 </script>
 

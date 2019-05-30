@@ -644,6 +644,8 @@
 <script>
 
 jQuery(document).ready(function(){
+
+  jQuery(".menu-item-home").addClass("current-menu-item");
   
   jQuery(document).on("click","#btn-step2",function() {
      if(jQuery("#firname").html() || jQuery("#lname").html() || jQuery("#emailerr").html() || jQuery("#emailerr1").html() || jQuery("#phoneerror1").html() || jQuery("#addrerror").html()){
@@ -937,7 +939,7 @@ jQuery(document).ready(function(){
         var totallen = top - footer;
        
         if(jQuery('#virtualtour').length > 0){
-           var padtop = totallen - 780
+           var padtop = totallen - 770
            if (window.matchMedia('(max-width: 1679px)').matches) {
                jQuery(".filter-single-property").css({"top":padtop+"px","height":"500px","overflow":"auto"});
             }
@@ -945,7 +947,7 @@ jQuery(document).ready(function(){
            //jQuery(".filter-single-property").addClass("tobottom");
 
         }else{
-           var padtop   = totallen - 760
+           var padtop   = totallen - 750
             if (window.matchMedia('(max-width: 1679px)').matches) {
                jQuery(".filter-single-property").css({"top":padtop+"px","height":"500px","overflow":"auto"});
             }

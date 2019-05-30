@@ -159,3 +159,9 @@
 
 
  <?php get_footer(); ?>
+
+ <script>
+    jQuery(document).ready(function(){
+       jQuery(".menu-item-home").addClass("current-menu-item");
+    });
+ </script>

@@ -255,6 +255,8 @@
 		  });
         jQuery('.datepicker').removeClass("d-sm-block");
         jQuery('.datepicker-single').removeClass("d-sm-none");
+
+        jQuery(".menu-item-home").addClass("current-menu-item");
 	});
 </script>
 

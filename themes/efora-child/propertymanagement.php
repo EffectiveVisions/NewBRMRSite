@@ -269,6 +269,9 @@ Steven Griffin: Owner / General Manager / Broker
 
 <script type="text/javascript">
 	jQuery(document).ready(function(){
+
+    jQuery(".menu-item-home").addClass("current-menu-item");
+    
         jQuery('.feedback').slick({
         	arrows:false,
 			dots: true,

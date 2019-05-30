@@ -282,6 +282,8 @@
      var checkin = "<?php //echo date("d/m/Y") ?>";
      var checkout = "<?php //echo date('d/m/Y', mktime(0, 0, 0, date('m'), date('d') + 2, date('Y'))); ?>"
 
+     jQuery(".menu-item-home").addClass("current-menu-item");
+
      if(jQuery('#search_start_date_single').val()!=""){
         jQuery(".checkinspan").html(jQuery('#search_start_date_single').val());
      }else{

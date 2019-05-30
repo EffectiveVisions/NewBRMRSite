@@ -57,7 +57,7 @@ $google_plus_link  =  get_post_custom_values('google_plus_link',$page->ID);
              <div class="col-md-4  col-12 pb-md-0 pb-5">
                 <i class="icon icon-phone-outline mb-md-3 mb-2 d-block "></i>
                 <h6 class="font-weight-semi-bold text-black mb-3">Phone</h6>
-                <p class="font-weight-normal font-Nunito font-15"><a href="tel:(800) 237-7975" class="text-light-gray"><?php echo $phone[0] ?></a></p>     
+                <p class="font-weight-normal font-Nunito font-15"><a href="tel:1-800-237-7975" class="text-light-gray"><?php echo $phone[0] ?></a></p>     
              </div>
           </div>
 
@@ -99,3 +99,9 @@ $google_plus_link  =  get_post_custom_values('google_plus_link',$page->ID);
             Main End
     *************************************-->
 <?php get_footer(); ?>
+
+<script>
+    jQuery(document).ready(function(){
+        jQuery(".menu-item-home").addClass("current-menu-item");
+    });
+</script>
