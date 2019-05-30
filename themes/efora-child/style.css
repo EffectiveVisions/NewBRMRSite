@@ -4450,7 +4450,7 @@ border-radius: 10px;
 @media (max-width: 767px){
     /*search deatil page*/
      #gallerymodal ~ footer#mainfooter {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
     
 
