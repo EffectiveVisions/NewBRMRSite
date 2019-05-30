@@ -176,8 +176,7 @@
                    <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && !propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11"
                           ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?>
                    </button>
-                   
-                   <button ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && !propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11"  ng-click="showAll();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold ml-3 showall"><?php _e('Show All Result', 'streamline-core') ?></button>
+                   <button  ng-click="showAll();" ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold ml-md-3 mt-3 mt-md-0 showall"><?php _e('Show All Result', 'streamline-core') ?></button>
                  </div>
              </div>
             <?php else: ?>
@@ -200,7 +199,7 @@
                           ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?>
 
                         </button>
-                        <button ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && !propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11"  ng-click="showAll();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold ml-3 showall"><?php _e('Show All Result', 'streamline-core') ?>
+                        <button  ng-click="showAll();" ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold ml-md-3 mt-3 mt-md-0 showall"><?php _e('Show All Result', 'streamline-core') ?>
 
                         </button>
                     </div>                   
