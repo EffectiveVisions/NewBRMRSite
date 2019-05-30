@@ -202,7 +202,7 @@ class StreamlineCore_Settings{
                                                 </tr>
                                                 <tr>
                                                   <td>' . __( 'Total Cost', 'streamline-core' ) . '</td>
-                                                  <td><strong>%price_balance%</strong></td>
+                                                  <td><strong>$</strong><strong>%price_balance%</strong></td>
                                                 </tr>
                                               </table>', // textarea
       'top_spacing'                       => '', // text
