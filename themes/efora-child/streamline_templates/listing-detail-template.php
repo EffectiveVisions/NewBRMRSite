@@ -586,7 +586,7 @@
         <input type="hidden" id="enddate" name="enddate" value="" />
         <input type="hidden" id="occupants" name="occupants" value="" />
         <input type="hidden" id="occupants_small" name="occupants_small" value="" />
-        <input type="hidden" id="pets" name="pets" value="" />
+        <input type="hidden" id="petscount" name="pets" value="" />
         <input type="hidden" id="price_common" name="price_common" value="" />
         <input type="hidden" id="price_balance" name="price_balance" value="" />
         <input type="hidden" id="travelagent_name" name="travelagent_name" value="" />
