@@ -268,7 +268,7 @@
                 </div>
             </div>
             <div class="px-0 col-5  col-sm-4 justify-content-center d-flex">
-                <a href="javascript:void(0);" ng-click="editSearch()" class="btn btn-warning text-uppercase font-12 rounded-0">Edit Search</a>
+                <a href="javascript:void(0);" ng-click="editSearch()" class="btn btn-primary text-uppercase font-12 rounded-0">Edit Search</a>
             </div>
         </div>
     </div>

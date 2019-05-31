@@ -111,7 +111,7 @@
                                      <div class="w-100 d-inline-block buttons_area list_view_buttons mt-2">
                                             <div class="row mx-0">
                                                 <div class="col-md-12 px-0  d-inline-md-block text-md-right" >
-                                                    <a class="propertyButtons book  btn btn-warning  mt-md-2 text-uppercase font-13 py-2 text-black"
+                                                    <a class="propertyButtons book  btn btn-primary  mt-md-2 text-uppercase font-13 py-2 text-black"
                                                        ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}">
                                                         <?php _e( 'CHECK AVAILABILITY', 'streamline-core' ) ?>
                                                     </a>
