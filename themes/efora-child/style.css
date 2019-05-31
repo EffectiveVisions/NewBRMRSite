@@ -5451,3 +5451,8 @@ border-radius: 10px;
     z-index:10;
 }
 
+.modal-content {
+  background-clip: border-box;
+  border: none;
+}
+
