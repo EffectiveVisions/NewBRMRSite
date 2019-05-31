@@ -2913,7 +2913,7 @@ border-radius: 10px;
 
 .slider-places .slick-slide {
     margin-right: 4px;
-    height: 160px;
+    height: 100%;
     overflow: hidden;
 }
 
