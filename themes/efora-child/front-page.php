@@ -208,7 +208,7 @@
                     <p><?php echo wp_trim_words( get_the_content(), 18, '...' );?></p>
                  </div>
                  <div class="blogDetail px-4 pb-4 w-100 mt-auto">
-                    <a target="_blank" href="<?php the_permalink(); ?>" class="font-weight-bold readMore"> READ MORE  </a> 
+                    <a href="<?php the_permalink(); ?>" class="font-weight-bold readMore"> READ MORE  </a> 
                  </div>
              </div>
            </div>
@@ -217,7 +217,7 @@
            wp_reset_postdata();
           ?>
           <div class="col-12 text-center mt-md-5 mt-4">
-              <a href="/blogpage" target="_blank" class="btn btn-primary themeBtn text-uppercase font-weight-bold font-Nunito view-all">View All</a>
+              <a href="/blogpage" class="btn btn-primary themeBtn text-uppercase font-weight-bold font-Nunito view-all">View All</a>
           </div>
       </div>
    </div>
