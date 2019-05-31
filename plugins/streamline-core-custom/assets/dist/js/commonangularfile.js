@@ -2904,8 +2904,9 @@
         $scope.loadMarkers = function(properties, setBounds) {
             if ($scope.mapEnabled) {
                 angular.forEach(properties, function(property) {
-                    if (!isNaN(property.location_latitude) && !isNaN(property.location_longitude)) {
-                        var marker = {
+                    
+                    if (property.location_latitude && property.location_longitude && !isNaN(property.location_latitude) && !isNaN(property.location_longitude)) {
+                    	 var marker = {
                             id: property.id,
                             name: property.location_name,
                             latitude: parseFloat(property.location_latitude),
@@ -2916,16 +2917,18 @@
                             guests: property.max_occupants,
                             seo_page_name: property.seo_page_name
                         };
+                    	
+                        
                         if ($scope.method == "GetPropertyAvailabilityWithRatesWordPress") {
                             marker["price"] = property.total
                         } else {
                             marker["price"] = property.price_data
                         }
                         if (map != undefined) {
-                        	/*if(!isNaN(property.location_latitude) && !isNaN(property.location_longitude)){
+                        	if(!isNaN(property.location_latitude) && !isNaN(property.location_longitude)){
                         		var latLong = new google.maps.LatLng(parseFloat(property.location_latitude), parseFloat(property.location_longitude));
                                  bounds.extend(latLong);
-                        	}*/
+                        	}
                             
                             $scope.loadMarker(marker)
                         } else {
@@ -3010,8 +3013,6 @@
             	jQuery("#ammentieshidden").val(ammentiesid.join(","));
                 params['amenities_filter'] = ammentiesid.join(",");
             }
-
-
 
             $scope.loadMoreProperties(params, size, $scope.currentPage, false);
 
@@ -4372,7 +4373,6 @@
             //run_waitMe(".list-container-wrapper", "bounce", "Searching The Best Places For You...");
             $scope.enableInfinitiScroll = false;
             rpapi.getWithParams(method, params).success(function(obj) {
-
                 $scope.showBtn = true
                 $scope.loadingShow = "false"
                 $scope.loadMoreShow = "false"
@@ -4464,7 +4464,6 @@
             });
             $scope.loading = false
         };
-
 
         $scope.noResult = function(params, size, page, clearUnits) {
         	$scope.noResults = false
@@ -4574,7 +4573,6 @@
 
         $scope.showAll = function() {
             var params = $scope.getParams();
-            console.log(params);
             $scope.showAllProperties(params, $scope.total_units, 1, false);
         };
 
@@ -4586,7 +4584,6 @@
             $scope.showBtn = false;
             params.page_number = page;
             params.page_results_number = size;
-            params.skip_units = "";
             method = $rootScope.searchSettings.searchMethod;
             if (!(params.startdate == "" || params.startdate == undefined) && !(params.enddate == "" || params.enddate == undefined)) {
                 var oneDay = 24 * 60 * 60 * 1e3;
