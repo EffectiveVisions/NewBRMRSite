@@ -2121,8 +2121,8 @@ class ResortPro{
         $content = str_replace("%occupants%", $reservation_info['data']['reservation']['occupants'], $content);
         $content = str_replace("%occupants_small%", $reservation_info['data']['reservation']['occupants_small'], $content);
         $content = str_replace("%pets%", $reservation_info['data']['reservation']['pets'], $content);
-        $content = str_replace("%price_common%", number_format($reservation_info['data']['reservation']['price_common'],2, '.', ','), $content);
-        $content = str_replace("%price_balance%", number_format($reservation_info['data']['reservation']['price_balance'],2,'.',','), $content);
+        $content = str_replace("%price_common%", "$"." ".number_format($reservation_info['data']['reservation']['price_common'],2, '.', ','), $content);
+        $content = str_replace("%price_balance%", "$"." ".number_format($reservation_info['data']['reservation']['price_balance'],2,'.',','), $content);
         $content = str_replace("%travelagent_name%", $reservation_info['data']['reservation']['travelagent_name'], $content);
         $content = str_replace("%email%", $reservation_info['data']['reservation']['email'], $content);
         $content = str_replace("%fname%", $reservation_info['data']['reservation']['fname'], $content);
@@ -2138,8 +2138,8 @@ class ResortPro{
         $content = str_replace("%occupants%", $_REQUEST['occupants'], $content);
         $content = str_replace("%occupants_small%", $_REQUEST['occupants_small'], $content);
         $content = str_replace("%pets%", $_REQUEST['pets'], $content);
-        $content = str_replace("%price_common%", number_format($_REQUEST['price_common'],2, '.', ','), $content);
-        $content = str_replace("%price_balance%", number_format($_REQUEST['price_balance'],2,'.',','), $content);
+        $content = str_replace("%price_common%", "$"." ".number_format($_REQUEST['price_common'],2, '.', ','), $content);
+        $content = str_replace("%price_balance%", "$"." ".number_format($_REQUEST['price_balance'],2,'.',','), $content);
         $content = str_replace("%travelagent_name%", $_REQUEST['travelagent_name'], $content);
         $content = str_replace("%email%", $_REQUEST['email'], $content);
         $content = str_replace("%fname%", $_REQUEST['fname'], $content);
