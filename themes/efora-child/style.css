@@ -5190,7 +5190,7 @@ border-radius: 10px;
         width: 100%;
     }
     .availability-sec .ui-datepicker .ui-datepicker-next, .availability-sec .ui-datepicker .ui-datepicker-prev{
-        z-index: 999;
+        z-index: 9;
         height: 30px;
         width: 30px;
         line-height: 30px;
@@ -5441,5 +5441,13 @@ border-radius: 10px;
 
 .viewallhomepage{
     font-size:12px;
+}
+
+.ui-datepicker-prev{
+    z-index:10;
+}
+
+.ui-datepicker-next{
+    z-index:10;
 }
 
