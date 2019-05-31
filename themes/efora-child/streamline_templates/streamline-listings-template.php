@@ -408,7 +408,7 @@
           }); 
     });
 
-    jQuery('.reset_search').removeClass('.btn-primary').addClass(' btn-warning  text-uppercase w-100 font-13 mt-2 py-2')
+    jQuery('.reset_search').removeClass('.btn-primary').addClass(' btn-primary  text-uppercase w-100 font-13 mt-2 py-2')
 
     jQuery('.amenity_item').find('label').addClass('checkmark');
 

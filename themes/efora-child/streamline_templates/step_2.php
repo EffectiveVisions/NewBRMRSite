@@ -216,7 +216,7 @@
                   </div>
                   <div class="col-md-6 col-sm-8 col-xs-6 pl-0 pr-0 pl-md-2">
                      <button id="btn-step2" type="submit"
-                        class="continue btn primary-button   btn-warning mt-3 font-14 btn-h-custome btn-block  text-uppercase py-0 font-weight-light-bold btn-shadow "
+                        class="continue btn primary-button   btn-primary mt-3 font-14 btn-h-custome btn-block  text-uppercase py-0 font-weight-light-bold btn-shadow "
                         ng-click="goToStep2(true)">
                      <?php  _e('Continue',  'streamline-core'); ?>
                      <i class="glyphicon glyphicon-arrow-right"></i>

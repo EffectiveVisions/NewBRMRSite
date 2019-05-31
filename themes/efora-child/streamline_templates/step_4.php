@@ -330,7 +330,7 @@
                      </button>
                   </div>
                   <div class="col-12 px-0">
-                     <button id="btn-checkout" type="submit" ng-click="validateStep3(checkout)" class="complete_book btn btn-h-custome btn-warning  mt-3 font-14 btn-block text-uppercase py-0 btn-shadow  btn-h-custome ">
+                     <button id="btn-checkout" type="submit" ng-click="validateStep3(checkout)" class="complete_book btn btn-h-custome btn-primary  mt-3 font-14 btn-block text-uppercase py-0 btn-shadow  btn-h-custome ">
                      <?php _e('COMPLETE MY BOOKING', 'streamline-core'); ?>
                      </button>
                   </div>

@@ -154,7 +154,7 @@
                </button>
             </div>
             <div class="col-md-6 col-sm-8 col-xs-6 pr-0 pl-md-2 continue pl-0">
-               <button id="btn-step3" type="button" class="btn primary-button   btn-warning mt-3 font-14 btn-h-custome btn-block  text-uppercase py-0 font-weight-light-bold btn-shadow " ng-click="goToStep3()">
+               <button id="btn-step3" type="button" class="btn primary-button   btn-primary mt-3 font-14 btn-h-custome btn-block  text-uppercase py-0 font-weight-light-bold btn-shadow " ng-click="goToStep3()">
                <?php  _e('Continue',  'streamline-core')  ?> <i class="glyphicon glyphicon-arrow-right"></i>
                </button>
             </div>

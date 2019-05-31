@@ -188,7 +188,7 @@
    </div>
    <div class="form-group bottom_btnn">
       <?php if(!(is_numeric($property['online_bookings']) && $property['online_bookings'] == 0)): ?>
-         <a  ng-click="goToStepTwoA()" ng-disabled="isDisabled" class="btn btn-h-custome btn-warning  mt-3 font-14 btn-block text-uppercase py-0 btn-shadow continue text-white" id="btn-step1">
+         <a  ng-click="goToStepTwoA()" ng-disabled="isDisabled" class="btn btn-h-custome btn-primary  mt-3 font-14 btn-block text-uppercase py-0 btn-shadow continue text-white" id="btn-step1">
             <?php _e( 'Book Your Vacation', 'streamline-core' ) ?>
          </a>
       <?php endif; ?>

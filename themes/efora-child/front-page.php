@@ -125,10 +125,10 @@
   <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
          <div data-aos="fade-down" data-aos-duration="500" class="col-12 py-sm-4 pt-4 pb-3 text-center">
-            <h2 class="text-white mb-0 f-property-heading"> PROPERTIES RUNNING SPECIALS & DISCOUNTS</h2>
+            <h2 class="text-white mb-0 f-property-heading"> Properties Running Discouns and Specials</h2>
          </div>
       </div>
-      <div class="row" ng-init="search.amenities_filter='129950';sortBy='random';availabilitySearch();">
+      <div class="row" ng-init="search.amenities_filter='129951';sortBy='random';availabilitySearch();">
          <div data-aos="fade-up" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 9" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
           <div class="inner-div p-lg-1 d-inline-block w-100">
               <div class="property bg-white">
@@ -156,13 +156,13 @@
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?></span></li>
                     </ul>
                    <h6 class="font-12 text-uppercase mb-3 night propertypackage"> <strong class="f-15">{[property.price_data.daily | currency]} </strong>avg/night</h6>
-                       <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"  class="btn btn-warning  text-uppercase w-100 font-13"><?php _e( 'CHECK AVAILABILITY', 'streamline-core' ) ?></a>
+                       <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"  class="btn btn-primary  text-uppercase w-100 font-13"><?php _e( 'CHECK AVAILABILITY', 'streamline-core' ) ?></a>
                  </div>
               </div>
           </div>
          </div>
          <div  class="col-md-12 text-center mt-5 mb-4">
-            <a href="/search-results/?amenities=129950" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold">See All Properties Running Specials</a>
+            <a href="/search-results/?" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold">Search All properties</a>
          </div>
       </div>
   </div>
@@ -216,13 +216,10 @@
            endforeach; 
            wp_reset_postdata();
           ?>
-         
           <div class="col-12 text-center mt-md-5 mt-4">
-                  <a href="/blogpage" target="_blank" class="btn btn-primary themeBtn text-uppercase font-weight-bold font-Nunito view-all">View All</a>
+              <a href="/blogpage" target="_blank" class="btn btn-primary themeBtn text-uppercase font-weight-bold font-Nunito view-all">View All</a>
           </div>
-
       </div>
-  
    </div>
 </section>
 <section id="contactsec" class="contactus theme-bg-color py-md-5 py-3 home-contact-sec">

@@ -116,7 +116,7 @@ $class = get_body_class(); ?>
 
                         </li>
                         <li class="list-inline-item nav-item d-none d-lg-inline-block mr-0">
-                             <button onclick="moveToSearch()" type="button" class="btn btn-warning position-relative header-animated-button rounded-0 border-0 gatewayBtn text-uppercase "><div class="position-relative gatewayBtn-under d-inline-block">Find your Getaway</div></button>
+                             <button onclick="moveToSearch()" type="button" class="btn btn-primary position-relative header-animated-button rounded-0 border-0 gatewayBtn text-uppercase "><div class="position-relative gatewayBtn-under d-inline-block">Find your Getaway</div></button>
                         </li>
                          <li class="pl-3 list-inline-item nav-item header-contact d-lg-none mobile-search">
                             <a href="#tg-search" class="position-relative">
