@@ -99,8 +99,8 @@ $slider_places_image = get_field('en_slider_places_image',$page->ID); ?>
                           
           </div>
          <div class="col-md-12 text-center mt-5 mb-sm-4 mb-3">
-            <a ng-if="total_units > 0 && loadBtn && !propertiesObj.length<12" ng-click="loadMore();" class="btn theme-btn read-more text-uppercase font-15  py-0 rounded-0
-             properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?></a>
+            <a ng-if="total_units > 0 && loadBtn && !propertiesObj.length<12" ng-click="showAll();" class="btn theme-btn read-more text-uppercase font-15  py-0 rounded-0
+             properties font-weight-light-bold showall"><?php _e('View All', 'streamline-core') ?></a>
          </div>
       </div>
   </div>

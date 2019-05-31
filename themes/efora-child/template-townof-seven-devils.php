@@ -151,7 +151,7 @@ $popular_places_desc = get_field('valle_popular_places_desc',$page->ID); ?>
                           
           </div>
          <div class="col-md-12 text-center mt-5 mb-4">
-            <a ng-if="total_units > 0 && loadBtn && !propertiesObj.length<12" ng-click="loadMore();" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?></a>
+            <a ng-if="total_units > 0 && loadBtn && !propertiesObj.length<12" ng-click="showAll();" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold showall"><?php _e('View All', 'streamline-core') ?></a>
          </div>
       </div>
   </div>
