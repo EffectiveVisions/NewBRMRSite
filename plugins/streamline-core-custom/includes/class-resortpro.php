@@ -2739,7 +2739,7 @@ class ResortPro{
               $s .= "<div class='c-guests-dropdown__row c-guests-dropdown__row--cta container-fluid mb-0'>";
               $s .= "<div class='row'>";
               $s .= "<div class='col-12'>";
-              $s .= "<button id='guestsDropClearBtn' type='button' class='btn btn-warning themeBtn text-uppercase font-weight-bold font-Nunito float-right' aria-label='Reset' ng-click='resetGuests();'>Clear</button>";
+              $s .= "<button id='guestsDropClearBtn' type='button' class='btn btn-primary themeBtn text-uppercase font-weight-bold font-Nunito float-right' aria-label='Reset' ng-click='resetGuests();'>Clear</button>";
               $s .= "</div>";
               $s .= "<div class='col-12'>";
               $s .= "<button type='button' id='guestsDropCloseBtn' class='btn btn-default btn-block d-none' aria-label='Close' ng-click='closeGuests()'>Apply</button>";
