@@ -608,7 +608,7 @@
 
 
 
-<div ng-controller="PropertyController as pCtrl" id="gallerymodal" class="modal fade gallery-modal" role="dialog">
+<div ng-controller="PropertyController as pCtrl" id="gallerymodal" class="modal fade gallery-modal detailpagemodal" role="dialog">
   <div class="modal-dialog modal-lg">
     <div class="modal-content px-4 pb-4">
       <div class="modal-header pb-2 px-0">

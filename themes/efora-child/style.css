@@ -4449,7 +4449,7 @@ border-radius: 10px;
 }
 @media (max-width: 767px){
     /*search deatil page*/
-     #gallerymodal ~ footer#mainfooter {
+     .detailpagemodal ~ footer#mainfooter {
         margin-bottom: 40px;
     }
     
@@ -4462,7 +4462,7 @@ border-radius: 10px;
         left: 0;
     }
     .fixed-checkin-out-sec ~ footer#mainfooter {
-        padding-bottom: 70px;
+        padding-bottom: 60px;
     }
 	/*thank you table*/
 	.thank-you-sec .table-responsive-custom table > tbody > tr > td {
