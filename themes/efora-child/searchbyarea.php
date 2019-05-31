@@ -141,7 +141,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
   <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
          <div data-aos="fade-down" data-aos-duration="3000" class="col-12 py-sm-4 pt-4 pb-3 text-center">
-            <h2 class="text-white mb-0 f-property-heading">FEATURED PROPERTIES</h2>
+            <h2 class="text-white mb-0 f-property-heading">Properties Running Discounts and Specials</h2>
          </div>
       </div>
       <div class="row" ng-init="search.amenities_filter='129951';sortBy='random';availabilitySearch();">
@@ -182,7 +182,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
           </div>
          </div>
          <div class="col-md-12 text-center mt-5 mb-4">
-            <a href="/search-results/?" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold">Search All properties</a>
+            <a href="/search-results/?" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold viewallhomepage">See All Properties Running Special</a>
          </div>
       </div>
   </div>
