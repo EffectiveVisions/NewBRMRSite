@@ -508,7 +508,7 @@
         }
 
         $scope.setNights = function() {
-            
+           
             if($scope.modal_nights) {
                 jQuery('#myModal').modal("hide");
                 $scope.modal_checkin = jQuery('#modal_checkin').val();
@@ -870,6 +870,7 @@
             return [!booked, strClass, title]
         };
         $scope.renderCalendarNew = function(date, restriction, action) {
+
             if ($rootScope.calendar2.range) {
                 var str_price = "";
                 var start_date = new Date($rootScope.calendar2.range.beginDate);
@@ -4728,7 +4729,7 @@
                     	var propertydtl = $rootScope.properties.concat(tempProperties);
                     	
                     	for(var i=$scope.limit+1; i<propertydtl.length; i++){
-                    		
+
                             $rootScope.properties.push(propertydtl[i]);
                     		
                     	}
@@ -5506,6 +5507,7 @@
             })
         };
         $scope.setModalCheckin = function(date) {
+        	jQuery("#modal_days").next("p").remove();
             $scope.modal_checkin = date
         };
         $scope.resetCalendarPopup = function() {
@@ -5514,24 +5516,30 @@
             $scope.modal_nights = ""
         };
         $scope.setNights = function() {
-            var frm = new Date($scope.modal_checkin);
-            nts = parseInt($scope.modal_nights);
-            var the_year = frm.getFullYear();
-            if (the_year < 2e3) the_year = 2e3 + the_year % 100;
-            var to = new Date(the_year, frm.getMonth(), frm.getDate() + nts);
-            $scope.modal_checkout = to.format("mm/dd/yyyy");
-            var booking = {
-                checkin: frm.format("mm/dd/yyyy"),
-                checkout: to.format("mm/dd/yyyy"),
-                unit_id: $scope.propertyId,
-                occupants: 1,
-                occupants_small: 0,
-                pets: 0
-            };
-            jQuery("#modal_end_date").datepicker("option", "minDate", frm);
-            $scope.modal_checkin = frm.format("mm/dd/yyyy");
-            $scope.modal_checkout = to.format("mm/dd/yyyy");
-            $scope.updatePricePopupCalendar()
+        	if($scope.modal_nights){
+        		jQuery("#modal_days").next("p").remove();
+        		var frm = new Date($scope.modal_checkin);
+	            nts = parseInt($scope.modal_nights);
+	            var the_year = frm.getFullYear();
+	            if (the_year < 2e3) the_year = 2e3 + the_year % 100;
+	            var to = new Date(the_year, frm.getMonth(), frm.getDate() + nts);
+	            $scope.modal_checkout = to.format("mm/dd/yyyy");
+	            var booking = {
+	                checkin: frm.format("mm/dd/yyyy"),
+	                checkout: to.format("mm/dd/yyyy"),
+	                unit_id: $scope.propertyId,
+	                occupants: 1,
+	                occupants_small: 0,
+	                pets: 0
+	            };
+	            jQuery("#modal_end_date").datepicker("option", "minDate", frm);
+	            $scope.modal_checkin = frm.format("mm/dd/yyyy");
+	            $scope.modal_checkout = to.format("mm/dd/yyyy");
+	            $scope.updatePricePopupCalendar()
+        	}else{
+        		jQuery("#modal_days").after('<p style="color:red; font-size:12px;" class="validation">Nights are required.</p>')
+        	}
+          
         };
         $scope.updatePricePopupCalendar = function() {
             run_waitMe("#myModal .modal-content", "bounce");
