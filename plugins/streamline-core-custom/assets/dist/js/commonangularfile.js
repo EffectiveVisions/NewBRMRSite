@@ -2339,6 +2339,30 @@
              {'name':'Love Hollow','id':174846}
         ]
 
+        $scope.pluspets = function(max, type) {
+            if (type == "search.pets") {
+                //$scope.search.pets = 1;
+                if ($scope.search.pets == max) {} else {
+                    $scope.search.pets++
+                }
+            }
+        }
+
+        $scope.minuspets = function(min, type){
+            if (type == "search.pets") {
+                //$scope.search.pets = 0;
+                if ($scope.search.pets == min) {
+                    $scope.search.pets = null
+                } else if ($scope.search.pets == 0 || $scope.search.pets == null) {$scope.search.pets = ""} else {
+                    if($scope.search.pets == 1){
+                       $scope.search.pets = ""; 
+                    }else{
+                    	$scope.search.pets--
+                    }    
+                }
+            }
+        }
+
         $scope.plus = function(max, type) {
             if (type == "search.occupants") {
                 if ($scope.search.occupants == max) {$scope.isPlusDisabled = true; $scope.isMinusDisabled = false; } else {
@@ -2393,7 +2417,10 @@
             if (type == "search.pets") {
                 //$scope.search.pets = 1;
                 if ($scope.search.pets == max) {} else {
-                    $scope.search.pets++
+                	if($scope.search.pets<=0){
+                		$scope.search.pets++
+                	}
+                    
                 }
             }
             if (type == "modal_pets") {

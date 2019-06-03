@@ -2541,7 +2541,45 @@ class ResortPro{
 
     static function plusMinus($label_txt, $name, $options, $cur_value, $zero_option = null, $ng_model = null, $plus = null)
     {
-      $angular_str = (!empty($ng_model)) ? 'ng-init="'.$ng_model.'=\''.$cur_value.'\'" ng-model="' . $ng_model . '" ng-change="availabilitySearch(search)"' : '';
+
+      if($ng_model == "search.pets"){
+       $angular_str = (!empty($ng_model)) ? 'ng-init="'.$ng_model.'=\''.$cur_value.'\'" ng-model="' . $ng_model . '" ng-change="availabilitySearch(search)"' : '';
+
+      $bind_str = "ng-bind = '".$ng_model."'" ;
+
+      if ($name == 'resortpro_sw_bedrooms_number') {
+        $max = count($options) - 1;
+        $min = 0;
+      } else {
+        $max = end($options);
+        $min = $options[0];
+        if($min === null){
+          $min = 1;
+        }
+      }
+
+      if (!empty($ng_model)) {
+      if ($name == 'resortpro_sw_adults'){
+        $cur_value = $_REQUEST['oc'];
+      } elseif ($name == 'resortpro_sw_children') {
+        $cur_value = $_REQUEST['ch'];
+      } elseif ($name == 'resortpro_sw_pets') {
+        $cur_value = $_REQUEST['pets'];
+      } elseif ($name == 'resortpro_sw_bedrooms_number') {
+        $cur_value = $_REQUEST['beds'];
+      }
+    }
+      $s = "<div class='input-group' ng-controller='PlusMinusControler as pCtrl'><span ng-click='resetGuests()' id='resetbedsroom'></span>";
+      $s .= "<div class='input-group-text-box w-100 d-flex align-items-center'><span {$bind_str} class='data_bind count-single-{$label_txt}'></span>&nbsp;<span class='text-capitalize font-14 font-weight-light-bold label-single-{$label_txt}'>$label_txt</span>";
+      $s .= "<div class='btn-group-filter ml-auto'>";
+      $s .= "<button type='button' class='decreasesingle btn btn-outline-secondary filter-count-btn p-0 rounded-circle mr-3' aria-label='Minus' ng-click='minuspets($min, \"$ng_model\")'><i class='icon icon-Minus font-12'></i></button>";
+      $s .= "<input class='form-control pets_count' aria-label='Button Amounts' name=\"$name\" {$angular_str} placeholder='$zero_option[1]' readonly>";
+       $s .= "<button type='button' class='increasesingle btn btn-outline-secondary filter-count-btn p-0 rounded-circle' aria-label='Plus' ng-click='pluspets($max, \"$ng_model\")'><i class='icon icon-plus font-12'></i></button>";
+      $s .= "</div>";
+      $s .= "</div>";
+      $s .= "</div>";
+      }else{
+        $angular_str = (!empty($ng_model)) ? 'ng-init="'.$ng_model.'=\''.$cur_value.'\'" ng-model="' . $ng_model . '" ng-change="availabilitySearch(search)"' : '';
 
       $bind_str = "ng-bind = '".$ng_model."'" ;
 
@@ -2576,6 +2614,8 @@ class ResortPro{
       $s .= "</div>";
       $s .= "</div>";
       $s .= "</div>";
+      }
+      
 
       return $s;
     }
