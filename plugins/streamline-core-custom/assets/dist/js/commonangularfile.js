@@ -4240,7 +4240,6 @@
         }
 
         $scope.loadMoreProperties = function(params, size, page, clearUnits){
-
         	$scope.noResults = false
             $scope.loadingShow = "true"
             $scope.showBtn = false
@@ -4427,13 +4426,21 @@
                         tempProperties = obj.data.available_properties.property
                     }
                     if ($rootScope.properties.length > 0) {
-                        $rootScope.properties = $rootScope.properties.concat(tempProperties)
+                    	var propertydtl = $rootScope.properties.concat(tempProperties);
+                    	for(var i=0; i<propertydtl.length; i++){
+                           $rootScope.properties.push(propertydtl[i]);
+                    	}
                     } else {
-                        $rootScope.properties = tempProperties
+                    	propertydtl = tempProperties;
+                    	for(var i=0; i<propertydtl.length; i++){
+                    		$rootScope.properties.push(propertydtl[i]);
+                    	}
                     }
                     $rootScope.propertiesObj = Object.keys($rootScope.properties).map(function(key) {
                         return $rootScope.properties[key]
                     });
+
+       
                     if (params.sort_by == "random") {
                         angular.forEach(tempProperties, function(property) {
                             if ($scope.skipUnits == "") {
@@ -4551,6 +4558,8 @@
                     $rootScope.propertiesObj = Object.keys($rootScope.properties).map(function(key) {
                         return $rootScope.properties[key]
                     });
+
+                 
                     if (params.sort_by == "random") {
                         angular.forEach(tempProperties, function(property) {
                             if ($scope.skipUnits == "") {
@@ -4572,16 +4581,79 @@
         };
 
         $scope.showAll = function() {
+        	$scope.loadMoreShow = "true";
+            var size = $scope.total_units;
+            $scope.currentPage++;
+            //$scope.limit += $scope.total_units;
             var params = $scope.getParams();
-            $scope.showAllProperties(params, $scope.total_units, 1, false);
+             var ammenties = [];
+			 var pets       = "";
+			 var start_date = jQuery('#search_start_date').val();
+			 var end_date   = jQuery('#search_end_date').val();
+			 var children   = jQuery('#resortpro-search-guests-children-block-not').find('.count-single-child').html();
+			 var adults     = jQuery("#resortpro-search-guests-adults-block-not").find('.count-single-adult').html();
+			 var beds       = parseInt(jQuery('#resortpro-search-number-bedrooms-block-not').find(".ng-binding").html());
+			 var location   = jQuery("#resortpro_sw_ra_id option:selected").val();
+
+			 jQuery('input[name="resortpro_sw_amenities[]"]:checked').each(function(e) {
+				ammenties.push({
+				      id:jQuery(this).attr("value"),
+				      name:jQuery(this).next('label').html()
+				   });
+			 });
+ 
+            if(adults && adults!=0){
+            	params['occupants'] = parseInt(adults);
+            }
+            if(beds){
+                params['bedrooms_number'] = parseInt(beds);
+            }
+            if(start_date){
+                params['startdate'] = start_date
+            }
+            if(end_date){
+                params['enddate'] = end_date
+            }
+            if(children){
+                params['occupants_small'] = parseInt(children)
+            }
+            if(location){
+                params['resort_area_id'] = parseInt(location)
+            }
+            if(ammenties.length>0){
+            	var ammentiesid = [];
+            	for(let i=0; i<ammenties.length; i++){
+                      ammentiesid.push(ammenties[i].id);
+            	}
+            	jQuery("#ammentieshidden").val(ammentiesid.join(","));
+                params['amenities_filter'] = ammentiesid.join(",");
+            }
+
+            $scope.showAllProperties(params, size, 1, false);
+
+            if ($rootScope.searchSettings.enable_save_unit_place == 1) {
+                var cookiePageObj = jQuery($cookies.get("sl_current_page"));
+                if (cookiePageObj.selector != "") {
+                    $cookies.putObject("sl_current_page", parseInt(cookiePageObj.selector) + 1, {
+                        path: "/"
+                    })
+                } else {
+                    $cookies.putObject("sl_current_page", $scope.currentPage, {
+                        path: "/"
+                    })
+                }
+            }
         };
 
-        $scope.showAllProperties = function(params, size, page, clearUnits) {
-        	jQuery(".showall").addClass("d-none");
-        	jQuery(".load-more").addClass("d-none");
+        $scope.doInsert = function(handled,){
 
+        }
+
+        $scope.showAllProperties = function(params, size, page, clearUnits) {
             $scope.showAllClicked = true
             $scope.showBtn = false;
+            $scope.noResults = false
+            $scope.loadingShow = "true"
             params.page_number = page;
             params.page_results_number = size;
             method = $rootScope.searchSettings.searchMethod;
@@ -4598,14 +4670,32 @@
                 method = "GetPropertyListWordPress"
             }
             $scope.method = method;
-            $scope.loadMoreShow = "true";
-            //run_waitMe(".listings_wrapper_box", "roundBounce", "Searching The Best Places For You...");
             $scope.enableInfinitiScroll = false;
             rpapi.getWithParams(method, params).success(function(obj) {
-            	$scope.loadMoreShow = "false";
-                $scope.showbuttons = false;
+            	$scope.loadBtn = false;
+                $scope.showBtn = true
+                $scope.loadingShow = "false"
+                $scope.loadMoreShow = "false"
+                $scope.isDataShow = "true";
                 jQuery(".col-md-4.search-sidebar #sticky-wrapper").addClass("sticky-wrapper");
-                //hide_waitMe(".listings_wrapper_box");
+                if ($rootScope.searchSettings.enable_save_unit_place == 1) {
+                    var cookieunitobj = $cookies.getObject("unit_id");
+                    var sl_cookie_unit = "#unit-" + cookieunitobj;
+                    setTimeout(function() {
+                        offset = 0;
+                        if (jQuery("body.admin-bar").length > 0) offset = 32;
+                        jQuery(document).ready(function() {
+                            if (typeof cookieunitobj != "undefined") {
+                                jQuery("html, body").animate({
+                                    scrollTop: jQuery(sl_cookie_unit).offset().top + 0
+                                }, "slow");
+                                $scope.deleteCookiesFilters();
+                                return false
+                            }
+                        })
+                    }, 50)
+                }
+                var cookiePageObject = jQuery($cookies.get("sl_current_page"));
                 if (clearUnits) {
                     $rootScope.propertiesObj = [];
                     $rootScope.properties = [];
@@ -4614,8 +4704,13 @@
                     } else {
                         $scope.skipUnits = ""
                     }
+                    if ($rootScope.searchSettings.enable_save_unit_place == 1 && cookiePageObject.selector != "") {
+                        $scope.limit = pagination_search_number
+                    } else {
+                        $scope.limit = $rootScope.searchSettings.propertyPagination
+                    }
                 }
-                if(!obj.status && obj.data.available_properties && obj.data.available_properties.pagination.total_units > 0) {
+                if (!obj.status && obj.data.available_properties && obj.data.available_properties.pagination.total_units > 0) {
                     if (obj.data.available_properties.pagination.total_pages > $scope.currentPage) {
                         $scope.enableInfinitiScroll = true
                     }
@@ -4630,12 +4725,19 @@
                         tempProperties = obj.data.available_properties.property
                     }
                     if ($rootScope.properties.length > 0) {
-                        $rootScope.properties = $rootScope.properties.concat(tempProperties)
+                    	var propertydtl = $rootScope.properties.concat(tempProperties);
+                    	
+                    	for(var i=$scope.limit+1; i<propertydtl.length; i++){
+                    		
+                            $rootScope.properties.push(propertydtl[i]);
+                    		
+                    	}
                     } else {
                         $rootScope.properties = tempProperties
                     }
-                    $rootScope.propertiesObj = tempProperties
-
+                    $rootScope.propertiesObj = Object.keys($rootScope.properties).map(function(key) {
+                        return $rootScope.properties[key]
+                    });
                     if (params.sort_by == "random") {
                         angular.forEach(tempProperties, function(property) {
                             if ($scope.skipUnits == "") {
@@ -4647,12 +4749,11 @@
                     }
                    
                 } else {
-                    $scope.noResults = true
+                	$scope.loadBtn = false;
                 }
             });
-            $scope.loading = false   
+            $scope.loading = false
         }
-
 
         $scope.paymentLogin = function(login) {
             var data = {
