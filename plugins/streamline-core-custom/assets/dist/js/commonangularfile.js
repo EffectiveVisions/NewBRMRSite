@@ -3798,6 +3798,7 @@
              jQuery('.checkindate').parent().addClass("d-none");
              jQuery('.checkoutdate').parent().addClass("d-none");
              jQuery('.locationname').parent().addClass("d-none");
+            $scope.loadBtn = true;
             $scope.noResults = false
             $scope.isDataShow = "false";
             $scope.showfilter = false;
