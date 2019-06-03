@@ -274,10 +274,10 @@
                     <div class="ml-sm-auto my-sm-0 mb-3 mt-2  order-sm-2 order-1">
                      <a  href="javascript:history.go(-1)" class="btn theme-btn font-Nunito text-uppercase font-13 text-white position-relative font-weight-light-bold text-uppercase align-items-center backtosearch">Back To search results</a>
                      </div>
-                      <a href="javascript:void(0)" class="d-none d-md-block d-xl-none toggle-filter">
-                        <div class="mb-0 rounded ml-sm-3 ml-4 text-center theme-bg-color  filter-tool">
-                            
-                            <svg  class="" version="1.1" id="Capa_1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px"
+                      <a href="javascript:void(0)" class="d-none d-md-block d-xl-none toggle-filter order-sm-3">
+                       <span class="mb-0 rounded ml-sm-3 ml-4 text-center theme-bg-color  filter-tool text-white">
+                          Filter
+                           <!--  <svg  class="" version="1.1" id="Capa_1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px"
                                viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
                             <g>
                               <path  d="M8,41.08V2c0-0.553-0.448-1-1-1S6,1.447,6,2v39.08C2.613,41.568,0,44.481,0,48c0,3.859,3.14,7,7,7s7-3.141,7-7
@@ -288,9 +288,9 @@
                               <path d="M56,8c0-3.859-3.14-7-7-7s-7,3.141-7,7c0,3.519,2.613,6.432,6,6.92V54c0,0.553,0.448,1,1,1s1-0.447,1-1V14.92
                                 C53.387,14.432,56,11.519,56,8z M49,13c-2.757,0-5-2.243-5-5s2.243-5,5-5s5,2.243,5,5S51.757,13,49,13z" fill="#fff"/>
                             </g>
-                            </svg>
+                            </svg> -->
 
-                        </div>
+                        </span>
                       </a>
                   </div>
                     <h6 class="f-14 pb-1 font-weight-semi-bold">
@@ -876,7 +876,7 @@ jQuery(document).ready(function(){
     );
 
 
-    jQuery("#book_now_mobile").waypoint(function(direction){
+    /*jQuery("#book_now_mobile").waypoint(function(direction){
         
          if(direction === 'down'){
            jQuery('#book_now_mobile').addClass("filter-fixed");
@@ -960,7 +960,9 @@ jQuery(document).ready(function(){
         jQuery('#book_now_mobile').addClass("filter-fixed");
         jQuery(".filter-single-property").removeAttr("style");
     }
-  });
+  });*/
+
+   
 
 });
 </script>

@@ -2653,7 +2653,7 @@ border-radius: 10px;
     padding: 0 15px;
 }
 
-.searchbyarea-banner .form .col-lg-2.custom-space {
+.searchbyarea-banner .form .custom-space {
     padding: 0;
 }
 
@@ -3728,14 +3728,14 @@ border-radius: 10px;
 }
 
 /*modal customize */
-	.modal {
-	    overflow-y: auto;
-	    -webkit-overflow-scrolling: touch;
-	}
-	body.modal-open {
-	    overflow: hidden;
-	    -webkit-overflow-scrolling: auto;
-	}
+.modal {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+body.modal-open {
+    overflow: hidden;
+    -webkit-overflow-scrolling: auto;
+}
 
 /*coupon code sarch box*/
 .redeem-promo-code span.input-group-btn button.btn {
@@ -3743,6 +3743,95 @@ border-radius: 10px;
     font-size: 14px;
     font-weight: 500;
     border-radius: 0 4px 4px 0;
+}
+/*later addeed changes*/
+.btn-warning {
+    color: #f5f6f7;
+    background-color: #005a9a;
+    border-color: #005a9a;
+}
+
+.btn-warning:hover {
+    color: #f5f6f7 !important;
+    background-color: #005a9a !important;
+    border-color: #005a9a !important;
+}
+.btn-warning.disabled, .btn-warning:disabled, .btn-warning[disabled="disabled"] {
+    color: #212529;
+    background-color: #143265;
+    border-color: #1b468e;
+    box-shadow: none!important;
+}
+.btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active, .show > .btn-warning.dropdown-toggle {
+    color: #f8f9fa;
+    background-color: #1b468e;
+    border-color: #1b468e;
+    0: ;
+}
+.slash-end a, .slash-end span {
+    background: linear-gradient(to right bottom,#223b70 50%,#fff 50%)!important;
+}
+
+#description h1,#description h2,#description h3,#description h4,#description h5,#description span ,#description p, #description strong{
+    font-size:14px;
+    font-family: 'Nunito',sans-serif;
+}
+
+.description-content:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 17px;
+    background: rgba(255, 255, 255, 0.85);
+    bottom: 0;
+    left: 0;
+}
+
+.description-content{
+    position:relative;
+}
+
+.listings_wrapper_box .noresult .alert.alert-danger {
+    font-weight: 500;
+    font-size: 14px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    color: red;
+}
+
+.list-container-wrapper .noresult .alert.alert-danger {
+    font-weight: 500;
+    font-size: 14px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    color: red;
+}
+
+.z-index{
+   
+}
+
+#fiterbar-sidebar .ui-widget-content .ui-state-default{
+    outline:none;
+}
+
+.viewallhomepage{
+    font-size:12px;
+}
+
+.ui-datepicker-prev{
+    z-index:10;
+}
+
+.ui-datepicker-next{
+    z-index:10;
+}
+
+.modal-content {
+  background-clip: border-box;
+  border: none;
 }
 /*================================
       Responsive media start here
@@ -3878,6 +3967,29 @@ border-radius: 10px;
 
 @media (min-width: 768px) and (max-width: 1199px){
 
+    /*vacation-homes-by-area banner*/
+    .propertyBanner.searchbyarea-banner .custom-space:not(:last-child) {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 15px;
+    }
+    .searchbyarea-banner .form .custom-space:last-child {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;  
+    }
+    .searchbyarea-banner .form .custom-space {
+        padding: 0 7px !important;
+    }
+    .trustpilot-rating {
+        top: 440px !important;
+    }
+    .home-banner-section .inner-content-banner {
+       top: 80px;
+    }
 	/*trust-piolt sldier*/
 	.trust-pilot .slider1 .slick-arrow.slick-prev {
     	left: -30px;
@@ -4105,10 +4217,11 @@ border-radius: 10px;
 #book_now_mobile.filter-single-property {
     /*position: fixed;
     top: 98px;*/
-    height: auto;
+    /*height: auto;*/
 }
 .filter-single-property.filter-fixed {
-    height: auto;
+    /*height: calc(100% - 98px);
+    overflow*/
 }
 }
 
@@ -4933,6 +5046,9 @@ border-radius: 10px;
     .propertyBanner .form-group {
         margin-bottom: 0.6rem;
     }
+    .searchbyarea-banner .form .custom-space:last-child .form-group {
+      margin-bottom: 0px;
+    }
     .home-banner-section .inner-content-banner h1{
         top: 0;
     }
@@ -5289,7 +5405,7 @@ border-radius: 10px;
          text-align: right;
     }
 	.searchbyarea-banner .form .custom-space {
-		padding: 0px 7px;
+		padding: 0px 3px !important;
 	}
 	.searchbyarea-banner .form .custom-space .form-group{
     	margin: 0 0 15px ;
@@ -5364,95 +5480,13 @@ border-radius: 10px;
     .fixed-checkin-out-sec ~ footer#mainfooter {
         padding-bottom: 60px;
     }
-
+    .searchbyarea-banner .form .custom-space:last-child {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
-.btn-warning {
-    color: #f5f6f7;
-    background-color: #005a9a;
-    border-color: #005a9a;
-}
 
-.btn-warning:hover {
-    color: #f5f6f7 !important;
-    background-color: #005a9a !important;
-    border-color: #005a9a !important;
-}
-.btn-warning.disabled, .btn-warning:disabled, .btn-warning[disabled="disabled"] {
-    color: #212529;
-    background-color: #143265;
-    border-color: #1b468e;
-    box-shadow: none!important;
-}
-.btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active, .show > .btn-warning.dropdown-toggle {
-    color: #f8f9fa;
-    background-color: #1b468e;
-    border-color: #1b468e;
-    0: ;
-}
-.slash-end a, .slash-end span {
-    background: linear-gradient(to right bottom,#223b70 50%,#fff 50%)!important;
-}
-
-#description h1,#description h2,#description h3,#description h4,#description h5,#description span ,#description p, #description strong{
-    font-size:14px;
-    font-family: 'Nunito',sans-serif;
-}
-
-.description-content:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 17px;
-    background: rgba(255, 255, 255, 0.85);
-    bottom: 0;
-    left: 0;
-}
-
-.description-content{
-    position:relative;
-}
-
-.listings_wrapper_box .noresult .alert.alert-danger {
-    font-weight: 500;
-    font-size: 14px;
-    background: transparent;
-    border: 0;
-    padding: 0;
-    color: red;
-}
-
-.list-container-wrapper .noresult .alert.alert-danger {
-    font-weight: 500;
-    font-size: 14px;
-    background: transparent;
-    border: 0;
-    padding: 0;
-    color: red;
-}
-
-.z-index{
-   
-}
-
-#fiterbar-sidebar .ui-widget-content .ui-state-default{
-    outline:none;
-}
-
-.viewallhomepage{
-    font-size:12px;
-}
-
-.ui-datepicker-prev{
-    z-index:10;
-}
-
-.ui-datepicker-next{
-    z-index:10;
-}
-
-.modal-content {
-  background-clip: border-box;
-  border: none;
-}
 
