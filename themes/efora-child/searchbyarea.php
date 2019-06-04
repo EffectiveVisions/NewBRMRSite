@@ -152,7 +152,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                     <img src="{[property.default_thumbnail_path]}" class="img-fluid" alt="" />
                  </div>
                  <div class="propertyDetail py-4 px-3">
-                    <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6  class="mb-0 text-blue f-600 pro-name-heading">{[property.name]}</h6></a>
+                    <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6  class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6></a>
                      <div class="star-rating" ng-if="property.rating_average > 0">
                         <div class="star-rating" star-rating rating-value="property.rating_average" data-max="5"></div>
                         <span class="rating_number">({[property.rating_count]})</span>

@@ -111,8 +111,9 @@ $popular_places_desc = get_field('valle_popular_places_desc',$page->ID); ?>
                     <img datasrc="{[property.default_thumbnail_path]}" lazy-load class="img-fluid" alt="" />
                  </div>
                  <div class="propertyDetail py-4 px-3">
-                    <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6 ng-if="property.name.length>28"  class="mb-0 text-blue f-600 pro-name-heading">{[property.name.substring(0,28)+"..."]}</h6>
-                    <h6 ng-if="property.name.length<=28"  class="mb-0 text-blue f-600 pro-name-heading">{[property.name]}</h6>
+                    <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}">
+
+                    <h6  class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6>
                     </a>
                      <div class="star-rating" ng-if="property.rating_average > 0">
                         <div class="star-rating" star-rating rating-value="property.rating_average" data-max="5"></div>
