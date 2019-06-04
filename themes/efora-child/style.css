@@ -3734,14 +3734,15 @@ border-radius: 10px;
 }
 
 /*modal customize */
-.modal {
+.modal,#menu.mm-menu.mm-opened {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
-body.modal-open {
+body.modal-open,body.menuopened {
     overflow: hidden;
     -webkit-overflow-scrolling: auto;
 }
+
 
 /*coupon code sarch box*/
 .redeem-promo-code span.input-group-btn button.btn {
@@ -3838,6 +3839,32 @@ body.modal-open {
 .modal-content {
   background-clip: border-box;
   border: none;
+}
+/*antialiased  edge text*/
+ body .ms-view .ms-slide-container{
+    transform-style: flat !important;
+ }
+/*navigation*/
+
+.mobile-nav-calender .resortpro-search-checkin-block:after,
+.mobile-nav-calender .resortpro-search-checkout-block:after {
+    transform: translateY(calc(-50% + 15px));
+}
+.mobile-nav-calender .c-guests-dropdown .dropdown-toggle::after{
+    position: absolute;
+    right: 15px;
+    top: 0;
+}
+.mobile-nav-calender .search_widget .c-guests-dropdown__btn-item--guests:before{
+    content: "\e91f";
+    font-family: 'icon-blueridge';
+    top: -1px;
+    font-size: 16px;
+}
+.mobile-nav-calender .search_widget .c-guests-dropdown__body:after, 
+.mobile-nav-calender .search_widget .c-guests-dropdown__body:before{
+    top: auto;
+    bottom: -5px;
 }
 /*================================
       Responsive media start here
@@ -4216,20 +4243,6 @@ body.modal-open {
 	}
 }
 
-@media (min-width: 1680px) {
-.custome-w-pro-page {
-    width: calc(100% - 100px);
-}
-#book_now_mobile.filter-single-property {
-    /*position: fixed;
-    top: 98px;*/
-    /*height: auto;*/
-}
-.filter-single-property.filter-fixed {
-    /*height: calc(100% - 98px);
-    overflow*/
-}
-}
 
 @media (min-width: 1200px) {
     
@@ -4283,6 +4296,23 @@ body.modal-open {
 	    padding: 0px 35px;
 	}
 }
+@media (min-width: 1680px) {
+    .custome-w-pro-page {
+        width: calc(100% - 100px);
+    }
+    #book_now_mobile.filter-single-property {
+        /*position: fixed;
+        top: 98px;*/
+        /*height: auto;*/
+    }
+    .filter-single-property.filter-fixed {
+        /*height: calc(100% - 98px);
+        overflow*/
+        height: 580px;
+        width: 415px;
+    }
+}
+
 @media (max-width: 1199px){
 	/*top bar*/
 
@@ -4988,6 +5018,12 @@ body.modal-open {
     }
 }
 @media (max-width: 567px){
+    .home-banner-section .inner-content-banner {
+        top: 45px;
+    }
+    .home-banner-section .home-banner.search-area-home + .inner-content-banner {
+        top: 75px;
+    }
     /*search deatil page*/
     .cutome-btn-width-mob{
         width: 100%;

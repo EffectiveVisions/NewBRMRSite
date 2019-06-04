@@ -21,5 +21,13 @@
         endif; ?>
 
        <?php } ?>
+       <div class="mobile-nav-calender z-index col-12 mt-3">
+         <h6><small class="text-uppercase font-weight-bold">Search Property</small></h6>
+            <?php if ( is_active_sidebar( 'home-hero-widgets' ) ) { ?>
+                <?php dynamic_sidebar( 'home-hero-widgets' ); ?>
+            <?php } ?>
+        </div>
     </ul>
+
+    
 </nav>
