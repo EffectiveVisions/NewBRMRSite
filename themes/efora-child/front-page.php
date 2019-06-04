@@ -50,7 +50,7 @@
                               <li class="list-inline-item mr-sm-4 mr-0 active-item d-block d-sm-inline-block vacation-listing-item">
                                <a href="/" class="f-600 tabby text-uppercase font-13 text-white position-relative"> Vacation homes by date</a> 
                                </li>
-                               <li class="list-inline-item d-block d-sm-inline-block vacation-listing-item mr-sm-4">
+                               <li class="list-inline-item d-block d-sm-inline-block vacation-listing-item">
                                   <a href="/vacation-homes-by-area" class="f-600 tabby text-uppercase font-13 text-white position-relative">Vacation homes by Area</a>
                                </li>
                                <li class="list-inline-item d-block d-sm-inline-block vacation-listing-item">
@@ -132,11 +132,11 @@
          </div>
       </div>
       <div class="row" ng-init="search.amenities_filter='129951';sortBy='random';availabilitySearch();">
-         <div data-aos="fade-up" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 9" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
+         <div data-aos="fade-up" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 12" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
           <div class="inner-div p-lg-1 d-inline-block w-100">
               <div class="property bg-white">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img lazy-load datasrc="{[property.default_thumbnail_path]}" class="img-fluid" alt="Featured Product" />
+                    <img src="{[property.default_thumbnail_path]}" class="img-fluid propertythumb" alt="Featured Product" />
                  </div>
                  <div class="propertyDetail py-4 px-3">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6  class="mb-0 text-blue f-600 pro-name-heading">{[property.name]}</h6></a>
@@ -149,13 +149,13 @@
                       </div>
                     <ul class="list-unstyled detailsaboutproperty mt-2 mb-4 d-flex flex-md-wrap flex-sm-nowrap flex-wrap">
                        <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2  d-flex flex-wrap align-items-center">
-                        <img lazy-load datasrc="http://blueridg.protacto.com/wp-content/uploads/2019/04/bed.svg"  class="w-20" alt="bed-image">
+                        <img src="http://blueridg.protacto.com/wp-content/uploads/2019/04/bed.svg"  class="w-20" alt="bed-image">
                         <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bedrooms_number]} <?php _e( 'Beds', 'streamline-core' ) ?></span></li>
                        <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2 d-flex flex-wrap align-items-center">
-                         <img lazy-load datasrc="http://blueridg.protacto.com/wp-content/uploads/2019/04/slumber.svg" class="w-20" alt="slumber-image">
+                         <img src="http://blueridg.protacto.com/wp-content/uploads/2019/04/slumber.svg" class="w-20" alt="slumber-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text"> <?php _e( 'Sleeps', 'streamline-core' ) ?> {[property.max_occupants]}</span></li>
                        <li class="list-inline-item d-flex flex-wrap align-items-center">
-                         <img lazy-load datasrc="http://blueridg.protacto.com/wp-content/uploads/2019/04/shower.svg" class="w-20" alt="shower-image">
+                         <img src="http://blueridg.protacto.com/wp-content/uploads/2019/04/shower.svg" class="w-20" alt="shower-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?></span></li>
                     </ul>
                    <h6 class="font-12 text-uppercase mb-3 night propertypackage"> <strong class="f-15">{[property.price_data.daily | currency]} </strong>avg/night</h6>
@@ -200,7 +200,7 @@
              <div class="blog transition h-100  bg-white d-flex flex-wrap">
                 <figure class="mb-0 blog-image overflow-h w-100">
                 <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?> 
-                 <img datasrc="<?php echo $url ?>" lazy-load/>
+                 <img class="blogthumb" src="<?php echo $url ?>"/>
                 </figure>
                  <div class="blogDetail px-4 pt-4  w-100">
                   <div class="d-flex flex-wrap align-items-center">
@@ -308,7 +308,12 @@
 
      jQuery(".lookup").click(function(){
          jQuery("#tg-search").addClass("open");
-     })     
+     })
+
+     jQuery(".propertythumb")
+    .on('load', function() { console.log("image loaded correctly"); })
+    .on('error', function() { console.log("error loading image"); });
+
  });
 </script>
 <?php endif; ?>
