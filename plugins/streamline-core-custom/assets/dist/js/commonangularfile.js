@@ -5565,6 +5565,7 @@
 	            $scope.modal_checkout = to.format("mm/dd/yyyy");
 	            $scope.updatePricePopupCalendar()
         	}else{
+        		jQuery("#modal_days").next("p").remove();
         		jQuery("#modal_days").after('<p style="color:red; font-size:12px;" class="validation">Nights are required.</p>')
         	}
           
