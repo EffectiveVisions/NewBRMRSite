@@ -1,10 +1,10 @@
 <!-- unit start -->
-<div class="inner-div listing custom_search_results list_view_container test w-100 mx-0 custome-shadow-1 border-0 py-md-3 px-0 pt-3 pb-4 ">
+<div class="inner-div listing custom_search_results list_view_container test w-100 mx-0 custome-shadow-1 border-0 py-md-3 px-0 pt-3 pb-4 d-none">
         <div class="row mx-0">
             <div class="col-lg-9 col-md-8 col-12">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}" class="w-100">
                         <figure class="container_list_img overflow-h">
-                            <img datasrc="{[property.default_image_path]}" lazy-load class=" w-100 object-fit h-100" 
+                            <img imageonloadsearchgrid ng-src="{[property.default_image_path]}" class=" w-100 object-fit h-100" 
                          alt="{[property.location_name]}"
                          err-src="<?php ResortPro()->assets_url('images/dummy-image.jpg'); ?>"
                            />
@@ -59,16 +59,16 @@
                                 </div> 
                                 <div class="secondary_info_unit w-100 d-flex  mt-1">
                                     <div class="mr-xl-4 mr-2 d-flex flex-wrap align-items-center">
-                                        <img datasrc="/wp-content/uploads/2019/04/bed.svg" lazy-load class="w-20" alt="bed-image">
+                                        <img ng-src="/wp-content/uploads/2019/04/bed.svg" class="w-20" alt="bed-image">
                                         <span ng-if="property.bedrooms_number == 0"><strong><?php _e('Studio','streamline-core') ?></strong></span>
                                         <span class="text-color font-Nunito font-weight-bold font-13 ml-sm-2 ml-1 text-text" ng-if="property.bedrooms_number != 0">{[property.bedrooms_number]} <?php _e('Bedrooms','streamline-core') ?></span>
                                      </div>
                                      <div class="mr-xl-4 mr-2 d-flex flex-wrap align-items-center">
-                                          <img datasrc="/wp-content/uploads/2019/04/slumber.svg" lazy-load class="w-20" alt="slumber-image">
+                                          <img ng-src="/wp-content/uploads/2019/04/slumber.svg" class="w-20" alt="slumber-image">
                                         <span class="text-color font-Nunito font-weight-bold font-13 ml-sm-2 ml-1 text-text">{[property.bathrooms_number]} <?php _e('Bathrooms','streamline-core') ?></span>
                                     </div>
                                     <div class="mr-xl-4  d-flex flex-wrap align-items-center">
-                                          <img datasrc="/wp-content/uploads/2019/04/shower.svg" lazy-load class="w-20" alt="shower-image">
+                                          <img ng-src="/wp-content/uploads/2019/04/shower.svg" class="w-20" alt="shower-image">
                                         <span class="text-color font-Nunito font-weight-bold font-13 ml-sm-2 ml-1 text-text"><?php _e('Sleeps', 'streamline-core') ?> {[property.max_occupants]} </span>
                                     </div>
                                 </div>

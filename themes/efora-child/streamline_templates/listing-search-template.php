@@ -1,8 +1,8 @@
   <div class="inner-div d-inline-block w-100">
-      <div class="property bg-white">
+      <div class="property bg-white d-none">
          <div class="propertyImage">
             <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}" class="position-absolute h-100 w-100">
-               <img datasrc="{[property.default_thumbnail_path]}" lazy-load class="w-100 h-100 object-fit" alt="{[property.location_name]}" err-src="<?php ResortPro::assets_url('images/dummy-image.jpg'); ?>">
+               <img ng-src="{[property.default_thumbnail_path]}" imageonloadsearch class="w-100 h-100 object-fit" alt="{[property.location_name]}" err-src="<?php ResortPro()->assets_url('images/dummy-image.jpg'); ?>">
             </a>
          </div>
          <div class="propertyDetail py-4 px-3">
@@ -28,18 +28,18 @@
                 </div>
                 <ul class="list-unstyled detailsaboutproperty mt-2 mb-4 d-flex flex-md-wrap flex-sm-nowrap flex-wrap">
                    <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2  d-flex flex-wrap align-items-center">
-                          <img datasrc="/wp-content/uploads/2019/04/bed.svg" lazy-load class="w-20" alt="bed-image">
+                          <img ng-src="/wp-content/uploads/2019/04/bed.svg"  class="w-20" alt="bed-image">
                         <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bedrooms_number]} <?php _e( 'Beds', 'streamline-core' ) ?>
                         </span>
                    </li>
                    <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2 d-flex flex-wrap align-items-center">
-                         <img datasrc="/wp-content/uploads/2019/04/slumber.svg" lazy-load class="w-20" alt="slumber-image">
+                         <img ng-src="/wp-content/uploads/2019/04/slumber.svg" class="w-20" alt="slumber-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">
                              <?php _e( 'Sleeps', 'streamline-core' ) ?> {[property.max_occupants]}
                          </span>
                    </li>
                    <li class="list-inline-item d-flex flex-wrap align-items-center">
-                           <img datasrc="/wp-content/uploads/2019/04/shower.svg" lazy-load class="w-20" alt="shower-image">
+                           <img ng-src="/wp-content/uploads/2019/04/shower.svg"  class="w-20" alt="shower-image">
                         <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">
                            {[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?>
                         </span>

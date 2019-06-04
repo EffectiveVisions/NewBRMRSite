@@ -174,9 +174,9 @@
                   </div>
                  <div ng-if="loadingShow != 'true'" class="col-md-12 text-center mt-md-5 my-4 pt-2 px-3">
                    <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && !propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11"
-                          ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?>
+                          ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold d-none"><?php _e('Load More', 'streamline-core') ?>
                    </button>
-                   <button  ng-click="showAll();" ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold ml-md-3 mt-3 mt-md-0 showall"><?php _e('Show All Results', 'streamline-core') ?></button>
+                   <button  ng-click="showAll();" ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold ml-md-3 mt-3 mt-md-0 showall d-none"><?php _e('Show All Results', 'streamline-core') ?></button>
                  </div>
              </div>
             <?php else: ?>
@@ -196,10 +196,10 @@
                     </div>
                     <div ng-if="loadingShow != 'true'" class="col-md-12 text-center mt-md-5 my-4 px-3">
                         <button   ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11"
-                          ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold"><?php _e('Load More', 'streamline-core') ?>
+                          ng-click="loadMore();" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold d-none"><?php _e('Load More', 'streamline-core') ?>
 
                         </button>
-                        <button  ng-click="showAll();" ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold ml-md-3 mt-3 mt-md-0 showall"><?php _e('Show All Results', 'streamline-core') ?>
+                        <button  ng-click="showAll();" ng-if="loadBtn && total_units > 0 && !noResults && currentView !='mapview' && propertiesObj.length>11 && filteredItems.length!=0 && filteredItems.length>11" type="button" class="btn btn-outline-primary text-uppercase font-13 load-more properties font-weight-light-bold ml-md-3 mt-3 mt-md-0 showall d-none"><?php _e('Show All Results', 'streamline-core') ?>
 
                         </button>
                     </div>                   

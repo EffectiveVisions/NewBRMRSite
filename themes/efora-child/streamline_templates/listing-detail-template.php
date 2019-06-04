@@ -24,7 +24,7 @@
                        <?php echo $image['description'] ?>
                      </div>
                  <?php endif; ?>
-                 <img datasrc="<?php echo $image['image_path'] ?>" lazy-load class="ms-thumb" alt="<?php echo $image['description'] ?>" />
+                 <img src="<?php echo $image['image_path'] ?>" class="ms-thumb" alt="<?php echo $image['description'] ?>" />
               </div>
            <?php endforeach; ?>
          <?php else : ?>
@@ -32,7 +32,7 @@
              <img src="<?php ResortPro()->assets_url('masterslider/blank.gif'); ?>"
               data-src="<?php echo $property['default_image_path']; ?>"
               alt="<?php echo $property['name']; ?>" />
-              <img lazy-load datasrc="<?php echo $property['default_thumbnail_path'] ?>" class="ms-thumb" 
+              <img src="<?php echo $property['default_thumbnail_path'] ?>" class="ms-thumb" 
               alt="<?php echo wp_strip_all_tags( $property['short_description'], true ); ?>"/>
           </div>
        <?php endif; ?>
@@ -59,15 +59,15 @@
               <?php endif; ?>
             <ul class="list-unstyled detailsaboutproperty detailsaboutproperty-filter mt-2 mb-4 w-100 d-flex justify-content-md-between justify-content-sm-center  px-3">
                <li class="list-inline-item d-inline-flex flex-wrap align-items-center">
-                  <img datasrc="/wp-content/uploads/2019/04/bed.svg" lazy-load class="w-20" alt="bed-image">
+                  <img src="/wp-content/uploads/2019/04/bed.svg" class="w-20" alt="bed-image">
                   <span class="text-color font-13 ml-2 font-Nunito font-weight-bold text"><?php echo $property['bedrooms_number']; ?> <?php _e( 'Beds', 'streamline-core' ) ?></span>
                 </li>
                <li class="list-inline-item d-inline-flex flex-wrap align-items-center">
-                  <img datasrc="/wp-content/uploads/2019/04/slumber.svg" lazy-load class="w-20" alt="slumber-image">
+                  <img src="/wp-content/uploads/2019/04/slumber.svg" class="w-20" alt="slumber-image">
                   <span class="text-color font-13 ml-2 font-Nunito font-weight-bold text"> <?php _e( 'Sleeps', 'streamline-core' ) ?> <?php echo $property['max_occupants']; ?></span>
                 </li>
               <li class="list-inline-item d-inline-flex flex-wrap align-items-center">
-                  <img datasrc="/wp-content/uploads/2019/04/shower.svg" lazy-load class="w-20" alt="shower-image">
+                  <img src="/wp-content/uploads/2019/04/shower.svg" class="w-20" alt="shower-image">
                   <span class="text-color font-13 ml-2 font-Nunito font-weight-bold text"><?php echo $property['bathrooms_number']; ?> <?php _e( 'Bathrooms', 'streamline-core' ) ?></span>
               </li>
             </ul>
@@ -348,7 +348,7 @@
                        </div>
                         <?php if (isset($options['unit_tab_location']) && $options['unit_tab_location'] == 1 && (!empty($property['location_latitude']) && !empty($property['location_longitude']))): ?>
                           <div class="col-12 mt-3 px-lg-3 px-0">
-                              <iframe lazy-load datasrc="https://maps.google.com/maps?q=<?php echo "{$property['location_latitude']},{$property['location_longitude']}" ?>&z=15&output=embed" src="" width="360" height="400" frameborder="0" style="border:0"></iframe>
+                              <iframe src="https://maps.google.com/maps?q=<?php echo "{$property['location_latitude']},{$property['location_longitude']}" ?>&z=15&output=embed" src="" width="360" height="400" frameborder="0" style="border:0"></iframe>
                               
                           </div>
                       <?php endif; ?>
@@ -467,7 +467,7 @@
                           <div class="col-sm-6 custom-padiing">
                                <figure class="mb-0 ament-gallery-img position-relative">
                                  <a href="javascript:void(0)" data-attr="<?php echo $image['id'] ?>"  class="ms-lightbox galleryopen" data-title="<?php echo $property['location_name'] ?>">
-                                  <img datasrc="<?php echo $image['thumbnail_path'] ?>" lazy-load class="w-100" />
+                                  <img src="<?php echo $image['thumbnail_path'] ?>" class="w-100" />
                                  </a>
                               </figure>
                           </div>
@@ -630,7 +630,7 @@
                   foreach ($property_gallery as $key=>$image):
                ?>
              <div data-attr="<?php echo $image['id'] ?>">
-                <img datasrc="<?php echo $image['image_path'] ?>" lazy-load class="carouselimage"/>
+                <img src="<?php echo $image['image_path'] ?>" class="carouselimage"/>
              </div>
            <?php
                  endforeach;

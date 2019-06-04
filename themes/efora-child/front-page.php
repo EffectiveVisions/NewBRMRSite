@@ -124,7 +124,7 @@
     </div>
 </section>-->
 
-<section class="featureProperty theme-bg-color py-md-5 py-4 ">
+<section class="featureProperty theme-bg-color py-md-5 py-4 d-none">
   <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
          <div data-aos="fade-down" data-aos-duration="500" class="col-12 py-sm-4 pt-4 pb-3 text-center">
@@ -134,12 +134,12 @@
       <div class="row" ng-init="search.amenities_filter='129951';sortBy='random';availabilitySearch();">
          <div data-aos="fade-up" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 12" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
           <div class="inner-div p-lg-1 d-inline-block w-100">
-              <div class="property bg-white">
+              <div class="property bg-white d-none">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img src="{[property.default_thumbnail_path]}" class="img-fluid propertythumb" alt="Featured Product" />
+                    <img ng-src="{[property.default_thumbnail_path]}" class="img-fluid propertythumb" alt="Featured Product" imageonload />
                  </div>
                  <div class="propertyDetail py-4 px-3">
-                    <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6  class="mb-0 text-blue f-600 pro-name-heading">{[property.name]}</h6></a>
+                    <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6 class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6></a>
                      <div class="star-rating" ng-if="property.rating_average > 0">
                         <div class="star-rating" star-rating rating-value="property.rating_average" data-max="5"></div>
                         <span class="rating_number">({[property.rating_count]})</span>
@@ -207,7 +207,7 @@
                     <i class="icon icon-small-calendar font-20 text-blue"></i>
                     <span class="ml-2 text-muted"><?php echo get_the_date('M j, Y'); ?></span>
                   </div>
-                    <h6 class="font-weight-bold text-blue my-3 blog-heading mb-2"><?php the_title(); ?></h6>
+                    <h6 class="font-weight-bold text-blue my-3 blog-heading text-truncate mb-2"><?php the_title(); ?></h6>
                     <p><?php echo wp_trim_words( get_the_content(), 18, '...' );?></p>
                  </div>
                  <div class="blogDetail px-4 pb-4 w-100 mt-auto">
@@ -274,7 +274,7 @@
    <div  class="container">
       <div   class="row bg-white  contact-form-detail map">
          <div class="col-md-6 pl-0 pr-0 shadow-right order-2 order-md-1">          
-             <iframe lazy-load datasrc="https://maps.google.com/maps?q=Blue%20Ridge%20Mountain%20Rentals&t=&z=15&ie=UTF8&iwloc=&output=embed" src="" width="360" height="600" frameborder="0" style="border:0"></iframe>
+             <iframe src="https://maps.google.com/maps?q=Blue%20Ridge%20Mountain%20Rentals&t=&z=15&ie=UTF8&iwloc=&output=embed" src="" width="360" height="600" frameborder="0" style="border:0"></iframe>
             <!--<map
                     center="34.866215,-84.326248"
                     zoom="8" scrollwheel="false" style="height:600px;">
@@ -298,22 +298,17 @@
     window.location.href = "/blog"
   }
   jQuery(document).ready(function(){
-    jQuery(".filter-count-btn").bind('touchend', function(e) {
-         e.preventDefault(); 
-         jQuery(this).click();
-    });
-     jQuery('input[name="pets"]').removeAttr("checked"); 
-     //jQuery(document).prop('title', 'The Best Boone NC Cabin Rentals and Blowing Rock NC Cabin Rentals');
-     document.getElementsByClassName("searchform")[0].reset();
+      jQuery(".filter-count-btn").bind('touchend', function(e) {
+           e.preventDefault(); 
+           jQuery(this).click();
+      });
+      jQuery('input[name="pets"]').removeAttr("checked"); 
+      document.getElementsByClassName("searchform")[0].reset();
 
-     jQuery(".lookup").click(function(){
-         jQuery("#tg-search").addClass("open");
-     })
-
-     jQuery(".propertythumb")
-    .on('load', function() { console.log("image loaded correctly"); })
-    .on('error', function() { console.log("error loading image"); });
-
+      jQuery(".lookup").click(function(){
+           jQuery("#tg-search").addClass("open");
+      })
+     
  });
 </script>
 <?php endif; ?>

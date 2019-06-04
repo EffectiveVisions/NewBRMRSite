@@ -137,7 +137,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
     </div>
 </section>
 
-<section class="featureProperty theme-bg-color py-md-5 py-4 ">
+<section class="featureProperty theme-bg-color py-md-5 py-4 d-none">
   <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
          <div data-aos="fade-down" data-aos-duration="3000" class="col-12 py-sm-4 pt-4 pb-3 text-center">
@@ -147,9 +147,9 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       <div class="row" ng-init="search.amenities_filter='129951';sortBy='random';availabilitySearch();">
          <div data-aos="fade-down" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 20" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
           <div class="inner-div p-lg-1 d-inline-block w-100">
-              <div class="property bg-white">
+              <div class="property bg-white d-none">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img src="{[property.default_thumbnail_path]}" class="img-fluid" alt="" />
+                    <img src="{[property.default_thumbnail_path]}" imageonload class="img-fluid" alt="" />
                  </div>
                  <div class="propertyDetail py-4 px-3">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6  class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6></a>

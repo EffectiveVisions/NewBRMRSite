@@ -101,7 +101,7 @@ $top_amenities = get_field('blowing_top_amenities',$page->ID); ?>
   <div class="py-xl-5 py-3">&nbsp;</div>
 </section>
 
-<section id="featured" class="featureProperty bg-gray py-md-5 py-4 ">
+<section id="featured" class="featureProperty bg-gray py-md-5 py-4 d-none">
   <div class="container pt-4" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
          <div data-aos="fade-down" data-aos-duration="500" class="col-12 py-sm-4 pt-4 pb-3 mb-3 text-center">
@@ -112,9 +112,9 @@ $top_amenities = get_field('blowing_top_amenities',$page->ID); ?>
       <div class="row" ng-init="search.resort_area_id=6458;sortBy='random';availabilitySearch(); limit = searchSettings.propertyPagination; loadBtn = true">
          <div data-aos="fade-down" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
           <div class="inner-div p-lg-1 d-inline-block w-100">
-              <div class="property bg-white">
+              <div class="property bg-white d-none">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img datasrc="{[property.default_thumbnail_path]}" lazy-load class="img-fluid" alt="" />
+                    <img imageonload ng-src="{[property.default_thumbnail_path]}" class="img-fluid" alt="" />
                  </div>
                  <div class="propertyDetail py-4 px-3">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}">

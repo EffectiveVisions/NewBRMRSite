@@ -1902,6 +1902,45 @@
 
     });
 
+    directives.directive('imageonload', function() {
+	    return {
+	        restrict: 'A',
+	        link: function(scope, element, attrs) {
+	            element.bind('load', function() {
+	                element.parent().parent().removeClass("d-none");
+
+	                jQuery(".featureProperty").removeClass("d-none");
+	            });
+	        }
+	    };
+    });
+
+    directives.directive('imageonloadsearch', function() {
+	    return {
+	        restrict: 'A',
+	        link: function(scope, element, attrs) {
+	            element.bind('load', function() {
+	                element.parent().parent().parent().removeClass("d-none");
+	                jQuery('.load-more').removeClass("d-none");
+	                jQuery('.showall').removeClass("d-none");
+	            });
+	        }
+	    };
+    });
+
+     directives.directive('imageonloadsearchgrid', function() {
+	    return {
+	        restrict: 'A',
+	        link: function(scope, element, attrs) {
+	            element.bind('load', function() {
+	                element.parent().parent().parent().parent().parent().removeClass("d-none");
+	                jQuery('.load-more').removeClass("d-none");
+	                jQuery('.showall').removeClass("d-none");
+	            });
+	        }
+	    };
+    });
+
     directives.directive("bedroomrange", function($rootScope) {
         return {
             restrict: "A",
