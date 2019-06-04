@@ -2624,8 +2624,8 @@ class ResortPro{
         $value_options = html_entity_decode(json_encode($options));
         $s = "<div class='c-guests-dropdown dropdown z-index location-area-c-search icon icon-location-mark
 ' ng-controller='PlusMinusControler as pCtrl'>";
-        $s .= "<input type='hidden' name='resortpro_sw_area' id='area_id' value=''/>";
-        $s .= "<input id='vacationarea' placeholder='Area' type='text' ng-model='area' uib-typeahead='area as area.name for area in areas | filter:area' typeahead-focus-first='true' typeahead-on-select='onLocationSelect(area.id)' class='form-control pl-4'>";
+        $s .= "<input type='hidden' name='resortpro_sw_ra_id' id='area_id' value=''/>";
+        $s .= "<input autocomplete='off' id='vacationarea' placeholder='Area' type='text' ng-model='area' uib-typeahead='area as area.name for area in areas | filter:area' typeahead-focus-first='true' typeahead-on-select='onLocationSelect(area.id)' class='form-control pl-4'>";
         $s .= "</div>";
         return $s;
     }

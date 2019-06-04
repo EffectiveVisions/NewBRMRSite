@@ -2196,7 +2196,14 @@
         $scope.isMinusDisabled = false;
         $scope.isPlusDisabled  = false;
         $scope.area = undefined;
-        $scope.areas = [{'name':'Appalachian Ski Mountain Cabin Rental','id':6289},{'name':'Banner Elk','id':13331},{'name':'Banner Elk Cabin Rental','id':8625},{'name':'Between Boone &amp; Blowing Rock Cabin Rental','id':8629},{'name':'Between Boone &amp; Valle Crucis (Willow Valley)','id':12142},{'name':'Blowing Rock','id':13332},{'name':'Blowing Rock Cabin Rental South Hwy 221','id':8627},{'name':'Blowing Rock Cabin Rental South Hwy 321','id':8628},{'name':'Blowing Rock in Town Vacation Rental','id':6291},{'name':'Blue Ridge Mountain Club Vacation Rental','id':8637},{'name':'Boone','id':13329},{'name':'Boone Cabin Rental Near Town','id':8626},{'name':'Boone Cabin Rental Shores Farm','id':8630},{'name':'Boone New River &amp; Jefferson Cabin Rental','id':7904},{'name':'Eagles Nest','id':13394},{'name':'Eagles Nest Resort near Banner Elk','id':13271},{'name':'Foscoe','id':13333},{'name':'Kerr Scott Lake Cabin Rental','id':8624},{'name':'Linville','id':13334},{'name':'Seven Devils Cabin Rental','id':6294},{'name':'Sugar Grove, Vilas &amp; Bethel Cabin Rental','id':6292},{'name':'Sugar Mountain','id':13330},{'name':'Todd','id':13326},{'name':'Valle Crucis','id':13325},{'name':'Valle Crucis Cabin Rental','id':6339},{'name':'Yonahlossee','id':13328},{'name':'Yonahlossee Vacation Rental','id':8632},{'name':'Zionville','id':13337}];
+        $scope.areas = [
+	        {'name':'Banner Elk','id':12944},
+	        {'name':'Blowing Rock','id':6458},
+	        {'name':'Boone','id':6459},
+	        {'name':'Eagle Nest','id':12875},
+	        {'name':'Seven Devils & Foscoe','id':6461},
+	        {'name':'Valle Crucis','id':6460}
+        ];
         $scope.locations = [
 
              {'name':'1 Abundant Life','id':174640},
