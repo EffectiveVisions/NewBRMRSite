@@ -5539,5 +5539,23 @@ body.modal-open,body.menuopened {
     }
 }
 
+.tg-404errorpage{
+    background:none;
+}
 
 
+#mainfooter{
+    clear:both;
+}
+
+.tg-404errorcontent h1{
+    color:#000;
+}
+
+.tg-404errorcontent h2{
+    color:#000;
+}
+
+.tg-404errorcontent .tg-description p{
+    color:#000;
+}
