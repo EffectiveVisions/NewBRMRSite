@@ -279,6 +279,25 @@
   var backurl = document.referrer;
   var index = 0;
   jQuery(document).ready(function(){
+    
+
+     if (window.history && window.history.pushState) {
+
+        jQuery(window).on('popstate', function() {
+          var hashLocation = location.hash;
+          var hashSplit = hashLocation.split("#!/");
+          var hashName = hashSplit[1];
+
+          if (hashName !== '') {
+            var hash = window.location.hash;
+            if (hash === '') {
+              window.location.href= backurl;
+            }
+          }
+        });
+
+      }
+
      var checkin = "<?php //echo date("d/m/Y") ?>";
      var checkout = "<?php //echo date('d/m/Y', mktime(0, 0, 0, date('m'), date('d') + 2, date('Y'))); ?>"
 
