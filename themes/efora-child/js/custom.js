@@ -21,6 +21,29 @@ setTimeout(function(){
 });
 
 jQuery(document).ready(function(){              
-jQuery('.custome-loader').fadeOut("slow");
-jQuery('.selectsearch').find('.c-select-list').removeClass('form-control');         
+  jQuery('.custome-loader').fadeOut("slow");
+  jQuery('.selectsearch').find('.c-select-list').removeClass('form-control'); 
+
+  jQuery("body").delegate(".datepicker-popup", "focusin", function(){
+  	 if(jQuery(this).attr("id")=="end_date_popup"){
+  	 	
+  	 	if(jQuery("#start_date_popup").val()!=""){
+  	 		var myDate = new Date(jQuery("#start_date_popup").val());
+            myDate.setDate(myDate.getDate() + 1);
+  	 		jQuery(this).datepicker({
+               minDate:myDate
+  	 	    });
+  	 	}else{
+  	 		myDate = new Date();
+  	 		myDate.setDate(myDate.getDate() + 1);
+  	 		jQuery(this).datepicker({
+               minDate:myDate
+  	 	    });
+  	 	}	
+  	 }else{
+  	 	jQuery(this).datepicker();
+  	 }  
+  	 jQuery("body").append(jQuery("#ui-datepicker-div"));
+   });
+
 });
