@@ -3866,6 +3866,37 @@ body.modal-open,body.menuopened {
     top: auto;
     bottom: -5px;
 }
+
+
+.mm-listview>li:not(.mm-divider):after{
+    border:none;
+}
+
+.tg-404errorpage{
+    background:none;
+}
+
+
+#mainfooter{
+    clear:both;
+}
+
+.tg-404errorcontent h1{
+    color:#000;
+}
+
+.tg-404errorcontent h2{
+    color:#000;
+}
+
+.tg-404errorcontent .tg-description p{
+    color:#000;
+}
+
+
+.mm-menu .mm-listview>li.mm-opened.mm-vertical>.mm-panel, .mm-menu .mm-listview>li.mm-opened.mm-vertical>a.mm-next, .mm-menu.mm-vertical .mm-listview>li.mm-opened>.mm-panel, .mm-menu.mm-vertical .mm-listview>li.mm-opened>a.mm-next{
+    background:none;
+}
 /*================================
       Responsive media start here
 ==================================*/
@@ -5539,23 +5570,3 @@ body.modal-open,body.menuopened {
     }
 }
 
-.tg-404errorpage{
-    background:none;
-}
-
-
-#mainfooter{
-    clear:both;
-}
-
-.tg-404errorcontent h1{
-    color:#000;
-}
-
-.tg-404errorcontent h2{
-    color:#000;
-}
-
-.tg-404errorcontent .tg-description p{
-    color:#000;
-}
