@@ -78,7 +78,7 @@ $google_plus_link  =  get_post_custom_values('google_plus_link',$page->ID);
     <div id="contactus" class="container-fluid">
         <div class="row bg-white  contact-form-detail map shadow-none">
             <div ng-controller="PropertyController as pCtrl" class="col-md-6 px-0  left-side-map">
-                 <iframe lazy-load datasrc="https://maps.google.com/maps?q=Blue%20Ridge%20Mountain%20Rentals&t=&z=15&ie=UTF8&iwloc=&output=embed" src="" width="360" height="600" frameborder="0" style="border:0"></iframe>
+                 <iframe src="https://maps.google.com/maps?q=Blue%20Ridge%20Mountain%20Rentals&t=&z=15&ie=UTF8&iwloc=&output=embed" src="" width="360" height="600" frameborder="0" style="border:0"></iframe>
              </div>
              <div class="col-md-6 px-0 contact-form-home">
                   <div class="comment contact-form-detail  contactForm bg-light shadow-none p-lg-5 p-3 pt-md-3 pt-5">
