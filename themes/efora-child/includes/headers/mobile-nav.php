@@ -2,37 +2,17 @@
 
 <nav id="menu">
     <ul>
-    	<a class="closemenu"><i class="icon icon-plus d-block"  aria-hidden="true" style="transform: rotate(45deg);"></i></a>
-    	<?php if($class[1] != "page-template-template-boone" && $class[1] != "page-template-template-blowing-rock" && $class[1] != "page-template-template-valle-crucis" && $class[1] != "page-template-template-townof-seven-devils" && $class[1] != "page-template-template-eagles-nest"&& $class[1] != "page-template-template-banner-elk"
-                       ) {  ?>
-        <?php if ( has_nav_menu( 'mobile-menu' ) ) :
-            wp_nav_menu( array( 'theme_location' => 'mobile-menu','container' => '','depth' => 3,'items_wrap' => '%3$s', 'walker' => new efora_Mobile_Nav_Menu()) );
-        else:
-            echo '<li><a>' . esc_html__( 'Define your mobile menu.', 'efora' ) . '</a></li>';
-        endif; ?>
-       <?php } else {   ?>
-         
-         <?php if ( has_nav_menu( 'mobile-menu' ) ) :
-            wp_nav_menu( array( 'theme_location' => 'community-menu','container' => '','depth' => 3,'items_wrap' => '%3$s', 'walker' => new efora_Mobile_Nav_Menu()) );
-
-            echo '<li><a href="https://new.blueridgerentals.com/search-results/">' . esc_html__( 'Find your gateway', 'efora' ) . '</a></li>';
-        else:
-            echo '<li><a>' . esc_html__( 'Define your mobile menu.', 'efora' ) . '</a></li>';
-        endif; ?>
-
-       <?php } ?>
-
+      
        <!-- Search start -->
 
        <div class="mobile-nav-calender z-index col-12 mt-3">
-         <h6><small class="text-uppercase font-weight-bold">Search Property</small></h6>
-
+        
             <div id="resortpro_search_widget-15" class="widget_resortpro_search_widget">
                <div class="search_widget">
                   <form ng-submit="updateSearch($event)" method="post" class="form searchform ng-pristine ng-valid" action="http://blueridge.com/search-results/">
                      <input type="hidden" name="resortpro_search_nonce" value="cf316fbc2c">
                      <div class="row" id="search-widget-main-rowresortpro_search_widget-15" style="">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-3" id="resortpro-search-checkin-block-idclass-homeless">
+                        <div class="col-12" id="resortpro-search-checkin-block-idclass-homeless">
                            <div class="form-group has-feedback resortpro-search-checkin-block" id="resortpro-search-checkin-block-not">
                             <label for="checkin">Check in</label>
                             
@@ -42,7 +22,8 @@
                             </span>
                           </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-3" id="resortpro-search-checkout-block-idclass-homeless">
+
+                        <div class="col-12" id="resortpro-search-checkout-block-idclass-homeless">
                            <div class="form-group has-feedback resortpro-search-checkout-block" id="resortpro-search-checkout-block-not">
                             <label for="checkout">Check Out</label>
 
@@ -51,7 +32,8 @@
                             <span class="glyphicon glyphicon-calendar form-control-feedback end-date-widget"></span>
                           </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-2" id="resortpro-search-guests-dropdown-block-idclass">
+
+                        <div class="col-12" id="resortpro-search-guests-dropdown-block-idclass">
                            <div class="form-group  resortpro-search-guests-dropdown-block" id="resortpro-search-guests-dropdown-block">
                               <label for="guests_dropdown">Guest Dropdown</label>
                               <div class="c-guests-dropdown dropdown ng-scope" ng-controller="PlusMinusControler as pCtrl">
@@ -118,10 +100,18 @@
                                  </div>
                               </div>
                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-xs-3 col-12" id="resortpro-search-submit-button-block-idclass-homeless">
+
+
+
+
+                        
+                        <div class="col-12" id="resortpro-search-submit-button-block-idclass-homeless">
                            <div class="form-group  resortpro-search-submit-button-block mb-0" id="resortpro-search-submit-button-block-not"><button class="btn btn-warning  w-100 themeBtn text-uppercase font-weight-bold font-Nunito" type="submit">Search</button></div>
                         </div>
+
+                        </div>
+
+
                      </div>
                      <input class="sortfilter ng-pristine ng-untouched ng-valid ng-empty" ng-model="sortbyvalue" type="hidden" name="resortpro_sw_filter" value="">
                   </form>
@@ -129,5 +119,28 @@
             </div>
         </div>
         <!-- Search end -->
+
+
+    	<a class="closemenu"><i class="icon icon-plus d-block"  aria-hidden="true" style="transform: rotate(45deg);"></i></a>
+    	<?php if($class[1] != "page-template-template-boone" && $class[1] != "page-template-template-blowing-rock" && $class[1] != "page-template-template-valle-crucis" && $class[1] != "page-template-template-townof-seven-devils" && $class[1] != "page-template-template-eagles-nest"&& $class[1] != "page-template-template-banner-elk"
+                       ) {  ?>
+        <?php if ( has_nav_menu( 'mobile-menu' ) ) :
+            wp_nav_menu( array( 'theme_location' => 'mobile-menu','container' => '','depth' => 3,'items_wrap' => '%3$s', 'walker' => new efora_Mobile_Nav_Menu()) );
+        else:
+            echo '<li><a>' . esc_html__( 'Define your mobile menu.', 'efora' ) . '</a></li>';
+        endif; ?>
+       <?php } else {   ?>
+         
+         <?php if ( has_nav_menu( 'mobile-menu' ) ) :
+            wp_nav_menu( array( 'theme_location' => 'community-menu','container' => '','depth' => 3,'items_wrap' => '%3$s', 'walker' => new efora_Mobile_Nav_Menu()) );
+
+            echo '<li><a href="https://new.blueridgerentals.com/search-results/">' . esc_html__( 'Find your gateway', 'efora' ) . '</a></li>';
+        else:
+            echo '<li><a>' . esc_html__( 'Define your mobile menu.', 'efora' ) . '</a></li>';
+        endif; ?>
+
+       <?php } ?>
+
+      
     </ul>
 </nav>
