@@ -1915,6 +1915,19 @@
 	    };
     });
 
+     directives.directive('imageonloadgallery', function() {
+	    return {
+	        restrict: 'A',
+	        link: function(scope, element, attrs) {
+	            element.bind('load', function() {
+	                element.parent().removeClass("d-none");
+
+	                jQuery(".gallerySection").removeClass("d-none");
+	            });
+	        }
+	    };
+    });
+
     directives.directive('imageonloadsearch', function() {
 	    return {
 	        restrict: 'A',
@@ -2384,6 +2397,10 @@
              {'name':'Lookout Lodge','id':354511},
              {'name':'Love Hollow','id':174846}
         ]
+
+        $scope.startsWith = function(area, viewValue) {
+        	return area.substr(0, viewValue.length).toLowerCase() == viewValue.toLowerCase();
+        }
 
         $scope.pluspets = function(max, type) {
             if (type == "search.pets") {
