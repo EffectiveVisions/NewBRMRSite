@@ -46,4 +46,10 @@ jQuery(document).ready(function(){
   	 jQuery("body").append(jQuery("#ui-datepicker-div"));
    });
 
+  jQuery(".mainmenu").css({"background":"#005a9a","margin-top":"70px"})
+  jQuery(".mainmenu").css({"color":"#fff"})
+  jQuery(".community").css({"padding-left":"20px"});
+  jQuery(".community").css({"background":"rgb(237, 241, 243)"});
+  jQuery(".mainmenu").children("a").css({"color":"#fff","font-weight":"bold"});
+  //jQuery(".closemenu").next().find("a").css({"color":"#fff"});
 });
