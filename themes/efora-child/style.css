@@ -3901,6 +3901,13 @@ body.modal-open,body.menuopened {
 .discount-gallery .blog-image img{object-fit: cover; width: 100%; height: 100%; display: block;}
 
 
+#resortpro-search-amenities-block{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+
 /*================================
       Responsive media start here
 ==================================*/
