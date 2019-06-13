@@ -10,7 +10,7 @@
     </form>-->
     <div class="search">
         <div ng-controller='PlusMinusControler as pCtrl' class="input-group">
-          <div class="input-group-text p-0 border-0 rounded-0">
+          <div class="input-group-text p-0 border-0 rounded-0 d-none">
             <span class="input-group-text border-0 cursor-pointer close-search-btn" style=" background-color: #efefef;" id="basic-addon1"><i class="icon icon-search font-20"></i></span>
           <input id="searchbox" type="text" class="form-control pr-3 font-Nunito font-weight-normal" ng-model='area' 
           uib-typeahead='area as area.name for area in locations | filter:$viewValue:stateComparator' 
@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class="selectsearch d-none">
+    <div class="selectsearch">
      <?php if (is_active_sidebar('headersearch')): ?>
          <?php dynamic_sidebar('headersearch'); ?>
     <?php endif; ?>

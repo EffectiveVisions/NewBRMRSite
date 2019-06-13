@@ -3509,14 +3509,17 @@ border-radius: 10px;
 
 }
 .selectsearch .resortpro-search-bedroom-type-block .chosen-single {
-    background: #fff;
-    padding: 10px 15px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 15px;
+  background: #efefef;
+    padding: 10px 45px;
+    font-family: 'Nunito',sans-serif;
+    font-size: 13px;
     box-shadow: none;
-    border: 1px solid #ddd;
+    border: none;
     border-radius: 0;
     position: relative;
+    height: 40px;
+    background-color: #efefef;
+    color: #848383;
 }
 .chosen-container.chosen-with-drop .chosen-drop{
     padding: 0px 12px 0;
@@ -3601,7 +3604,7 @@ border-radius: 10px;
 }
 
 #tg-search.top-bar-serach .selectsearch {
-    padding: 35px 40px 10px 0px;
+    padding:15px;
 }
 .top-bar-serach.tg-search .form-control{
 	height: 42px;
@@ -3618,7 +3621,7 @@ border-radius: 10px;
     cursor: pointer;
 }
 .top-bar-serach.tg-search .search {
-    position: relative;
+    position: absolute;
     padding: 15px;
     min-width: 680px;
     display: block;
@@ -3906,8 +3909,62 @@ body.modal-open,body.menuopened {
     justify-content: space-around;
     padding-top: 20px;
 }
+.selectsearch{
+ min-width: 680px;
+}
+/*--------------------------search http://blueridge.com/------------------*/
+.tg-search .form-group{
+        margin-bottom: 0;
+}
+.chosen-container:after{
+         content: "\e92a";
+    position: absolute;
+    font-family: 'icon-blueridge';
+    font-size: 20px;
+    top: 4px;
+    left: 12px;
+}
+body .chosen-container-active.chosen-with-drop .chosen-single {
+    border: none;
+    background-image: none;
+    background-image: none ;
+    -webkit-box-shadow: none ;
+    box-shadow: none ;
+}
+body .chosen-container .chosen-drop{
+        background: #1c3d6e;
+} 
+body .chosen-container .chosen-results li.active-result{
+        color: #fff ;
+}
+body .chosen-container-single .chosen-search input[type=text]{
+    background: #fff
+}
+.selectsearch .chosen-results::-webkit-scrollbar {
+  width: 5px;
+}
 
+/* Track */
+.selectsearch .chosen-results::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.selectsearch .chosen-results::-webkit-scrollbar-thumb {
+  background: #fff; 
+  border-radius: 10px;
+}
 
+/* Handle on hover */
+.selectsearch .chosen-results::-webkit-scrollbar-thumb:hover {
+  background: #fff; 
+}
+.selectsearch .c-select-list{
+     background: #efefef;
+ }
+    .c-select-list select{
+padding: 10px 15px;
+    }
 /*================================
       Responsive media start here
 ==================================*/
@@ -3925,7 +3982,9 @@ body.modal-open,body.menuopened {
   }
 }
 @media only screen and (max-width: 767px) {
-  
+    #tg-search.top-bar-serach .selectsearch{
+         min-width: 520px;
+    }
   .load-more{
       min-width: 100%;
   }
@@ -5065,6 +5124,12 @@ body.modal-open,body.menuopened {
     }
 }
 @media (max-width: 567px){
+
+    /*---------------search bar-----------*/
+   #tg-search.top-bar-serach .selectsearch{
+         min-width: 310px;
+
+    }
     .home-banner-section .inner-content-banner {
         top: 45px;
     }
