@@ -3897,6 +3897,10 @@ body.modal-open,body.menuopened {
 .mm-menu .mm-listview>li.mm-opened.mm-vertical>.mm-panel, .mm-menu .mm-listview>li.mm-opened.mm-vertical>a.mm-next, .mm-menu.mm-vertical .mm-listview>li.mm-opened>.mm-panel, .mm-menu.mm-vertical .mm-listview>li.mm-opened>a.mm-next{
     background:none;
 }
+
+.discount-gallery .blog-image img{object-fit: cover; width: 100%; height: 100%; display: block;}
+
+
 /*================================
       Responsive media start here
 ==================================*/
@@ -4001,12 +4005,17 @@ body.modal-open,body.menuopened {
     .home-contact-sec.contactus{
        height: 652px; 
     }
+    .height-100{height: 100%;}
 
 }
 @media only screen and (max-width: 767px) {
   .home-contact-form .contact-form-detail.map iframe{
     height: 365px
   }
+
+  .pt-space{padding-top: 15px;}
+
+
 }
  /*-----------footer------------*/
 @media only screen and (max-width: 991px) {

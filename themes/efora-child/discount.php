@@ -34,13 +34,18 @@
 
 
    <section class="heading rental-policy-heading">
-	   <div class="img d-flex align-items-center justify-content-center banner-title-bg" style="background-image:url('<?php echo $img; ?>'); ">
+	   <div class="img d-flex flex-wrap align-items-center justify-content-center py-5" style="background-image:url('<?php echo $img; ?>'); ">
+	   	
+
+	   	<div class="py-md-5 my-md-5">
 	   	<?php if($discountheader[0] != '') { ?>
-	      <h1 class="text-white font-weight-semi-bold mb-0"><?php echo $discountheader[0];?></h1>
+	      <h1 class="text-white font-weight-semi-bold mb-0 w-100 text-center"><?php echo $discountheader[0];?></h1>
 	   	<?php } ?>
 	    <?php if($discountsubheader[0] != '') { ?>
-	      <p class="text-white font-weight-semi-bold"><?php echo $discountsubheader[0] ?></p>
+	      <p class="text-white w-100 text-center h4 font-weight-normal"><?php echo $discountsubheader[0] ?></p>
 	   	<?php } ?>
+	   </div>
+	   
 	   </div>
    </section>
 
@@ -86,89 +91,107 @@
      </div>
    </section>
 
-   <section class="blogSection gallerySection py-5 d-none" ng-controller="PropertyController as pCtrl">
+   <section class="blogSection gallerySection py-5 d-none discount-gallery" ng-controller="PropertyController as pCtrl">
         <div class="row">
 	         <div data-aos="fade-down" data-aos-duration="500" class="col-12 py-sm-4 pt-4 pb-3 text-center">
 	            <h2 style="color:#0061a3;" class="mb-0 f-property-heading"> Our Galleries</h2>
 	         </div>
 	    </div>
 
-       <div class="row pt-1">
-		   <div class="col-md-6">
-		      <div class="row">
-		         <div class="col-md-6">
-		            <div class="col-12 custome-padding-gallery pb-1">
-		               <figure class="mb-0 blog-image position-relative overflow-h w-100 d-none">
+       <div class="row pt-1 m-0">
+		   
+
+
+		   <div class="col-md-3">
+		      
+		         
+		       
+		            <div class="col-12 custome-padding-gallery h-50 px-0">
+		               <figure class="blog-image position-relative overflow-h w-100 d-none h-100 m-0 pb-2">
 		                  <img imageonloadgallery class="object-fit h-100 w-100" ng-src="{[propertiesObj[0].default_thumbnail_path]}" alt=""> 
 		                  <a id="0" class="galleryopen" href="javascript:void(0)">
 		                     <div class="hoverlay-blog animated zoomIn align-items-center text-center w-100 h-100 justify-content-center">
 		                        <div class="inner-text text-white z-index"><i class="icon icon-plus-circle"></i><span class="w-100 d-inline-block text-uppercase">{[propertiesObj[0].name]}</span></div>
 		                     </div>
-		                     &nbsp; 
+		                     
 		                  </a>
 		               </figure>
 		            </div>
-		            <div class="col-12 custome-padding-gallery pb-1">
-		               <figure class="mb-0 blog-image position-relative overflow-h w-100 d-none">
+		            <div class="col-12 custome-padding-gallery h-50 px-0">
+		               <figure class="blog-image position-relative overflow-h w-100 d-none h-100 m-0 pt-2" >
 		                  <img imageonloadgallery class="object-fit h-100 w-100"  ng-src="{[propertiesObj[1].default_thumbnail_path]}" alt=""> 
 		                  <a id="1" class="galleryopen" href="javascript:void(0)">
 		                     <div class="hoverlay-blog animated zoomIn align-items-center text-center w-100 h-100 justify-content-center">
 		                        <div class="inner-text text-white z-index"><i class="icon icon-plus-circle"></i><span class="w-100 d-inline-block text-uppercase">{[propertiesObj[1].name]}</span></div>
 		                     </div>
-		                     &nbsp; 
+		                     
 		                  </a>
 		               </figure>
 		            </div>
-		         </div>
-		         <div class="col-md-6">
-		            <div class="col-12 custome-padding-gallery pb-1">
-		               <figure class="mb-0 blog-image position-relative overflow-h w-100 d-none">
+		         
+
+		         
+
+		      
+		   
+		   </div>
+
+
+
+		   <div class="col-md-5 px-md-2 pt-space">
+		            <div class="col-12 custome-padding-gallery p-0 h-100 ">
+		               <figure class="blog-image position-relative overflow-h w-100 d-none h-100 m-0">
 		                  <img imageonloadgallery class="object-fit h-100 w-100" ng-src="{[propertiesObj[2].default_thumbnail_path]}" alt=""> 
 		                  <a id="2" class="galleryopen" href="javascript:void(0)">
 		                     <div class="hoverlay-blog animated zoomIn align-items-center text-center w-100 h-100 justify-content-center">
 		                        <div class="inner-text text-white z-index"><i class="icon icon-plus-circle"></i><span class="w-100 d-inline-block text-uppercase">{[propertiesObj[2].name]}</span></div>
 		                     </div>
-		                     &nbsp; 
+		                    
 		                  </a>
 		               </figure>
 		            </div>
-		         </div>
-		      </div>
-		   </div>
-		   <div class="col-md-6">
-		      <div class="row">
-		         <div class="col-12 custome-padding-gallery pb-1">
-		            <figure class="mb-0 blog-image position-relative overflow-h w-100 d-none">
+		    </div>
+
+
+		   
+
+		   
+
+
+		   <div class="col-md-4 px-md-2 pt-space">
+		      <div class="row height-100">
+		         <div class="col-12 custome-padding-gallery pb-0 h-50 mb-md-0 mb-3 ">
+		            <figure class="blog-image position-relative overflow-h w-100 d-none h-100 m-0 pb-md-2 ">
 		               <img imageonloadgallery class="object-fit h-100 w-100" ng-src="{[propertiesObj[3].default_thumbnail_path]}" alt=""> 
 		               <a id="3" class="galleryopen" href="javascript:void(0)">
 		                  <div class="hoverlay-blog animated zoomIn align-items-center text-center w-100 h-100 justify-content-center">
 		                     <div class="inner-text text-white z-index"><i class="icon icon-plus-circle"></i><span class="w-100 d-inline-block text-uppercase">{[propertiesObj[3].name]}</span></div>
 		                  </div>
-		                  &nbsp; 
+		                  
 		               </a>
 		            </figure>
 		         </div>
-		         <div class="col-12 custome-padding-gallery pb-1">
-		            <div class="row" style="margin-right: 0; margin-left: 0;">
-		               <div class="col-6 custome-padding-gallery pb-1">
-		                  <figure class="mb-0 blog-image position-relative overflow-h w-100 d-none">
+		         <div class="col-12 custome-padding-gallery p-0 h-50 ">
+		            <div class="row h-100" style="margin-right: 0; margin-left: 0;" >
+		               <div class="col-sm-6 custome-padding-gallery h-100 pr-md-2 m-0 pt-md-2 mb-md-0 mb-3 ">
+		                  <figure class="blog-image position-relative overflow-h w-100 d-none m-0 h-100">
 		                     <img imageonloadgallery  class="object-fit h-100 w-100" ng-src="{[propertiesObj[4].default_thumbnail_path]}" alt=""> 
 		                     <a id="4" class="galleryopen" href="javascript:void(0)">
 		                        <div class="hoverlay-blog animated zoomIn align-items-center text-center w-100 h-100 justify-content-center">
 		                           <div class="inner-text text-white z-index"><i class="icon icon-plus-circle"></i><span class="w-100 d-inline-block text-uppercase">{[propertiesObj[4].name]}</span></div>
 		                        </div>
-		                        &nbsp; 
+		                       
 		                     </a>
 		                  </figure>
 		               </div>
-		               <div class="col-6 custome-padding-gallery pb-1">
-		                  <figure class="mb-0 blog-image position-relative overflow-h w-100 d-none">
+		               <div class="col-sm-6 custome-padding-gallery h-100 pl-md-2 mb-md-0 mb-3">
+		                  <figure class="blog-image position-relative overflow-h w-100 d-none m-0 pt-md-2 h-100">
 		                     <img imageonloadgallery class="object-fit h-100 w-100" ng-src="{[propertiesObj[5].default_thumbnail_path]}" alt=""> 
 		                     <a id="5" class="galleryopen" href="javascript:void(0)">
 		                        <div class="hoverlay-blog animated zoomIn align-items-center text-center w-100 h-100 justify-content-center">
 		                           <div class="inner-text text-white z-index"><i class="icon icon-plus-circle"></i><span class="w-100 d-inline-block text-uppercase">{[propertiesObj[5].name]}</span></div>
 		                        </div>
-		                        &nbsp; 
+		                       
 		                     </a>
 		                  </figure>
 		               </div>
@@ -176,6 +199,8 @@
 		         </div>
 		      </div>
 		   </div>
+
+
 		</div>
    </section>
 
@@ -230,11 +255,11 @@
    <div class="container">
       <div class="row">
          <div class="col-md-12 py-2">
-            <?php if($discountheader[0]!=""){ ?>
-               <p class="f-500 mt-sm-4 line-height-normal mb-0 text-black"><?php echo $discountheader[0] ?></p>
+            <?php if($your_dream_home_text[0]!=""){ ?>
+               <p class="mt-sm-4 mb-0 text-black"><?php echo $your_dream_home_text[0] ?></p>
             <?php } ?>
-            <?php if($discountsubheader[0]!=""){ ?>
-               <h1 class="f-500 mt-sm-4 line-height-normal mb-0 text-black"><?php echo $discountsubheader[0] ?></h1>
+            <?php if($your_dream_home_subtext[0]!=""){ ?>
+               <h2 class="f-500 mt-sm-4 line-height-normal mb-0 text-black"><?php echo $your_dream_home_subtext[0] ?></h2>
             <?php } ?>
          </div>
           <div  class="col-md-12 text-center mt-5 mb-4">
@@ -276,8 +301,7 @@
          <div class="col-md-4  col-12 pb-md-0 pb-5 mb-3 mb-md-0">
            <a href="tel:<?php echo $phoneno[0]; ?>" class="text-white">
             <i class="icon icon-telephone text-white mb-3 d-block"></i>
-            <?php 
-                        if(!empty($phoneno[0])){ ?>
+            <?php if(!empty($phoneno[0])){ ?>
                        
             <h6 class="font-weight-normal font-Nunito text-white"><?php echo $phoneno[0]; ?></h6>
             
@@ -289,30 +313,20 @@
    </div>
 </section>
 
-
-
 <section ng-controller="PropertyController as pCtrl" id="contactus"   class="contactForm mt-md-0 mt-4 home-contact-form">
    <div  class="container">
       <div   class="row bg-white  contact-form-detail map">
-         <div class="col-md-6 pl-0 pr-0 shadow-right order-2 order-md-1">          
+         <div class="col-md-6 pl-0 pr-0 shadow-right order-2 order-md-1">        
              <iframe src="https://maps.google.com/maps?q=Blue%20Ridge%20Mountain%20Rentals&t=&z=15&ie=UTF8&iwloc=&output=embed" src="" width="360" height="600" frameborder="0" style="border:0"></iframe>
-            <!--<map
-                    center="34.866215,-84.326248"
-                    zoom="8" scrollwheel="false" style="height:600px;">
-                    <marker
-                      position="34.866215,-84.326248"
-                      title="Blueridge mountain rentals"></marker>
-              </map>--> 
-          
+            
          </div>
          <div  class="col-md-6 p-lg-5 p-4 contact-form-home order-1 order-md-2">
-         
             <?php if ( is_active_sidebar( 'footer-s4' ) ) { ?>
                  <?php dynamic_sidebar( 'footer-s4' ); ?>
             <?php } ?>
          </div>
-     </div>
- </div>
+      </div>
+    </div>
 </section>
 
 
@@ -323,13 +337,11 @@
         <button type="button" id="slick-popup-close" class="close close-search text-white " data-dismiss="modal"><i class="icon icon-plus close-popup d-block" style="transform: rotate(45deg);"></i></button>
       </div>
       <div class="modal-body px-0 pb-0">
-          <div class="slider4">
-               
+          <div class="slider4"> 
              <div ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter">
                 <h5 class="gallery-heading text-white text-uppercase font-weight-semi-bold">{[property.name]}</h5>
                 <img err-src="<?php ResortPro::assets_url('images/dummy-image.jpg'); ?>" ng-src="{[property.default_thumbnail_path]}"  class="carouselimage setminreq" />
              </div>
-           
           </div>
           <div class="image-slick-loader row mx-0 align-items-center justify-content-center" style="display: none;  position: absolute;top: 30vh; left: 25vw;">
             <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
@@ -343,20 +355,15 @@
 
  <script>
    jQuery(document).ready(function(){
-
-
    	  setTimeout(function(){
           jQuery('.slider4').slick({
-         dots: false,
-         speed: 500,
-         slidesToShow:1,
-         prevArrow: "<a class='slider-left-arrow' href='#'><span class='icon icon-angle-left'></span></a>",
-         nextArrow: "<a class='slider-right-arrow' href='#'><span class='icon icon-angle-right'></span></a>",
-       });
-   	  },8000)
-
-      
-
+	         dots: false,
+	         speed: 500,
+	         slidesToShow:1,
+	         prevArrow: "<a class='slider-left-arrow' href='#'><span class='icon icon-angle-left'></span></a>",
+	         nextArrow: "<a class='slider-right-arrow' href='#'><span class='icon icon-angle-right'></span></a>",
+           });
+   	    },8000)
 
         var first = true;
         jQuery('.galleryopen').click(function(){
@@ -377,7 +384,6 @@
               first = false
           } 
       })
-
    });
 
  </script>
