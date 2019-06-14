@@ -54,9 +54,12 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                               <li class="list-inline-item mr-sm-4 mr-0 d-block d-sm-inline-block vacation-listing-item">
                                <a href="/" class="f-600 tabby text-uppercase font-13 text-white position-relative"> Vacation homes by date</a> 
                                </li>
-                                 <li class="list-inline-item active-item d-block d-sm-inline-block vacation-listing-item">
+                                 <li class="list-inline-item active-item d-block d-sm-inline-block vacation-listing-item mr-sm-4">
                                   <a href="/vacation-homes-by-area" class="f-600 tabby text-uppercase font-13 text-white position-relative">Vacation homes by Area</a>
-                               </li> 
+                               </li>
+                                 <li class="list-inline-item d-block d-sm-inline-block vacation-listing-item">
+                                  <a href="javascript:void(0)" class="f-600 tabby text-uppercase font-13 text-white position-relative lookup">Lookup Homes by Name</a>
+                               </li>  
                            </ul>
                         </div>
                         <div class="col-12 mt-2  propertyBanner py-3 rounded searchbyarea-banner">
@@ -290,6 +293,9 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
 <!-- here javscript code text -->
 <script>
    jQuery(document).ready(function(){
+    jQuery(".lookup").click(function(){
+           jQuery("#tg-search").addClass("open");
+    })
     jQuery(".search_widget .c-guests-dropdown__body").css("z-index","400");
     jQuery('input[name="pets"]').removeAttr("checked"); 
     document.getElementsByClassName("searchform")[0].reset();  
@@ -422,6 +428,17 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
               first = false
           }
       })
+
+      jQuery(".amenity_item").each(function(){
+          if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500"){
+
+            jQuery(this).children("input").css({"vertical-align":"middle","outline":"none"});
+            jQuery(this).children("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"14px"});
+
+          }else{
+            jQuery(this).remove();
+          }
+      });
 
       // jQuery('.slider2').on('afterChange', function(event, slick, currentSlide, nextSlide){
       //     console.log(currentSlide);

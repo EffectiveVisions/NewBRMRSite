@@ -3909,6 +3909,15 @@ body.modal-open,body.menuopened {
     justify-content: space-around;
     padding-top: 20px;
 }
+
+
+#resortpro-search-amenities-block-not{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+
 .selectsearch{
  min-width: 680px;
 }
