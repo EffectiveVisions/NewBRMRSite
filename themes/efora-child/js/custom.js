@@ -26,22 +26,30 @@ jQuery(document).ready(function(){
 
   jQuery("body").delegate(".datepicker-popup", "focusin", function(){
   	 if(jQuery(this).attr("id")=="end_date_popup"){
-  	 	
   	 	if(jQuery("#start_date_popup").val()!=""){
   	 		var myDate = new Date(jQuery("#start_date_popup").val());
             myDate.setDate(myDate.getDate() + 1);
   	 		jQuery(this).datepicker({
                minDate:myDate
   	 	    });
+        jQuery("#end_date_popup").val("");
+        jQuery( this).datepicker("refresh");
   	 	}else{
+        jQuery("#end_date_popup").val("");
   	 		myDate = new Date();
   	 		myDate.setDate(myDate.getDate() + 1);
   	 		jQuery(this).datepicker({
                minDate:myDate
   	 	    });
+        jQuery( this).datepicker("refresh");
   	 	}	
   	 }else{
-  	 	jQuery(this).datepicker();
+       myDate = new Date();
+       myDate.setDate(myDate.getDate() + 1);
+  	 	jQuery(this).datepicker({
+         minDate:myDate
+      });
+      jQuery(this).datepicker("refresh");
   	 }  
   	 jQuery("body").append(jQuery("#ui-datepicker-div"));
    });
