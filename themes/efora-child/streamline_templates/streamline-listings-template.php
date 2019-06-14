@@ -355,13 +355,18 @@
     var beds = "<?php echo $_REQUEST['beds'] ?>"
     var ammenties = "<?php echo $_REQUEST['amenities'] ?>"
     var allamenties = ammenties.split(",");
-    if(allamenties.length>0){
-      jQuery(".custom-checkbox").each(function(){
-         if(jQuery.inArray(jQuery(this).children("input").val(), allamenties) !== -1){
-             jQuery(this).children().prop('checked', true);
-         }   
-      });
-    }
+    /*if(allamenties.length>0){
+      jQuery('.ammenties-item').html("");
+      jQuery('.ammenties-item').parent().parent().removeClass("d-none");
+      for(let i = 0; i<allamenties.length; i++){
+          jQuery("input[value="+allamenties[i]+"]").prop('checked', true)
+          var html = '<label class="font-13 font-weight-light-bold d-block" for="customCheck1">'+jQuery("input[value="+allamenties[i]+"]").next('label').html()+'</label>'
+             jQuery('.ammenties-item').append(html)
+      } 
+    }else{
+      jQuery('.ammenties-item').children().remove();
+      jQuery('.ammenties-item').parent().parent().addClass("d-none");
+    }*/
     beds = parseInt(beds);
     adultguest = parseInt(adultguest);
     childguest = parseInt(childguest);
@@ -385,7 +390,7 @@
       jQuery(".count-single-child").html(childguest);
     }
 
-    if(adultguest!=0 || childguest!=0 || sd || ed || pets || resort_area_id || beds){
+    if(adultguest!=0 || childguest!=0 || sd || ed || pets || resort_area_id || beds || allamenties.length>0){
        jQuery("#updatesearch").click();
        //jQuery('.update_search').click();
     }
