@@ -33,7 +33,7 @@
          <div class="row">
             <div class="col-md-12">
               <?php if($banner_heading[0]!=""){ ?>
-               <h1 class="text-white text-center f-600 mb-sm-0  mb-3 banner-heading"><?php echo $banner_heading[0]; ?></h1> 
+               <h1 class="text-white text-center f-600 mb-sm-0  mb-1 banner-heading"><?php echo $banner_heading[0]; ?></h1> 
               <?php } ?>
             </div>
          </div>
@@ -46,7 +46,7 @@
                             <i class="icon icon-information-circle text-white font-24"></i>
                             <div class="custom-tooltip theme-bg-color text-white font-13 position-absolute px-3 py-2 z-index">All selections are optional. Just Click Search to browse all properties.</div>
                           </a>
-                           <ul class="list-unstyled mb-0 pl-md-4 pr-md-4 mt-sm-3 text-center text-sm-left vacation-listing mb-4 mb-sm-0">
+                           <ul class="list-unstyled mb-0 pl-md-4 pr-md-4 mt-sm-3 text-center text-sm-left vacation-listing mb-2 mb-sm-0">
                               <li class="list-inline-item mr-sm-4 mr-0 active-item d-block d-sm-inline-block vacation-listing-item">
                                <a href="/" class="f-600 tabby text-uppercase font-13 text-white position-relative"> Vacation homes by date</a> 
                                </li>
@@ -58,7 +58,7 @@
                                </li> 
                            </ul>
                         </div>
-                        <div class="col-12 mt-2  propertyBanner py-3 rounded">
+                        <div class="col-12 mt-2  propertyBanner py-1 rounded">
                             
                            <?php if ( is_active_sidebar( 'home-hero-widgets' ) ) { ?>
                                    <?php dynamic_sidebar( 'home-hero-widgets' ); ?>
