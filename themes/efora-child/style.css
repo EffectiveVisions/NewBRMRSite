@@ -3162,7 +3162,7 @@ border-radius: 10px;
     width: 51.25%;
 }
 .contact-form-detail.blog-single .frm_submit input[type=submit].send-to-us {
-    float: left;
+    float: right;
 }
 .comment.contact-form-detail.blog-single fieldset {
     padding-bottom: 0;
@@ -5194,7 +5194,7 @@ padding: 10px 15px;
         width: 100%;
     }
     .contact-form-detail.blog-single .frm_submit input[type=submit].send-to-us{
-        float: right;
+        float: left;
     }
     /*propertyBanner home*/
     .propertyBanner .form-group {
