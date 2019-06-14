@@ -3851,7 +3851,7 @@ body.modal-open,body.menuopened {
 
 .mobile-nav-calender .resortpro-search-checkin-block:after,
 .mobile-nav-calender .resortpro-search-checkout-block:after {
-    transform: translateY(calc(-50% + 15px));
+    transform: translateY(-50%);
 }
 .mobile-nav-calender .c-guests-dropdown .dropdown-toggle::after{
     position: absolute;
@@ -3973,6 +3973,10 @@ body .chosen-container-single .chosen-search input[type=text]{
  }
     .c-select-list select{
 padding: 10px 15px;
+    }
+
+    .mobile-nav-calender label{
+        display:none;
     }
 /*================================
       Responsive media start here
