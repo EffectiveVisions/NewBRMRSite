@@ -3978,6 +3978,10 @@ padding: 10px 15px;
     .mobile-nav-calender label{
         display:none;
     }
+
+ .star-rating{
+    min-height: 30px;
+  }
 /*================================
       Responsive media start here
 ==================================*/
