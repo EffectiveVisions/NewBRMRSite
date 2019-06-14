@@ -49,7 +49,7 @@
 	   </div>
    </section>
 
-   <section class="blogSection py-5 bg-gray">
+   <section class="blogSection py-3 bg-gray">
    <div ng-controller="PropertyController as pCtrl" ng-cloak  class="container">
    	   <div class="row">
 	         <div data-aos="fade-down" data-aos-duration="500" class="col-12 py-sm-4 pt-4 pb-3 text-center">
@@ -91,7 +91,7 @@
      </div>
    </section>
 
-   <section class="blogSection gallerySection py-5 d-none discount-gallery" ng-controller="PropertyController as pCtrl">
+   <section class="blogSection gallerySection py-3 d-none discount-gallery" ng-controller="PropertyController as pCtrl">
         <div class="row">
 	         <div class="col-12 py-sm-4 pt-4 pb-3 text-center">
 	            <h2 style="color:#0061a3;" class="mb-0 f-property-heading"> Our Gallery</h2>
