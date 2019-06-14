@@ -34,7 +34,7 @@
 
 
    <section class="heading rental-policy-heading">
-	   <div class="img d-flex flex-wrap align-items-center justify-content-center py-5" style="background-image:url('<?php echo $img; ?>'); ">
+	   <div class="img d-flex flex-wrap align-items-center justify-content-center py-5" style="background-image:url('<?php echo $img; ?>'); background-size:cover;">
 	   	
 
 	   	<div class="py-md-5 my-md-5">
@@ -93,8 +93,8 @@
 
    <section class="blogSection gallerySection py-5 d-none discount-gallery" ng-controller="PropertyController as pCtrl">
         <div class="row">
-	         <div data-aos="fade-down" data-aos-duration="500" class="col-12 py-sm-4 pt-4 pb-3 text-center">
-	            <h2 style="color:#0061a3;" class="mb-0 f-property-heading"> Our Galleries</h2>
+	         <div class="col-12 py-sm-4 pt-4 pb-3 text-center">
+	            <h2 style="color:#0061a3;" class="mb-0 f-property-heading"> Our Gallery</h2>
 	         </div>
 	    </div>
 
@@ -263,7 +263,7 @@
             <?php } ?>
          </div>
           <div  class="col-md-12 text-center mt-5 mb-4">
-	            <a href="/search-results/?" class="btn btn-primary text-uppercase btn-ouline-white properties font-weight-light-bold viewallhomepage">View All</a>
+	            <a href="/search-results/?" class="btn btn-primary text-uppercase btn-ouline-white properties font-weight-light-bold viewallhomepage">Book Now</a>
 	      </div>
       </div>
    </div>
