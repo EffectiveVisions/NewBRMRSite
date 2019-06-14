@@ -50,7 +50,7 @@
                               <li class="list-inline-item mr-sm-4 mr-0 active-item d-block d-sm-inline-block vacation-listing-item">
                                <a href="/" class="f-600 tabby text-uppercase font-13 text-white position-relative"> Vacation homes by date</a> 
                                </li>
-                               <li class="list-inline-item d-block d-sm-inline-block vacation-listing-item">
+                               <li class="list-inline-item d-block d-sm-inline-block vacation-listing-item mr-sm-4">
                                   <a href="/vacation-homes-by-area" class="f-600 tabby text-uppercase font-13 text-white position-relative">Vacation homes by Area</a>
                                </li>
                                <li class="list-inline-item d-block d-sm-inline-block vacation-listing-item">
@@ -258,13 +258,10 @@
            <a href="tel:<?php echo $phoneno[0]; ?>" class="text-white">
             <i class="icon icon-telephone text-white mb-3 d-block"></i>
             <?php $phoneno = get_post_custom_values("home_page_contact_number",$page->ID);
-                        if(!empty($phoneno[0])){ ?>
-                       
-            <h6 class="font-weight-normal font-Nunito text-white"><?php echo $phoneno[0]; ?></h6>
-            
-            <?php } ?>
+              if(!empty($phoneno[0])){ ?>       
+                <h6 class="font-weight-normal font-Nunito text-white"><?php echo $phoneno[0]; ?></h6>
+               <?php } ?>
             </a>
-           
          </div>
       </div>
    </div>
@@ -282,12 +279,12 @@
                       position="34.866215,-84.326248"
                       title="Blueridge mountain rentals"></marker>
               </map>--> 
-          
+
          </div>
          <div  class="col-md-6 p-lg-5 p-4 contact-form-home order-1 order-md-2">
          
-            <?php if ( is_active_sidebar( 'footer-s4' ) ) { ?>
-                 <?php dynamic_sidebar( 'footer-s4' ); ?>
+            <?php if(is_active_sidebar('footer-s4')){ ?>
+                 <?php dynamic_sidebar('footer-s4'); ?>
             <?php } ?>
          </div>
      </div>
@@ -312,7 +309,8 @@
       jQuery(".amenity_item").each(function(){
           if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500"){
 
-            jQuery(this).children("label").css({"display":"inline","color":"#fff","padding-left":"10px"});
+            jQuery(this).children("input").css({"vertical-align":"middle"});
+            jQuery(this).children("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"14px"});
 
           }else{
             jQuery(this).remove();
