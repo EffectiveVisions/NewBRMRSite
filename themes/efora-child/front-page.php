@@ -307,7 +307,7 @@
       jQuery(".amenity_item").each(function(){
           if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500"){
 
-            jQuery(this).children("input").css({"vertical-align":"middle"});
+            jQuery(this).children("input").css({"vertical-align":"middle","outline":"none"});
             jQuery(this).children("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"14px"});
 
           }else{
