@@ -58,7 +58,7 @@
                                </li> 
                            </ul>
                         </div>
-                        <div class="col-12 mt-2  propertyBanner py-1 rounded">
+                        <div class="col-12 mt-2  propertyBanner py-3 rounded">
                             
                            <?php if ( is_active_sidebar( 'home-hero-widgets' ) ) { ?>
                                    <?php dynamic_sidebar( 'home-hero-widgets' ); ?>
@@ -77,7 +77,7 @@
                           <div class="trustpilot-widget" data-locale="en-US" data-template-id="5613c9cde69ddc09340c6beb" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="100px" data-style-width="100%" data-theme="dark">
                           </div>
                         </figure>                       
-                       <figure class="mb-0   rating-two mr-lg-4 pr-md-2 mr-lg-3 mr-md-4 mt-md-0 mt-4 ml-md-auto mt-md-3 pt-md-4 pl-md-0 pl-sm-4">
+                       <figure class="mb-0   rating-two mr-lg-4 pr-md-2 mr-lg-3 mr-md-4 mt-md-0 mt-2 ml-md-auto mt-md-3 pt-md-4 pl-md-0 pl-sm-4">
                           <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img lazy-load style="border: 0;" datasrc="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
                       </figure>                    
                   </div>
@@ -102,7 +102,6 @@
                       <img class="img-fluid" alt="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
                    </a>
                   <?php } ?>
-                
             </figure>
             <?php if($come_stay_heading[0]!=""){ ?>
                <p class="f-500 mt-sm-4 line-height-normal mb-0 text-black"><?php echo $come_stay_heading[0] ?></p>
@@ -169,7 +168,6 @@
          </div>
       </div>
   </div>
-
 </section>
 
 <section ng-controller="PropertyController as pCtrl" ng-cloak class="trust-pilot my-5">

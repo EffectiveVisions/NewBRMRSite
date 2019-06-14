@@ -68,7 +68,7 @@
                                     </div>
                                     <!-- ngIf: search.pets == 1 -->
                                  </a>
-                                 <div class="c-guests-dropdown__body dropdown-menu js-guestsDropdown" aria-labelledby="guestsDropdownBtn">
+                                 <div style="z-index:99; width:100%;" class="c-guests-dropdown__body dropdown-menu js-guestsDropdown" aria-labelledby="guestsDropdownBtn">
                                     <div class="c-guests-dropdown__body-inner py-3 dropdown-menu-index">
                                        <div class="c-guests-dropdown__row input-group-text-box w-100 d-flex align-items-center">
                                           <span ng-bind="search.occupants" class="font-14 font-weight-light-bold adultscount ng-binding"></span>&nbsp;<span class="font-14 font-weight-light-bold text-capitalize font-14 font-weight-light-bold adults_label">Adult</span>
