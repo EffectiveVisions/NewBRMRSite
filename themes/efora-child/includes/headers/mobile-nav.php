@@ -2,8 +2,27 @@
 
 <nav id="menu">
     <ul>
-      
-       <!-- Search start -->
+    	<a class="closemenu"><i class="icon icon-plus d-block"  aria-hidden="true" style="transform: rotate(45deg);"></i></a>
+    	<?php if($class[1] != "page-template-template-boone" && $class[1] != "page-template-template-blowing-rock" && $class[1] != "page-template-template-valle-crucis" && $class[1] != "page-template-template-townof-seven-devils" && $class[1] != "page-template-template-eagles-nest"&& $class[1] != "page-template-template-banner-elk"
+                       ) {  ?>
+        <?php if ( has_nav_menu( 'mobile-menu' ) ) :
+            wp_nav_menu( array( 'theme_location' => 'mobile-menu','container' => '','depth' => 3,'items_wrap' => '%3$s', 'walker' => new efora_Mobile_Nav_Menu()) );
+        else:
+            echo '<li><a>' . esc_html__( 'Define your mobile menu.', 'efora' ) . '</a></li>';
+        endif; ?>
+       <?php } else {   ?>
+         
+         <?php if ( has_nav_menu( 'mobile-menu' ) ) :
+            wp_nav_menu( array( 'theme_location' => 'community-menu','container' => '','depth' => 3,'items_wrap' => '%3$s', 'walker' => new efora_Mobile_Nav_Menu()) );
+
+            echo '<li><a href="https://new.blueridgerentals.com/search-results/">' . esc_html__( 'Find your gateway', 'efora' ) . '</a></li>';
+        else:
+            echo '<li><a>' . esc_html__( 'Define your mobile menu.', 'efora' ) . '</a></li>';
+        endif; ?>
+
+       <?php } ?>
+
+              <!-- Search start -->
 
        <div class="mobile-nav-calender z-index col-12 mt-3">
         
@@ -100,10 +119,6 @@
                                  </div>
                               </div>
                            </div>
-
-
-
-
                         
                         <div class="col-12" id="resortpro-search-submit-button-block-idclass-homeless">
                            <div class="form-group  resortpro-search-submit-button-block mb-0" id="resortpro-search-submit-button-block-not"><button class="btn btn-warning  w-100 themeBtn text-uppercase font-weight-bold font-Nunito" type="submit">Search</button></div>
@@ -119,27 +134,6 @@
             </div>
         </div>
         <!-- Search end -->
-
-
-    	<a class="closemenu"><i class="icon icon-plus d-block"  aria-hidden="true" style="transform: rotate(45deg);"></i></a>
-    	<?php if($class[1] != "page-template-template-boone" && $class[1] != "page-template-template-blowing-rock" && $class[1] != "page-template-template-valle-crucis" && $class[1] != "page-template-template-townof-seven-devils" && $class[1] != "page-template-template-eagles-nest"&& $class[1] != "page-template-template-banner-elk"
-                       ) {  ?>
-        <?php if ( has_nav_menu( 'mobile-menu' ) ) :
-            wp_nav_menu( array( 'theme_location' => 'mobile-menu','container' => '','depth' => 3,'items_wrap' => '%3$s', 'walker' => new efora_Mobile_Nav_Menu()) );
-        else:
-            echo '<li><a>' . esc_html__( 'Define your mobile menu.', 'efora' ) . '</a></li>';
-        endif; ?>
-       <?php } else {   ?>
-         
-         <?php if ( has_nav_menu( 'mobile-menu' ) ) :
-            wp_nav_menu( array( 'theme_location' => 'community-menu','container' => '','depth' => 3,'items_wrap' => '%3$s', 'walker' => new efora_Mobile_Nav_Menu()) );
-
-            echo '<li><a href="https://new.blueridgerentals.com/search-results/">' . esc_html__( 'Find your gateway', 'efora' ) . '</a></li>';
-        else:
-            echo '<li><a>' . esc_html__( 'Define your mobile menu.', 'efora' ) . '</a></li>';
-        endif; ?>
-
-       <?php } ?>
 
       
     </ul>
