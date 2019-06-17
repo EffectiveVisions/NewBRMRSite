@@ -436,7 +436,7 @@
                  <?php endif; ?>
 
                   <div id="description" class="ament-description shadow-bottom mt-5 p-4">
-                    <div class="description-content font-weight-light-bold font-14 font-Nunito font-weight-light-bold text-light-dark d-inline-block w-100">
+                    <div class="description-content description-dtl font-weight-light-bold font-14 font-Nunito font-weight-light-bold text-light-dark d-inline-block w-100">
                        <div class="custom_fields" ng-show="!isEmpty(custom_featured_field)" ng-init="getPropertyCustomFeatured(unit_id)">
                         <span ng-show="!isEmpty(custom_featured_field)"></span>
                        </div>
@@ -680,11 +680,13 @@ jQuery(document).ready(function(){
   jQuery('.r_more_description').click(function(){
      if(jQuery(this).find('span').html() == "Less") {
         jQuery('.description-content').css({"max-height":height+"px", "overflow-y":"hidden"})
+        jQuery('.description-content').addClass("description-dtl"); 
         jQuery(this).find('span').html("Read More");
         document.getElementById("description").scrollIntoView();
      }else{
         jQuery('.description-content').removeAttr("style")
-        jQuery(this).find('span').html("Less");  
+        jQuery(this).find('span').html("Less");
+        jQuery('.description-content').removeClass("description-dtl");  
      }    
   });
   jQuery('.more_photos').click(function(){
