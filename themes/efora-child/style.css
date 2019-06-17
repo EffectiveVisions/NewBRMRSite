@@ -1385,10 +1385,7 @@ header.tg-haslayout{
     background: #1b468e;
     z-index: 99999;
 }
-.tg-header .tg-addnavcartsearch nav ul li a {
-    font-size: 10px;
-    font-weight: normal;
-}
+
 .tg-header .tg-addnav ul.sub-menu li:before{
 	display: none;
 }
@@ -3848,6 +3845,7 @@ body.modal-open,body.menuopened {
 .mobile-nav-calender .resortpro-search-checkin-block:after,
 .mobile-nav-calender .resortpro-search-checkout-block:after {
     transform: translateY(calc(-50% + 15px));
+    top:20%;
 }
 .mobile-nav-calender .c-guests-dropdown .dropdown-toggle::after{
     position: absolute;
@@ -3915,14 +3913,11 @@ img.ammenityicon {
 img.ammenityicon.w-18{
     width: 18px
 }
-.page-id-5 ul#menu-footer-menu li{
-    width: 100% !important;
-    margin-bottom: 10px;
-}
+
 .amenity_item label{
     text-transform: uppercase
 }
-.tg-addnavcartsearch  input.form-control{
+.topMenuSearchBar  input.form-control{
     background: transparent;
     border: none;
 }
@@ -3933,15 +3928,63 @@ img.ammenityicon.w-18{
  .amenity_item label {
     font-weight: bold;
 }
-.tg-cartsearch ul li{
+.tg-cartsearch .topMenuSearchBar ul li{
     width: 100%;
+}
+.tg-cartsearch .topMenuSearchBar ul li a{
+    color: #000 !important;
+ }
+ .tg-cartsearch .topMenuSearchBar ul.dropdown-menu{
+    z-index: 9999
+ }
+.topMenuSearchBar ul {
+      background: #e9ecef;
+    border: 0;
+    left: 0 !important;
+    top: 40px;
+    border-radius: 0;
+    padding: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+.topMenuSearchBar ul li{
+    margin-bottom: 10px
+}
+.mobileUl li{
+    list-style: none;
+}
+.topMenuSearchBar ul li a {
+    font-size: 10px;
+    font-weight: normal;
+}
+.input-calender-icon .form-control[readonly] {
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    cursor: pointer
+
+}
+.mobile-nav-calender .form-group  label{
+    display: none
 }
 /*================================
       Responsive media start here
 ==================================*/
-@media only screen and (max-width:1400px) and (min-width:1200px) {
+@media only screen and (min-width:1700px) {
+    .page-id-5 ul#menu-footer-menu li{
+            width: 50% !important;
+            margin-bottom: 10px;
+        }
+    }
+@media only screen and (max-width:1600px) and (min-width:1200px) {
      .page-id-5 .footer1 img{
         width: 30%
+    }
+        .page-id-5 ul#menu-footer-menu li{
+        width: 100% !important;
+        margin-bottom: 10px;
     }
 }
 /*old code fore responsive media*/
@@ -4063,6 +4106,9 @@ img.ammenityicon.w-18{
     border-right:0px solid #dee2e6 !important;
     border-bottom: 1px solid #dee2e6 
   }
+  .tg-socialicons {
+    overflow: visible;
+}
 
 }
 
@@ -4080,6 +4126,22 @@ img.ammenityicon.w-18{
   .footerlink .list-inline-item {
      width: 45%;
   }
+  .tg-header .tg-navigationarea .tg-nav {
+    top: 25px;
+}
+.tg-socialsignin {
+    width: 100%;
+    margin-left:0 !important;
+    margin-right: 0 !important;
+}
+.tg-socialsignin ul ,
+ .tg-socialsignin ul li.topMenuSearchBar ,
+  .tg-socialsignin ul li.topMenuSearchBar div{
+    width: 100%
+}
+.tg-socialsignin .tg-socialicons{
+    padding: 0;
+}
 }
 /*here close old code*/
 
@@ -4623,13 +4685,7 @@ img.ammenityicon.w-18{
     .navbar-header .navbar-toggle .icon-bar:nth-child(2) {
         margin-top: 0;
     }
-    .tg-socialsignin .tg-socialicons li.mobile-search a {
-        background: #005a9a;
-        border-radius: 0;
-        width: 40px;
-        height: 40px;
-        padding: 10px 6px;
-    }
+  
     .tg-socialsignin .tg-socialicons li.mobile-search a i{
         color: #fff;
     }
