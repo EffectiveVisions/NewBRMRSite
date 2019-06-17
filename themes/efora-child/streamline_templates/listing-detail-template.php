@@ -8,8 +8,6 @@
 * @package    ResortPro
 * @since      v1.0
 */
-
-
 ?>
 
 <div id="main-part" ng-controller="PropertyController as pCtrl" ng-init="initializeData(); propertyId=<?php echo $property['id']; ?>" >
@@ -839,8 +837,7 @@ jQuery(document).ready(function(){
                 return true;  
            if (code < 48 || code > 57)  
                 return false;  
-        }  
-    ); 
+  }); 
 
 
   jQuery('input[name=phone]').bind('keypress',function(e){  
@@ -876,7 +873,7 @@ jQuery(document).ready(function(){
     );
 
 
-    jQuery("#book_now_mobile").waypoint(function(direction){
+    /*jQuery("#book_now_mobile").waypoint(function(direction){
         
          if(direction === 'down'){
            jQuery('#book_now_mobile').addClass("filter-fixed");
@@ -897,7 +894,7 @@ jQuery(document).ready(function(){
     },
     {
       offset: '10%'
-    });
+    });*/
 
     jQuery("#detailsec").waypoint(function(direction){
          if(direction === 'up'){
@@ -910,57 +907,33 @@ jQuery(document).ready(function(){
          }
     });
     
-  //     var waypoint3 = new Waypoint({
-  //     element: document.getElementById('mainfooter'),
-  //     handler: function(direction) {
-  //       if(direction === 'down'){
-  //          jQuery('#propertymenu').removeClass("header-fixed");
-  //          jQuery('#book_now_mobile').removeClass("filter-fixed");
-  //       }else{
-  //         jQuery('#propertymenu').addClass("header-fixed");
-  //          jQuery('#book_now_mobile').addClass("filter-fixed");
-  //       }
-        
-  //     }
-  //  })
-
-
-  jQuery(window).scroll(function () {
-
+  /*jQuery(window).scroll(function () {
     if ((jQuery(window).scrollTop() + jQuery(window).height()) < 3000) {
-
     } else if ((jQuery(window).scrollTop() + jQuery(window).height() + 400) >= jQuery(document).height()) {
-        //jQuery('#propertymenu').removeClass("header-fixed");
         if (window.matchMedia('(max-width: 1679px)').matches) {
-            jQuery('#book_now_mobile').removeClass("filter-fixed");
+            //jQuery('#book_now_mobile').removeClass("filter-fixed");
         }
         var top = jQuery('#main-part').height();
         var footer = jQuery("#mainfooter").height();
         var totallen = top - footer;
-       
         if(jQuery('#virtualtour').length > 0){
            var padtop = totallen - 770
            if (window.matchMedia('(max-width: 1679px)').matches) {
-               jQuery(".filter-single-property").css({"top":padtop+"px","height":"500px","overflow":"auto"});
+               //jQuery(".filter-single-property").css({"top":padtop+"px","height":"500px","overflow":"auto"});
             }
-           
-           //jQuery(".filter-single-property").addClass("tobottom");
-
         }else{
            var padtop   = totallen - 750
             if (window.matchMedia('(max-width: 1679px)').matches) {
-               jQuery(".filter-single-property").css({"top":padtop+"px","height":"500px","overflow":"auto"});
+               //jQuery(".filter-single-property").css({"top":padtop+"px","height":"500px","overflow":"auto"});
             }
-          
-           //jQuery(".filter-single-property").addClass("tobottom");
         }
         
-    } else {
+     } else {
         jQuery('#propertymenu').addClass("header-fixed");
         jQuery('#book_now_mobile').addClass("filter-fixed");
         jQuery(".filter-single-property").removeAttr("style");
     }
-  });
+  });*/
 
    
 
