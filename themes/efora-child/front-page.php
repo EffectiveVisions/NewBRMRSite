@@ -53,9 +53,9 @@
                                <li class="list-inline-item d-block d-sm-inline-block vacation-listing-item mr-sm-4">
                                   <a href="/vacation-homes-by-area" class="f-600 tabby text-uppercase font-13 text-white position-relative">Vacation homes by Area</a>
                                </li>
-                               <li class="list-inline-item d-block d-sm-inline-block vacation-listing-item">
+                               <!--<li class="list-inline-item d-block d-sm-inline-block vacation-listing-item">
                                   <a href="javascript:void(0)" class="f-600 tabby text-uppercase font-13 text-white position-relative lookup">Lookup Homes by Name</a>
-                               </li> 
+                               </li>--> 
                            </ul>
                         </div>
                         <div class="col-12 mt-2  propertyBanner homepagesearch py-3 rounded">
