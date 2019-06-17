@@ -2,12 +2,15 @@
 
 <nav id="menu">
     <ul>
-                    <!-- Search start -->
-
+      <!-- Search start -->
        <div class="mobile-nav-calender z-index col-12 mt-3">
-        
             <div id="resortpro_search_widget-15" class="widget_resortpro_search_widget">
                <div class="search_widget">
+                  <div ng-controller="PropertyController as pCtrl">
+                      <span class="start_date" ng-init="search.start_date=''"></span>
+                      <span class="end_date" ng-init="search.end_date=''"></span>
+                  </div>
+
                   <form ng-submit="updateSearch($event)" method="post" class="form searchform ng-pristine ng-valid" action="<?php echo get_site_url()."/"."search-results/"; ?>">
                      <input type="hidden" name="resortpro_search_nonce" value="cf316fbc2c">
                      <div class="row" id="search-widget-main-rowresortpro_search_widget-15" style="">
@@ -101,12 +104,9 @@
                            </div>
                         
                         <div class="col-12" id="resortpro-search-submit-button-block-idclass-homeless">
-                           <div class="form-group  resortpro-search-submit-button-block mb-0" id="resortpro-search-submit-button-block-not"><button class="btn btn-warning  w-100 themeBtn text-uppercase font-weight-bold font-Nunito" type="submit">Search</button></div>
+                           <div class="form-group  resortpro-search-submit-button-block mb-0" id="resortpro-search-submit-button-block-not"><button class="btn btn-primary  w-100 themeBtn text-uppercase font-weight-bold font-Nunito" type="submit">Search</button></div>
                         </div>
-
-                        </div>
-
-
+                      </div>
                      </div>
                      <input class="sortfilter ng-pristine ng-untouched ng-valid ng-empty" ng-model="sortbyvalue" type="hidden" name="resortpro_sw_filter" value="">
                   </form>
