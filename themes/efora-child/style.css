@@ -3784,7 +3784,7 @@ body.modal-open,body.menuopened {
     font-family: 'Nunito',sans-serif;
 }
 
-.description-content:after {
+.description-dtl:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -3829,11 +3829,11 @@ body.modal-open,body.menuopened {
 }
 
 .ui-datepicker-prev{
-    z-index:10;
+    z-index:0;
 }
 
 .ui-datepicker-next{
-    z-index:10;
+    z-index:0;
 }
 
 .modal-content {
@@ -3908,7 +3908,7 @@ body.modal-open,body.menuopened {
 }
 
 img.ammenityicon {
-    width: 16px;
+    width: 18px;
     margin-left: 6px;
     margin-right: 0px;
     vertical-align: middle;
@@ -3917,10 +3917,24 @@ img.ammenityicon {
     width: 100% !important;
     margin-bottom: 10px;
 }
+.amenity_item label{
+    text-transform: uppercase
+}
+.tg-addnavcartsearch  input.form-control{
+    background: transparent;
+    border: none;
+}
+.tg-cartsearch  .close-search-btn{
+    background-color: transparent !important;
+}
 /*================================
       Responsive media start here
 ==================================*/
-
+@media only screen and (max-width:1400px) and (min-width:1200px) {
+     .page-id-5 .footer1 img{
+        width: 30%
+    }
+}
 /*old code fore responsive media*/
 /*conatct form code*/
 @media only screen and (max-width: 1024px) {
@@ -4361,12 +4375,7 @@ img.ammenityicon {
         top: 98px;*/
         /*height: auto;*/
     }
-    .filter-single-property.filter-fixed {
-        /*height: calc(100% - 98px);
-        overflow*/
-        height: 580px;
-        width: 415px;
-    }
+  
 }
 
 @media (max-width: 1199px){
