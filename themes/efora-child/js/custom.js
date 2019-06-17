@@ -6,7 +6,7 @@ setTimeout(function(){
       var js = ["/wp-content/themes/efora-child/js/tp.widget.bootstrap.min.js"];
       var $head = jQuery("head");
       for (var i = 0; i < js.length; i++) {
-	$head.append("<script defer='true' src=\"" + js[i] + "\"></scr" + "ipt>");
+	      $head.append("<script defer='true' src=\"" + js[i] + "\"></scr" + "ipt>");
       }
   }
 }, 6000)
@@ -17,7 +17,7 @@ if(jQuery('.frm_error_style')[0] || jQuery('.frm_message')[0]){
           scrollTop: jQuery("#contactus").offset().top-150
        });        
      },500); 
- }            
+   }            
 });
 
 jQuery(document).ready(function(){              
@@ -27,14 +27,16 @@ jQuery(document).ready(function(){
   jQuery("body").delegate(".datepicker-popup", "focusin", function(){
   	 if(jQuery(this).attr("id")=="end_date_popup"){
   	 	if(jQuery("#start_date_popup").val()!=""){
-  	 		var myDate = new Date(jQuery("#start_date_popup").val());
-            myDate.setDate(myDate.getDate() + 1);
-  	 		jQuery(this).datepicker({
+         jQuery(this).datepicker('setDate', null);
+  	 		 var myDate = new Date(jQuery("#start_date_popup").val());
+         myDate.setDate(myDate.getDate() + 1);
+  	 		 jQuery(this).datepicker({
                minDate:myDate
-  	 	    });
+  	 	   });
         jQuery("#end_date_popup").val("");
-        jQuery( this).datepicker("refresh");
+        
   	 	}else{
+        jQuery(this).datepicker('setDate', null);
         jQuery("#end_date_popup").val("");
   	 		myDate = new Date();
   	 		myDate.setDate(myDate.getDate() + 1);
@@ -44,11 +46,21 @@ jQuery(document).ready(function(){
         jQuery( this).datepicker("refresh");
   	 	}	
   	 }else{
+       var input = jQuery('#end_date_popup');
+       input.val('');
+       input.trigger('input'); 
+       input.trigger('change'); 
        myDate = new Date();
        myDate.setDate(myDate.getDate() + 1);
   	 	jQuery(this).datepicker({
-         minDate:myDate
+         minDate:myDate,
+         onSelect: function (selectedDate) {
+            myDate = new Date(selectedDate);
+            myDate.setDate(myDate.getDate() + 1);
+            jQuery('#end_date_popup').datepicker('option', 'minDate', myDate);
+         }
       });
+      
       jQuery(this).datepicker("refresh");
   	 }  
   	 jQuery("body").append(jQuery("#ui-datepicker-div"));
