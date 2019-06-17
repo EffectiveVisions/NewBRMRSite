@@ -9,7 +9,7 @@ setTimeout(function(){
 	$head.append("<script defer='true' src=\"" + js[i] + "\"></scr" + "ipt>");
       }
   }
-}, 2000)
+}, 6000)
 
 if(jQuery('.frm_error_style')[0] || jQuery('.frm_message')[0]){
     setTimeout(function(){
