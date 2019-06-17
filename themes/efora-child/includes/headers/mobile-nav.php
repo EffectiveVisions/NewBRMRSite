@@ -8,7 +8,7 @@
         
             <div id="resortpro_search_widget-15" class="widget_resortpro_search_widget">
                <div class="search_widget">
-                  <form ng-submit="updateSearch($event)" method="post" class="form searchform ng-pristine ng-valid" action="http://blueridge.com/search-results/">
+                  <form ng-submit="updateSearch($event)" method="post" class="form searchform ng-pristine ng-valid" action="<?php echo get_site_url()."/"."search-results/"; ?>">
                      <input type="hidden" name="resortpro_search_nonce" value="cf316fbc2c">
                      <div class="row" id="search-widget-main-rowresortpro_search_widget-15" style="">
                         <div class="col-12" id="resortpro-search-checkin-block-idclass-homeless">
