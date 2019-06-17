@@ -58,7 +58,7 @@
                                </li> 
                            </ul>
                         </div>
-                        <div class="col-12 mt-2  propertyBanner py-3 rounded">
+                        <div class="col-12 mt-2  propertyBanner homepagesearch py-3 rounded">
                             
                            <?php if ( is_active_sidebar( 'home-hero-widgets' ) ) { ?>
                                    <?php dynamic_sidebar( 'home-hero-widgets' ); ?>
@@ -236,6 +236,7 @@
              <?php $address = get_post_custom_values("home_page_contact_address",$page->ID);
                         if(!empty($address[0])){ ?>
             <h6 class="text-white font-weight-normal font-Nunito"><?php echo $address[0]; ?></h6>
+            
             <?php } ?>
          </div>
          <div class="col-md-4 col-12 pb-md-0 pb-5 mb-3 mb-md-0">
@@ -292,6 +293,7 @@
   function redirectToBlog(){
     window.location.href = "/blog"
   }
+
   jQuery(document).ready(function(){
       jQuery(".filter-count-btn").bind('touchend', function(e) {
            e.preventDefault(); 
@@ -305,10 +307,21 @@
       })
 
       jQuery(".amenity_item").each(function(){
-          if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500"){
+          if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500"){ 
+            if(jQuery(this).children("input").val() == "121857"){
+                jQuery("input[value='121857'").after('<img class="ammenityicon"  src="/wp-content/uploads/2019/06/bath-tub.svg">');
+            }
 
+            if(jQuery(this).children("input").val() == "121865"){
+               jQuery("input[value='121865'").after('<img class="ammenityicon w-18" src="/wp-content/uploads/2019/06/pawprint.svg">');
+            }
+
+            if(jQuery(this).children("input").val() == "416500"){
+              jQuery("input[value='416500'").after('<img class="ammenityicon" src="/wp-content/uploads/2019/06/Mountain.svg">');
+            }
+            
             jQuery(this).children("input").css({"vertical-align":"middle","outline":"none"});
-            jQuery(this).children("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"14px"});
+            jQuery(this).children("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"12px"});
 
           }else{
             jQuery(this).remove();

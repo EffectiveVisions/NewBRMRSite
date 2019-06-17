@@ -432,8 +432,20 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       jQuery(".amenity_item").each(function(){
           if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500"){
 
+              if(jQuery(this).children("input").val() == "121857"){
+                jQuery("input[value='121857'").after('<img class="ammenityicon" src="/wp-content/uploads/2019/06/bath-tub.svg">');
+            }
+
+            if(jQuery(this).children("input").val() == "121865"){
+               jQuery("input[value='121865'").after('<img class="ammenityicon w-18" src="/wp-content/uploads/2019/06/pawprint.svg">');
+            }
+
+            if(jQuery(this).children("input").val() == "416500"){
+              jQuery("input[value='416500'").after('<img class="ammenityicon" src="/wp-content/uploads/2019/06/Mountain.svg">');
+            }
+
             jQuery(this).children("input").css({"vertical-align":"middle","outline":"none"});
-            jQuery(this).children("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"14px"});
+            jQuery(this).children("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"12px"});
 
           }else{
             jQuery(this).remove();
