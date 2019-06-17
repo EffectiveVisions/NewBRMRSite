@@ -1361,9 +1361,7 @@ header.tg-haslayout{
 }
 
 /*header*/
-.tg-cartsearch ul li {
-    border-left: 1px solid #414150;
-}
+
 .tg-header .tg-addnav ul.sub-menu li a {
     color: #fff;
     font-size: 10px;
@@ -1694,6 +1692,7 @@ header.tg-haslayout{
     top: 0px;
     border-top: 8px solid #005a9a;
     z-index: 1;
+     transition: top 0.3s ease-in 0s;
 }
 .filter-single-property .star-rating.divider:after,
 .filter-single-property .star-rating.divider:before {
@@ -3781,7 +3780,7 @@ body.modal-open,body.menuopened {
 
 #description h1,#description h2,#description h3,#description h4,#description h5,#description span ,#description p, #description strong{
     font-size:14px;
-    font-family: 'Nunito',sans-serif;
+    font-family: 'Nunito',sans-serif !important;
 }
 
 .description-dtl:after {
@@ -3901,17 +3900,20 @@ body.modal-open,body.menuopened {
 .discount-gallery .blog-image img{object-fit: cover; width: 100%; height: 100%; display: block;}
 
 
-#resortpro-search-amenities-block{
+.resortpro-search-amenities-block{
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
 }
 
 img.ammenityicon {
-    width: 18px;
+    width: 20px;
     margin-left: 6px;
     margin-right: 0px;
     vertical-align: middle;
+}
+img.ammenityicon.w-18{
+    width: 18px
 }
 .page-id-5 ul#menu-footer-menu li{
     width: 100% !important;
@@ -3926,6 +3928,10 @@ img.ammenityicon {
 }
 .tg-cartsearch  .close-search-btn{
     background-color: transparent !important;
+}
+
+ .amenity_item label {
+    font-weight: bold;
 }
 /*================================
       Responsive media start here
@@ -4324,6 +4330,7 @@ img.ammenityicon {
         height: calc(100% - 98px);
         z-index: 99;
         right: 0px;
+
     }
     /*eagles-nest page*/
     .eagles-nest.places .blog-image {
