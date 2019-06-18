@@ -211,7 +211,7 @@
 	            <h2 class="text-white mb-0 f-property-heading"> Properties Running Discounts and Specials</h2>
 	         </div>
 	      </div>
-	      <div class="row" ng-init="search.amenities_filter='129951';sortBy='random';availabilitySearch();">
+	      <div class="row" ng-init="search.amenities_filter='129950';sortBy='random';availabilitySearch();">
 	         <div data-aos="fade-up" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 12" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
 	          <div class="inner-div p-lg-1 d-inline-block w-100">
 	              <div class="property bg-white d-none">
