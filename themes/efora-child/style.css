@@ -96,12 +96,13 @@ body select.form-control{
 .theme-bg-color{
 background: #0061a3
 }
-.btn.theme-btn{
+.btn.theme-btn ,
+a.btn.theme-btn{
     color: #fff;
     background-color: #005a9a;
     border-color: #005a9a;
 }
-.btn.theme-btn:hover {
+.btn.theme-btn:hover ,a.btn.theme-btn:hover {
     color: #fff;
     background-color: #123877;
     border-color: #123877;
@@ -3932,6 +3933,7 @@ img.ammenityicon.w-18{
 }
 .tg-cartsearch .topMenuSearchBar ul li a{
     color: #000 !important;
+
  }
  .tg-cartsearch .topMenuSearchBar ul.dropdown-menu{
     z-index: 9999
@@ -3949,7 +3951,9 @@ img.ammenityicon.w-18{
 
 }
 .topMenuSearchBar ul li{
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: left;
 }
 .mobileUl li{
     list-style: none;
@@ -3957,6 +3961,7 @@ img.ammenityicon.w-18{
 .topMenuSearchBar ul li a {
     font-size: 10px;
     font-weight: normal;
+    text-align: left;
 }
 .input-calender-icon .form-control[readonly]  {
     background-color: transparent;
@@ -3972,16 +3977,16 @@ img.ammenityicon.w-18{
       Responsive media start here
 ==================================*/
 @media only screen and (min-width:1700px) {
-    .page-id-5 ul#menu-footer-menu li{
+    .page-id-5 ul#menu-footer-menu li ,.page-id-4 ul#menu-footer-menu li{
             width: 50% !important;
             margin-bottom: 10px;
         }
     }
 @media only screen and (max-width:1600px) and (min-width:1200px) {
-     .page-id-5 .footer1 img{
+     .page-id-5 .footer1 img , .page-id-4 .footer1 img{
         width: 30%
     }
-        .page-id-5 ul#menu-footer-menu li{
+        .page-id-5 ul#menu-footer-menu li , .page-id-4 ul#menu-footer-menu li{
         width: 100% !important;
         margin-bottom: 10px;
     }
@@ -4348,7 +4353,7 @@ img.ammenityicon.w-18{
     top: 138px;
     right: -390px;
     width: 390px;
-    z-index: 999;
+    z-index: 99;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     height: 100%;
   }
