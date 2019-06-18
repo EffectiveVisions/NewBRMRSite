@@ -165,16 +165,16 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                       </div>
                     <ul class="list-unstyled detailsaboutproperty mt-2 mb-4 d-flex flex-md-wrap flex-sm-nowrap flex-wrap">
                        <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2  d-flex flex-wrap align-items-center">
-                         <img src="http://blueridg.protacto.com/wp-content/uploads/2019/04/bed.svg" class="w-20" alt="bed-image">
+                         <img src="/wp-content/uploads/2019/04/bed.svg" class="w-20" alt="bed-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bedrooms_number]} <?php _e( 'Beds', 'streamline-core' ) ?></span></li>
                        
                        <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2 d-flex flex-wrap align-items-center">
-                         <img src="http://blueridg.protacto.com/wp-content/uploads/2019/04/slumber.svg" class="w-20" alt="slumber-image">
+                         <img src="/wp-content/uploads/2019/04/slumber.svg" class="w-20" alt="slumber-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text"> <?php _e( 'Sleeps', 'streamline-core' ) ?> {[property.max_occupants]}</span></li>
 
 
                        <li class="list-inline-item d-flex flex-wrap align-items-center">
-                         <img src="http://blueridg.protacto.com/wp-content/uploads/2019/04/shower.svg" class="w-20" alt="shower-image">
+                         <img src="/wp-content/uploads/2019/04/shower.svg" class="w-20" alt="shower-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?></span></li>
                     </ul>
 
@@ -299,20 +299,21 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
     jQuery(".search_widget .c-guests-dropdown__body").css("z-index","400");
     jQuery('input[name="pets"]').removeAttr("checked"); 
     document.getElementsByClassName("searchform")[0].reset();  
+
     jQuery("#vacationarea").bind("paste", function(e){
       setTimeout(() => {
-        var all =  document.querySelectorAll(".dropdown-menu li");
-        if(all && all.length){
-          for(var i=0; i< all.length; i++){
-            all[i].style.display = "none";
+         var all =  document.querySelectorAll(".dropdown-menu li");
+         if(all && all.length){
+           for(var i=0; i< all.length; i++){
+             all[i].style.display = "none";
           }
-        }
-        var arr =   document.querySelectorAll(".dropdown-menu li a strong")
-        if(arr && arr.length){
-          for(var i=0; i< arr.length; i++){
-            arr[i].parentElement.parentElement.style.display = "block";
-          }
-        }
+         }
+         var arr =   document.querySelectorAll(".dropdown-menu li a strong")
+         if(arr && arr.length){
+           for(var i=0; i< arr.length; i++){
+             arr[i].parentElement.parentElement.style.display = "block";
+           }
+         }
       }, 500);
 
     });
