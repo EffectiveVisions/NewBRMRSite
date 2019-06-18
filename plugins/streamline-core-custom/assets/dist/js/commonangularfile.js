@@ -2654,7 +2654,10 @@
             $scope.search.pets = "";
             $scope.search.num_bedrooms = "";
             jQuery('input[name="pets"]').removeAttr("checked");
-            jQuery(".guests-sum-label").addClass("pl-2");  
+            //jQuery(".guests-sum-label").addClass("pl-2"); 
+            jQuery(".guests-sum").html("");
+            jQuery(".guests-sum-label").html("Guest");
+
         };
 
         $scope.closeGuests = function() {
