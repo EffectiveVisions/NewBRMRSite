@@ -302,17 +302,18 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
 
     // Search on keyup
     jQuery("#vacationarea").bind("keyup", function (e) {
-      var all = document.querySelectorAll(".dropdown-menu li");
-      if (all && all.length) {
-        for (var i = 0; i < all.length; i++) {
-          if (all[i].innerText.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1) {
-            all[i].style.display = "block";
-          } else {
-            all[i].style.display = "none";
+      setTimeout(() => {
+        var all = document.querySelectorAll(".dropdown-menu li");
+        if (all && all.length) {
+          for (var i = 0; i < all.length; i++) {
+            if (all[i].innerText.toLowerCase().indexOf(e.target.value.toLowerCase().trim()) > -1) {
+              all[i].style.display = "block";
+            } else {
+              all[i].style.display = "none";
+            }
           }
         }
-      }
-
+      }, 50);
     });
 
     // Manupulate search on paste
@@ -449,16 +450,16 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       jQuery(".amenity_item").each(function(){
           if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500"){
 
-              if(jQuery(this).children("input").val() == "121857"){
-                jQuery("input[value='121857'").after('<img class="ammenityicon" src="/wp-content/uploads/2019/06/bath-tub.svg">');
+             if(jQuery(this).children("input").val() == "121857"){
+                jQuery("input[value='121857']").after('<img class="ammenityicon"  src="/wp-content/uploads/2019/06/bath-tub.svg">');
             }
 
             if(jQuery(this).children("input").val() == "121865"){
-               jQuery("input[value='121865'").after('<img class="ammenityicon w-18" src="/wp-content/uploads/2019/06/pawprint.svg">');
+               jQuery("input[value='121865']").after('<img class="ammenityicon w-18" src="/wp-content/uploads/2019/06/pawprint.svg">');
             }
 
             if(jQuery(this).children("input").val() == "416500"){
-              jQuery("input[value='416500'").after('<img class="ammenityicon" src="/wp-content/uploads/2019/06/Mountain.svg">');
+              jQuery("input[value='416500']").after('<img class="ammenityicon" src="/wp-content/uploads/2019/06/Mountain.svg">');
             }
 
             jQuery(this).children("input").css({"vertical-align":"middle","outline":"none"});
