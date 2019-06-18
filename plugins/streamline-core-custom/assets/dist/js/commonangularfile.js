@@ -3820,6 +3820,10 @@
 			    var clean_uri = uri.substring(0, uri.indexOf("?"));
 			    window.history.replaceState({}, document.title, clean_uri);
 			}
+            jQuery(".checkinspan").html("");
+            jQuery(".checkoutspan").html("");
+			jQuery("#search_start_date_single").val("");
+			jQuery("#search_end_date_single").val("");
 
 			jQuery("input[name=resortpro_sw_children]").val("");
             jQuery("input[name=resortpro_sw_adults]").val("");
@@ -4066,8 +4070,9 @@
             var totalguest = "";
             var pets       = "";
             var count = 0;
-            var start_date = jQuery('#search_start_date').val();
-            var end_date   = jQuery('#search_end_date').val();
+            var start_date = jQuery('#search_start_date_single').val();
+            var end_date   = jQuery('#search_end_date_single').val();
+
             var children   = jQuery('#resortpro-search-guests-children-block-not').find('.count-single-child').html();
             var adults     = jQuery("#resortpro-search-guests-adults-block-not").find('.count-single-adult').html();
           
