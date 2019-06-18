@@ -300,6 +300,22 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
     jQuery('input[name="pets"]').removeAttr("checked"); 
     document.getElementsByClassName("searchform")[0].reset();  
 
+    // Search on keyup
+    jQuery("#vacationarea").bind("keyup", function (e) {
+      var all = document.querySelectorAll(".dropdown-menu li");
+      if (all && all.length) {
+        for (var i = 0; i < all.length; i++) {
+          if (all[i].innerText.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1) {
+            all[i].style.display = "block";
+          } else {
+            all[i].style.display = "none";
+          }
+        }
+      }
+
+    });
+
+    // Manupulate search on paste
     jQuery("#vacationarea").bind("paste", function(e){
       setTimeout(() => {
          var all =  document.querySelectorAll(".dropdown-menu li");
