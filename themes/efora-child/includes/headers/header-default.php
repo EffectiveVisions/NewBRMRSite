@@ -6,7 +6,7 @@ $class = get_body_class(); ?>
 <header ng-controller="PropertyController as pCtrl" id="tg-header" class="tg-header tg-haslayout">
     <div class="container-fluid">
         <div class="row">
-            <div class="tg-topbar px-3 pl-lg-3">
+            <div class="tg-topbar px-3">
                 <nav class="tg-infonav">
                     <ul class="mb-0">
 
@@ -58,7 +58,7 @@ $class = get_body_class(); ?>
                             </ul>
                         </nav>
                     <?php } ?>
-                    <nav class="tg-cartsearch  px-3 pl-lg-3">
+                    <nav class="tg-cartsearch  px-3">
                         <ul class="mb-0">
                             <?php $facebook = get_field("facebook_link","option");
                             if(!empty($facebook)){ ?>

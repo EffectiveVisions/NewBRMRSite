@@ -3956,6 +3956,7 @@ vertical-align: middle
     max-height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
+    width: 100%;
 
 }
 .topMenuSearchBar ul li{
@@ -3985,9 +3986,7 @@ vertical-align: middle
 .mobile-nav-calender .form-group  label{
     display: none
 }
-.tg-addnavcartsearch nav ul .topMenuSearchBar ul {
-    width: 93%;
-}
+
 .mm-listview .mm-next{
     z-index: 1
 }
