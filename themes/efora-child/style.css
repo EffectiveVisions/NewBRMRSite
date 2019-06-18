@@ -775,7 +775,7 @@ ul.dropdown-menu li {
     width: 100%;
 }
 .propertyBanner .dropdown-menu{
-	padding: 6px 0;
+	
 }
 .propertyBanner .dropdown-menu li {
     padding: 8px 20px;
@@ -3295,7 +3295,7 @@ border-radius: 10px;
     border: 1px solid #f6f7f9;
   
     border-image:
-      url("http://blueridg.protacto.com/wp-content/uploads/2019/04/privacy-border.png")  /* source */
+      url("https://new.blueridgerentals.com/wp-content/uploads/2019/04/privacy-border.png")  /* source */
       27 /                    /* slice */
       19px 19px 19px 19px /    /* width */
       8px 8px 8px 8px       /* outset */
@@ -3407,28 +3407,29 @@ border-radius: 10px;
     font-weight: 600;
 }
 .ui-datepicker-calendar .available span,
-.ui-datepicker-calendar .available .ui-state-default{
+.ui-datepicker-calendar .available .ui-state-default ,
+.ui-datepicker-calendar  .ui-state-default{
     color: #8c99b4;
-    font-size: 11px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    font-size: 13px;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     margin: 0 auto;
-    font-size: 12px;
 }
 .ui-widget-content .ui-state-disabled .ui-state-default {
     color: #dbdbdb;
     background: transparent !important
 }
 .ui-datepicker-calendar .available span, .ui-datepicker-calendar .available .ui-state-default
-.ui-datepicker-calendar .available a.ui-state-default.ui-state-hover {
+.ui-datepicker-calendar .available a.ui-state-default.ui-state-hover{
     border-color: #223b70;
     background: #223b70 !important;
     color: #fff;
 }
-.ui-datepicker-calendar .available.ui-datepicker-days-cell-over a.ui-state-default{
+.ui-datepicker-calendar .available.ui-datepicker-days-cell-over a.ui-state-default,
+.ui-datepicker-calendar  .ui-datepicker-current-day a ,.ui-datepicker-calendar  .ui-datepicker-days-cell-over  a{
     background: #223b70;
     border-radius: 50%;
     width: 30px;
@@ -3471,10 +3472,7 @@ border-radius: 10px;
 }
 
 /*additional calender new changes*/
-.ui-datepicker.ui-datepicker-multi .ui-datepicker-calendar .available a {
-    font-weight: 600;
-    font-size: 13px;
-}
+
 
 .ui-datepicker.ui-datepicker-multi-2 .ui-datepicker-next {
     right: 20px;
@@ -3778,6 +3776,7 @@ body.modal-open,body.menuopened {
 #description h1,#description h2,#description h3,#description h4,#description h5,#description span ,#description p, #description strong{
     font-size:14px;
     font-family: 'Nunito',sans-serif !important;
+     line-height: 23px;
 }
 
 .description-dtl:after {
@@ -3911,7 +3910,7 @@ img.ammenityicon {
     vertical-align: middle;
 }
 img.ammenityicon.w-18{
-    width: 18px
+    width: 16px
 }
 
 .amenity_item label{
@@ -3959,7 +3958,7 @@ img.ammenityicon.w-18{
     font-size: 10px;
     font-weight: normal;
 }
-.input-calender-icon .form-control[readonly] {
+.input-calender-icon .form-control[readonly]  {
     background-color: transparent;
     position: relative;
     z-index: 1;
