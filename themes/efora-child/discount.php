@@ -94,7 +94,7 @@
    <section class="blogSection gallerySection py-3 d-none discount-gallery" ng-controller="PropertyController as pCtrl">
         <div class="row">
 	         <div class="col-12 py-sm-4 pt-4 pb-3 text-center">
-	            <h2 style="color:#0061a3;" class="mb-0 f-property-heading"> Our Gallery</h2>
+	            <h2 style="color:#0061a3;" class="mb-0 f-property-heading"> Featured Properties Gallery </h2>
 	         </div>
 	    </div>
 
@@ -245,7 +245,7 @@
 	          </div>
 	         </div>
 	         <div  class="col-md-12 text-center mt-5 mb-4">
-	            <a href="/search-results/?" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold viewallhomepage">See All Properties Running Special</a>
+	            <a href="/search-results/?" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold viewallhomepage">See All Properties Running Specials</a>
 	         </div>
 	      </div>
 	  </div>
