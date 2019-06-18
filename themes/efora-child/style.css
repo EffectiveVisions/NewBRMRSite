@@ -3994,6 +3994,31 @@ vertical-align: middle
 .search_widget .c-guests-dropdown__body:after, .search_widget .c-guests-dropdown__body:before{
     display: none
 }
+.icon.icon-search.font-20{
+    font-size: 16px;
+}
+/*----------scroll------------*/
+/* width */
+.topMenuSearchBar ::-webkit-scrollbar {
+  width:5px;
+}
+
+/* Track */
+.topMenuSearchBar ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.topMenuSearchBar ::-webkit-scrollbar-thumb {
+  background: #000; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.topMenuSearchBar ::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
 /*================================
       Responsive media start here
 ==================================*/
