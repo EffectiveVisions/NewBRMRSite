@@ -3590,7 +3590,7 @@
                 }
                 if ($scope.checkNumber(search.resort_area_id, false)) {
                     params.resort_area_id = parseInt(search.resort_area_id);
-                    $location.search("resort_area_id", params.resort_area_id)
+                    //$location.search("resort_area_id", params.resort_area_id)
                 } else {
                     delete params.resort_area_id;
                     $location.search("resort_area_id", null)
