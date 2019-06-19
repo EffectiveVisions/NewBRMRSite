@@ -295,6 +295,7 @@
   }
 
   jQuery(document).ready(function(){
+      jQuery(".amenity_item").addClass("d-none d-md-inline-block");
       jQuery(".filter-count-btn").bind('touchend', function(e) {
            e.preventDefault(); 
            jQuery(this).click();
@@ -307,7 +308,18 @@
       })
 
       jQuery(".amenity_item").each(function(){
-          if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500"){ 
+          if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500" || jQuery(this).children("input").val() == "121870"){ 
+
+            if(jQuery(this).children("input").val() == "121870"){
+               jQuery("input[value='121870']").addClass("displaydeskammen")
+               jQuery("input[value='121870']").after('<img class="ammenityicon displaydeskammen"  src="/wp-content/uploads/2019/06/pin-pong.svg">');
+               var html = jQuery(this).html();
+               jQuery(this).remove()
+               jQuery("#resortpro-search-amenities-block").append("<span class='amenity_item d-none d-md-inline-block'>"+html+"</span>");
+               jQuery("input[value='121870']").next().next("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"12px"});
+              
+            }
+
             if(jQuery(this).children("input").val() == "121857"){
                 jQuery("input[value='121857']").after('<img class="ammenityicon"  src="/wp-content/uploads/2019/06/bath-tub.svg">');
             }

@@ -293,6 +293,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
 <!-- here javscript code text -->
 <script>
    jQuery(document).ready(function(){
+
     jQuery(".lookup").click(function(){
            jQuery("#tg-search").addClass("open");
     })
@@ -446,11 +447,22 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
               first = false
           }
       })
-
+      jQuery(".amenity_item").addClass("d-none d-md-inline-block");
+      //jQuery("#resortpro-search-amenities-block-not").addClass("d-none d-md-inline-block");
       jQuery(".amenity_item").each(function(){
-          if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500"){
+          if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500" || jQuery(this).children("input").val() == "121870"){ 
 
-             if(jQuery(this).children("input").val() == "121857"){
+            if(jQuery(this).children("input").val() == "121870"){
+               jQuery("input[value='121870']").addClass("displaydeskammen")
+               jQuery("input[value='121870']").after('<img class="ammenityicon displaydeskammen"  src="/wp-content/uploads/2019/06/pin-pong.svg">');
+               var html1 = jQuery(this).html();
+               jQuery(this).remove()
+               jQuery("#resortpro-search-amenities-block-not").append("<span class='amenity_item d-none d-md-inline-block'>"+html1+"</span>");
+               jQuery("input[value='121870']").next().next("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"12px"});
+
+            }
+
+            if(jQuery(this).children("input").val() == "121857"){
                 jQuery("input[value='121857']").after('<img class="ammenityicon"  src="/wp-content/uploads/2019/06/bath-tub.svg">');
             }
 
@@ -461,7 +473,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
             if(jQuery(this).children("input").val() == "416500"){
               jQuery("input[value='416500']").after('<img class="ammenityicon" src="/wp-content/uploads/2019/06/Mountain.svg">');
             }
-
+            
             jQuery(this).children("input").css({"vertical-align":"middle","outline":"none"});
             jQuery(this).children("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"12px"});
 
