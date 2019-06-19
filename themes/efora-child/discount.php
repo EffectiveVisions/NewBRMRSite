@@ -49,47 +49,7 @@
 	   </div>
    </section>
 
-   <section class="blogSection py-3 bg-gray">
-   <div ng-controller="PropertyController as pCtrl" ng-cloak  class="container">
-   	   <div class="row">
-	         <div class="col-12 py-sm-4 pt-4 pb-3 text-center">
-	            <h2 style="color:#0061a3;" class="mb-0 f-property-heading"> Special Packages</h2>
-	         </div>
-	    </div>
-       <div class="row my-md-5 py-2 mb-md-3">
-        <?php
-           $args = array( 'posts_per_page' => 3, 'offset'=> 1, 'category' => 312 );
-           $myposts = get_posts( $args );
-          foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-           <div class="col-lg-4  col-sm-6 col-12 pb-3 pb-sm-0 blog-container">
-             <div class="blog transition h-100  bg-white d-flex flex-wrap">
-                <figure class="mb-0 blog-image overflow-h w-100">
-                <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?> 
-                 <img class="blogthumb" src="<?php echo $url ?>"/>
-                </figure>
-                 <div class="blogDetail px-4 pt-4  w-100">
-                  <div class="d-flex flex-wrap align-items-center">
-                    <i class="icon icon-small-calendar font-20 text-blue"></i>
-                    <span class="ml-2 text-muted"><?php echo get_the_date('M j, Y'); ?></span>
-                  </div>
-                    <h6 class="font-weight-bold text-blue my-3 blog-heading text-truncate mb-2"><?php the_title(); ?></h6>
-                    <p><?php echo wp_trim_words( get_the_content(), 18, '...' );?></p>
-                 </div>
-                 <div class="blogDetail px-4 pb-4 w-100 mt-auto">
-                    <a href="<?php the_permalink(); ?>" class="font-weight-bold readMore"> READ MORE  </a> 
-                 </div>
-             </div>
-           </div>
-         <?php 
-           endforeach; 
-           wp_reset_postdata();
-          ?>
-          <div class="col-12 text-center mt-md-5 mt-4">
-              <a href="/blogpage" class="btn btn-primary themeBtn text-uppercase font-weight-bold font-Nunito view-all">View All</a>
-          </div>
-      </div>
-     </div>
-   </section>
+
 
    <section class="blogSection gallerySection py-3 d-none discount-gallery" ng-controller="PropertyController as pCtrl">
         <div class="row">
