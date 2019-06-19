@@ -1690,7 +1690,7 @@ header.tg-haslayout{
     top: 0px;
     border-top: 8px solid #005a9a;
     z-index: 1;
-     transition: top 0.3s ease-in 0s;
+     transition: top 0.7s ease-in 0s;
 }
 .filter-single-property .star-rating.divider:after,
 .filter-single-property .star-rating.divider:before {
@@ -4017,6 +4017,12 @@ vertical-align: middle
 /* Handle on hover */
 .topMenuSearchBar ::-webkit-scrollbar-thumb:hover {
   background: #b30000; 
+}
+a.btn-ouline-white:not([href]):not([tabindex]) {
+    color: #fff;
+}
+a.btn-ouline-white:hover:not([href]):not([tabindex]) {
+    color: #000;
 }
 /*================================
       Responsive media start here

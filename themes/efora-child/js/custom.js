@@ -31,7 +31,12 @@ jQuery(document).ready(function(){
   	 		 var myDate = new Date(jQuery("#start_date_popup").val());
          myDate.setDate(myDate.getDate() + 1);
   	 		 jQuery(this).datepicker({
-               minDate:myDate
+               minDate:myDate,
+               onSelect: function(selectedDate){
+                  jQuery("#search_end_date_single").val("");
+                  jQuery("#search_start_date_single").val("");
+
+               }
   	 	   });
         jQuery("#end_date_popup").val("");
         
@@ -41,7 +46,11 @@ jQuery(document).ready(function(){
   	 		myDate = new Date();
   	 		myDate.setDate(myDate.getDate() + 1);
   	 		jQuery(this).datepicker({
-               minDate:myDate
+               minDate:myDate,
+               onSelect: function(selectedDate){
+                  jQuery("#search_end_date_single").val("");
+                  jQuery("#search_start_date_single").val("");
+               }
   	 	    });
         jQuery( this).datepicker("refresh");
   	 	}	
@@ -52,16 +61,17 @@ jQuery(document).ready(function(){
        input.trigger('change'); 
        myDate = new Date();
        myDate.setDate(myDate.getDate() + 1);
-  	 	jQuery(this).datepicker({
+  	 	 jQuery(this).datepicker({
          minDate:myDate,
          onSelect: function (selectedDate) {
             myDate = new Date(selectedDate);
             myDate.setDate(myDate.getDate() + 1);
             jQuery('#end_date_popup').datepicker('option', 'minDate', myDate);
+            jQuery("#search_end_date_single").val("");
+            jQuery("#search_start_date_single").val("");
          }
-      });
-      
-      jQuery(this).datepicker("refresh");
+       });
+       jQuery(this).datepicker("refresh");
   	 }  
   	 jQuery("body").append(jQuery("#ui-datepicker-div"));
    });
@@ -72,5 +82,42 @@ jQuery(document).ready(function(){
   jQuery(".community").css({"background":"rgb(237, 241, 243)"});
   jQuery(".mainmenu").children("a").css({"color":"#fff","font-weight":"bold"});
 
-  //jQuery(".closemenu").next().find("a").css({"color":"#fff"});
+  jQuery(".increase-adult").on("click",function() {
+    setTimeout(function(){
+       jQuery(".homepagesearch").find(".guests-sum").html("");
+       jQuery(".homepagesearch").find(".guests-sum-label").html("Guest");
+       jQuery(".searchbyarea-banner").find(".guests-sum").html("");
+       jQuery(".searchbyarea-banner").find(".guests-sum-label").html("Guest");
+    },500)
+      
+      
+  });
+
+  jQuery(".decrease-adult").on("click",function() {
+      setTimeout(function(){
+         jQuery(".homepagesearch").find(".guests-sum").html("");
+         jQuery(".homepagesearch").find(".guests-sum-label").html("Guest");
+         jQuery(".searchbyarea-banner").find(".guests-sum").html("");
+         jQuery(".searchbyarea-banner").find(".guests-sum-label").html("Guest");
+       },500)
+  });
+
+  jQuery(".increase-child").on("click",function(){
+       setTimeout(function(){
+         jQuery(".homepagesearch").find(".guests-sum").html("");
+         jQuery(".homepagesearch").find(".guests-sum-label").html("Guest");
+         jQuery(".searchbyarea-banner").find(".guests-sum").html("");
+         jQuery(".searchbyarea-banner").find(".guests-sum-label").html("Guest");
+       },500)
+  });
+
+  jQuery(".decrease-child").on("click",function(){
+      setTimeout(function(){
+         jQuery(".homepagesearch").find(".guests-sum").html("");
+         jQuery(".homepagesearch").find(".guests-sum-label").html("Guest");
+         jQuery(".searchbyarea-banner").find(".guests-sum").html("");
+         jQuery(".searchbyarea-banner").find(".guests-sum-label").html("Guest");
+       },500)
+  });
+
 });

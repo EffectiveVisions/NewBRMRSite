@@ -6,16 +6,11 @@
        <div class="mobile-nav-calender z-index col-12 mt-3">
             <div id="resortpro_search_widget-15" class="widget_resortpro_search_widget">
                <div class="search_widget">
-                  <div ng-controller="PropertyController as pCtrl">
-                      <span class="start_date" ng-init="search.start_date=''"></span>
-                      <span class="end_date" ng-init="search.end_date=''"></span>
-                  </div>
-
                   <form ng-submit="updateSearch($event)" method="post" class="form searchform ng-pristine ng-valid" action="<?php echo get_site_url()."/"."search-results/"; ?>">
                      <input type="hidden" name="resortpro_search_nonce" value="cf316fbc2c">
                      <div class="row" id="search-widget-main-rowresortpro_search_widget-15" style="">
                         <div class="col-12" id="resortpro-search-checkin-block-idclass-homeless">
-                           <div class="form-group has-feedback resortpro-search-checkin-block" id="resortpro-search-checkin-block-not">
+                           <div class="form-group has-feedback resortpro-search-checkin-block" id="resortpro-search-checkin-block-not1">
                             <label for="checkin">Check in</label>
                             
                             <input ng-model="search.start_date" id="start_date_popup" data-min-stay="2" data-checkin-days="1" class="form-control datepicker-popup" type="text" name="start_date" readonly="readonly" placeholder="Check in">
@@ -26,7 +21,7 @@
                         </div>
 
                         <div class="col-12" id="resortpro-search-checkout-block-idclass-homeless">
-                           <div class="form-group has-feedback resortpro-search-checkout-block" id="resortpro-search-checkout-block-not">
+                           <div class="form-group has-feedback resortpro-search-checkout-block" id="resortpro-search-checkout-block-not1">
                             <label for="checkout">Check Out</label>
 
                             <input ng-model="search.end_date" id="end_date_popup" class="form-control datepicker-popup" type="text" name="end_date" readonly="readonly" placeholder="Check Out">
@@ -56,17 +51,17 @@
                                        <div class="c-guests-dropdown__row input-group-text-box w-100 d-flex align-items-center">
                                           <span ng-bind="search.occupants" class="font-14 font-weight-light-bold adultscount ng-binding"></span>&nbsp;<span class="font-14 font-weight-light-bold text-capitalize font-14 font-weight-light-bold adults_label">Adult</span>
                                           <div class="btn-group-filter ml-auto d-flex">
-                                             <div class="js-guestsOccBtn"><button type="button" class="btn btn-outline-secondary filter-count-btn p-0 rounded-circle mr-3" aria-label="Minus" ng-click="minus(1, &quot;search.occupants&quot;)"><i class="icon icon-Minus font-12" aria-hidden="true"></i></button></div>
+                                             <div class="js-guestsOccBtn"><button type="button" class="btn btn-outline-secondary filter-count-btn p-0 rounded-circle mr-3 decrease-adult" aria-label="Minus" ng-click="minus(1, &quot;search.occupants&quot;)"><i class="icon icon-Minus font-12" aria-hidden="true"></i></button></div>
                                              <input class="form-control js-guestsOccupants pets_count ng-pristine ng-untouched ng-valid ng-empty" aria-label="Button Amounts" name="occ_adults" ng-init="search.occupants=''" ng-model="search.occupants" placeholder="0" readonly="">
-                                             <div class="js-guestsOccBtn"><button type="button" class="btn btn-outline-secondary filter-count-btn p-0 rounded-circle" aria-label="Plus" ng-click="plus(10, &quot;search.occupants&quot;)"><i class="icon icon-plus font-12" aria-hidden="true"></i></button></div>
+                                             <div class="js-guestsOccBtn"><button type="button" class="btn btn-outline-secondary filter-count-btn p-0 rounded-circle increase-adult" aria-label="Plus" ng-click="plus(10, &quot;search.occupants&quot;)"><i class="icon icon-plus font-12" aria-hidden="true"></i></button></div>
                                           </div>
                                        </div>
                                        <div class="c-guests-dropdown__row input-group-text-box w-100 d-flex align-items-center">
                                           <span ng-bind="search.occupants_small" class="font-14 font-weight-light-bold children-count ng-binding"></span>&nbsp;<span class="children-label font-14 font-weight-light-bold text-capitalize font-14 font-weight-light-bold">Child</span>
                                           <div class="btn-group-filter ml-auto d-flex">
-                                             <div class="js-guestsOccBtn"><button type="button" class="btn btn-outline-secondary filter-count-btn p-0 rounded-circle mr-3" aria-label="Minus" ng-click="minus(0, &quot;search.occupants_small&quot;)"><i class="icon icon-Minus font-12" aria-hidden="true"></i></button></div>
+                                             <div class="js-guestsOccBtn"><button type="button" class="btn btn-outline-secondary filter-count-btn p-0 rounded-circle mr-3 decrease-child" aria-label="Minus" ng-click="minus(0, &quot;search.occupants_small&quot;)"><i class="icon icon-Minus font-12" aria-hidden="true"></i></button></div>
                                              <input class="form-control js-guestsOccupants pets_count ng-pristine ng-untouched ng-valid ng-empty" aria-label="Button Amounts" name="occ_children" ng-init="search.occupants_small=''" ng-model="search.occupants_small" placeholder="0" readonly="">
-                                             <div class="js-guestsOccBtn"><button type="button" class="btn btn-outline-secondary filter-count-btn p-0 rounded-circle" aria-label="Plus" ng-click="plus(10, &quot;search.occupants_small&quot;)"><i class="icon icon-plus font-12" aria-hidden="true"></i></button></div>
+                                             <div class="js-guestsOccBtn"><button type="button" class="btn btn-outline-secondary filter-count-btn p-0 rounded-circle increase-child" aria-label="Plus" ng-click="plus(10, &quot;search.occupants_small&quot;)"><i class="icon icon-plus font-12" aria-hidden="true"></i></button></div>
                                           </div>
                                        </div>
                                        <div class="c-guests-dropdown__row  input-group-text-box w-100 d-flex align-items-center">
@@ -74,7 +69,7 @@
                                           <div class="btn-group-filter ml-auto">
                                              <div class="custom-control custom-radio custom-control-inline align-items-center "> 
 
-                                                <input type="radio" id="r4" class="custom-control-input" name="pets" ng-click="minus(0, &quot;search.pets&quot;)"> 
+                                                <input type="radio" id="r4" class="custom-control-input pet-click" name="pets" ng-click="minus(0, &quot;search.pets&quot;)"> 
 
                                                 <label class="custom-control-label yes font-13 font-weight-light-bold text-capitalize custome-size-radio-dot" for="r4">No
                                                 </label>
@@ -83,7 +78,7 @@
                                              <input class="form-control pets_count ng-pristine ng-untouched ng-valid ng-empty" aria-label="Button Amounts" name="occ_pets" ng-init="search.pets=''" ng-model="search.pets" placeholder="0" readonly="">
                                              <div class="custom-control custom-radio custom-control-inline align-items-center mr-0"> 
 
-                                                <input type="radio" id="r3" class="custom-control-input" name="pets" ng-click="plus(10, &quot;search.pets&quot;)"> 
+                                                <input type="radio" id="r3" class="custom-control-input pet-click" name="pets" ng-click="plus(10, &quot;search.pets&quot;)"> 
 
                                                 <label class="custom-control-label no font-13 font-weight-light-bold text-capitalize custome-size-radio-dot" for="r3">Yes</label>
 
