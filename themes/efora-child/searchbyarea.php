@@ -447,7 +447,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
               first = false
           }
       })
-      jQuery(".amenity_item").addClass("d-none d-md-inline-block");
+      //jQuery(".amenity_item").addClass("d-none d-md-inline-block");
       //jQuery("#resortpro-search-amenities-block-not").addClass("d-none d-md-inline-block");
       jQuery(".amenity_item").each(function(){
           if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500" || jQuery(this).children("input").val() == "121870"){ 

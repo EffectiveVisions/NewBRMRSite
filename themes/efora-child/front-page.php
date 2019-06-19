@@ -295,7 +295,7 @@
   }
 
   jQuery(document).ready(function(){
-      jQuery(".amenity_item").addClass("d-none d-md-inline-block");
+      //jQuery(".amenity_item").addClass("d-none d-md-inline-block");
       jQuery(".filter-count-btn").bind('touchend', function(e) {
            e.preventDefault(); 
            jQuery(this).click();
@@ -317,6 +317,8 @@
                jQuery(this).remove()
                jQuery("#resortpro-search-amenities-block").append("<span class='amenity_item d-none d-md-inline-block'>"+html+"</span>");
                jQuery("input[value='121870']").next().next("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"12px"});
+
+               
               
             }
 
