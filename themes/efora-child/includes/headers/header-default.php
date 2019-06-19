@@ -78,7 +78,7 @@ $class = get_body_class(); ?>
                                         <span class="input-group-text border-0 cursor-pointer close-search-btn" id="basic-addon1"><i class="icon icon-search font-20"></i></span>
                                       <input id="searchbox" type="text" class="form-control pr-3 font-Nunito font-weight-normal" ng-model='area' 
                                       uib-typeahead='area as area.name for area in locations | filter:$viewValue:stateComparator' 
-                                      typeahead-on-select='onSearchSelect(area.id)' typeahead-focus-first="true" placeholder="Search Location" aria-label="Search" aria-describedby="basic-addon1">
+                                      typeahead-on-select='onSearchSelect(area.id)' typeahead-focus-first="true" placeholder="Vacation Homes by Name" aria-label="Search" aria-describedby="basic-addon1">
                                       </div>
                                     </div>
 
@@ -134,7 +134,7 @@ $class = get_body_class(); ?>
                                         <span class="input-group-text border-0 cursor-pointer close-search-btn" id="basic-addon1"><i class="icon icon-search font-20"></i></span>
                                       <input id="searchbox" type="text" class="form-control pr-3 font-Nunito font-weight-normal" ng-model='area' 
                                       uib-typeahead='area as area.name for area in locations | filter:$viewValue:stateComparator' 
-                                      typeahead-on-select='onSearchSelect(area.id)' typeahead-focus-first="true" placeholder="Search Location" aria-label="Search" aria-describedby="basic-addon1">
+                                      typeahead-on-select='onSearchSelect(area.id)' typeahead-focus-first="true" placeholder="Vacation Homes by Name" aria-label="Search" aria-describedby="basic-addon1">
                                       </div>
                             </div>
                            
