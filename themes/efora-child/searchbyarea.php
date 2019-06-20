@@ -454,7 +454,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
 
             if(jQuery(this).children("input").val() == "121870"){
                jQuery("input[value='121870']").addClass("displaydeskammen")
-               jQuery("input[value='121870']").after('<img class="ammenityicon displaydeskammen"  src="/wp-content/uploads/2019/06/table-tennis.png">');
+               jQuery("input[value='121870']").after('<img class="ammenityicon displaydeskammen tableicon"  src="/wp-content/uploads/2019/06/table-tennis.png">');
                var html1 = jQuery(this).html();
                jQuery(this).remove()
                jQuery("#resortpro-search-amenities-block-not").append("<span class='amenity_item d-none d-md-inline-block'>"+html1+"</span>");

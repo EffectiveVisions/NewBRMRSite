@@ -312,7 +312,7 @@
 
             if(jQuery(this).children("input").val() == "121870"){
                jQuery("input[value='121870']").addClass("displaydeskammen")
-               jQuery("input[value='121870']").after('<img class="ammenityicon displaydeskammen"  src="/wp-content/uploads/2019/06/table-tennis.png">');
+               jQuery("input[value='121870']").after('<img class="ammenityicon displaydeskammen tableicon"  src="/wp-content/uploads/2019/06/table-tennis.png">');
                var html = jQuery(this).html();
                jQuery(this).remove()
                jQuery("#resortpro-search-amenities-block").append("<span class='amenity_item d-none d-md-inline-block'>"+html+"</span>");
