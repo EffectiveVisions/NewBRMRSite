@@ -983,7 +983,7 @@
                         jQuery(".sticky-wrapper").hide();
                         jQuery(".price_sticky").hide();
                         jQuery(".view_breakdown_days").hide();
-                        Alert.add(Alert.errorType, errorMsg);
+                        //Alert.add(Alert.errorType, errorMsg);
                         hide_waitMe("#resortpro-book-unit form");
                         $scope.isDisabled = true
                     } else {
@@ -4075,10 +4075,8 @@
             var count = 0;
             var start_date = jQuery('#search_start_date_single').val();
             var end_date   = jQuery('#search_end_date_single').val();
-
             var children   = jQuery('#resortpro-search-guests-children-block-not').find('.count-single-child').html();
             var adults     = jQuery("#resortpro-search-guests-adults-block-not").find('.count-single-adult').html();
-          
             if($scope.getParameterByName('pets')){
             	pets = parseInt($scope.getParameterByName('pets'))
             }else{
@@ -4288,11 +4286,14 @@
             params['page_number'] = 1;
 
             var newRelativePathQuery = queryparams;
+
             history.pushState(null, '', newRelativePathQuery);
+
             $scope.searchProperties(params, size, 1, true)
-           if($scope.sortBy != "random"){
+
+            if($scope.sortBy != "random"){
               jQuery('.sortfilter').val($scope.sortBy);
-           }
+            }
         }
 
 
