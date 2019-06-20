@@ -35,8 +35,8 @@ jQuery(document).ready(function () {
             jQuery(this).datepicker({
                minDate: myDate,
                onSelect: function (selectedDate) {
-                  jQuery("#search_end_date_single").val("");
-                  jQuery("#search_start_date_single").val("");
+                  //jQuery("#search_end_date_single").val("");
+                  //jQuery("#search_start_date_single").val("");
 
                }
             });
@@ -51,8 +51,8 @@ jQuery(document).ready(function () {
             jQuery(this).datepicker({
                minDate: myDate,
                onSelect: function (selectedDate) {
-                  jQuery("#search_end_date_single").val("");
-                  jQuery("#search_start_date_single").val("");
+                  //jQuery("#search_end_date_single").val("");
+                  //jQuery("#search_start_date_single").val("");
                }
             });
             jQuery(this).datepicker("refresh");
@@ -64,6 +64,7 @@ jQuery(document).ready(function () {
          // input.trigger('input');
          // input.trigger('change');
          myDate = new Date();
+         
          myDate.setDate(myDate.getDate() + 1);
          jQuery(this).datepicker({
             minDate: myDate,
@@ -71,8 +72,8 @@ jQuery(document).ready(function () {
                myDate = new Date(selectedDate);
                myDate.setDate(myDate.getDate() + 1);
                jQuery('#end_date_popup').datepicker('option', 'minDate', myDate);
-               jQuery("#search_end_date_single").val("");
-               jQuery("#search_start_date_single").val("");
+               //jQuery("#search_end_date_single").val("");
+               //jQuery("#search_start_date_single").val("");
             }
          });
          jQuery(this).datepicker("refresh");
