@@ -355,12 +355,12 @@ jQuery(document).ready(function(){
      jQuery(".guest-label-mobile").html("Guest");
   });
 
-  jQuery("#start_date_popup").click(function(){
-     jQuery(this).focus();
+  jQuery('#start_date_popup').on('touchstart', function() {
+    jQuery(this).focus();
   });
 
-   jQuery("#end_date_popup").click(function(){
-     jQuery(this).focus();
+  jQuery('#end_date_popup').on('touchstart', function() {
+    jQuery(this).focus();
   });
-    
+   
 });
