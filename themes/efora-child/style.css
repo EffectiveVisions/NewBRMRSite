@@ -4025,6 +4025,8 @@ a.btn-ouline-white:not([href]):not([tabindex]) {
 a.btn-ouline-white:hover:not([href]):not([tabindex]) {
     color: #000;
 }
+
+#searchbox1{width: 170px;}
 /*================================
       Responsive media start here
 ==================================*/
