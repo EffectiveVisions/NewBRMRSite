@@ -82,127 +82,285 @@ jQuery(document).ready(function(){
   jQuery(".community").css({"background":"rgb(237, 241, 243)"});
   jQuery(".mainmenu").children("a").css({"color":"#fff","font-weight":"bold"});
 
-  jQuery(".increase-adult").on("click",function() {
-    setTimeout(function(){
-       jQuery(".homepagesearch").find(".guests-sum").html("");
-       jQuery(".homepagesearch").find(".guests-sum-label").html("Guest");
-       jQuery(".homepagesearch").find(".adults_label").html("Adult");
-       jQuery(".homepagesearch").find(".children-label").html("Child");
-       jQuery(".searchbyarea-banner").find(".guests-sum").html("");
-       jQuery(".searchbyarea-banner").find(".guests-sum-label").html("Guest");
-       jQuery(".searchbyarea-banner").find(".adults_label").html("Adult");
-       jQuery(".searchbyarea-banner").find(".children-label").html("Child");
-       jQuery(".homepagesearch").find(".adultscount").html("");
-       jQuery(".homepagesearch").find(".children-count").html("");
-       jQuery(".searchbyarea-banner").find(".adultscount").html("");
-       jQuery(".searchbyarea-banner").find(".children-count").html("");
-    },200)
-      
-      
-  });
+  jQuery(".increase-child").on("click", function(){
+       var child_count = jQuery.trim(jQuery(".count-children").html());
+       if(child_count==""){
+          jQuery(".count-children").html("1");
+       }else{
+          var orgcount = parseInt(jQuery(".count-children").html())
+          if(orgcount<10){
+             var count = parseInt(jQuery(".count-children").html())+1;
+             jQuery(".count-children").html(count);
+          }
+       }
+       var check_count = jQuery.trim(jQuery(".count-children").html());
+       if(parseInt(check_count)>1){
+          jQuery(".children-label-mobile").html("Children");
+       }else{
+          jQuery(".children-label-mobile").html("Child");
+       }
+       jQuery(".children_count_hidden").val(jQuery.trim(jQuery(".count-children").html()))
+       var adult_count = jQuery.trim(jQuery(".count_adults").html());
+       var child_count = jQuery.trim(jQuery(".count-children").html());
+       if(adult_count!="" && child_count!=""){
+          var total_count = parseInt(adult_count) + parseInt(child_count);
 
-  jQuery(".decrease-adult").on("click",function() {
-      setTimeout(function(){
-         jQuery(".homepagesearch").find(".guests-sum").html("");
-         jQuery(".homepagesearch").find(".guests-sum-label").html("Guest");
-         jQuery(".homepagesearch").find(".adults_label").html("Adult");
-         jQuery(".homepagesearch").find(".children-label").html("Child");
-         jQuery(".searchbyarea-banner").find(".guests-sum").html("");
-         jQuery(".searchbyarea-banner").find(".guests-sum-label").html("Guest");
-          jQuery(".homepagesearch").find(".adultscount").html("");
-         jQuery(".homepagesearch").find(".children-count").html("");
-         jQuery(".searchbyarea-banner").find(".adultscount").html("");
-         jQuery(".searchbyarea-banner").find(".children-count").html("");
-         jQuery(".searchbyarea-banner").find(".adults_label").html("Adult");
-         jQuery(".searchbyarea-banner").find(".children-label").html("Child");
-       },200)
-  });
-
-  jQuery(".increase-child").on("click",function(){
-       setTimeout(function(){
-         jQuery(".homepagesearch").find(".guests-sum").html("");
-         jQuery(".homepagesearch").find(".guests-sum-label").html("Guest");
-         jQuery(".homepagesearch").find(".adults_label").html("Adult");
-         jQuery(".homepagesearch").find(".children-label").html("Child");
-         jQuery(".searchbyarea-banner").find(".guests-sum").html("");
-         jQuery(".searchbyarea-banner").find(".guests-sum-label").html("Guest");
-         jQuery(".searchbyarea-banner").find(".adults_label").html("Adult");
-         jQuery(".searchbyarea-banner").find(".children-label").html("Child");
-         jQuery(".homepagesearch").find(".adultscount").html("");
-         jQuery(".homepagesearch").find(".children-count").html("");
-         jQuery(".searchbyarea-banner").find(".adultscount").html("");
-         jQuery(".searchbyarea-banner").find(".children-count").html("");
-       },200)
+          if(total_count>1){
+            jQuery(".guest-label-mobile").html("Guests");
+           
+          }else{
+             jQuery(".guest-label-mobile").html("Guest");     
+          }
+          jQuery(".total_count").html(total_count);
+       }else if(adult_count!=""){
+          var total_count = parseInt(adult_count);
+          if(total_count>1){
+              jQuery(".guest-label-mobile").html("Guests");
+          }else{
+              jQuery(".guest-label-mobile").html("Guest");
+          }
+          jQuery(".total_count").html(total_count);
+       }else if(child_count!=""){
+          var total_count = parseInt(child_count);
+          if(total_count>1){
+              jQuery(".guest-label-mobile").html("Guests");
+          }else{
+              jQuery(".guest-label-mobile").html("Guest");
+          }
+          jQuery(".total_count").html(child_count);
+       }else{
+           jQuery(".total_count").html("");
+           jQuery(".guest-top-label").html("Guest");
+       }
   });
 
   jQuery(".decrease-child").on("click",function(){
-      setTimeout(function(){
-         jQuery(".homepagesearch").find(".guests-sum").html("");
-         jQuery(".homepagesearch").find(".guests-sum-label").html("Guest");
-         jQuery(".homepagesearch").find(".adults_label").html("Adult");
-         jQuery(".homepagesearch").find(".children-label").html("Child");
-         jQuery(".searchbyarea-banner").find(".guests-sum").html("");
-         jQuery(".searchbyarea-banner").find(".guests-sum-label").html("Guest");
-         jQuery(".homepagesearch").find(".adultscount").html("");
-         jQuery(".homepagesearch").find(".children-count").html("");
-         jQuery(".searchbyarea-banner").find(".adultscount").html("");
-         jQuery(".searchbyarea-banner").find(".children-count").html("");
-       },200)
-  });
-
-  jQuery(".rounded-circle").one("click", function(){
-     if(jQuery(this).hasClass( "increase-adult") || jQuery(this).hasClass("decrease-adult") || jQuery(this).hasClass("decrease-child") || jQuery(this).hasClass("increase-child")){
-       
-       jQuery(".homepagesearch").find(".pets_count").val("");
-       jQuery(".homepagesearch").find(".pets_count").trigger('input') ;// Use for Chrome/Firefox/Edge
-       jQuery(".homepagesearch").find(".pets_count").trigger('change');
-       jQuery(".homepagesearch").find("#guestsDropClearBtn").trigger("click");
-       jQuery(".searchbyarea-banner").find("#guestsDropClearBtn").trigger("click");
-       jQuery(".searchbyarea-banner").find(".pets_count").val("");
-       jQuery(".searchbyarea-banner").find(".pets_count").trigger('input') ;// Use for Chrome/Firefox/Edge
-       jQuery(".searchbyarea-banner").find(".pets_count").trigger('change');
+     var child_count = jQuery.trim(jQuery(".count-children").html());
+     if(parseInt(child_count)>=1){
+            jQuery(".children-label-mobile").html("Children");
      }else{
-         jQuery(".mobile-nav-calender").find("#guestsDropClearBtn1").trigger("click");
-         jQuery(".mobile-nav-calender").find(".pets_count").val("");
-         jQuery(".mobile-nav-calender").find(".pets_count").trigger('input');
-         jQuery(".mobile-nav-calender").find(".pets_count").trigger('change');
+            jQuery(".children-label-mobile").html("Child");
      }
+     if(child_count!=""){
+       var count = parseInt(jQuery.trim(jQuery(".count-children").html()));
+       if(count<=1){
+          jQuery(".count-children").html("");
+       }else{
+          var orgcount = parseInt(jQuery.trim(jQuery(".count-children").html())) - 1
+          jQuery(".count-children").html(orgcount);
+       }
+     }
+
+     var check_count = jQuery.trim(jQuery(".count-children").html());
+     if(parseInt(check_count)>1){
+          jQuery(".children-label-mobile").html("Children");
+      }else{
+          jQuery(".children-label-mobile").html("Child");
+      }
+     jQuery(".children_count_hidden").val(jQuery.trim(jQuery(".count-children").html()))
+
+      var adult_count = jQuery.trim(jQuery(".count_adults").html());
+       var child_count = jQuery.trim(jQuery(".count-children").html());
+       if(adult_count!="" && child_count!=""){
+          var total_count = parseInt(adult_count) + parseInt(child_count);
+          if(total_count>1){
+               jQuery(".guest-label-mobile").html("Guests");
+          }else{
+              jQuery(".guest-label-mobile").html("Guest");
+          }
+          jQuery(".total_count").html(total_count);
+       }else if(adult_count!=""){
+          var total_count = parseInt(adult_count);
+           if(total_count>1){
+              jQuery(".guest-label-mobile").html("Guests");
+          }else{
+              jQuery(".guest-label-mobile").html("Guest");
+          }
+          jQuery(".total_count").html(total_count);
+       }else if(child_count!=""){
+          var total_count = parseInt(child_count);
+           if(total_count>1){
+              jQuery(".guest-label-mobile").html("Guests");
+          }else{
+              jQuery(".guest-label-mobile").html("Guest");
+          }
+          jQuery(".total_count").html(child_count);
+       }else{
+           jQuery(".total_count").html("");
+           jQuery(".guest-top-label").html("Guest");
+       }
+     
   });
 
-  jQuery(".rounded-circle").on("click",function(){
+  jQuery(".increase-adult").on("click", function(){
+       var adult_count = jQuery.trim(jQuery(".count_adults").html());
+       if(adult_count==""){
+          jQuery(".count_adults").html("1");
+       }else{
+          var orgcount = parseInt(jQuery(".count_adults").html())
+          if(orgcount<10){
+             var count = parseInt(jQuery(".count_adults").html())+1;
+             jQuery(".count_adults").html(count);
+          }
+       }
+       var check_count = jQuery.trim(jQuery(".count_adults").html());
+       if(parseInt(check_count)>1){
+            jQuery(".adults_label_mobile").html("Adults");
+        }else{
+            jQuery(".adults_label_mobile").html("Adult");
+        }
 
-     if(jQuery(this).hasClass( "increase-adult") || jQuery(this).hasClass("decrease-adult") || jQuery(this).hasClass("decrease-child") || jQuery(this).hasClass("increase-child")){
-          
-     }else{
-        setTimeout(function(){
-            var homeadultscount   = parseInt(jQuery(".homepagesearch").find(".adultscount").html());
-            var homechildrencount = parseInt(jQuery(".homepagesearch").find(".children-count").html());
-            var searchadultscount = parseInt(jQuery(".searchbyarea-banner").find(".adultscount").html());
-            var searchchildcount  = parseInt(jQuery(".searchbyarea-banner").find(".children-count").html());
-            if(homeadultscount && homeadultscount>1){
-                 jQuery(".homepagesearch").find(".adults_label").html("Adults");
-            }else{
-                 jQuery(".homepagesearch").find(".adults_label").html("Adult");
-            }
-            if(homechildrencount && homechildrencount>1){
-                jQuery(".homepagesearch").find(".children-label").html("Children");
-            }else{
-                jQuery(".homepagesearch").find(".children-label").html("Child");
-            }
-            if(searchadultscount && searchadultscount>1){
-                jQuery(".searchbyarea-banner").find(".adults_label").html("Adults");
-            }else{
-                jQuery(".searchbyarea-banner").find(".adults_label").html("Adult");
-            }
-            if(searchchildcount && searchchildcount>1){
-                jQuery(".searchbyarea-banner").find(".children-label").html("Children");
-            }else{
-                jQuery(".searchbyarea-banner").find(".children-label").html("Child");
-            }
-            jQuery(".mobile-nav-calender").find(".guests-sum").html("");
-            jQuery(".mobile-nav-calender").find(".guests-sum-label").html("Guest");
-        },200)
-     }
+       jQuery(".adult_count_hidden").val(jQuery.trim(jQuery(".count_adults").html()));
+
+        var adult_count = jQuery.trim(jQuery(".count_adults").html());
+       var child_count = jQuery.trim(jQuery(".count-children").html());
+       if(adult_count!="" && child_count!=""){
+          var total_count = parseInt(adult_count) + parseInt(child_count);
+           if(total_count>1){
+              jQuery(".guest-label-mobile").html("Guests");
+          }else{
+              jQuery(".guest-label-mobile").html("Guest");
+          }
+          jQuery(".total_count").html(total_count);
+       }else if(adult_count!=""){
+          var total_count = parseInt(adult_count);
+           if(total_count>1){
+              jQuery(".guest-label-mobile").html("Guests");
+          }else{
+              jQuery(".guest-label-mobile").html("Guest");
+          }
+          jQuery(".total_count").html(total_count);
+       }else if(child_count!=""){
+          var total_count = parseInt(child_count);
+           if(total_count>1){
+              jQuery(".guest-label-mobile").html("Guests");
+          }else{
+              jQuery(".guest-label-mobile").html("Guest");
+          }
+          jQuery(".total_count").html(child_count);
+       }else{
+           jQuery(".total_count").html("");
+           jQuery(".guest-top-label").html("Guest");
+       }
+
   });
 
+  jQuery(".decrease-adult").on("click", function(){
+      var adult_count = jQuery.trim(jQuery(".count_adults").html());
+      if(parseInt(adult_count)>=1){
+            jQuery(".adults_label_mobile").html("Adults");
+      }else{
+            jQuery(".adults_label_mobile").html("Adult");
+      }
+      if(adult_count!=""){
+         var count = parseInt(jQuery.trim(jQuery(".count_adults").html()));
+         if(count<=1){
+            jQuery(".count_adults").html("");
+         }else{
+            var orgcount = parseInt(jQuery.trim(jQuery(".count_adults").html())) - 1
+            jQuery(".count_adults").html(orgcount);
+         }
+      }
+
+     var check_count = jQuery.trim(jQuery(".count_adults").html());
+     if(parseInt(check_count)>1){
+          jQuery(".adults_label_mobile").html("Adults");
+      }else{
+          jQuery(".adults_label_mobile").html("Adult");
+      }
+      jQuery(".adult_count_hidden").val(jQuery.trim(jQuery(".count_adults").html()));
+
+       var adult_count = jQuery.trim(jQuery(".count_adults").html());
+       var child_count = jQuery.trim(jQuery(".count-children").html());
+       if(adult_count!="" && child_count!=""){
+          var total_count = parseInt(adult_count) + parseInt(child_count);
+           if(total_count>1){
+              jQuery(".guest-label-mobile").html("Guests");
+          }else{
+              jQuery(".guest-label-mobile").html("Guest");
+          }
+          jQuery(".total_count").html(total_count);
+       }else if(adult_count!=""){
+          var total_count = parseInt(adult_count);
+           if(total_count>1){
+              jQuery(".guest-label-mobile").html("Guests");
+          }else{
+              jQuery(".guest-label-mobile").html("Guest");
+          }
+          jQuery(".total_count").html(total_count);
+       }else if(child_count!=""){
+          var total_count = parseInt(child_count);
+           if(total_count>1){
+              jQuery(".guest-label-mobile").html("Guests");
+          }else{
+              jQuery(".guest-label-mobile").html("Guest");
+          }
+          jQuery(".total_count").html(child_count);
+       }else{
+           jQuery(".total_count").html("");
+           jQuery(".guest-top-label").html("Guest");
+       }
+  });
+
+  jQuery(".pet-click").on("click", function(){
+    if(jQuery(this).attr("id") == "r3"){
+      jQuery(".pets-available").removeClass("d-none");
+    }
+
+    if(jQuery(this).attr("id") == "r4"){
+      jQuery(".pets-available").addClass("d-none");
+    } 
+  });
+
+  jQuery(".search-mobile").click(function(e){
+
+      e.preventDefault();
+     
+      var url = jQuery(".searchformmobile").attr("action") + "?";
+      
+      var adult = jQuery(".adult_count_hidden").val();
+      var child = jQuery(".children_count_hidden").val();
+
+      if(jQuery(".pets-available").hasClass("d-none")){
+          var pet = 0;
+      }else{
+          var pet = 1;
+      }
+
+      if(jQuery("#start_date_popup").val()!="" && jQuery("#end_date_popup").val()!=""){
+         url = url + '&sd='+jQuery("#start_date_popup").val()+'' + '&ed='+jQuery("#end_date_popup").val()+'' 
+      }
+
+      if(adult!=""){
+         url = url + '&oc='+adult+''
+      }
+      if(child!=""){
+         url = url + '&ch='+child+''
+      }
+      if(pet!=0){
+         url = url + '&pets='+pet+''
+      }
+
+      window.location.href = url;
+  });
+
+  jQuery("#guestsDropClearBtn1").on("click",function(){
+     jQuery(".count-children").html("");
+     jQuery(".count_adults").html("");
+     jQuery(".count_adult_input").val("");
+     jQuery(".children_count_input").val("");
+     jQuery(".pet-click").prop('checked', false);
+     jQuery(".pets-available").addClass("d-none");
+     jQuery(".total_count").html("");
+     jQuery(".guest-label-mobile").html("Guest");
+  });
+
+  jQuery("#start_date_popup").click(function(){
+     jQuery(this).focus();
+  });
+
+   jQuery("#end_date_popup").click(function(){
+     jQuery(this).focus();
+  });
+    
 });
