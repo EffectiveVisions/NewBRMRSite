@@ -1219,7 +1219,7 @@ ul.rating li{
 /*Home page*/
 .tg-header .tg-cartsearch ul li a{
   width: auto;
-  top: 5px;
+ 
 }
 header.tg-haslayout{
     float: none;
@@ -3927,7 +3927,7 @@ vertical-align: middle
 }
 
 .topMenuSearchBar .input-group-text{
-        background-color: #fff;
+    
    
 }
 .tg-cartsearch  .close-search-btn{
@@ -3938,12 +3938,24 @@ vertical-align: middle
     font-weight: bold;
 }
 .tg-cartsearch .topMenuSearchBar ul li{
-    width: 100%;
+    width: 100%; line-height: initial;
 }
 .tg-cartsearch .topMenuSearchBar ul li a{
     color: #000 !important;
+    display: block;
+    padding: 5px 20px;
+    clear: both;
+    text-transform: capitalize;
 
  }
+
+.tg-cartsearch .topMenuSearchBar ul li a:hover{
+text-decoration: none;
+    color: #262626;
+    background-color: #f5f5f5;}
+
+
+
  .tg-cartsearch .topMenuSearchBar ul.dropdown-menu{
     z-index: 9999
  }
@@ -3953,7 +3965,7 @@ vertical-align: middle
     left: 0 !important;
     top: 40px;
     border-radius: 0;
-    padding: 15px;
+   
     max-height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -3961,7 +3973,7 @@ vertical-align: middle
 
 }
 .topMenuSearchBar ul li{
-    margin-bottom: 10px;
+  
     width: 100%;
     text-align: left;
 }
@@ -4000,24 +4012,25 @@ vertical-align: middle
 /*----------scroll------------*/
 /* width */
 .topMenuSearchBar ::-webkit-scrollbar {
-  width:5px;
+  width: 10px;
 }
 
 /* Track */
 .topMenuSearchBar ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
+ 
+ 
+  background: #f1f1f1; 
 }
  
 /* Handle */
 .topMenuSearchBar ::-webkit-scrollbar-thumb {
-  background: #000; 
-  border-radius: 10px;
+  background: #888
+  
 }
 
 /* Handle on hover */
 .topMenuSearchBar ::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
+  background: red; 
 }
 a.btn-ouline-white:not([href]):not([tabindex]) {
     color: #fff;
@@ -4026,7 +4039,47 @@ a.btn-ouline-white:hover:not([href]):not([tabindex]) {
     color: #000;
 }
 
-#searchbox{width: 170px;}
+
+
+li.topMenuSearchBar{width: 203px;}
+
+
+.topMenuSearchBar input.form-control{height: auto;}
+
+.topMenuSearchBar input.form-control{padding: 0 0 0 15px;
+    border-radius: 3px 0px 0px 3px !important;}
+
+
+.search-section-area .input-group-text {
+    padding: 2px 12px;
+    background-color: #fff;
+    border: none;
+    border-radius: 0px 3px 3px 0px !important;
+}
+
+
+.search-section-area .input-group-text img{
+
+position: relative;
+    top: -1px;
+}
+
+
+.tg-addnavcartsearch  ul.dropdown-menu {
+    width: 100%;
+    float: left;
+    list-style: none;
+    font-size: inherit;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); border-radius: 3px;
+}
+
+
+
+
+
+
+
+
 /*================================
       Responsive media start here
 ==================================*/
@@ -4192,17 +4245,19 @@ a.btn-ouline-white:hover:not([href]):not([tabindex]) {
 }
 .tg-socialsignin {
     width: 100%;
-    margin-left:0 !important;
+    margin-left: 0 !important;
     margin-right: 0 !important;
+    padding-right: 0 !important;
 }
-.tg-socialsignin ul ,
- .tg-socialsignin ul li.topMenuSearchBar ,
-  .tg-socialsignin ul li.topMenuSearchBar div{
-    width: 100%
+
+.tg-socialsignin .tg-socialicons {
+    padding: 19px 0px;
+    width: 100%;
 }
-.tg-socialsignin .tg-socialicons{
-    padding: 0;
-}
+
+.tg-header .tg-socialsignin .tg-socialicons li{width: 100%;}
+
+
 }
 /*here close old code*/
 
@@ -4596,7 +4651,7 @@ a.btn-ouline-white:hover:not([href]):not([tabindex]) {
     min-width: 180px;
   }
   .tg-header .tg-socialsignin .tg-socialicons li {
-    padding: 0 0 0 5px;
+    padding: 0;
     z-index: 999;
   }
   body .tg-header .tg-navigationarea .tg-nav {
@@ -4808,6 +4863,28 @@ a.btn-ouline-white:hover:not([href]):not([tabindex]) {
 	    padding-left: 60px;
 	    padding-top: 70px;
 	}
+
+
+
+    
+
+    .tg-header .tg-socialsignin .tg-socialicons li .input-group input{border:1px solid #ccc; border-right: none; padding: 10px 0 10px 15px;}
+
+    .tg-header .tg-socialsignin .tg-socialicons li .input-group-prepend.search-section-area{
+        border:1px solid #ccc; border-left: none; padding: 10px 10px; border-radius: 0px 3px 3px 0;
+    }
+
+
+    .tg-header .tg-socialsignin .tg-socialicons li ul.dropdown-menu li a{color: #000 !important;
+    display: block;
+    padding: 5px 20px;
+    clear: both;
+    text-transform: capitalize;}
+
+
+
+
+
 
 }
 @media (max-width: 767px){

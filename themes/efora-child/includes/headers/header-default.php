@@ -6,7 +6,7 @@ $class = get_body_class(); ?>
 <header ng-controller="PropertyController as pCtrl" id="tg-header" class="tg-header tg-haslayout">
     <div class="container-fluid">
         <div class="row">
-            <div class="tg-topbar px-3">
+            <div class="tg-topbar px-4">
                 <nav class="tg-infonav">
                     <ul class="mb-0">
 
@@ -71,15 +71,41 @@ $class = get_body_class(); ?>
                                 <li class="list-inline-item nav-item header-contact  d-lg-none sociallink"><a target="_blank" href="<?php echo get_field("t","option"); ?>"><i class="icon icon-twitter-outline font-15"></i></a></li>
                             <?php } ?>
                             <?php if(efora_option('topSearch') != 1){ ?>
-                                <li class="pl-3 d-lg-inline-block d-none topMenuSearchBar">
+                                <li class="d-lg-inline-block d-none topMenuSearchBar">
 
                                     <div ng-controller='PlusMinusControler as pCtrl' class="input-group">
-                                      <div class="input-group-text p-0 rounded-0">
-                                        <span class="input-group-text border-0 cursor-pointer close-search-btn" id="basic-addon1"><i class="icon icon-search font-20"></i></span>
-                                      <input id="searchbox1" type="text" class="form-control pr-3 font-Nunito font-weight-normal" ng-model='area' 
+                                      
+
+
+
+                                        
+                                      
+                                      <input id="searchbox1" type="text" class="form-control font-Nunito font-weight-normal" ng-model='area' 
                                       uib-typeahead='area as area.name for area in locations | filter:$viewValue:stateComparator' 
                                       typeahead-on-select='onSearchSelect(area.id)' typeahead-focus-first="true" placeholder="Vacation Homes by Name" aria-label="Search" aria-describedby="basic-addon1">
-                                      </div>
+
+
+
+                                      
+
+
+
+                                      
+
+                                      <div class="input-group-prepend search-section-area">  
+
+                                      <span class="input-group-text cursor-pointer" id="basic-addon1">
+                                        <span class="img-search"><img src="/wp-content/uploads/2019/06/symbol-search.png"></span>
+
+                                    </span>
+
+
+                                </div>
+
+
+
+
+
                                     </div>
 
                                     <!--<a href="#tg-search" class="position-relative">
@@ -91,7 +117,7 @@ $class = get_body_class(); ?>
                     </nav>
                 </div>
             </div>
-            <div class="tg-navigationarea tg-headerfixed d-flex flex-wrap px-3 shadow">                 
+            <div class="tg-navigationarea tg-headerfixed d-flex flex-wrap px-4 shadow">                 
                     <strong class="tg-logo my-auto">
                         <a href="<?php echo esc_url(home_url('/')); ?>">
                             <?php $default_logo = efora_option('default_logo');
@@ -127,21 +153,31 @@ $class = get_body_class(); ?>
                         <li class="list-inline-item nav-item d-none d-lg-inline-block mr-0">
                              <button onclick="moveToSearch()" type="button" class="btn btn-primary position-relative header-animated-button rounded-0 border-0 gatewayBtn text-uppercase "><div class="position-relative gatewayBtn-under d-inline-block">Find your Getaway</div></button>
                         </li>
-                         <li class="pl-sm-3 my-3 topMenuSearchBar d-lg-none ">
+                         <li class="topMenuSearchBar d-lg-none ">
 
                               <div ng-controller='PlusMinusControler as pCtrl' class="input-group">
-                                      <div class="input-group-text p-0 rounded-0">
-                                        <span class="input-group-text border-0 cursor-pointer close-search-btn" id="basic-addon1"><i class="icon icon-search font-20"></i></span>
-                                      <input id="searchbox" type="text" class="form-control pr-3 font-Nunito font-weight-normal" ng-model='area' 
+                                      
+                                     <input id="searchbox" type="text" class="form-control font-Nunito font-weight-normal" ng-model='area' 
                                       uib-typeahead='area as area.name for area in locations | filter:$viewValue:stateComparator' 
-                                      typeahead-on-select='onSearchSelect(area.id)' typeahead-focus-first="true" placeholder="Vacation Homes by Name" aria-label="Search" aria-describedby="basic-addon1">
+                                      typeahead-on-select='onSearchSelect(area.id)' typeahead-focus-first="true" placeholder="Vacation Homes by Name" aria-label="Search" aria-describedby="basic-addon1">   
+
+                                      <div class="input-group-prepend search-section-area">
+                                        <span class="img-search"><img src="/wp-content/uploads/2019/06/symbol-search.png"></span>
+                                      
+
+
+
                                       </div>
                             </div>
                            
-                            <!--<a href="#tg-search" class="position-relative">
-                               <i class="icon icon-search py-0 font-18"></i>
-                            </a>-->
+                            
+                        
+
                         </li>
+
+
+
+
                     </ul>
 
                 </div>
