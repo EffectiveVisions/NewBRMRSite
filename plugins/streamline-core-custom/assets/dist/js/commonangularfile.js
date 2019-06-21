@@ -3768,6 +3768,52 @@
               }
         }
 
+
+        $scope.allListing = function(search, map_search) {
+        	var cookiePageObject = jQuery($cookies.get("sl_current_page"));
+            var view = jQuery($cookies.get("view"));
+            size = $scope.size;
+            properties = $rootScope.propList;
+            $scope.noResults = false;
+            $scope.currentPage = 1;
+            if (!$scope.limit) {
+                $scope.limit = size
+            }
+            map_search = typeof map_search !== "undefined" ? map_search : false;
+            $scope.mapSearch = map_search;
+            $scope.loading = true;
+            var params = $scope.getParams();
+            if(params.hasOwnProperty("pets")){
+            	delete params.pets;
+            	params.amenities_filter = "121865"
+            }
+            params.page_number = $scope.currentPage;
+            params.page_results_number = size;
+            angular.forEach(arrMarkers, function(item, i) {
+                item.setMap(null)
+            });
+            arrMarkers = [];
+            $scope.searchProperties(params, size, 1, true)
+            $scope.currentView = "gridview";
+            if(view.selector){
+                 if(view.selector == "mapview"){
+                    $scope.changeToMapView();
+                 }
+
+                 if(view.selector == "gridview"){
+                    $scope.changeToGridView();
+                 }
+
+                 if(view.selector == "listview"){
+                    $scope.changeToListView();
+                 }
+            }else{
+                $scope.view = "gridview";
+                $scope.showload = true;
+            }
+        }
+
+        
         $scope.availabilitySearch = function(search, map_search) {
             var cookiePageObject = jQuery($cookies.get("sl_current_page"));
             var view = jQuery($cookies.get("view"));

@@ -54,7 +54,7 @@
    <section class="blogSection gallerySection py-3 d-none discount-gallery" ng-controller="PropertyController as pCtrl">
         <div class="row">
 	         <div class="col-12 py-sm-4 pt-4 pb-3 text-center">
-	            <h2 style="color:#0061a3;" class="mb-0 f-property-heading"> Featured Properties Gallery </h2>
+	            <a href="/search-results"><h2 style="color:#0061a3;" class="mb-0 f-property-heading"> Featured Properties Gallery </h2></a>
 	         </div>
 	    </div>
 
@@ -88,12 +88,7 @@
 		                  </a>
 		               </figure>
 		            </div>
-		         
-
-		         
-
-		      
-		   
+		        
 		   </div>
 
 
@@ -168,11 +163,11 @@
 	  <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
 	     <div class="row">
 	         <div data-aos="fade-down" data-aos-duration="500" class="col-12 py-sm-4 pt-4 pb-3 text-center">
-	            <a href="/search-results"><h2 style="color:#0061a3;" class="mb-0 f-property-heading"> Featured Properties Gallery </h2></a>
+	            <h2 class="text-white mb-0 f-property-heading"> Properties Running Discounts and Specials</h2>
 	         </div>
 	      </div>
-	      <div class="row" ng-init="search.amenities_filter='129950';sortBy='random';availabilitySearch();">
-	         <div data-aos="fade-up" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 12" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
+	      <div class="row" ng-init="search.amenities_filter='129950';sortBy='random'; size=19; allListing();">
+	         <div data-aos="fade-up" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
 	          <div class="inner-div p-lg-1 d-inline-block w-100">
 	              <div class="property bg-white d-none">
 	                 <div ng-click="go(property.seo_page_name)" class="propertyImage">
@@ -204,9 +199,9 @@
 	              </div>
 	          </div>
 	         </div>
-	         <div  class="col-md-12 text-center mt-5 mb-4">
+	         <!--<div  class="col-md-12 text-center mt-5 mb-4">
 	            <a href="/search-results/?" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold viewallhomepage">See All Properties Running Specials</a>
-	         </div>
+	         </div>-->
 	      </div>
 	  </div>
    </section>
