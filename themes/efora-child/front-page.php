@@ -311,6 +311,7 @@
           if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500" || jQuery(this).children("input").val() == "121870"){ 
 
             if(jQuery(this).children("input").val() == "121870"){
+               jQuery("input[value='121870']").css({"vertical-align":"middle","outline":"none"});
                jQuery("input[value='121870']").addClass("displaydeskammen")
                jQuery("input[value='121870']").after('<img class="ammenityicon displaydeskammen tableicon"  src="/wp-content/uploads/2019/06/table-tennis.png">');
                var html = jQuery(this).html();
