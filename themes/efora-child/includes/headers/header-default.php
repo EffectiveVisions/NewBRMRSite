@@ -95,7 +95,7 @@ $class = get_body_class(); ?>
                                       <div class="input-group-prepend search-section-area">  
 
                                       <span class="input-group-text cursor-pointer" id="basic-addon1">
-                                        <span class="img-search"><img src="/wp-content/uploads/2019/06/symbol-search.png"></span>
+                                        <span style="cursor:pointer;" class="img-search"><img src="/wp-content/uploads/2019/06/symbol-search.png"></span>
 
                                     </span>
 
@@ -162,7 +162,7 @@ $class = get_body_class(); ?>
                                       typeahead-on-select='onSearchSelect(area.id)' typeahead-focus-first="true" placeholder="Vacation Homes by Name" aria-label="Search" aria-describedby="basic-addon1">   
 
                                       <div class="input-group-prepend search-section-area">
-                                        <span class="img-search"><img src="/wp-content/uploads/2019/06/symbol-search.png"></span>
+                                        <span style="cursor:pointer;" class="img-search"><img src="/wp-content/uploads/2019/06/symbol-search.png"></span>
                                       
 
 
