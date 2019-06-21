@@ -371,5 +371,10 @@ jQuery(document).ready(function () {
       jQuery(this).focus();
    });
 
+   jQuery(".img-search").click(function(){
+       jQuery("#searchbox1").focus();
+       jQuery("#searchbox").focus();
+   });
+
 
 });
