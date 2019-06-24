@@ -230,14 +230,14 @@ function add_file_types_to_uploads($file_types) {
 add_action('upload_mimes', 'add_file_types_to_uploads');
 
 
-function my_custom_js() {
+/*function my_custom_js() {
 
     $url = get_stylesheet_directory_uri() . '/js/picturefill.min.js';
 
     echo '<script type="text/javascript" src='.$url.' async></script>';
 }
 
-add_action( 'wp_head', 'my_custom_js' );
+add_action( 'wp_head', 'my_custom_js' );*/
 
 function defer_parsing_of_js($url) {
     if (FALSE === strpos($url, '.js'))
