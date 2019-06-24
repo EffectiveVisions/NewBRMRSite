@@ -135,7 +135,7 @@
           <div class="inner-div p-lg-1 d-inline-block w-100">
               <div class="property bg-white d-none">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img srcset="{[property.default_thumbnail_path]}" class="img-fluid propertythumb" alt="Featured Product" imageonload />
+                    <img srcset="{[property.default_thumbnail_path]} 356w" class="img-fluid propertythumb" alt="Featured Product" imageonload />
                  </div>
                  <div class="propertyDetail py-4 px-3">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6 class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6></a>
@@ -198,7 +198,7 @@
              <div class="blog transition h-100  bg-white d-flex flex-wrap">
                 <figure class="mb-0 blog-image overflow-h w-100">
                 <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?> 
-                 <img class="blogthumb" srcset="<?php echo $url ?>"/>
+                 <img class="blogthumb" srcset="<?php echo $url ?> 366w"/>
                 </figure>
                  <div class="blogDetail px-4 pt-4  w-100">
                   <div class="d-flex flex-wrap align-items-center">
