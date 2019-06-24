@@ -78,7 +78,7 @@
                           </div>
                         </figure>                       
                        <figure class="mb-0 rating-two mr-lg-4 pr-md-2 mr-lg-3 mr-md-4 mt-md-0 mt-2 ml-md-auto mt-md-3 pt-md-4 pl-md-0 pl-sm-4">
-                          <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img style="border: 0;" srcset="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png 2x" alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
+                          <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img style="border: 0;" srcset="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
                       </figure>                    
                   </div>
                 </div>
@@ -95,11 +95,11 @@
                   <?php $default_logo = efora_option('default_logo');
                   if(!empty($default_logo)){ ?>
                    <a href="<?php echo esc_url(home_url('/')); ?>" class="d-inline-block">
-                      <img class="img-fluid" alt="logo" srcset="<?php echo esc_url(efora_option('default_logo')); ?> 2x" alt="<?php bloginfo('name'); ?>">
+                      <img class="img-fluid" alt="logo" srcset="<?php echo esc_url(efora_option('default_logo')); ?>" alt="<?php bloginfo('name'); ?>">
                     </a>
                   <?php } else{ ?>
                   <a href="<?php echo esc_url(home_url('/')); ?>" class="d-inline-block">
-                      <img class="img-fluid" alt="logo" srcset="<?php echo get_template_directory_uri(); ?>/images/logo.png 2x" alt="<?php bloginfo('name'); ?>">
+                      <img class="img-fluid" alt="logo" srcset="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
                    </a>
                   <?php } ?>
             </figure>
