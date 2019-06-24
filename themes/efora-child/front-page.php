@@ -23,8 +23,8 @@
 
 ?>
 <section class="position-relative home-banner-section home-main-sec">   
-      <div ng-controller="PropertyController as pCtrl" datasrc="removeclass" lazy-load class="lazy slider home-banner mb-0">
-        <span class="carouselpart d-none">
+      <div class="lazy slider home-banner mb-0">
+        <span class="carouselpart">
          <?php echo do_shortcode("[wp_owl id='211']"); ?>
         </span>
       </div>   
@@ -69,16 +69,16 @@
                   </div>
                </div>
 
-                <div ng-controller="PropertyController as pCtrl" class="trustpilot-rating w-100 mt-md-0 pt-md-0 mt-md-0 mt-sm-3 pt-4" >
-                  <div class="d-flex flex-wrap justify-content-center  justify-content-md-start align-items-center" lazy-load datasrc="trustpilot">                    
-                      <figure class="mb-0 rating-one d-none">
+                <div class="trustpilot-rating w-100 mt-md-0 pt-md-0 mt-md-0 mt-sm-3 pt-4" >
+                  <div class="d-flex flex-wrap justify-content-center  justify-content-md-start align-items-center">                    
+                      <figure class="mb-0 rating-one">
                           <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b637fa0340045cd0c936" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="20px" data-style-width="100%" data-theme="dark">
                           </div>
                           <div class="trustpilot-widget" data-locale="en-US" data-template-id="5613c9cde69ddc09340c6beb" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="100px" data-style-width="100%" data-theme="dark">
                           </div>
                         </figure>                       
-                       <figure class="mb-0   rating-two mr-lg-4 pr-md-2 mr-lg-3 mr-md-4 mt-md-0 mt-2 ml-md-auto mt-md-3 pt-md-4 pl-md-0 pl-sm-4">
-                          <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img lazy-load style="border: 0;" datasrc="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
+                       <figure class="mb-0 rating-two mr-lg-4 pr-md-2 mr-lg-3 mr-md-4 mt-md-0 mt-2 ml-md-auto mt-md-3 pt-md-4 pl-md-0 pl-sm-4">
+                          <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img style="border: 0;" src="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
                       </figure>                    
                   </div>
                 </div>
@@ -170,9 +170,9 @@
   </div>
 </section>
 
-<section ng-controller="PropertyController as pCtrl" ng-cloak class="trust-pilot my-5">
-   <div lazy-load datasrc="trustpilot1" class="container">
-      <div class="row d-none trustpilotdtl">
+<section class="trust-pilot my-5">
+   <div class="container">
+      <div class="row trustpilotdtl">
          <div class="col-md-12">            
             <div class="trustpilot-widget" data-locale="en-US" data-template-id="539adbd6dec7e10e686debee" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="80px" data-style-width="100%" data-stars="1,2,3,4,5" data-schema-type="Organization">
            </div>
@@ -182,13 +182,13 @@
       </div>
    </div>
 </section>
-<section ng-controller="PropertyController as pCtrl" datasrc="replaceclass" lazy-load class="aboutussec py-5">
+<section class="aboutussec py-5 aboutUs">
   <?php if($blueridge_post[0]!=""){ ?>
      <?php echo $blueridge_post[0] ?>
   <?php } ?>
 </section>
 <section class="blogSection py-5 bg-gray">
-   <div ng-controller="PropertyController as pCtrl" ng-cloak  class="container">
+   <div class="container">
        <div class="row my-md-5 py-2 mb-md-3">
         <?php
            $args = array( 'posts_per_page' => 3, 'offset'=> 1, 'category' => 312 );
@@ -266,7 +266,7 @@
    </div>
 </section>
 
-<section ng-controller="PropertyController as pCtrl" id="contactus"   class="contactForm mt-md-0 mt-4 home-contact-form">
+<section id="contactus"  class="contactForm mt-md-0 mt-4 home-contact-form">
    <div  class="container">
       <div   class="row bg-white  contact-form-detail map">
          <div class="col-md-6 pl-0 pr-0 shadow-right order-2 order-md-1">          
