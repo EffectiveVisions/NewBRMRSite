@@ -344,5 +344,4 @@
       });
  });
 </script>
-<?php endif; ?>
 <?php echo get_footer();?>
