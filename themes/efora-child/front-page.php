@@ -198,7 +198,7 @@
              <div class="blog transition h-100  bg-white d-flex flex-wrap">
                 <figure class="mb-0 blog-image overflow-h w-100">
                 <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?> 
-                 <img class="blogthumb" srcset="<?php echo $url ?> 2x"/>
+                 <img class="blogthumb" srcset="<?php echo $url ?> 1x"/>
                 </figure>
                  <div class="blogDetail px-4 pt-4  w-100">
                   <div class="d-flex flex-wrap align-items-center">
@@ -270,7 +270,7 @@
    <div  class="container">
       <div   class="row bg-white  contact-form-detail map">
          <div class="col-md-6 pl-0 pr-0 shadow-right order-2 order-md-1">          
-             <iframe src="https://maps.google.com/maps?q=Blue%20Ridge%20Mountain%20Rentals&t=&z=15&ie=UTF8&iwloc=&output=embed" src="" width="360" height="600" frameborder="0" style="border:0"></iframe>
+             <iframe lazy-load datasrc="https://maps.google.com/maps?q=Blue%20Ridge%20Mountain%20Rentals&t=&z=15&ie=UTF8&iwloc=&output=embed" src="" width="360" height="600" frameborder="0" style="border:0"></iframe>
             <!--<map
                     center="34.866215,-84.326248"
                     zoom="8" scrollwheel="false" style="height:600px;">
