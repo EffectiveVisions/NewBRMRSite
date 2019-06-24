@@ -69,8 +69,8 @@
                   </div>
                </div>
 
-                <div class="trustpilot-rating w-100 mt-md-0 pt-md-0 mt-md-0 mt-sm-3 pt-4" >
-                  <div class="d-flex flex-wrap justify-content-center  justify-content-md-start align-items-center">                    
+                <div ng-controller="PropertyController as pCtrl" class="trustpilot-rating w-100 mt-md-0 pt-md-0 mt-md-0 mt-sm-3 pt-4" >
+                  <div class="d-flex flex-wrap justify-content-center  justify-content-md-start align-items-center" lazy-load datasrc="trustpilot">                    
                       <figure class="mb-0 rating-one d-none">
                           <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b637fa0340045cd0c936" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="20px" data-style-width="100%" data-theme="dark">
                           </div>
@@ -170,8 +170,8 @@
   </div>
 </section>
 
-<section class="trust-pilot my-5">
-   <div class="container">
+<section ng-controller="PropertyController as pCtrl" ng-cloak class="trust-pilot my-5">
+   <div lazy-load datasrc="trustpilot1" class="container">
       <div class="row d-none trustpilotdtl">
          <div class="col-md-12">            
             <div class="trustpilot-widget" data-locale="en-US" data-template-id="539adbd6dec7e10e686debee" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="80px" data-style-width="100%" data-stars="1,2,3,4,5" data-schema-type="Organization">
@@ -182,7 +182,7 @@
       </div>
    </div>
 </section>
-<section class="aboutussec py-5">
+<section ng-controller="PropertyController as pCtrl" datasrc="replaceclass" lazy-load class="aboutussec py-5">
   <?php if($blueridge_post[0]!=""){ ?>
      <?php echo $blueridge_post[0] ?>
   <?php } ?>
@@ -266,7 +266,7 @@
    </div>
 </section>
 
-<section id="contactus"   class="contactForm mt-md-0 mt-4 home-contact-form">
+<section ng-controller="PropertyController as pCtrl" id="contactus"   class="contactForm mt-md-0 mt-4 home-contact-form">
    <div  class="container">
       <div   class="row bg-white  contact-form-detail map">
          <div class="col-md-6 pl-0 pr-0 shadow-right order-2 order-md-1">          
@@ -344,4 +344,5 @@
       });
  });
 </script>
+
 <?php echo get_footer();?>
