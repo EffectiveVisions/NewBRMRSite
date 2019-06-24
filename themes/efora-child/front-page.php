@@ -307,7 +307,7 @@
            jQuery("#tg-search").addClass("open");
       })
 
-      jQuery(".amenity_item").each(function(){
+      /*jQuery(".amenity_item").each(function(){
           if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500" || jQuery(this).children("input").val() == "121870"){ 
 
             if(jQuery(this).children("input").val() == "121870"){
@@ -341,7 +341,7 @@
           }else{
             jQuery(this).remove();
           }
-      });
+      });*/
  });
 </script>
 <?php endif; ?>
