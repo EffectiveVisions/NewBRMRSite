@@ -136,8 +136,8 @@
           <div class="inner-div p-lg-1 d-inline-block w-100">
               <div class="property bg-white d-none">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img data-src="{[property.default_thumbnail_path]}" data-srcset="{[property.default_thumbnail_path]} 2x" 
-                        class="img-fluid propertythumb lazy" alt="Featured Product" imageonloadhome />
+                    <img srcset="{[property.default_thumbnail_path]} 2x" 
+                        class="img-fluid propertythumb lazy" alt="Featured Product" imageonload />
                  </div>
                  <div class="propertyDetail py-4 px-3">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6 class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6></a>
