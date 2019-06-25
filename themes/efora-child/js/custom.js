@@ -407,6 +407,7 @@ jQuery(document).ready(function () {
    };
 
    ll = new LazyLoad({
+      threshold: 0,
       elements_selector: ".lazy",
       // Assign the callbacks defined above
       callback_enter: callback_enter,
@@ -416,6 +417,5 @@ jQuery(document).ready(function () {
       callback_error: callback_error,
       callback_finish: callback_finish
    });
-
 
 });
