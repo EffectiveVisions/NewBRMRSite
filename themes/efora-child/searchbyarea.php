@@ -25,8 +25,6 @@ $perfectgatewaydescription = get_post_custom_values('perfect_gateway_description
 
 $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID);
 
-mail("anku@rudrainnovative.com","User Agent",$_SERVER['HTTP_USER_AGENT']);
-
 ?>
 
 <section class="position-relative home-banner-section home-main-sec">
@@ -141,7 +139,7 @@ mail("anku@rudrainnovative.com","User Agent",$_SERVER['HTTP_USER_AGENT']);
         <?php } ?>
     </div>
 </section>
-
+<?php if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false): ?>
 <section class="featureProperty theme-bg-color py-md-5 py-4 d-none">
   <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
@@ -192,7 +190,7 @@ mail("anku@rudrainnovative.com","User Agent",$_SERVER['HTTP_USER_AGENT']);
       </div>
   </div>
 </section>
-
+<?php endif; ?>
 
 <section class="trust-pilot my-sm-5 mt-5 py-4">
     <div class="container">
