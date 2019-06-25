@@ -82,7 +82,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                           </div>
                       </figure>
                        <figure class="mb-0   rating-two mr-lg-4 pr-md-2 mr-lg-3 mr-md-4 mt-md-0 mt-4 ml-md-auto mt-md-3 pt-md-4 pl-md-0 pl-sm-4">
-                          <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img style="border: 0;" src="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
+                          <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img class="lazy" style="border: 0;" data-src="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" data-srcset="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png 2x" alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
                       </figure>
                       </div>
                 </div>
@@ -115,7 +115,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       <?php $count = 0; foreach($galleries as $gallery) { ?>
       <div class="col-md-3 col-sm-4 col-12 custome-padding-gallery pb-1">
         <figure class="mb-0 blog-image position-relative overflow-h w-100">
-          <img class="object-fit h-100 w-100" src="<?php echo $gallery['image']['sizes']['medium_large']; ?>" alt="" />
+          <img class="object-fit h-100 w-100 lazy" data-srcset="<?php echo $gallery['image']['sizes']['medium_large']; ?> 2x" data-src="<?php echo $gallery['image']['sizes']['medium_large']; ?>" alt="" />
         <a id="<?php echo $count; ?>" class="galleryopen" href="javascript:void(0)">
           <div class="hoverlay-blog animated zoomIn align-items-center text-center w-100 h-100 justify-content-center">
             <div class="inner-text text-white z-index"><i class="icon icon-plus-circle"></i><span class="w-100 d-inline-block text-uppercase"><?php echo $gallery['text'] ?></span></div>
@@ -139,7 +139,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
         <?php } ?>
     </div>
 </section>
-
+<?php if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false): ?>
 <section class="featureProperty theme-bg-color py-md-5 py-4 d-none">
   <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
@@ -165,16 +165,16 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                       </div>
                     <ul class="list-unstyled detailsaboutproperty mt-2 mb-4 d-flex flex-md-wrap flex-sm-nowrap flex-wrap">
                        <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2  d-flex flex-wrap align-items-center">
-                         <img src="/wp-content/uploads/2019/04/bed.svg" class="w-20" alt="bed-image">
+                         <img data-srcset="/wp-content/uploads/2019/04/bed.svg 2x" data-src="/wp-content/uploads/2019/04/bed.svg" class="w-20 lazy" alt="bed-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bedrooms_number]} <?php _e( 'Beds', 'streamline-core' ) ?></span></li>
                        
                        <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2 d-flex flex-wrap align-items-center">
-                         <img src="/wp-content/uploads/2019/04/slumber.svg" class="w-20" alt="slumber-image">
+                         <img data-srcset="/wp-content/uploads/2019/04/slumber.svg 2x" data-src="/wp-content/uploads/2019/04/slumber.svg" class="w-20 lazy" alt="slumber-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text"> <?php _e( 'Sleeps', 'streamline-core' ) ?> {[property.max_occupants]}</span></li>
 
 
                        <li class="list-inline-item d-flex flex-wrap align-items-center">
-                         <img src="/wp-content/uploads/2019/04/shower.svg" class="w-20" alt="shower-image">
+                         <img data-srcset="/wp-content/uploads/2019/04/shower.svg 2x" data-src="/wp-content/uploads/2019/04/shower.svg" class="w-20 lazy" alt="shower-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?></span></li>
                     </ul>
 
@@ -190,6 +190,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       </div>
   </div>
 </section>
+<?php endif; ?>
 
 <section class="trust-pilot my-sm-5 mt-5 py-4">
     <div class="container">
@@ -209,7 +210,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                <?php foreach($sliders1 as $sliders){ ?>
                   <div class="col-lg-3 col-sm-6 col-12">
                      <figure class="mb-0 blog-image overflow-h w-100">
-                        <img class="h-100 w-100 object-fit" src="<?php echo $sliders['image']['url']; ?>" alt="slider-image" />
+                        <img class="h-100 w-100 object-fit lazy" data-src="<?php echo $sliders['image']['url']; ?>" data-srcset="<?php echo $sliders['image']['url']; ?> 2x" alt="slider-image" />
                         <figcaption class="figure-caption populer-caption px-xl-4 px-3 position-relative mx-1 ">
                            <div class="d-inline-block w-100 bg-white shadow-bottom p-xl-4 p-md-3 p-2">
                               <?php echo $sliders['description'] ?>
@@ -231,7 +232,9 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
          <div class="slider2">
           <?php foreach($sliders2 as $sliders){ ?>
             <div class="slider-inner-container position-relative">
-               <figure class="mb-0 rating-one"><img class="h-100 w-100 object-fit" src="<?php echo $sliders['image']['url']; ?>" alt="" /></figure>
+               <figure class="mb-0 rating-one"><img class="h-100 w-100 object-fit lazy" data-src="<?php echo $sliders['image']['url']; ?>" 
+                data-srcset="<?php echo $sliders['image']['url']; ?> 2x"
+                alt="" /></figure>
                <div class="slider-text w-100 pl-md-5 px-3 row mx-0 align-items-end">
                   <div class="text d-inline-block w-100 z-index mb-sm-4 pb-2 custom-slider-data">
                     <?php echo $sliders["description"] ?>
@@ -275,7 +278,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                 
                  <div>
                     <h5 class="gallery-heading text-white text-uppercase font-weight-semi-bold"><?php echo $gallery['text'] ?></h5>
-                    <img  class="carouselimage" src="<?php echo $gallery['image']['sizes']['large']; ?>"/>
+                    <img  class="carouselimage lazy" data-srcset="<?php echo $gallery['image']['sizes']['large']; ?> 2x" data-src="<?php echo $gallery['image']['sizes']['large']; ?>"/>
                  </div>
            <?php $count++; } ?>
           </div>

@@ -123,7 +123,7 @@
       </div>
     </div>
 </section>-->
-
+<?php if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false): ?>
 <section class="featureProperty theme-bg-color py-md-5 py-4 d-none">
   <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
@@ -172,6 +172,7 @@
       </div>
   </div>
 </section>
+<?php endif; ?>
 
 <section class="trust-pilot my-5">
    <div class="container">
@@ -312,7 +313,7 @@
             if(jQuery(this).children("input").val() == "121870"){
                jQuery("input[value='121870']").css({"vertical-align":"middle","outline":"none"});
                jQuery("input[value='121870']").addClass("displaydeskammen")
-               jQuery("input[value='121870']").after('<img class="ammenityicon displaydeskammen tableicon"  srcset="/wp-content/uploads/2019/06/table-tennis.png 2x">');
+               jQuery("input[value='121870']").after('<img class="ammenityicon displaydeskammen tableicon" srcset="/wp-content/uploads/2019/06/table-tennis.png 2x">');
                var html = jQuery(this).html();
                jQuery(this).remove()
                jQuery("#resortpro-search-amenities-block").append("<span class='amenity_item d-none d-md-inline-block'>"+html+"</span>");
