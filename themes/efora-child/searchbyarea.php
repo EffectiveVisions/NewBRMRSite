@@ -150,9 +150,9 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       <div class="row" ng-init="search.amenities_filter='129951';sortBy='random';availabilitySearch();">
          <div data-aos="fade-down" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 20" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
           <div class="inner-div p-lg-1 d-inline-block w-100">
-              <div class="property bg-white d-none">
+              <div class="property bg-white">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img srcset="{[property.default_thumbnail_path]} 2x" imageonload class="img-fluid" alt="" />
+                    <img src="/wp-content/uploads/2019/06/result-3.svg" lazy-load datasrc="{[property.default_thumbnail_path]}" class="img-fluid" alt="" />
                  </div>
                  <div class="propertyDetail py-4 px-3">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6  class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6></a>
@@ -170,7 +170,8 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                        
                        <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2 d-flex flex-wrap align-items-center">
                          <img data-srcset="/wp-content/uploads/2019/04/slumber.svg 2x" data-src="/wp-content/uploads/2019/04/slumber.svg" class="w-20 lazy" alt="slumber-image">
-                         <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text"> <?php _e( 'Sleeps', 'streamline-core' ) ?> {[property.max_occupants]}</span></li>
+                         <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text"> <?php _e( 'Sleeps', 'streamline-core' ) ?> {[property.max_occupants]}</span>
+                       </li>
 
 
                        <li class="list-inline-item d-flex flex-wrap align-items-center">

@@ -418,4 +418,8 @@ jQuery(document).ready(function () {
       callback_finish: callback_finish
    });
 
+   setTimeout(function(){
+      jQuery(".featureProperty").removeClass("d-none");
+   },5000)
+
 });
