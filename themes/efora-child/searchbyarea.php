@@ -139,7 +139,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
         <?php } ?>
     </div>
 </section>
-<?php if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false): ?>
+
 <section class="featureProperty theme-bg-color py-md-5 py-4 d-none">
   <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
@@ -152,7 +152,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
           <div class="inner-div p-lg-1 d-inline-block w-100">
               <div class="property bg-white d-none">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img src="{[property.default_thumbnail_path]}" imageonload class="img-fluid" alt="" />
+                    <img srcset="{[property.default_thumbnail_path]} 2x" imageonload class="img-fluid" alt="" />
                  </div>
                  <div class="propertyDetail py-4 px-3">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6  class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6></a>
@@ -190,7 +190,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       </div>
   </div>
 </section>
-<?php endif; ?>
+
 
 <section class="trust-pilot my-sm-5 mt-5 py-4">
     <div class="container">
