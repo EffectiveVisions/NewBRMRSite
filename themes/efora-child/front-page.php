@@ -123,7 +123,7 @@
       </div>
     </div>
 </section>-->
-<?php if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false): ?>
+
 <section class="featureProperty theme-bg-color py-md-5 py-4 d-none">
   <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
@@ -134,10 +134,10 @@
       <div class="row" ng-init="search.amenities_filter='129951';sortBy='random';availabilitySearch();">
          <div data-aos="fade-up" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 12" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
           <div class="inner-div p-lg-1 d-inline-block w-100">
-              <div class="property bg-white d-none">
+              <div class="property bg-white">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img srcset="{[property.default_thumbnail_path]} 2x" 
-                        class="img-fluid propertythumb lazy" alt="Featured Product" imageonload />
+                    <img src="/wp-content/uploads/2019/06/result-3.svg" lazy-load datasrc="{[property.default_thumbnail_path]}" 
+                        class="img-fluid propertythumb lazy" alt="Featured Product"/>
                  </div>
                  <div class="propertyDetail py-4 px-3">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6 class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6></a>
@@ -150,14 +150,14 @@
                       </div>
                     <ul class="list-unstyled detailsaboutproperty mt-2 mb-4 d-flex flex-md-wrap flex-sm-nowrap flex-wrap">
                        <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2  d-flex flex-wrap align-items-center">
-                        <img data-src="/wp-content/uploads/2019/04/bed.svg"
-                        data-srcset="/wp-content/uploads/2019/04/bed.svg 2x"  class="w-20" alt="bed-image">
+                        <img src="/wp-content/uploads/2019/04/bed.svg"
+                        class="w-20" alt="bed-image">
                         <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bedrooms_number]} <?php _e( 'Beds', 'streamline-core' ) ?></span></li>
                        <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2 d-flex flex-wrap align-items-center">
-                         <img data-src="/wp-content/uploads/2019/04/slumber.svg" data-srcset="/wp-content/uploads/2019/04/slumber.svg 2x" class="w-20" alt="slumber-image">
+                         <img src="/wp-content/uploads/2019/04/slumber.svg"  class="w-20" alt="slumber-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text"> <?php _e( 'Sleeps', 'streamline-core' ) ?> {[property.max_occupants]}</span></li>
                        <li class="list-inline-item d-flex flex-wrap align-items-center">
-                         <img data-src="/wp-content/uploads/2019/04/shower.svg" data-srcset="/wp-content/uploads/2019/04/shower.svg 2x" class="w-20" alt="shower-image">
+                         <img src="/wp-content/uploads/2019/04/shower.svg" class="w-20" alt="shower-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?></span></li>
                     </ul>
                    <h6 class="font-12 text-uppercase mb-3 night propertypackage"> <strong class="f-15">{[property.price_data.daily | currency]} </strong>avg/night</h6>
@@ -172,7 +172,7 @@
       </div>
   </div>
 </section>
-<?php endif; ?>
+
 
 <section class="trust-pilot my-5">
    <div class="container">
