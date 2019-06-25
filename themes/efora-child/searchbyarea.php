@@ -211,7 +211,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                <?php foreach($sliders1 as $sliders){ ?>
                   <div class="col-lg-3 col-sm-6 col-12">
                      <figure class="mb-0 blog-image overflow-h w-100">
-                        <img class="h-100 w-100 object-fit lazy" data-src="<?php echo $sliders['image']['url']; ?>" data-srcset="<?php echo $sliders['image']['url']; ?> 2x" alt="slider-image" />
+                        <img class="h-100 w-100 object-fit lazy" srcset="<?php echo $sliders['image']['url']; ?> 2x" alt="slider-image" />
                         <figcaption class="figure-caption populer-caption px-xl-4 px-3 position-relative mx-1 ">
                            <div class="d-inline-block w-100 bg-white shadow-bottom p-xl-4 p-md-3 p-2">
                               <?php echo $sliders['description'] ?>
@@ -233,8 +233,8 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
          <div class="slider2">
           <?php foreach($sliders2 as $sliders){ ?>
             <div class="slider-inner-container position-relative">
-               <figure class="mb-0 rating-one"><img class="h-100 w-100 object-fit lazy" data-src="<?php echo $sliders['image']['url']; ?>" 
-                data-srcset="<?php echo $sliders['image']['url']; ?> 2x"
+               <figure class="mb-0 rating-one"><img class="h-100 w-100 object-fit lazy" 
+                srcset="<?php echo $sliders['image']['url']; ?> 2x"
                 alt="" /></figure>
                <div class="slider-text w-100 pl-md-5 px-3 row mx-0 align-items-end">
                   <div class="text d-inline-block w-100 z-index mb-sm-4 pb-2 custom-slider-data">
