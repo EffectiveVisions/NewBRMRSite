@@ -25,6 +25,8 @@ $perfectgatewaydescription = get_post_custom_values('perfect_gateway_description
 
 $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID);
 
+mail("anku@rudrainnovative.com","User Agent",$_SERVER['HTTP_USER_AGENT']);
+
 ?>
 
 <section class="position-relative home-banner-section home-main-sec">
