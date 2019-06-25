@@ -78,13 +78,14 @@
                           </div>
                         </figure>                       
                        <figure class="mb-0 rating-two mr-lg-4 pr-md-2 mr-lg-3 mr-md-4 mt-md-0 mt-2 ml-md-auto mt-md-3 pt-md-4 pl-md-0 pl-sm-4">
-                          <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img style="border: 0;" srcset="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
+                          <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img class="lazy" style="border: 0;" data-src="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" 
+                          data-srcset="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png 1x"
+                          alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
                       </figure>                    
                   </div>
                 </div>
              </div>
           </div>
-
 </section>
 
 <section class="rentalcompany position-relative text-center py-5 bg-gray">
@@ -135,7 +136,8 @@
           <div class="inner-div p-lg-1 d-inline-block w-100">
               <div class="property bg-white d-none">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img srcset="{[property.default_thumbnail_path]} 2x" class="img-fluid propertythumb" alt="Featured Product" imageonload />
+                    <img srcset="{[property.default_thumbnail_path]} 2x" 
+                        class="img-fluid propertythumb lazy" alt="Featured Product" imageonload />
                  </div>
                  <div class="propertyDetail py-4 px-3">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6 class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6></a>
@@ -205,7 +207,8 @@
 
               
                 ?> 
-                 <img class="blogthumb" srcset="<?php echo $url ?> 1x"/>
+                 <img class="blogthumb lazy" data-src="<?php echo $url ?>" 
+                          data-srcset="<?php echo $url ?> 2x"/>
                 </figure>
                  <div class="blogDetail px-4 pt-4  w-100">
                   <div class="d-flex flex-wrap align-items-center">
@@ -278,7 +281,7 @@
       <div   class="row bg-white  contact-form-detail map">
          <div class="col-md-6 pl-0 pr-0 shadow-right order-2 order-md-1">      
 
-             <iframe lazy-load datasrc="https://maps.google.com/maps?q=Blue%20Ridge%20Mountain%20Rentals&t=&z=15&ie=UTF8&iwloc=&output=embed" src="" width="360" height="600" frameborder="0" style="border:0"></iframe>
+             <iframe class="lazy" data-src="https://maps.google.com/maps?q=Blue%20Ridge%20Mountain%20Rentals&t=&z=15&ie=UTF8&iwloc=&output=embed" src="" width="360" height="600" frameborder="0" style="border:0"></iframe>
             <!--<map
                     center="34.866215,-84.326248"
                     zoom="8" scrollwheel="false" style="height:600px;">

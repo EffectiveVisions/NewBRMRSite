@@ -22,7 +22,8 @@ function efora_child_scripts_footer() {
     wp_enqueue_script('chosen-js', get_stylesheet_directory_uri() . '/js/chosen.jquery.min.js', array('jquery'), '', true);
     wp_enqueue_script('aos-js', get_stylesheet_directory_uri() . '/js/aos.js', '', '', true);
     wp_enqueue_script('custom-js', get_stylesheet_directory_uri() . '/js/custom.js', '', '', true);
-     wp_enqueue_script('efora-main', get_stylesheet_directory_uri() . '/js/main.js','', '', true  );
+    wp_enqueue_script('efora-main', get_stylesheet_directory_uri() . '/js/main.js','', '', true  );
+    wp_enqueue_script('lazy-load', get_stylesheet_directory_uri() . '/js/lazyload.js','', '', true  );
 }
 
 add_action('wp_enqueue_scripts', 'efora_child_scripts_footer');
@@ -232,7 +233,7 @@ add_action('upload_mimes', 'add_file_types_to_uploads');
 
 /*function my_custom_js() {
 
-    $url = get_stylesheet_directory_uri() . '/js/picturefill.min.js';
+    $url = get_stylesheet_directory_uri() . '/js/lazyload.js';
 
     echo '<script type="text/javascript" src='.$url.' async></script>';
 }
@@ -242,7 +243,7 @@ add_action( 'wp_head', 'my_custom_js' );*/
 function defer_parsing_of_js($url) {
     if (FALSE === strpos($url, '.js'))
         return $url;
-    if (strpos($url, 'jquery/jquery.js') || strpos($url, 'angular.min.js') || strpos($url, 'resortpro.min.js') || strpos($url, 'aos.js') || strpos($url, 'commonangularfile.js') || strpos($url, 'picturefill.min.js')) {
+    if (strpos($url, 'jquery/jquery.js') || strpos($url, 'angular.min.js') || strpos($url, 'resortpro.min.js') || strpos($url, 'aos.js') || strpos($url, 'commonangularfile.js') || strpos($url, 'lazyload.js')) {
         return $url;
         //return "$url' async='async";
     } else {
