@@ -609,7 +609,7 @@ border-top: 26px solid transparent;
 
 /*------------aboutUs-------------*/
 .aboutUs{
-    background: url(/wp-content/uploads/2019/03/about-bg-1.jpg);
+    /*background: url(/wp-content/uploads/2019/03/about-bg-1.jpg);*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

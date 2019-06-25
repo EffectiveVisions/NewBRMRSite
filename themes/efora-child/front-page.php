@@ -136,8 +136,8 @@
           <div class="inner-div p-lg-1 d-inline-block w-100">
               <div class="property bg-white d-none">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img srcset="{[property.default_thumbnail_path]} 2x" 
-                        class="img-fluid propertythumb lazy" alt="Featured Product" imageonload />
+                    <img data-src="{[property.default_thumbnail_path]}" data-srcset="{[property.default_thumbnail_path]} 2x" 
+                        class="img-fluid propertythumb lazy" alt="Featured Product" imageonloadhome />
                  </div>
                  <div class="propertyDetail py-4 px-3">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6 class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6></a>
@@ -150,13 +150,14 @@
                       </div>
                     <ul class="list-unstyled detailsaboutproperty mt-2 mb-4 d-flex flex-md-wrap flex-sm-nowrap flex-wrap">
                        <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2  d-flex flex-wrap align-items-center">
-                        <img srcset="/wp-content/uploads/2019/04/bed.svg 2x"  class="w-20" alt="bed-image">
+                        <img data-src="/wp-content/uploads/2019/04/bed.svg"
+                        data-srcset="/wp-content/uploads/2019/04/bed.svg 2x"  class="w-20" alt="bed-image">
                         <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bedrooms_number]} <?php _e( 'Beds', 'streamline-core' ) ?></span></li>
                        <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2 d-flex flex-wrap align-items-center">
-                         <img srcset="/wp-content/uploads/2019/04/slumber.svg 2x" class="w-20" alt="slumber-image">
+                         <img data-src="/wp-content/uploads/2019/04/slumber.svg" data-srcset="/wp-content/uploads/2019/04/slumber.svg 2x" class="w-20" alt="slumber-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text"> <?php _e( 'Sleeps', 'streamline-core' ) ?> {[property.max_occupants]}</span></li>
                        <li class="list-inline-item d-flex flex-wrap align-items-center">
-                         <img srcset="/wp-content/uploads/2019/04/shower.svg 2x" class="w-20" alt="shower-image">
+                         <img data-src="/wp-content/uploads/2019/04/shower.svg" data-srcset="/wp-content/uploads/2019/04/shower.svg 2x" class="w-20" alt="shower-image">
                          <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?></span></li>
                     </ul>
                    <h6 class="font-12 text-uppercase mb-3 night propertypackage"> <strong class="f-15">{[property.price_data.daily | currency]} </strong>avg/night</h6>
@@ -184,7 +185,7 @@
       </div>
    </div>
 </section>
-<section class="aboutussec py-5 aboutUs">
+<section  class="aboutussec py-5 aboutUs lazy" data-bg="url(/wp-content/uploads/2019/03/about-bg-1.jpg)">
   <?php if($blueridge_post[0]!=""){ ?>
      <?php echo $blueridge_post[0] ?>
   <?php } ?>
@@ -203,9 +204,6 @@
                 $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium', false);
 
                 $url = $image[0];
-
-
-              
                 ?> 
                  <img class="blogthumb lazy" data-src="<?php echo $url ?>" 
                           data-srcset="<?php echo $url ?> 2x"/>
@@ -280,19 +278,9 @@
    <div  class="container">
       <div   class="row bg-white  contact-form-detail map">
          <div class="col-md-6 pl-0 pr-0 shadow-right order-2 order-md-1">      
-
              <iframe class="lazy" data-src="https://maps.google.com/maps?q=Blue%20Ridge%20Mountain%20Rentals&t=&z=15&ie=UTF8&iwloc=&output=embed" src="" width="360" height="600" frameborder="0" style="border:0"></iframe>
-            <!--<map
-                    center="34.866215,-84.326248"
-                    zoom="8" scrollwheel="false" style="height:600px;">
-                    <marker
-                      position="34.866215,-84.326248"
-                      title="Blueridge mountain rentals"></marker>
-              </map>--> 
-
          </div>
          <div  class="col-md-6 p-lg-5 p-4 contact-form-home order-1 order-md-2">
-         
             <?php if(is_active_sidebar('footer-s4')){ ?>
                  <?php dynamic_sidebar('footer-s4'); ?>
             <?php } ?>

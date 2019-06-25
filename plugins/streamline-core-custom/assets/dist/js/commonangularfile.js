@@ -1902,14 +1902,31 @@
 
     });
 
+    directives.directive('imageonloadhome', function() {
+	    return {
+	        restrict: 'A',
+	        link: function(scope, element, attrs) {
+	            element.bind('load', function() {
+	                element.parent().parent().removeClass("d-none");
+                    element.removeAttr("data-src");
+	                jQuery(".featureProperty").removeClass("d-none");
+	                var myLazyLoad = new LazyLoad();
+                    myLazyLoad.update();
+	            });
+	        }
+	    };
+    });
+
     directives.directive('imageonload', function() {
 	    return {
 	        restrict: 'A',
 	        link: function(scope, element, attrs) {
 	            element.bind('load', function() {
 	                element.parent().parent().removeClass("d-none");
-
+                    element.removeAttr("data-src");
 	                jQuery(".featureProperty").removeClass("d-none");
+	                var myLazyLoad = new LazyLoad();
+                    myLazyLoad.update();
 	            });
 	        }
 	    };
