@@ -4073,6 +4073,11 @@ position: relative;
     box-shadow: 0 6px 12px rgba(0,0,0,0.2); border-radius: 3px;
 }
 
+/*06-26-2019 topbar*/
+
+.tg-topbar .tg-addnavcartsearch {
+    height: 100%;
+}
 
 
 
@@ -4690,6 +4695,11 @@ position: relative;
 }
 
 @media (max-width: 991px){
+    /*topbar icons*/
+    .tg-topbar .tg-addnavcartsearch i.icon {
+        position: relative;
+        top: 2px;
+    }
     /*conatct us*/
     .contact-page .contact-form-detail.map map {
         height: 620px;
