@@ -1,7 +1,8 @@
 AOS.init();
 jQuery(window).load(function () {
 
-   setTimeout(function () {
+   
+   /*setTimeout(function () {
       if (navigator.userAgent.indexOf("Speed Insights") == -1) {
          var js = ["/wp-content/themes/efora-child/js/tp.widget.bootstrap.min.js"];
          var $head = jQuery("head");
@@ -9,7 +10,7 @@ jQuery(window).load(function () {
             $head.append("<script defer='true' src=\"" + js[i] + "\"></scr" + "ipt>");
          }
       }
-   }, 6000)
+   }, 6000)*/
 
    if (jQuery('.frm_error_style')[0] || jQuery('.frm_message')[0]) {
       setTimeout(function () {
@@ -58,13 +59,7 @@ jQuery(document).ready(function () {
             jQuery(this).datepicker("refresh");
          }
       } else {
-
-         // var input = jQuery('#end_date_popup');
-         // input.val('');
-         // input.trigger('input');
-         // input.trigger('change');
          myDate = new Date();
-         
          myDate.setDate(myDate.getDate() + 1);
          jQuery(this).datepicker({
             minDate: myDate,
@@ -72,8 +67,6 @@ jQuery(document).ready(function () {
                myDate = new Date(selectedDate);
                myDate.setDate(myDate.getDate() + 1);
                jQuery('#end_date_popup').datepicker('option', 'minDate', myDate);
-               //jQuery("#search_end_date_single").val("");
-               //jQuery("#search_start_date_single").val("");
             }
          });
          jQuery(this).datepicker("refresh");
@@ -318,14 +311,10 @@ jQuery(document).ready(function () {
    });
 
    jQuery(".search-mobile").click(function (e) {
-
       e.preventDefault();
-
       var url = jQuery(".searchformmobile").attr("action") + "?";
-
       var adult = jQuery(".adult_count_hidden").val();
       var child = jQuery(".children_count_hidden").val();
-
       if (jQuery(".pets-available").hasClass("d-none")) {
          var pet = 0;
       } else {
@@ -335,7 +324,6 @@ jQuery(document).ready(function () {
       if (jQuery("#start_date_popup").val() != "" && jQuery("#end_date_popup").val() != "") {
          url = url + '&sd=' + jQuery("#start_date_popup").val() + '' + '&ed=' + jQuery("#end_date_popup").val() + ''
       }
-
       if (adult != "") {
          url = url + '&oc=' + adult + ''
       }
@@ -345,7 +333,6 @@ jQuery(document).ready(function () {
       if (pet != 0) {
          url = url + '&pets=' + pet + ''
       }
-
       window.location.href = url;
    });
 
@@ -363,10 +350,7 @@ jQuery(document).ready(function () {
    jQuery('#start_date_popup').on('touchstart', function () {
       jQuery(this).focus();
    });
-   // jQuery('#start_date_popup').on('focusout', function () {
-   //    jQuery('#end_date_popup').focus();
-   // });
-
+  
    jQuery('#end_date_popup').on('touchstart', function () {
       jQuery(this).focus();
    });
@@ -385,41 +369,9 @@ jQuery(document).ready(function () {
          );
    }
 
-   var callback_enter = function(element) {
-      logElementEvent("🔑 ENTERED", element);
-   };
-   var callback_exit = function(element) {
-      logElementEvent("🚪 EXITED", element);
-   };
-   var callback_reveal = function(element) {
-      logElementEvent("👁️ REVEALED", element);
-   };
-   var callback_loaded = function(element) {
-      logElementEvent("👍 LOADED", element);
-   };
-   var callback_error = function(element) {
-      logElementEvent("💀 ERROR", element);
-      element.src =
-         "https://via.placeholder.com/440x560/?text=Error+Placeholder";
-   };
-   var callback_finish = function() {
-      logElementEvent("✔️ FINISHED", document.documentElement);
-   };
-
    ll = new LazyLoad({
       threshold: 0,
-      elements_selector: ".lazy",
-      // Assign the callbacks defined above
-      callback_enter: callback_enter,
-      callback_exit: callback_exit,
-      callback_reveal: callback_reveal,
-      callback_loaded: callback_loaded,
-      callback_error: callback_error,
-      callback_finish: callback_finish
+      elements_selector: ".lazy"
    });
-
-   setTimeout(function(){
-      jQuery(".featureProperty").removeClass("d-none");
-   },5000)
 
 });

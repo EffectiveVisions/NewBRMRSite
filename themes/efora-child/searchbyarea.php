@@ -74,15 +74,12 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                </div>
 
                 <div class="trustpilot-rating w-100 mt-md-0 pt-md-0 mt-sm-3 pt-4">
-                  <div class="d-flex flex-wrap justify-content-center  justify-content-md-start align-items-center">
+                  <div ng-controller="PropertyController as pCtrl" ng-cloak class="d-flex flex-wrap justify-content-center  justify-content-md-start align-items-center">
                       <figure class="mb-0 rating-one">
-                          <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b637fa0340045cd0c936" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="20px" data-style-width="100%" data-theme="dark">
-                          </div>
-                          <div class="trustpilot-widget" data-locale="en-US" data-template-id="5613c9cde69ddc09340c6beb" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="100px" data-style-width="100%" data-theme="dark">
-                          </div>
+                          <iframe class="lazy" lazy-load datasrc="http://widget.trustpilot.com/trustboxes/5613c9cde69ddc09340c6beb/index.html?templateId=5613c9cde69ddc09340c6beb&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=100px&styleWidth=100%25&theme=dark" src=""  style="border:0"></iframe>
                       </figure>
                        <figure class="mb-0   rating-two mr-lg-4 pr-md-2 mr-lg-3 mr-md-4 mt-md-0 mt-4 ml-md-auto mt-md-3 pt-md-4 pl-md-0 pl-sm-4">
-                          <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img class="lazy" style="border: 0;" data-src="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" data-srcset="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png 2x" alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
+                          <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img class="lazy" style="border: 0;" data-src="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" data-srcset="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png 1x" alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
                       </figure>
                       </div>
                 </div>
@@ -150,9 +147,9 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       <div class="row" ng-init="search.amenities_filter='129951';sortBy='random';availabilitySearch();">
          <div data-aos="fade-down" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 20" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
           <div class="inner-div p-lg-1 d-inline-block w-100">
-              <div class="property bg-white">
+              <div class="property bg-white d-none">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img src="/wp-content/uploads/2019/06/result-3.svg" lazy-load datasrc="{[property.default_thumbnail_path]}" class="img-fluid" alt="" />
+                    <img imageonload srcset="{[property.default_thumbnail_path]} 2x" class="img-fluid" alt="" />
                  </div>
                  <div class="propertyDetail py-4 px-3">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6  class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6></a>
@@ -176,7 +173,9 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
 
                        <li class="list-inline-item d-flex flex-wrap align-items-center">
                          <img src="/wp-content/uploads/2019/04/shower.svg" class="w-20 lazy" alt="shower-image">
-                         <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?></span></li>
+                         <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?>
+                           
+                         </span></li>
                     </ul>
 
                    <h6 class="font-12 text-uppercase mb-3 night propertypackage"> <strong class="f-15">{[property.price_data.daily | currency]} </strong>avg/night</h6>
