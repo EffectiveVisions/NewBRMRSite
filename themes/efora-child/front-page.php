@@ -72,7 +72,7 @@
                 <div class="trustpilot-rating w-100 mt-md-0 pt-md-0 mt-md-0 mt-sm-3 pt-4" >
                   <div ng-controller="PropertyController as pCtrl" ng-cloak class="d-flex flex-wrap justify-content-center  justify-content-md-start align-items-center">                    
                       <figure class="mb-0 rating-one">
-                          <iframe class="lazy" lazy-load datasrc="http://widget.trustpilot.com/trustboxes/5613c9cde69ddc09340c6beb/index.html?templateId=5613c9cde69ddc09340c6beb&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=100px&styleWidth=100%25&theme=dark" src=""  style="border:0"></iframe>
+                          <iframe class="lazy" lazy-load datasrc="https://widget.trustpilot.com/trustboxes/5613c9cde69ddc09340c6beb/index.html?templateId=5613c9cde69ddc09340c6beb&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=100px&styleWidth=100%25&theme=dark" src=""  style="border:0"></iframe>
 
                        </figure>                       
                        <figure class="mb-0 rating-two mr-lg-4 pr-md-2 mr-lg-3 mr-md-4 mt-md-0 mt-2 ml-md-auto mt-md-3 pt-md-4 pl-md-0 pl-sm-4">
@@ -176,9 +176,9 @@
    <div class="container">
       <div class="row trustpilotdtl">
          <div class="col-md-12"> 
-            <iframe class="lazy" data-src="http://widget.trustpilot.com/trustboxes/539adbd6dec7e10e686debee/index.html?templateId=539adbd6dec7e10e686debee&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=80px&styleWidth=100%25&stars=1%2C2%2C3%2C4%2C5&schemaType=Organization" src=""  style="border:0" height="80"></iframe>
+            <iframe class="lazy" data-src="https://widget.trustpilot.com/trustboxes/539adbd6dec7e10e686debee/index.html?templateId=539adbd6dec7e10e686debee&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=80px&styleWidth=100%25&stars=1%2C2%2C3%2C4%2C5&schemaType=Organization" src=""  style="border:0" height="80"></iframe>
 
-            <iframe class="lazy" data-src="http://widget.trustpilot.com/trustboxes/54ad5defc6454f065c28af8b/index.html?templateId=54ad5defc6454f065c28af8b&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=220px&styleWidth=100%25&theme=light&stars=1%2C2%2C3%2C4%2C5&schemaType=Organization" src=""  style="border:0"></iframe>
+            <iframe class="lazy" data-src="https://widget.trustpilot.com/trustboxes/54ad5defc6454f065c28af8b/index.html?templateId=54ad5defc6454f065c28af8b&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=220px&styleWidth=100%25&theme=light&stars=1%2C2%2C3%2C4%2C5&schemaType=Organization" src=""  style="border:0"></iframe>
             
          </div>
       </div>
