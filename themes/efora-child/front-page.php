@@ -175,7 +175,8 @@
 <section class="trust-pilot my-5">
    <div class="container">
       <div class="row trustpilotdtl">
-         <div class="col-md-12"> 
+         <div class="col-md-12">
+          
             <iframe class="lazy" data-src="https://widget.trustpilot.com/trustboxes/539adbd6dec7e10e686debee/index.html?templateId=539adbd6dec7e10e686debee&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=80px&styleWidth=100%25&stars=1%2C2%2C3%2C4%2C5&schemaType=Organization" src=""  style="border:0" height="80"></iframe>
 
             <iframe class="lazy" data-src="https://widget.trustpilot.com/trustboxes/54ad5defc6454f065c28af8b/index.html?templateId=54ad5defc6454f065c28af8b&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=220px&styleWidth=100%25&theme=light&stars=1%2C2%2C3%2C4%2C5&schemaType=Organization" src=""  style="border:0"></iframe>

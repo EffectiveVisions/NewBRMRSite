@@ -76,6 +76,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                 <div class="trustpilot-rating w-100 mt-md-0 pt-md-0 mt-sm-3 pt-4">
                   <div ng-controller="PropertyController as pCtrl" ng-cloak class="d-flex flex-wrap justify-content-center  justify-content-md-start align-items-center">
                       <figure class="mb-0 rating-one">
+                        
                           <iframe class="lazy" lazy-load datasrc="https://widget.trustpilot.com/trustboxes/5613c9cde69ddc09340c6beb/index.html?templateId=5613c9cde69ddc09340c6beb&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=100px&styleWidth=100%25&theme=dark" src=""  style="border:0"></iframe>
                       </figure>
                        <figure class="mb-0   rating-two mr-lg-4 pr-md-2 mr-lg-3 mr-md-4 mt-md-0 mt-4 ml-md-auto mt-md-3 pt-md-4 pl-md-0 pl-sm-4">
