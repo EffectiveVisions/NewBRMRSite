@@ -1908,7 +1908,6 @@
 	        link: function(scope, element, attrs) {
 	            element.bind('load', function() {
 	                element.parent().parent().removeClass("d-none");
-                    element.removeAttr("data-src");
 	                jQuery(".featureProperty").removeClass("d-none");
 	                var myLazyLoad = new LazyLoad();
                     myLazyLoad.update();
@@ -1923,7 +1922,6 @@
 	        link: function(scope, element, attrs) {
 	            element.bind('load', function() {
 	                element.parent().parent().removeClass("d-none");
-                    element.removeAttr("data-src");
 	                jQuery(".featureProperty").removeClass("d-none");
 	                var myLazyLoad = new LazyLoad();
                     myLazyLoad.update();
@@ -2234,187 +2232,787 @@
 	        {'name':'Seven Devils & Foscoe','id':6461},
 	        {'name':'Valle Crucis','id':6460}
         ];
-        $scope.locations = [
-
-             {'name':'1 Abundant Life','id':174640},
-             {'name':'1 Amazing View','id':174641},
-             {'name':'1 Appalachian Sky','id':174825},
-             {'name':'1 Awesome Skyview','id':174826},
-             {'name':'1 Beautiful View','id':174642},
-             {'name':'1 Million Dollar View','id':340923},
-             {'name':'1 Musical View','id':353475},
-             {'name':'1 Of A Kind','id':174657},
-             {'name':'1 Sublime View','id':355201},
-             {'name':'1 Sweet Seclusion','id':174650},
-             {'name':'1-2 Remember','id':174635},
-             {'name':'2 Beautiful 4 Words','id':174652},
-             {'name':'2 Cubs Cabin','id':361714},
-             {'name':'3 Peaks Lodge','id':174662},
-             {'name':'36 North','id':174658},
-             {'name':'4 Seasons Escape','id':304302},
-             {'name':'4330 Elevation','id':349682},
-             {'name':'4J Getaway','id':174663},
-             {'name':'5 OClock Somewhere','id':174668},
-             {'name':'7 Bears Lodge','id':354529},
-             {'name':'7th Heaven','id':174670},
-             {'name':'A Bears Eye View','id':174672},
-             {'name':'A Bears Hill','id':174742},
-             {'name':'A Bella Vista','id':174470},
-             {'name':'A Big View','id':174673},
-             {'name':'A Birds Eye View','id':174674},
-             {'name':'A Family Tradition','id':174675},
-             {'name':'A Great Catch','id':174677},
-             {'name':'A Happy Roost','id':174678},
-             {'name':'A Haven of Rest','id':174679},
-             {'name':'A High Country Retreat','id':174680},
-             {'name':'A Honeybear Heaven','id':174681},
-             {'name':'A Moon River View','id':174682},
-             {'name':'A Mountain Dream','id':353419},
-             {'name':'A Mountain Hideaway','id':174684},
-             {'name':'A Nest With a View','id':288236},
-             {'name':'A Paradise Found','id':174685},
-             {'name':'A Parkway Cabin','id':174686},
-             {'name':'A Peak of Heaven','id':174687},
-             {'name':'A Perfect Retreat','id':174688},
-             {'name':'A Point of View','id':174689},
-             {'name':'A Positive Outlook','id':174690},
-             {'name':'A River Mist','id':174691},
-             {'name':'A River Mist Too','id':174692},
-             {'name':'A River Mist Walk','id':174696},
-             {'name':'A River Runs Through It','id':174697},
-             {'name':'A Riversound','id':312261},
-             {'name':'A Slopeside Getaway','id':174700},
-             {'name':'A Stones Throw','id':174701},
-             {'name':'A Sunset View','id':312082},
-             {'name':'A Sweet Carolina Home','id':357172},
-             {'name':'A Sweet Retreat','id':313043},
-             {'name':'A Treetop Escape','id':253033},
-             {'name':'A View to Remember','id':174703},
-             {'name':'A Walk Through the Clouds','id':174705},
-             {'name':'A Watauga River Lookout','id':253300},
-             {'name':'Above it All','id':174706},
-             {'name':'Absolute Paradise','id':174707},
-             {'name':'Acorn Lodge','id':174708},
-             {'name':'Adventure Hideaway at Eagles Nest','id':174709},
-             {'name':'Agape Cove','id':174710},
-             {'name':'Aho Gap Lodge','id':174711},
-             {'name':'Almost Heaven','id':354393},
-             {'name':'Almost Perfect','id':354449},
-             {'name':'Alpenglow','id':266727},
-             {'name':'Alpine Lodge','id':174714},
-             {'name':'Alpine Vista','id':174715},
-             {'name':'Altitude Adjustment','id':174716},
-             {'name':'Altitudes Attitude','id':174717},
-             {'name':'Amen Corner','id':174719},
-             {'name':'Amitola','id':174720},
-             {'name':'Among the Trees','id':174721},
-             {'name':'An Irish Blessing','id':174722},
-             {'name':'Andrews River Haven','id':354412},
-             {'name':'Anglers Cabin','id':174724},
-             {'name':'Antlers Lodge','id':322107},
-             {'name':'AppalJack Retreat','id':174728},
-             {'name':'Appalachian Adventure','id':174726},
-             {'name':'Appalachian Retreat','id':174729},
-             {'name':'Apple of my Eye','id':174730},
-             {'name':'Aspen Memories','id':312899},
-             {'name':'Aspen View','id':174734},
-             {'name':'At Turtle Ridge','id':174736},
-             {'name':'Atop Boone','id':174737},
-             {'name':'Aussies Den','id':174738},
-             {'name':'Azalea Hill','id':174739},
-             {'name':'Bairds Creek Cabin','id':354413},
-             {'name':'Balloon Landing','id':174740},
-             {'name':'Banner View','id':367960},
-             {'name':'Bear Bungalow','id':174741},
-             {'name':'Bear N Grace','id':313351},
-             {'name':'Bear Pause','id':174743},
-             {'name':'Bears Repeatin','id':174744},
-             {'name':'Beech Haven','id':344046},
-             {'name':'Beech View Lodge','id':354445},
-             {'name':'Berkshires at Chetola','id':174746},
-             {'name':'Big Bear Lodge','id':354414},
-             {'name':'Black Bear Lodge','id':354415},
-             {'name':'Blackberry Creek Cabin','id':174747},
-             {'name':'Blue Ridge Retreat at The Farms','id':354461},
-             {'name':'Blue Ridge Shangri La II','id':354417},
-             {'name':'Boles Lodge','id':174748},
-             {'name':'Boulder Pod: Hidden Nite','id':368014},
-             {'name':'Boulder Pod: Rocky Top','id':368001},
-             {'name':'Boulder Pod: West Glow','id':368011},
-             {'name':'Boulder Ridge','id':354447},
-             {'name':'Boulder View','id':354457},
-             {'name':'Bridgepoint Cabin','id':354416},
-             {'name':'Brookshire Cabin','id':354459},
-             {'name':'Buena Vista','id':354418},
-             {'name':'Cabin Fever','id':174753},
-             {'name':'Canoe Run','id':368087},
-             {'name':'Cardinals Nest','id':368116},
-             {'name':'Carolina Charm','id':174754},
-             {'name':'Castle Rock at Eagles Nest','id':360523},
-             {'name':'Cats Creek Cabin','id':354419},
-             {'name':'Celestial View','id':174755},
-             {'name':'Celtic Mist','id':354420},
-             {'name':'Chestnut Lodge','id':174756},
-             {'name':'Chetola: Cardinal 101','id':174758},
-             {'name':'Chetola: Wren 301','id':174759},
-             {'name':'Comptime','id':174760},
-             {'name':'Copperleaf at Eagles Nest','id':354448},
-             {'name':'Cozy Twin Rivers Edge','id':310905},
-             {'name':'Creekside Cabin at Eagles Nest','id':348853},
-             {'name':'Crosswind','id':174764},
-             {'name':'Cruizin River Dreams','id':354421},
-             {'name':'Crystal View','id':254403},
-             {'name':'D Coys Nest','id':354469},
-             {'name':'Dancing Bear Cottage','id':174767},
-             {'name':'Daniel Boone Lodge','id':174768},
-             {'name':'Deer Hollow Retreat','id':238223},
-             {'name':'Deer Run','id':174769},
-             {'name':'Deerview Cottage','id':367169},
-             {'name':'Diamond Creek Lodge','id':174770},
-             {'name':'Double Eagle Lodge: Bear Suite','id':367962},
-             {'name':'Double Eagle Lodge: Buck Suite','id':368020},
-             {'name':'Double Eagle Lodge: Owl Suite','id':368033},
-             {'name':'Double Eagle Lodge: Wolf Suite','id':368034},
-             {'name':'Draggin Fly','id':285139},
-             {'name':'Dream Forest','id':206360},
-             {'name':'Eagles Long View Lodge','id':341010},
-             {'name':'East Meets West','id':284054},
-             {'name':'Elk Camp Lodge','id':354451},
-             {'name':'Emerald View','id':357363},
-             {'name':'Falling Waters','id':174774},
-             {'name':'Farallon','id':354423},
-             {'name':'Fern Ridge Lodge','id':274273},
-             {'name':'Fiddlestix at Yonahlossee','id':354424},
-             {'name':'Firefly Cabin','id':322974},
-             {'name':'Four Seasons','id':357907},
-             {'name':'Grand View','id':203352},
-             {'name':'Grandfather Vistas','id':174779},
-             {'name':'Grandview Getaway','id':367186},
-             {'name':'Grapevine Cottage','id':174780},
-             {'name':'Gratitude','id':174781},
-             {'name':'Great Escape','id':354425},
-             {'name':'Hangin Out','id':174783},
-             {'name':'Happy Ours','id':174784},
-             {'name':'Hawks View Lodge','id':322770},
-             {'name':'Heart Rock Lodge','id':354427},
-             {'name':'Heather Heights Cottage','id':349523},
-             {'name':'Hebron Falls','id':354428},
-             {'name':'Hemlock Hideaway','id':174786},
-             {'name':'Hidden Ridge','id':174787},
-             {'name':'Hideaway Mountain','id':174788},
-             {'name':'Highland Mist','id':354429},
-             {'name':'Honey Bear Haven','id':354450},
-             {'name':'Hummingbird Hollow','id':354426},
-             {'name':'I Cant Believe Its Not Heaven','id':174791},
-             {'name':'Innspiration','id':174792},
-             {'name':'Katydid','id':354455},
-             {'name':'Little Creek Lodge','id':174793},
-             {'name':'Lois Lane','id':359248},
-             {'name':'Longview at Eagles Nest','id':354456},
-             {'name':'Lookout Lodge','id':354511},
-             {'name':'Love Hollow','id':174846}
-        ]
-
+        $scope.locations = [{
+	"name": "Search your location",
+	"id": null
+}, {
+	"name": "1 Abundant Life",
+	"id": 174640
+}, {
+	"name": "1 Amazing View",
+	"id": 174641
+}, {
+	"name": "1 Appalachian Sky",
+	"id": 174825
+}, {
+	"name": "1 Awesome Skyview",
+	"id": 174826
+}, {
+	"name": "1 Beautiful View",
+	"id": 174642
+}, {
+	"name": "1 Million Dollar View",
+	"id": 340923
+}, {
+	"name": "1 Musical View",
+	"id": 353475
+}, {
+	"name": "1 Of A Kind",
+	"id": 174657
+}, {
+	"name": "1 Sublime View",
+	"id": 355201
+}, {
+	"name": "1 Sweet Seclusion",
+	"id": 174650
+}, {
+	"name": "1-2 Remember",
+	"id": 174635
+}, {
+	"name": "2 Beautiful 4 Words",
+	"id": 174652
+}, {
+	"name": "2 Cubs Cabin",
+	"id": 361714
+}, {
+	"name": "3 Peaks Lodge",
+	"id": 174662
+}, {
+	"name": "36 North",
+	"id": 174658
+}, {
+	"name": "4 Seasons Escape",
+	"id": 304302
+}, {
+	"name": "4330 Elevation",
+	"id": 349682
+}, {
+	"name": "4J Getaway",
+	"id": 174663
+}, {
+	"name": "5 OClock Somewhere",
+	"id": 174668
+}, {
+	"name": "7 Bears Lodge",
+	"id": 354529
+}, {
+	"name": "7th Heaven",
+	"id": 174670
+}, {
+	"name": "A Bears Eye View",
+	"id": 174672
+}, {
+	"name": "A Bears Hill",
+	"id": 174742
+}, {
+	"name": "A Bella Vista",
+	"id": 174470
+}, {
+	"name": "A Big View",
+	"id": 174673
+}, {
+	"name": "A Birds Eye View",
+	"id": 174674
+}, {
+	"name": "A Family Tradition",
+	"id": 174675
+}, {
+	"name": "A Great Catch",
+	"id": 174677
+}, {
+	"name": "A Happy Roost",
+	"id": 174678
+}, {
+	"name": "A Haven of Rest",
+	"id": 174679
+}, {
+	"name": "A High Country Retreat",
+	"id": 174680
+}, {
+	"name": "A Honeybear Heaven",
+	"id": 174681
+}, {
+	"name": "A Moon River View",
+	"id": 174682
+}, {
+	"name": "A Mountain Dream",
+	"id": 353419
+}, {
+	"name": "A Mountain Hideaway",
+	"id": 174684
+}, {
+	"name": "A Nest With a View",
+	"id": 288236
+}, {
+	"name": "A Paradise Found",
+	"id": 174685
+}, {
+	"name": "A Parkway Cabin",
+	"id": 174686
+}, {
+	"name": "A Peak of Heaven",
+	"id": 174687
+}, {
+	"name": "A Perfect Retreat",
+	"id": 174688
+}, {
+	"name": "A Point of View",
+	"id": 174689
+}, {
+	"name": "A Positive Outlook",
+	"id": 174690
+}, {
+	"name": "A River Mist",
+	"id": 174691
+}, {
+	"name": "A River Mist Too",
+	"id": 174692
+}, {
+	"name": "A River Mist Walk",
+	"id": 174696
+}, {
+	"name": "A River Runs Through It",
+	"id": 174697
+}, {
+	"name": "A Riversound",
+	"id": 312261
+}, {
+	"name": "A Slopeside Getaway",
+	"id": 174700
+}, {
+	"name": "A Stones Throw",
+	"id": 174701
+}, {
+	"name": "A Sunset View",
+	"id": 312082
+}, {
+	"name": "A Sweet Carolina Home",
+	"id": 357172
+}, {
+	"name": "A Sweet Retreat",
+	"id": 313043
+}, {
+	"name": "A Treetop Escape",
+	"id": 253033
+}, {
+	"name": "A View to Remember",
+	"id": 174703
+}, {
+	"name": "A Walk Through the Clouds",
+	"id": 174705
+}, {
+	"name": "A Watauga River Lookout",
+	"id": 253300
+}, {
+	"name": "Above it All",
+	"id": 174706
+}, {
+	"name": "Absolute Paradise",
+	"id": 174707
+}, {
+	"name": "Acorn Lodge",
+	"id": 174708
+}, {
+	"name": "Adventure Hideaway at Eagles Nest",
+	"id": 378563
+}, {
+	"name": "Agape Cove",
+	"id": 174710
+}, {
+	"name": "Aho Gap Lodge",
+	"id": 174711
+}, {
+	"name": "Almost Heaven",
+	"id": 354393
+}, {
+	"name": "Almost Perfect",
+	"id": 354449
+}, {
+	"name": "Along Rocks Way",
+	"id": 201776
+}, {
+	"name": "Alpenglow",
+	"id": 266727
+}, {
+	"name": "Alpine Lodge",
+	"id": 174714
+}, {
+	"name": "Alpine Vista",
+	"id": 174715
+}, {
+	"name": "Altitude Adjustment",
+	"id": 174716
+}, {
+	"name": "Altitudes Attitude",
+	"id": 174717
+}, {
+	"name": "Amen Corner",
+	"id": 174719
+}, {
+	"name": "Amitola",
+	"id": 174720
+}, {
+	"name": "Among the Trees",
+	"id": 174721
+}, {
+	"name": "An Irish Blessing",
+	"id": 174722
+}, {
+	"name": "Andrews River Haven",
+	"id": 354412
+}, {
+	"name": "Anglers Cabin",
+	"id": 174724
+}, {
+	"name": "Antlers Lodge",
+	"id": 322107
+}, {
+	"name": "AppalJack Retreat",
+	"id": 174728
+}, {
+	"name": "Appalachian Adventure",
+	"id": 174726
+}, {
+	"name": "Appalachian Retreat",
+	"id": 174729
+}, {
+	"name": "Apple of my Eye",
+	"id": 174730
+}, {
+	"name": "Aspen Memories",
+	"id": 312899
+}, {
+	"name": "Aspen View",
+	"id": 174734
+}, {
+	"name": "At Turtle Ridge",
+	"id": 174736
+}, {
+	"name": "Atop Boone",
+	"id": 174737
+}, {
+	"name": "Aussies Den",
+	"id": 174738
+}, {
+	"name": "Azalea Hill",
+	"id": 174739
+}, {
+	"name": "Baird's Creek Cabin",
+	"id": 354413
+}, {
+	"name": "Balloon Landing",
+	"id": 174740
+}, {
+	"name": "Banner View",
+	"id": 367960
+}, {
+	"name": "Bear Bungalow",
+	"id": 174741
+}, {
+	"name": "Bear N Grace",
+	"id": 313351
+}, {
+	"name": "Bear Pause",
+	"id": 174743
+}, {
+	"name": "Bear Tracks in Eagles Nest",
+	"id": 378773
+}, {
+	"name": "Bears Repeatin'",
+	"id": 174744
+}, {
+	"name": "Beech Haven",
+	"id": 344046
+}, {
+	"name": "Beech View Lodge",
+	"id": 354445
+}, {
+	"name": "Berkshires at Chetola",
+	"id": 174746
+}, {
+	"name": "Big Bear Lodge",
+	"id": 354414
+}, {
+	"name": "Black Bear Lodge",
+	"id": 354415
+}, {
+	"name": "Blackberry Creek Cabin",
+	"id": 382323
+}, {
+	"name": "Blue Ridge Retreat at The Farms",
+	"id": 354461
+}, {
+	"name": "Blue Ridge Shangri La II",
+	"id": 354417
+}, {
+	"name": "Boles Lodge",
+	"id": 174748
+}, {
+	"name": "Boulder Pod: Hidden Nite",
+	"id": 368014
+}, {
+	"name": "Boulder Pod: Rocky Top",
+	"id": 368001
+}, {
+	"name": "Boulder Pod: West Glow",
+	"id": 368011
+}, {
+	"name": "Boulder Ridge",
+	"id": 354447
+}, {
+	"name": "Boulder View",
+	"id": 354457
+}, {
+	"name": "Bridgepoint Cabin",
+	"id": 354416
+}, {
+	"name": "Brookshire Cabin",
+	"id": 354459
+}, {
+	"name": "Buena Vista",
+	"id": 354418
+}, {
+	"name": "Cabin Fever",
+	"id": 174753
+}, {
+	"name": "Canoe Run",
+	"id": 368087
+}, {
+	"name": "Cardinal's Nest",
+	"id": 368116
+}, {
+	"name": "Carolina Charm",
+	"id": 174754
+}, {
+	"name": "Castle Rock at Eagles Nest",
+	"id": 360523
+}, {
+	"name": "Cats Creek Cabin",
+	"id": 354419
+}, {
+	"name": "Celestial View",
+	"id": 174755
+}, {
+	"name": "Celtic Mist",
+	"id": 354420
+}, {
+	"name": "Chestnut Lodge",
+	"id": 174756
+}, {
+	"name": "Chetola: Cardinal 101",
+	"id": 174758
+}, {
+	"name": "Chetola: Cypress 5",
+	"id": 385039
+}, {
+	"name": "Chetola: Wren 301",
+	"id": 174759
+}, {
+	"name": "Comptime",
+	"id": 174760
+}, {
+	"name": "Copperleaf at Eagles Nest",
+	"id": 354448
+}, {
+	"name": "Cozy Twin Rivers Edge",
+	"id": 310905
+}, {
+	"name": "Crosswind",
+	"id": 174764
+}, {
+	"name": "Cruizin' River Dreams",
+	"id": 354421
+}, {
+	"name": "Crystal View",
+	"id": 254403
+}, {
+	"name": "D'Coys Nest",
+	"id": 354469
+}, {
+	"name": "Dancing Bear Cottage",
+	"id": 174767
+}, {
+	"name": "Daniel Boone Lodge",
+	"id": 174768
+}, {
+	"name": "Deer Hollow Retreat",
+	"id": 238223
+}, {
+	"name": "Deer Run",
+	"id": 174769
+}, {
+	"name": "Deerview Cottage",
+	"id": 367169
+}, {
+	"name": "Diamond Creek Lodge",
+	"id": 174770
+}, {
+	"name": "Double Eagle Lodge: Bear Suite",
+	"id": 367962
+}, {
+	"name": "Double Eagle Lodge: Buck Suite",
+	"id": 368020
+}, {
+	"name": "Double Eagle Lodge: Owl Suite",
+	"id": 368033
+}, {
+	"name": "Double Eagle Lodge: Wolf Suite",
+	"id": 368034
+}, {
+	"name": "Draggin Fly",
+	"id": 285139
+}, {
+	"name": "Dream Forest",
+	"id": 206360
+}, {
+	"name": "Eagles Long View Lodge",
+	"id": 341010
+}, {
+	"name": "East Meets West",
+	"id": 284054
+}, {
+	"name": "Elk Camp Lodge",
+	"id": 354451
+}, {
+	"name": "Emerald View",
+	"id": 357363
+}, {
+	"name": "Falling Waters",
+	"id": 174774
+}, {
+	"name": "Farallon",
+	"id": 354423
+}, {
+	"name": "Fern Ridge Lodge",
+	"id": 274273
+}, {
+	"name": "Fiddlestix at Yonahlossee",
+	"id": 354424
+}, {
+	"name": "Firefly Cabin",
+	"id": 322974
+}, {
+	"name": "Four Seasons",
+	"id": 357907
+}, {
+	"name": "Freedom Lodge",
+	"id": 174776
+}, {
+	"name": "Grand View",
+	"id": 203352
+}, {
+	"name": "Grandfather Vistas",
+	"id": 174779
+}, {
+	"name": "Grandview Getaway",
+	"id": 367186
+}, {
+	"name": "Grapevine Cottage",
+	"id": 174780
+}, {
+	"name": "Gratitude",
+	"id": 174781
+}, {
+	"name": "Great Escape",
+	"id": 354425
+}, {
+	"name": "Hangin' Out",
+	"id": 174783
+}, {
+	"name": "Happy Ours",
+	"id": 174784
+}, {
+	"name": "Hawks View Lodge",
+	"id": 322770
+}, {
+	"name": "Heart Rock Lodge",
+	"id": 354427
+}, {
+	"name": "Heather Heights Cottage",
+	"id": 349523
+}, {
+	"name": "Hebron Falls",
+	"id": 354428
+}, {
+	"name": "Hemlock Hideaway",
+	"id": 174786
+}, {
+	"name": "Hidden Ridge",
+	"id": 174787
+}, {
+	"name": "Hideaway Mountain",
+	"id": 174788
+}, {
+	"name": "Highland Mist",
+	"id": 354429
+}, {
+	"name": "Honey Bear Haven",
+	"id": 354450
+}, {
+	"name": "Hummingbird Hollow",
+	"id": 354426
+}, {
+	"name": "I Can't Believe It's Not Heaven",
+	"id": 174791
+}, {
+	"name": "Innspiration",
+	"id": 174792
+}, {
+	"name": "Katydid",
+	"id": 354455
+}, {
+	"name": "Lazy Bear Cabin",
+	"id": 380397
+}, {
+	"name": "Little Creek Lodge",
+	"id": 174793
+}, {
+	"name": "Lois Lane",
+	"id": 359248
+}, {
+	"name": "Longview at Eagles Nest",
+	"id": 354456
+}, {
+	"name": "Lookout Lodge",
+	"id": 354511
+}, {
+	"name": "Love Hollow",
+	"id": 174846
+}, {
+	"name": "Lucky Dog Retreat",
+	"id": 174794
+}, {
+	"name": "Lured Away",
+	"id": 368017
+}, {
+	"name": "Meagan's Loft",
+	"id": 354430
+}, {
+	"name": "Mile High Beech House",
+	"id": 354530
+}, {
+	"name": "Misty Mountain Hideaway",
+	"id": 321354
+}, {
+	"name": "Monkey Business",
+	"id": 174796
+}, {
+	"name": "Mountain Breezes",
+	"id": 174797
+}, {
+	"name": "Mountain Camp",
+	"id": 174798
+}, {
+	"name": "Mountain Creek Lodge",
+	"id": 194514
+}, {
+	"name": "Mountain Getaway",
+	"id": 174800
+}, {
+	"name": "Mountain Laurel Lodge",
+	"id": 174801
+}, {
+	"name": "Mountain Splendor",
+	"id": 174802
+}, {
+	"name": "Mountain Therapy",
+	"id": 174803
+}, {
+	"name": "Muir Lodge",
+	"id": 352148
+}, {
+	"name": "On Golden Ridge",
+	"id": 174808
+}, {
+	"name": "On Highland Time",
+	"id": 354532
+}, {
+	"name": "Our Neck of the Woods",
+	"id": 174810
+}, {
+	"name": "Overlook Lodge at Eagles Nest",
+	"id": 354454
+}, {
+	"name": "Owls Nest",
+	"id": 359646
+}, {
+	"name": "Peace of Heaven",
+	"id": 174812
+}, {
+	"name": "Peace of Mind",
+	"id": 354431
+}, {
+	"name": "Penrith Hideaway",
+	"id": 354432
+}, {
+	"name": "Prancing Horse Lodge",
+	"id": 367318
+}, {
+	"name": "Red Stag Lodge",
+	"id": 354446
+}, {
+	"name": "Reel Relaxing",
+	"id": 361864
+}, {
+	"name": "Renaissance Lodge",
+	"id": 174813
+}, {
+	"name": "Restoration Rock",
+	"id": 355565
+}, {
+	"name": "Rhys' River Valley",
+	"id": 354433
+}, {
+	"name": "Ridge Haven Lodge at Echota",
+	"id": 351934
+}, {
+	"name": "Rippling Water Retreat",
+	"id": 174815
+}, {
+	"name": "River Mill Lodge",
+	"id": 354434
+}, {
+	"name": "River Mountain Cabin",
+	"id": 354435
+}, {
+	"name": "River Ridge",
+	"id": 174818
+}, {
+	"name": "Riverdream",
+	"id": 174819
+}, {
+	"name": "Rivers Edge in Eagles Nest",
+	"id": 367340
+}, {
+	"name": "Riverside Cabin",
+	"id": 354534
+}, {
+	"name": "Riverview",
+	"id": 354436
+}, {
+	"name": "Running Brook",
+	"id": 174820
+}, {
+	"name": "Scarborough Fair",
+	"id": 174822
+}, {
+	"name": "Scenic Solitude",
+	"id": 354460
+}, {
+	"name": "Scrollrock",
+	"id": 354470
+}, {
+	"name": "Secretariat's Secret",
+	"id": 354422
+}, {
+	"name": "Serenity",
+	"id": 174823
+}, {
+	"name": "Silverleaf",
+	"id": 354438
+}, {
+	"name": "Sindy's Ranch",
+	"id": 354465
+}, {
+	"name": "Sorrento Falls Retreat",
+	"id": 174827
+}, {
+	"name": "Southern Comfort",
+	"id": 174828
+}, {
+	"name": "St Johns Ridge",
+	"id": 292181
+}, {
+	"name": "Stags Leap",
+	"id": 351521
+}, {
+	"name": "Steele Mountain Retreat",
+	"id": 174830
+}, {
+	"name": "Sterling Lodge",
+	"id": 354439
+}, {
+	"name": "Stoneledge Manor",
+	"id": 174831
+}, {
+	"name": "Storybook Cottage",
+	"id": 367308
+}, {
+	"name": "Stress Re-Leaf",
+	"id": 174832
+}, {
+	"name": "Sugar Buzz",
+	"id": 354533
+}, {
+	"name": "Sugar Hill",
+	"id": 174833
+}, {
+	"name": "Sugar Mountain Lodge",
+	"id": 354440
+}, {
+	"name": "Sugar View Lodge",
+	"id": 340779
+}, {
+	"name": "Sunrise Lodge at Eagles Nest",
+	"id": 357514
+}, {
+	"name": "The Blessing",
+	"id": 281877
+}, {
+	"name": "The Boulders",
+	"id": 174835
+}, {
+	"name": "The Dog House",
+	"id": 174836
+}, {
+	"name": "The Hiding Place",
+	"id": 174837
+}, {
+	"name": "The Lodge",
+	"id": 174838
+}, {
+	"name": "The Roost",
+	"id": 354466
+}, {
+	"name": "The Suddreth Cottage",
+	"id": 174704
+}, {
+	"name": "Timberwolf Lodge at Eagles Nest",
+	"id": 354462
+}, {
+	"name": "Tiny House Big Adventures",
+	"id": 376122
+}, {
+	"name": "Tree Top Lodge",
+	"id": 174841
+}, {
+	"name": "Uncle Johns Cabin",
+	"id": 174843
+}, {
+	"name": "Van Beek's Peak",
+	"id": 354441
+}, {
+	"name": "View House",
+	"id": 174844
+}, {
+	"name": "Walk In The Clouds",
+	"id": 354442
+}, {
+	"name": "Welcome Home",
+	"id": 174609
+}, {
+	"name": "Wilderness Lodge",
+	"id": 174845
+}, {
+	"name": "Winds Aloft",
+	"id": 354463
+}, {
+	"name": "Windswept Vistas",
+	"id": 354444
+}, {
+	"name": "Wounded Fork",
+	"id": 354443
+}];
         $scope.startsWith = function(area, viewValue) {
         	return area.substr(0, viewValue.length).toLowerCase() == viewValue.toLowerCase();
         }
