@@ -80,7 +80,7 @@
                       <span class="badge badge-primary custome-bage  font-weight-light-bold font-13  py-0 px-0 d-none">
                          <div class="dropdown">
                             <button style="color:#fff; text-decoration:none;" class="btn view-all-filters px-2 btn-link py-0  font-weight-light-bold font-13 text-white position-relative  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Ammenties
+                              Amenities
                             </button>
                             <div class="dropdown-menu ammenties-item py-2 px-3" aria-labelledby="dropdownMenuButton">
                                 
