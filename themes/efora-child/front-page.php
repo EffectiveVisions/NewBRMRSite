@@ -70,11 +70,13 @@
                </div>
 
                 <div class="trustpilot-rating w-100 mt-md-0 pt-md-0 mt-md-0 mt-sm-3 pt-4" >
-                  <div ng-controller="PropertyController as pCtrl" ng-cloak class="d-flex flex-wrap justify-content-center  justify-content-md-start align-items-center">                    
+                  <div class="d-flex flex-wrap justify-content-center  justify-content-md-start align-items-center">                    
                       <figure class="mb-0 rating-one">
-                          <iframe class="lazy" lazy-load datasrc="https://widget.trustpilot.com/trustboxes/5613c9cde69ddc09340c6beb/index.html?templateId=5613c9cde69ddc09340c6beb&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=100px&styleWidth=100%25&theme=dark" src=""  style="border:0"></iframe>
-
-                       </figure>                       
+                          <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b637fa0340045cd0c936" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="20px" data-style-width="100%" data-theme="dark">
+                          </div>
+                          <div class="trustpilot-widget" data-locale="en-US" data-template-id="5613c9cde69ddc09340c6beb" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="100px" data-style-width="100%" data-theme="dark">
+                          </div>
+                        </figure>                       
                        <figure class="mb-0 rating-two mr-lg-4 pr-md-2 mr-lg-3 mr-md-4 mt-md-0 mt-2 ml-md-auto mt-md-3 pt-md-4 pl-md-0 pl-sm-4">
                           <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img class="lazy" style="border: 0;" data-src="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" 
                           data-srcset="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png 1x"
@@ -94,11 +96,11 @@
                   <?php $default_logo = efora_option('default_logo');
                   if(!empty($default_logo)){ ?>
                    <a href="<?php echo esc_url(home_url('/')); ?>" class="d-inline-block">
-                      <img class="img-fluid" alt="logo" srcset="<?php echo esc_url(efora_option('default_logo')); ?>" alt="<?php bloginfo('name'); ?>">
+                      <img class="img-fluid lazy" alt="logo" data-src="<?php echo esc_url(efora_option('default_logo')); ?>" data-srcset="<?php echo esc_url(efora_option('default_logo')); ?> 1x" alt="<?php bloginfo('name'); ?>">
                     </a>
                   <?php } else{ ?>
                   <a href="<?php echo esc_url(home_url('/')); ?>" class="d-inline-block">
-                      <img class="img-fluid" alt="logo" srcset="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
+                      <img class="img-fluid lazy" alt="logo" data-src="<?php echo get_template_directory_uri(); ?>/images/logo.png" data-srcset="<?php echo get_template_directory_uri(); ?>/images/logo.png 1x" alt="<?php bloginfo('name'); ?> 1x">
                    </a>
                   <?php } ?>
             </figure>
@@ -134,7 +136,7 @@
           <div class="inner-div p-lg-1 d-inline-block w-100">
               <div class="property bg-white">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img imageonload srcset="{[property.default_thumbnail_path]} 2x" 
+                    <img err-src="/wp-content/uploads/2019/07/placeholder.png" src="" lazy-load datasrc="{[property.default_thumbnail_path]}" 
                         class="img-fluid propertythumb" alt="Featured Product"/>
                  </div>
                  <div class="propertyDetail py-4 px-3">
@@ -175,12 +177,11 @@
 <section class="trust-pilot my-5">
    <div class="container">
       <div class="row trustpilotdtl">
-         <div class="col-md-12">
-          
-            <iframe class="lazy" data-src="https://widget.trustpilot.com/trustboxes/539adbd6dec7e10e686debee/index.html?templateId=539adbd6dec7e10e686debee&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=80px&styleWidth=100%25&stars=1%2C2%2C3%2C4%2C5&schemaType=Organization" src=""  style="border:0" height="80"></iframe>
-
-            <iframe class="lazy" data-src="https://widget.trustpilot.com/trustboxes/54ad5defc6454f065c28af8b/index.html?templateId=54ad5defc6454f065c28af8b&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=220px&styleWidth=100%25&theme=light&stars=1%2C2%2C3%2C4%2C5&schemaType=Organization" src=""  style="border:0"></iframe>
-            
+         <div class="col-md-12">            
+            <div class="trustpilot-widget" data-locale="en-US" data-template-id="539adbd6dec7e10e686debee" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="80px" data-style-width="100%" data-stars="1,2,3,4,5" data-schema-type="Organization">
+           </div>
+            <div class="trustpilot-widget" data-locale="en-US" data-template-id="54ad5defc6454f065c28af8b" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="220px" data-style-width="100%" data-theme="light" data-stars="1,2,3,4,5" data-schema-type="Organization">
+            </div>          
          </div>
       </div>
    </div>
@@ -277,8 +278,8 @@
 <section id="contactus"  class="contactForm mt-md-0 mt-4 home-contact-form">
    <div  class="container">
       <div   class="row bg-white  contact-form-detail map">
-         <div class="col-md-6 pl-0 pr-0 shadow-right order-2 order-md-1">      
-             <iframe class="lazy" data-src="https://maps.google.com/maps?q=Blue%20Ridge%20Mountain%20Rentals&t=&z=15&ie=UTF8&iwloc=&output=embed" src="" width="360" height="600" frameborder="0" style="border:0"></iframe>
+         <div ng-controller="PropertyController as pCtrl" ng-cloak class="col-md-6 pl-0 pr-0 shadow-right order-2 order-md-1">      
+             <iframe  class="lazy" lazy-load datasrc="https://maps.google.com/maps?q=Blue%20Ridge%20Mountain%20Rentals&t=&z=15&ie=UTF8&iwloc=&output=embed" width="360" height="600" frameborder="0" style="border:0"></iframe>
          </div>
          <div  class="col-md-6 p-lg-5 p-4 contact-form-home order-1 order-md-2">
             <?php if(is_active_sidebar('footer-s4')){ ?>
