@@ -123,7 +123,7 @@
       </div>
     </div>
 </section>-->
-
+<?php if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false): ?>
 <section class="featureProperty theme-bg-color py-md-5 py-4 d-none">
   <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
@@ -289,6 +289,7 @@
      </div>
  </div>
 </section>
+<?php endif; ?>
 <script>
   function redirectToBlog(){
     window.location.href = "/blog"
