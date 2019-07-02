@@ -575,12 +575,15 @@ class ResortPro{
       if(!empty($options['google-maps-api']))
         $google_endpoint .= "?key={$options['google-maps-api']}";
 
-         if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false){ 
+         if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false){
 
-            wp_enqueue_script( 'googlemaps-js', $google_endpoint );
-         
+            if(is_page('4')) {
 
-       wp_enqueue_script( 'angularjs', $this->assets_url . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'src/js/commonangularfile.js' : 'dist/js/commonangularfile.js' ));
+               wp_enqueue_script( 'googlemaps-js', $google_endpoint );
+               
+            }
+
+            wp_enqueue_script( 'angularjs', $this->assets_url . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'src/js/commonangularfile.js' : 'dist/js/commonangularfile.js' ));
        }
 
       wp_enqueue_script( 'richMarker', $this->vendor_url . 'richMarker/' . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'richmarker.js' : 'richmarker.min.js' ), array( 'googlemaps-js' ) );
@@ -3002,9 +3005,9 @@ class ResortPro{
       }
 
       wp_localize_script( 'google_maps_marker', 'streamline_gmap', array('map_id' => $map_id,
-                                                                          'places' => $places_update,
-                                                                          'icon'   => $map_icon,
-                                                                          'ajax_url' => $wp_ajax_url ));
+          'places' => $places_update,
+         'icon'   => $map_icon,
+         'ajax_url' => $wp_ajax_url ));
 
       $output = "<div id=\"{$map_id}\" style=\"width:{$map_width};height:{$map_height};\"></div>";
 
