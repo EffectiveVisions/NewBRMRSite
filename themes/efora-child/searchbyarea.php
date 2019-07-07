@@ -113,8 +113,8 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       <?php $count = 0; foreach($galleries as $gallery) { ?>
       <div class="col-md-3 col-sm-4 col-12 custome-padding-gallery pb-1">
         <figure class="mb-0 blog-image position-relative overflow-h w-100">
-          <img class="object-fit h-100 w-100 lazy" data-srcset="<?php echo $gallery['image']['sizes']['medium']; ?> 2x" data-src="<?php echo $gallery['image']['sizes']['medium']; ?>" alt="" />
-        <a id="<?php echo $count; ?>" class="galleryopen" href="<?php echo $gallery['link'] ?>">
+          <a  href="<?php echo $gallery['Link'] ?>"><img  class="object-fit h-100 w-100 lazy" data-srcset="<?php echo $gallery['image']['sizes']['medium']; ?> 2x" data-src="<?php echo $gallery['image']['sizes']['medium']; ?>" alt="" /></a>
+        <a id="<?php echo $count; ?>" class="galleryopen" >
           <div class="hoverlay-blog animated zoomIn align-items-center text-center w-100 h-100 justify-content-center">
             <div class="inner-text text-white z-index"><i class="icon icon-plus-circle"></i><span class="w-100 d-inline-block text-uppercase"><?php echo $gallery['text'] ?></span></div>
           </div>&nbsp;
