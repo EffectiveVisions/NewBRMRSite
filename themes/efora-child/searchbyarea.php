@@ -148,9 +148,9 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       <div class="row" ng-init="search.amenities_filter='129951';sortBy='random';availabilitySearch();">
          <div data-aos="fade-down" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 20" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
           <div class="inner-div p-lg-1 d-inline-block w-100">
-              <div class="property bg-white d-none">
+              <div class="property bg-white">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                      <img src="" imageonload ng-src="{[property.default_thumbnail_path]}" 
+                       <img src="" lazy-load datasrc="{[property.default_thumbnail_path]}" err-src="/wp-content/uploads/2019/07/dummy-image.jpg" 
                         class="img-fluid propertythumb" alt="Featured Product"/>
                  </div>
                  <div class="propertyDetail py-4 px-3">
