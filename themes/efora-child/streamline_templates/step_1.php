@@ -156,7 +156,7 @@
                <td>
                   <strong class="total_price"><?php	_e('Total Price',	'streamline-core');	?>:</strong>
                </td>
-               <td ng-if="chkTravelInsuranceR.selectedOption == 1" class="text-right step_1_total_price_value" ng-bind="reservationDetails.total + travelInsurance | currency"></td>
+               <td ng-if="chkTravelInsuranceR.selectedOption == 1" class="text-right step_1_total_price_value" ng-bind="reservationDetails.total| currency"></td>
                <td ng-if="chkTravelInsuranceR.selectedOption == 0" class="text-right step_1_total_price_value" ng-bind="reservationDetails.total | currency"></td>
             </tr>
             <tr class="border-after-price">
