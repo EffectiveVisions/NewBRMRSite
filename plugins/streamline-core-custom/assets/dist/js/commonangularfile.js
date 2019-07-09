@@ -970,6 +970,7 @@
         
 
         $scope.getPreReservationPrice2 = function(booking, res) {
+        	$scope.isDisabled = true
         	Alert.clear();
             if (booking.checkin && booking.checkout) {
                 $scope.startDate = booking.checkin;
@@ -1000,7 +1001,7 @@
                         jQuery(".sticky-wrapper").hide();
                         jQuery(".price_sticky").hide();
                         jQuery(".view_breakdown_days").hide();
-                        //Alert.add(Alert.errorType, errorMsg);
+                        Alert.add(Alert.errorType, errorMsg);
                         hide_waitMe("#resortpro-book-unit form");
                         $scope.isDisabled = true
                     } else {
