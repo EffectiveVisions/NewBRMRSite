@@ -259,7 +259,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
          </p>
          <?php } ?>
       </div>
-      <div class="col-md-12 text-center mt-3 pt-1 mb-sm-4"><a href="/search-results" class="btn btn-primary text-uppercase font-14 font-weight-light-bold custome-explore-btn text-color text-white">Explore</a></div>
+      <div class="col-md-12 text-center mt-3 pt-1 mb-sm-4"><a href="/search-results" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold viewallhomepage">Explore</a></div>
    </div>
    </div>
 </section>
