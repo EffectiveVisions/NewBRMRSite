@@ -88,6 +88,8 @@
           </div>
 </section>
 
+<?php if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false): ?>
+
 <section class="rentalcompany position-relative text-center py-5 bg-gray">
    <div class="container">
       <div class="row">
@@ -123,7 +125,7 @@
       </div>
     </div>
 </section>-->
-<?php if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') === false): ?>
+
 <section class="featureProperty theme-bg-color py-md-5 py-4 d-none">
   <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
      <div class="row">
@@ -136,7 +138,7 @@
           <div class="inner-div p-lg-1 d-inline-block w-100">
               <div class="property bg-white">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img err-src="/wp-content/uploads/2019/07/placeholder.png" src="" lazy-load datasrc="{[property.default_thumbnail_path]}" 
+                    <img src="" lazy-load datasrc="{[property.default_thumbnail_path]}" err-src="/wp-content/uploads/2019/07/dummy-image.jpg" 
                         class="img-fluid propertythumb" alt="Featured Product"/>
                  </div>
                  <div class="propertyDetail py-4 px-3">
@@ -191,7 +193,7 @@
      <?php echo $blueridge_post[0] ?>
   <?php } ?>
 </section>
-<section class="blogSection py-5 bg-gray">
+<!-- <section class="blogSection py-5 bg-gray">
    <div class="container">
        <div class="row my-md-5 py-2 mb-md-3">
         <?php
@@ -231,7 +233,7 @@
           </div>
       </div>
    </div>
-</section>
+</section> !-->
 <section id="contactsec" class="contactus theme-bg-color py-md-5 py-3 home-contact-sec">
       <div class="container pt-4">
       <div class="row text-center">
@@ -318,10 +320,7 @@
                var html = jQuery(this).html();
                jQuery(this).remove()
                jQuery("#resortpro-search-amenities-block").append("<span class='amenity_item d-none d-md-inline-block'>"+html+"</span>");
-               jQuery("input[value='121870']").next().next("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"12px"});
-
-
-              
+               jQuery("input[value='121870']").next().next("label").css({"display":"inline","color":"#fff","padding-left":"10px","font-size":"12px"});              
             }
 
             if(jQuery(this).children("input").val() == "121857"){
