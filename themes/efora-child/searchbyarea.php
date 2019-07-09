@@ -74,13 +74,15 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                </div>
 
                 <div class="trustpilot-rating w-100 mt-md-0 pt-md-0 mt-sm-3 pt-4">
-                  <div ng-controller="PropertyController as pCtrl" ng-cloak class="d-flex flex-wrap justify-content-center  justify-content-md-start align-items-center">
+                  <div class="d-flex flex-wrap justify-content-center  justify-content-md-start align-items-center">
                       <figure class="mb-0 rating-one">
-                        
-                          <iframe class="lazy" lazy-load datasrc="https://widget.trustpilot.com/trustboxes/5613c9cde69ddc09340c6beb/index.html?templateId=5613c9cde69ddc09340c6beb&businessunitId=552521730000ff00057e9fd1#locale=en-US&styleHeight=100px&styleWidth=100%25&theme=dark" src=""  style="border:0"></iframe>
+                          <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b637fa0340045cd0c936" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="20px" data-style-width="100%" data-theme="dark">
+                          </div>
+                          <div class="trustpilot-widget" data-locale="en-US" data-template-id="5613c9cde69ddc09340c6beb" data-businessunit-id="552521730000ff00057e9fd1" data-style-height="100px" data-style-width="100%" data-theme="dark">
+                          </div>
                       </figure>
                        <figure class="mb-0   rating-two mr-lg-4 pr-md-2 mr-lg-3 mr-md-4 mt-md-0 mt-4 ml-md-auto mt-md-3 pt-md-4 pl-md-0 pl-sm-4">
-                          <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img class="lazy" style="border: 0;" data-src="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" data-srcset="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png 1x" alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
+                          <div style="padding-bottom: 10px;" class="text-center"><a href="http://www.bbb.org/northwestern-north-carolina/business-reviews/vacation-rentals/blue-ridge-mountain-rentals-inc-in-blowing-rock-nc-4002074/#bbbonlineclick" target="_blank" rel="nofollow noopener"><img class="lazy" style="border: 0;" data-src="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png" data-srcset="https://seal-nwnc.bbb.org/seals/blue-seal-200-65-bbb-4002074.png 2x" alt="Blue Ridge Mountain Rentals, Inc. BBB Business Review" /></a></div>
                       </figure>
                       </div>
                 </div>
@@ -113,8 +115,8 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       <?php $count = 0; foreach($galleries as $gallery) { ?>
       <div class="col-md-3 col-sm-4 col-12 custome-padding-gallery pb-1">
         <figure class="mb-0 blog-image position-relative overflow-h w-100">
-          <a  href="<?php echo $gallery['Link'] ?>"><img  class="object-fit h-100 w-100 lazy" data-srcset="<?php echo $gallery['image']['sizes']['medium']; ?> 2x" data-src="<?php echo $gallery['image']['sizes']['medium']; ?>" alt="" /></a>
-        <a id="<?php echo $count; ?>" class="galleryopen" >
+          <img class="object-fit h-100 w-100 lazy" data-srcset="<?php echo $gallery['image']['sizes']['medium']; ?> 2x" data-src="<?php echo $gallery['image']['sizes']['medium']; ?>" alt="" />
+        <a id="<?php echo $count; ?>" class="galleryopen" href="javascript:void(0)">
           <div class="hoverlay-blog animated zoomIn align-items-center text-center w-100 h-100 justify-content-center">
             <div class="inner-text text-white z-index"><i class="icon icon-plus-circle"></i><span class="w-100 d-inline-block text-uppercase"><?php echo $gallery['text'] ?></span></div>
           </div>&nbsp;
@@ -123,8 +125,6 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       </div>
     <?php $count++; } ?>
     </div>
-
-    
   </div>
 </section>
 
@@ -148,9 +148,10 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
       <div class="row" ng-init="search.amenities_filter='129951';sortBy='random';availabilitySearch();">
          <div data-aos="fade-down" data-aos-duration="500" ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 20" class="col-lg-4 col-sm-6 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex">
           <div class="inner-div p-lg-1 d-inline-block w-100">
-              <div class="property bg-white d-none">
+              <div class="property bg-white">
                  <div ng-click="go(property.seo_page_name)" class="propertyImage">
-                    <img imageonload srcset="{[property.default_thumbnail_path]} 2x" class="img-fluid" alt="" />
+                      <img err-src="/wp-content/uploads/2019/07/placeholder.png" src="" lazy-load datasrc="{[property.default_thumbnail_path]}" 
+                        class="img-fluid propertythumb" alt="Featured Product"/>
                  </div>
                  <div class="propertyDetail py-4 px-3">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6  class="mb-0 text-blue f-600 pro-name-heading text-truncate">{[property.name]}</h6></a>
@@ -174,9 +175,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
 
                        <li class="list-inline-item d-flex flex-wrap align-items-center">
                          <img src="/wp-content/uploads/2019/04/shower.svg" class="w-20 lazy" alt="shower-image">
-                         <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?>
-                           
-                         </span></li>
+                         <span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?></span></li>
                     </ul>
 
                    <h6 class="font-12 text-uppercase mb-3 night propertypackage"> <strong class="f-15">{[property.price_data.daily | currency]} </strong>avg/night</h6>
@@ -265,8 +264,6 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
    </div>
 </section>
 
-
-
 <div id="gallerymodal" class="modal fade gallery-modal gallery-vac " role="dialog">
   <div class="modal-dialog modal-lg  modal-dialog-centered">
     <div class="modal-content gallerycontent px-sm-4 px-3 pb-4">
@@ -347,88 +344,88 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
     });
 
     jQuery('#resortpro-search-area-block-idclass-homeless').addClass("px-0");
+    jQuery('#search-widget-main-rowresortpro_search_widget-16 .col-sm-6').addClass('custom-space');
+    jQuery("#resortpro-search-guests-dropdown-block-idclass-homeless").addClass("custom-space");
 
-      jQuery('#search-widget-main-rowresortpro_search_widget-16 .col-sm-6').addClass('custom-space');
-      jQuery("#resortpro-search-guests-dropdown-block-idclass-homeless").addClass("custom-space");
-       jQuery('.slider4').slick({
-         dots: false,
-         speed: 500,
-         slidesToShow:1,
-         prevArrow: "<a class='slider-left-arrow' href='#'><span class='icon icon-angle-left'></span></a>",
-         nextArrow: "<a class='slider-right-arrow' href='#'><span class='icon icon-angle-right'></span></a>",
-       });
-       jQuery('.slider1').slick({
-         dots: false,
-         speed: 500,
-         slidesToShow:3,
-         slidesToScroll: 1,
-         responsive: [
-         {
-            breakpoint: 991,
-            settings: {
-              arrows:true,
-              dots: false,
-              speed: 500,
-              slidesToShow: 2,
-              slidesToScroll: 2,
-            }
-          },
-         {
-            breakpoint: 767,
-            settings: {
-              arrows:true,
-              dots: false,
-              speed: 500,
-              slidesToShow: 2,
-              slidesToScroll: 2,
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows:true,
-              dots: false,
-              speed: 500,
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            }
-          }]
-       });
+     jQuery('.slider4').slick({
+       dots: false,
+       speed: 500,
+       slidesToShow:1,
+       prevArrow: "<a class='slider-left-arrow' href='#'><span class='icon icon-angle-left'></span></a>",
+       nextArrow: "<a class='slider-right-arrow' href='#'><span class='icon icon-angle-right'></span></a>",
+     });
 
-        jQuery('.slider2').slick({
-         dots: false,
-         speed: 500,
-         slidesToShow:1,
-         adaptiveHeight:false,
-         slidesToScroll: 1,
-         centerMode:true,
-         centerPadding:'80px',
-         responsive: [{
-            breakpoint: 767,
-            settings: {
-              dots: false,
-              speed: 500,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              adaptiveHeight:false
-            }
-          },
-          {
-            breakpoint: 567,
-            settings: {
-              dots: false,
-              speed: 500,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              adaptiveHeight:false
-            }
-          }]
-       });
+     jQuery('.slider1').slick({
+       dots: false,
+       speed: 500,
+       slidesToShow:3,
+       slidesToScroll: 1,
+       responsive: [
+       {
+          breakpoint: 991,
+          settings: {
+            arrows:true,
+            dots: false,
+            speed: 500,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          }
+        },
+       {
+          breakpoint: 767,
+          settings: {
+            arrows:true,
+            dots: false,
+            speed: 500,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows:true,
+            dots: false,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          }
+        }]
+     });
 
+    jQuery('.slider2').slick({
+       dots: false,
+       speed: 500,
+       slidesToShow:1,
+       adaptiveHeight:false,
+       slidesToScroll: 1,
+       centerMode:true,
+       centerPadding:'80px',
+       responsive: [{
+          breakpoint: 767,
+          settings: {
+            dots: false,
+            speed: 500,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            adaptiveHeight:false
+          }
+        },
+        {
+          breakpoint: 567,
+          settings: {
+            dots: false,
+            speed: 500,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            adaptiveHeight:false
+          }
+        }]
+     });
 
       var first = true;
       jQuery('.galleryopen').click(function () {
@@ -451,10 +448,9 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
               first = false
           }
       })
-      //jQuery(".amenity_item").addClass("d-none d-md-inline-block");
-      //jQuery("#resortpro-search-amenities-block-not").addClass("d-none d-md-inline-block");
+
       jQuery(".amenity_item").each(function(){
-          if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "121866" || jQuery(this).children("input").val() == "121870"){ 
+          if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500" || jQuery(this).children("input").val() == "121870"){ 
 
             if(jQuery(this).children("input").val() == "121870"){
                 jQuery("input[value='121870']").css({"vertical-align":"middle","outline":"none"});
@@ -475,8 +471,8 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
                jQuery("input[value='121865']").after('<img class="ammenityicon w-18" src="/wp-content/uploads/2019/06/pawprint.svg">');
             }
 
-            if(jQuery(this).children("input").val() == "121866"){
-              jQuery("input[value='121866']").after('<img class="ammenityicon" src="/wp-content/uploads/2019/06/Mountain.svg">');
+            if(jQuery(this).children("input").val() == "416500"){
+              jQuery("input[value='416500']").after('<img class="ammenityicon" src="/wp-content/uploads/2019/06/Mountain.svg">');
             }
             
             jQuery(this).children("input").css({"vertical-align":"middle","outline":"none"});
@@ -486,12 +482,5 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
             jQuery(this).remove();
           }
       });
-
-      // jQuery('.slider2').on('afterChange', function(event, slick, currentSlide, nextSlide){
-      //     console.log(currentSlide);
-      //     jQuery('.custom-slider-data').hide();
-      //     jQuery('.custom-slider-data:eq('+nextSlide+')').show();
-      // });
-
    });
 </script>
