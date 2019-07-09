@@ -2,7 +2,7 @@ AOS.init();
 jQuery(window).load(function () {
 
    
-   /*setTimeout(function () {
+   setTimeout(function () {
       if (navigator.userAgent.indexOf("Speed Insights") == -1) {
          var js = ["/wp-content/themes/efora-child/js/tp.widget.bootstrap.min.js"];
          var $head = jQuery("head");
@@ -10,7 +10,7 @@ jQuery(window).load(function () {
             $head.append("<script defer='true' src=\"" + js[i] + "\"></scr" + "ipt>");
          }
       }
-   }, 6000)*/
+   }, 6000)
 
    if (jQuery('.frm_error_style')[0] || jQuery('.frm_message')[0]) {
       setTimeout(function () {
@@ -374,8 +374,19 @@ jQuery(document).ready(function () {
       elements_selector: ".lazy"
    });
 
+   var data = [];
+
+   var x= document.getElementById("resortpro_sw_bed");
+
+   for(let i=0; i<x.options.length; i++){
+     data.push({
+        'name':x.options[i].text,
+        'id':parseInt(x.options[i].value)
+     })
+   }
+
    setTimeout(function(){
-      jQuery(".featureProperty").removeClass("d-none");
-    },6000)
+     jQuery(".featureProperty").removeClass("d-none");
+   },6000)
 
 });
