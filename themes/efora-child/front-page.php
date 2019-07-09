@@ -309,7 +309,7 @@
       })
 
       jQuery(".amenity_item").each(function(){
-          if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "416500" || jQuery(this).children("input").val() == "121870"){ 
+          if(jQuery(this).children("input").val() == "121857" || jQuery(this).children("input").val() == "121865" || jQuery(this).children("input").val() == "121866" || jQuery(this).children("input").val() == "121870"){ 
 
             if(jQuery(this).children("input").val() == "121870"){
                jQuery("input[value='121870']").css({"vertical-align":"middle","outline":"none"});
@@ -332,8 +332,8 @@
                jQuery("input[value='121865']").after('<img class="ammenityicon w-18" srcset="/wp-content/uploads/2019/06/pawprint.svg 2x">');
             }
 
-            if(jQuery(this).children("input").val() == "416500"){
-              jQuery("input[value='416500']").after('<img class="ammenityicon" srcset="/wp-content/uploads/2019/06/Mountain.svg 2x">');
+            if(jQuery(this).children("input").val() == "121866"){
+              jQuery("input[value='121866']").after('<img class="ammenityicon" srcset="/wp-content/uploads/2019/06/Mountain.svg 2x">');
             }
             
             jQuery(this).children("input").css({"vertical-align":"middle","outline":"none"});
