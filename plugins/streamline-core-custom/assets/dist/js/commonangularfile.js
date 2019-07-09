@@ -277,7 +277,15 @@
 
         $scope.goToStepTwoA = function() {
         	jQuery("form[name='formStep1']")[0].reset();
-        	$scope.checkout.country = "US"
+        	$scope.checkout.fname = "";
+        	$scope.checkout.lname = "";
+        	$scope.checkout.email = "";
+        	$scope.checkout.phone = "";
+        	$scope.checkout.address = "";
+        	$scope.checkout.city = "";
+        	$scope.checkout.postal_code = "";
+        	$scope.checkout.state = "";
+        	$scope.checkout.country = "US";
             $scope.getStates();
             if (typeof jQuery("#btn-step1").attr("disabled") == "undefined") {
                 jQuery("#step0").hide();
@@ -326,6 +334,8 @@
             jQuery('.main_cnt_step_1').removeAttr('style');
         };
         $scope.goToStep2 = function(isPbg) {
+        	//jQuery('#firname, #lname').removeClass('ng-hide');
+        	//jQuery('#firname, #lname').removeClass('ng-binding');
             $scope.pbgEnabled = isPbg;
             $scope.createCheckoutCookie();
             if ($scope.formStep1.$valid) {
@@ -392,6 +402,13 @@
         };
         $scope.goToStepTwo = function() {
             jQuery("#paymentform")[0].reset();
+            $scope.checkout.card_type = "";
+            $scope.checkout.card_number = "";
+            $scope.checkout.expire_month = "";
+            $scope.checkout.expire_year = "";
+            $scope.checkout.card_cvv = "";
+            $scope.termsConditions = "";
+            $scope.CardChargeUnderstand = "";
             jQuery('.main_cnt_step_3').removeAttr('style');
             if ($rootScope.checkout_layout_option == "2") {
                 setTimeout(function() {
@@ -953,6 +970,7 @@
         
 
         $scope.getPreReservationPrice2 = function(booking, res) {
+        	$scope.isDisabled = true
         	Alert.clear();
             if (booking.checkin && booking.checkout) {
                 $scope.startDate = booking.checkin;
@@ -983,7 +1001,7 @@
                         jQuery(".sticky-wrapper").hide();
                         jQuery(".price_sticky").hide();
                         jQuery(".view_breakdown_days").hide();
-                        //Alert.add(Alert.errorType, errorMsg);
+                        Alert.add(Alert.errorType, errorMsg);
                         hide_waitMe("#resortpro-book-unit form");
                         $scope.isDisabled = true
                     } else {

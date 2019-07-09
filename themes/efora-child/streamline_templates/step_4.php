@@ -45,7 +45,7 @@
             <td>
                <strong class="total_price"><?php _e('Total Price', 'streamline-core'); ?>:</strong>
             </td>
-            <td ng-if="chkTravelInsuranceR.selectedOption == 1" class="text-right step_1_total_price_value" ng-bind="reservationDetails.total + travelInsurance | currency"></td>
+            <td ng-if="chkTravelInsuranceR.selectedOption == 1" class="text-right step_1_total_price_value" ng-bind="reservationDetails.total | currency"></td>
             <td ng-if="chkTravelInsuranceR.selectedOption == 0" class="text-right step_1_total_price_value" ng-bind="reservationDetails.total | currency"></td>
          </tr>
          <tr class="border-after-price">
@@ -219,6 +219,63 @@
                   </div>
                </div>
             </div>
+            <div class="ad_extras" ng-if="reservationDetails.optional_fees.length > 0">
+                <span class="ch_info"><strong><?php _e('Additional Fees', 'streamline-core'); ?></span><span id="expand_extras">&nbsp;<i class="fa fa-plus"></i></strong></span><br>
+                <table ng-if="reservationDetails.optional_fees.length > 0" class="table table-bordered table-striped table-hover table-condensed ad_extras_tx" style="display:none">
+                    <tbody>
+                          <tr ng-repeat="optFee in reservationDetails.optional_fees track by $index">
+
+                            <td>
+                                <div class="checkbox2">
+                                    <strong><label ng-if="optFee.travel_insurance == 1">
+                                        <input type="checkbox"
+                                               ng-model="chkTravelInsuranceR.selectedOption"
+                                               value="{[optFee.id]}"
+                                               class="optional_fee"
+                                               ng-change="toggleTravelInsurance(optFee.id)"
+                                               ng-checked="optFee.active == 1"/>
+                                        <span style="left: -2px;">&nbsp;</span>{[optFee.name ]}
+                                    </label></strong>
+                                    <strong><label ng-if="optFee.cfar == 1">
+                                        <input type="checkbox"
+                                               value="{[optFee.id]}"
+                                               class="optional_fee"
+                                               ng-model="chkCfarR.selectedOption"
+                                               ng-change="toggleCfar(optFee.id)"
+                                               ng-checked="optFee.active == 1"/>
+                                        <span style="left: -2px;">&nbsp;</span>{[optFee.name ]}
+                                    </label></strong>
+                                    <strong><label ng-if="optFee.damage_waiver == 1">
+                                        <input type="checkbox"
+                                               value="{[optFee.id]}"
+                                               class="optional_fee"
+                                               ng-model="chkDamageWaiverR.selectedOption"
+                                               ng-change="toggleDamageWaiver(optFee.id)"
+                                               ng-checked="optFee.active == 1"/>
+                                        <span style="left: -2px;">&nbsp;</span>{[optFee.name ]}
+                                    </label></strong>
+                                    <strong><label
+                                        ng-if="optFee.damage_waiver == 0 && optFee.travel_insurance == 0 && optFee.cfar == 0">
+                                        <input type="checkbox"
+                                               id="optional-fee-{[optFee.id]}"
+                                               class="optional_fee"
+                                               value="{[optFee.id]}"
+                                               ng-model="optionalFees[$index]"
+                                               ng-click="getPreReservation()"
+                                               ng-checked="optFee.active == 1"/>
+                                        <span style="left: -2px;">&nbsp;</span>{[optFee.name ]}
+                                    </label></strong>
+                                </div>
+
+                            </td>
+                            <td class="text-right">
+                                {[ optFee.value | currency ]}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <?php  if  ($has_coupon || $notes_enabled):  ?>
             <div class="form-group">
                <div class="row">
