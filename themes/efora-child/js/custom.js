@@ -374,4 +374,8 @@ jQuery(document).ready(function () {
       elements_selector: ".lazy"
    });
 
+   setTimeout(function(){
+      jQuery(".featureProperty").removeClass("d-none");
+    },6000)
+
 });
