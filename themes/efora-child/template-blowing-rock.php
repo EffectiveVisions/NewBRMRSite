@@ -65,7 +65,7 @@ $top_amenities = get_field('blowing_top_amenities',$page->ID); ?>
    </div>
 </section>
 
-<<section class="trust-pilot mt-md-5 mt-4 py-5 theme-bg-color">
+<section class="trust-pilot mt-md-5 mt-4 py-5 theme-bg-color">
   <div class="container py-md-5">
     <div class="row">
       <?php if($explore_heading[0] != '') { ?>
