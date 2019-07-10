@@ -193,7 +193,7 @@
      <?php echo $blueridge_post[0] ?>
   <?php } ?>
 </section>
-<section class="blogSection py-5 bg-gray">
+<!-- <section class="blogSection py-5 bg-gray">
    <div class="container">
        <div class="row my-md-5 py-2 mb-md-3">
         <?php
@@ -233,7 +233,7 @@
           </div>
       </div>
    </div>
-</section>
+</section> !-->
 <section id="contactsec" class="contactus theme-bg-color py-md-5 py-3 home-contact-sec">
       <div class="container pt-4">
       <div class="row text-center">
