@@ -151,11 +151,12 @@ $top_amenities = get_field('blowing_top_amenities',$page->ID); ?>
                       <div></div>
                       <div></div>
                     </div>
-                </div>
-                          
+                </div>             
           </div>
          <div class="col-md-12 text-center mt-5 mb-4">
-            <a ng-if="total_units > 0 && loadBtn && !propertiesObj.length<12" ng-click="showAll();" class="btn theme-btn rounded-0 text-uppercase btn-ouline-white properties font-weight-light-bold showall"><?php _e('View All', 'streamline-core') ?></a>
+            <a ng-if="total_units > 0 && loadBtn && !propertiesObj.length<12" ng-click="showAll();" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold showall">
+              <?php _e('View All', 'streamline-core') ?>
+            </a>
          </div>
       </div>
   </div>
@@ -222,13 +223,11 @@ $top_amenities = get_field('blowing_top_amenities',$page->ID); ?>
             jQuery(this).parents().find('.mountain-discription').html(fulltext);
             jQuery(this).html("Read Less")
           }else{
-               var fulltext = jQuery.trim(jQuery(this).parents().find('.fulltext').html()).substring(0, 200)
+            var fulltext = jQuery.trim(jQuery(this).parents().find('.fulltext').html()).substring(0, 200)
            .split(" ").slice(0, -1).join(" ") + "..."; 
             jQuery(this).parents().find('.mountain-discription').html(fulltext);
             jQuery(this).html("Read More")
-          }
-          
+          } 
       });
-
-     });
+  });
 </script>

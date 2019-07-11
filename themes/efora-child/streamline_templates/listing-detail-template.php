@@ -465,7 +465,7 @@
                           <div class="col-sm-6 custom-padiing">
                                <figure class="mb-0 ament-gallery-img position-relative">
                                  <a href="javascript:void(0)" data-attr="<?php echo $image['id'] ?>"  class="ms-lightbox galleryopen" data-title="<?php echo $property['location_name'] ?>">
-                                  <img src="<?php echo $image['thumbnail_path'] ?>" class="w-100" />
+                                  <img err-src="<?php ResortPro()->assets_url('images/dummy-image.jpg'); ?>" ng-src="<?php  echo $image['image_path'] ?>" class="w-100" />
                                  </a>
                               </figure>
                           </div>
