@@ -1378,6 +1378,8 @@
             if (amenity_addons.length > 0) {
                 params["amenity_addon"] = amenity_addons
             }
+
+            console.log(params);
            
             rpapi.getWithParams("MakeReservation", params).success(function(obj) {
                 hide_waitMe("#step3");
@@ -6378,12 +6380,12 @@
             }
         };
         $scope.resetInquiry = function(inquiry) {
-            $scope.inquiry.unit_id = 0;
+            //$scope.inquiry.unit_id = 0;
             $scope.inquiry.startDate = "";
             $scope.inquiry.endDate = "";
             $scope.inquiry.email = "";
-            $scope.inquiry.occupants = "";
-            $scope.inquiry.occupantsSmall = "";
+            //$scope.inquiry.occupants = "";
+            //$scope.inquiry.occupantsSmall = "";
             $scope.inquiry.first_name = "";
             $scope.inquiry.last_name = "";
             $scope.inquiry.phone = "";
