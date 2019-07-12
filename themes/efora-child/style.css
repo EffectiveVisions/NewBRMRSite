@@ -4079,6 +4079,19 @@ position: relative;
     height: 100%;
 }
 
+.petfriend{
+    position: relative;
+    right: 0;
+    color: #fff;
+    padding: 10px;
+    font-size: 28px;
+}
+
+.petFriendly{
+    float:right !important;
+}
+
+
 
 
 
