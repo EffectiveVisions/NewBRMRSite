@@ -185,7 +185,7 @@ $luxury_homes_section = get_post_custom_values('luxury_homes_section',$page->ID)
           </div>
          </div>
          <div class="col-md-12 text-center mt-5 mb-4">
-            <a href="/search-results/?" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold viewallhomepage">See All Properties Running Special</a>
+            <a href="/search-results/?" class="btn btn-outline-dark text-uppercase btn-ouline-white properties font-weight-light-bold viewallhomepage">See All Properties Running Specials</a>
          </div>
       </div>
   </div>
