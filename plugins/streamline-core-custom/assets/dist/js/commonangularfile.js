@@ -4917,6 +4917,8 @@
 
             delete params.skip_units;
 
+            delete params.pets;
+
             if(adults && adults!=0){
             	params['occupants'] = parseInt(adults);
             	queryparams =$scope.addQueryParam(queryparams,'oc',parseInt(adults));
