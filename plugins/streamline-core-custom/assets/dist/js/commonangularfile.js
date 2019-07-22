@@ -4743,18 +4743,15 @@
         }
 
 
-        $scope.updateSearch = function(e){        	
+        $scope.updateSearch = function(e){       	
             jQuery("html, body").animate({ scrollTop: 0 }, "slow");
+            $scope.currentPage = 1;
             $scope.loadBtn = true;
         	$scope.noResults = false;
             $scope.isDataShow = "false";
             e.preventDefault();
             var ammenties = [];
-            var ammentiestext = [];
-            var youngguest = "";
-            var totalguest = "";
             var pets       = "";
-            var count = 0;
             var start_date = jQuery('#search_start_date_single').val();
             var end_date   = jQuery('#search_end_date_single').val();
             var children   = jQuery('#resortpro-search-guests-children-block-not').find('.count-single-child').html();
@@ -4915,18 +4912,10 @@
                 size = $rootScope.searchSettings.propertyPagination
             }
             var params = $scope.getParams();
+           
+            delete params.page_results_number;
 
-            if(params.hasOwnProperty("pets")){
-            	delete params.pets;
-            }
-
-            if(params.hasOwnProperty("skip_units")){
-                delete params.skip_units;
-            }
-
-            if(params.hasOwnProperty("page_results_number")){
-                delete params.page_results_number;
-            }
+            delete params.skip_units;
 
             if(adults && adults!=0){
             	params['occupants'] = parseInt(adults);
@@ -4936,10 +4925,6 @@
             	params['pets'] = parseInt(pets);
             	queryparams =$scope.addQueryParam(queryparams,'pets',parseInt(pets));
             }
-            var minBedVal = jQuery('.count-single-bed').html();
-            //var minBedVal = document.getElementsByClassName('count-single-bed').value;
-            console.log(minBedVal);
-            //console.log(beds);
             if(beds){
                 params['bedrooms_number'] = parseInt(beds);
 
