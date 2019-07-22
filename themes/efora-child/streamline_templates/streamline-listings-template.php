@@ -441,13 +441,13 @@
           if(jQuery(this).find('input').attr('checked')){
              var inputval = jQuery(this).find('input').val();
               var labelval = jQuery(this).find('.checkmark').html();
-              var html ='<div class="custom-control custom-checkbox"><input type="checkbox" checked name="resortpro_sw_amenities[]" value="'+inputval+'"class="custom-control-input" id="customCheck'+index+'"><label class="custom-control-label" for="customCheck'+index+'">'+labelval+'</label></div>'
+              var html ='<div class="custom-control custom-checkbox mr-auto"><input type="checkbox" checked name="resortpro_sw_amenities[]" value="'+inputval+'"class="custom-control-input" id="customCheck'+index+'"><label class="custom-control-label" for="customCheck'+index+'">'+labelval+'</label></div>'
              jQuery(this).remove();
              jQuery('.resortpro-search-amenities-block').append(html);
           }else{
               var inputval = jQuery(this).find('input').val();
               var labelval = jQuery(this).find('.checkmark').html();
-              var html ='<div class="custom-control custom-checkbox"><input type="checkbox" name="resortpro_sw_amenities[]" value="'+inputval+'"class="custom-control-input" id="customCheck'+index+'"><label class="custom-control-label" for="customCheck'+index+'">'+labelval+'</label></div>'
+              var html ='<div class="custom-control custom-checkbox mr-auto"><input type="checkbox" name="resortpro_sw_amenities[]" value="'+inputval+'"class="custom-control-input" id="customCheck'+index+'"><label class="custom-control-label" for="customCheck'+index+'">'+labelval+'</label></div>'
              jQuery(this).remove();
              jQuery('.resortpro-search-amenities-block').append(html);
           }

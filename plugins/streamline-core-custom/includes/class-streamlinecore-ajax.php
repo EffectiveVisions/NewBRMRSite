@@ -46,9 +46,21 @@ class StreamlineCore_AJAX{
 
     $data['params']['token_key'] = $token_key;
     $data['params']['token_secret'] = $token_secret;
-  
-    array_merge( array( 'token_key' => $token_key, 'token_secret' => $token_secret ), $data );
-
+    
+    if(isset($data['params']['bedrooms_number']) && intval($data['params']['bedrooms_number']) > 0){
+    	$max_beds = intval($data['params']['bedrooms_number']);
+    	$total_limit = 7; // max number of beds
+    	$arr = [];	
+    	for($x = $total_limit; $x >= $max_beds; $x--){
+    	    $arr[] = $x;
+      }  
+    	$data['params']['bedrooms_number'] = $arr;
+    	$data['params']['sort_by'] = "min_bedrooms_number";
+    } else {
+      $data['params']['sort_by'] = "min_bedrooms_number";
+    }
+    
+    array_merge( array( 'token_key' => $token_key, 'token_secret' => $token_secret ), $data );    
     $result = StreamlineCore_Wrapper::callApi($data['methodName'], $data['params']);
     $response = array();
     
@@ -83,8 +95,8 @@ class StreamlineCore_AJAX{
 
     header('Content-Type: application/json');
     echo json_encode($result, true);
-
     die();
+
   }
 
   // get price
