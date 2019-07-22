@@ -4743,8 +4743,9 @@
         }
 
 
-        $scope.updateSearch = function(e){
+        $scope.updateSearch = function(e){        	
             jQuery("html, body").animate({ scrollTop: 0 }, "slow");
+            $scope.loadBtn = true;
         	$scope.noResults = false;
             $scope.isDataShow = "false";
             e.preventDefault();
@@ -4935,6 +4936,10 @@
             	params['pets'] = parseInt(pets);
             	queryparams =$scope.addQueryParam(queryparams,'pets',parseInt(pets));
             }
+            var minBedVal = jQuery('.count-single-bed').html();
+            //var minBedVal = document.getElementsByClassName('count-single-bed').value;
+            console.log(minBedVal);
+            //console.log(beds);
             if(beds){
                 params['bedrooms_number'] = parseInt(beds);
 
@@ -6671,6 +6676,7 @@
                 if ($rootScope.bookingSettings.hearedAboutId && $rootScope.bookingSettings.hearedAboutId > 0) {
                     params["hear_about_id"] = $rootScope.bookingSettings.hearedAboutId
                 }
+                run_waitMe("#myModal2 .modal-dialog, #inquiry_box", "", "");
                 rpapi.getWithParams("MakeReservation", params).success(function(obj) {
                     hide_waitMe("#myModal2 .modal-dialog, #inquiry_box");
                     if (obj.status) {
