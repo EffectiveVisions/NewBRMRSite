@@ -3697,6 +3697,7 @@
             $scope.currentPage++;
             $scope.limit += $rootScope.searchSettings.propertyPagination;
             var params = $scope.getParams();
+            delete params.skip_units;
              var ammenties = [];
 			 var pets       = "";
 			 var start_date = jQuery('#search_start_date').val();
