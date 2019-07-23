@@ -107,8 +107,8 @@
 					 <?php if ( is_active_sidebar( 'blogsearch' ) ) { ?>
                          <?php dynamic_sidebar( 'blogsearch' ); ?>
                      <?php } ?>
-                	</div>
-                </div>
+                	 </div>
+                   </div>
 				</div>
 				<div class="category pt-5 pl-lg-3">
 					<div class="categorytitle">
@@ -181,45 +181,43 @@
 			
 				<div class="property mt-4 pt-2 pl-lg-3">
                     <div class="container" ng-controller="PropertyController as pCtrl" ng-cloak>
-        <div class="row d-none">
-	        <div class="col-12 py-sm-4 pt-4 pb-3 text-center">
-	           <h2 class="text-white mb-0 f-property-heading">Featured Properties</h2>
-	        </div>
-      	</div>
-        <div class="row" ng-init="search.amenities_filter='129951';sortBy='default';availabilitySearch();">
-         <div ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 2" class="col-lg-12 col-sm-12 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex mb-3 mb-md-0">
-          <div class="inner-div  d-inline-block w-100">
-              <div class="property-single bg-white">
-                 <div ng-click="go(property.seo_page_name)" class="propertyImage w-100 d-inline-block position-relative">
-                    <img src="{[property.default_thumbnail_path]}" class="h-100 w-100 object-fit" alt="" />
-                    <div class="occupants bg-warning-sec p-2 ">
-                    		<h6 class="font-12 font-weight-semi-bold text-color mb-0">Occupants, Max:<span class="occupants-counts"> {[property.max_occupants]} </span></h6>
-                    </div>
-                 </div>
-                 <div class="propertyDetail pt-3">
-                    <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6  class="mb-0 text-dark f-600 pro-name-heading font-15 text-color font-weight-bold ">{[property.name]}</h6></a>
-                     
-                    <!-- <ul class="list-unstyled detailsaboutproperty mt-2 mb-4 d-flex flex-md-wrap flex-sm-nowrap flex-wrap">
-                       <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2  d-flex flex-wrap align-items-center"><i class="icon icon-bed font-20 mb-xl-0"></i><span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bedrooms_number]} <?php _e( 'Beds', 'streamline-core' ) ?></span></li>
-                       <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2 d-flex flex-wrap align-items-center"><i class="icon icon-slumber font-20  mb-xl-0"></i><span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.max_occupants]} <?php _e( 'Sleeps', 'streamline-core' ) ?></span></li>
-                       <li class="list-inline-item d-flex flex-wrap align-items-center"><i class="icon icon-shower font-20  mb-xl-0"></i><span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?></span></li>
-                    </ul> -->
+			        <div class="row d-none">
+				        <div class="col-12 py-sm-4 pt-4 pb-3 text-center">
+				           <h2 class="text-white mb-0 f-property-heading">Featured Properties</h2>
+				        </div>
+			      	</div>
+			        <div class="row" ng-init="search.amenities_filter='129951';sortBy='default';availabilitySearch();">
+			         <div ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter | limitTo: 2" class="col-lg-12 col-sm-12 p-xl-3 px-md-2 px-3 pt-3  d-inline-flex mb-3 mb-md-0">
+			          <div class="inner-div  d-inline-block w-100">
+			              <div class="property-single bg-white">
+			                 <div ng-click="go(property.seo_page_name)" class="propertyImage w-100 d-inline-block position-relative">
+			                    <img err-src="/wp-content/uploads/2019/07/dummy-image.jpg" lazy-load datasrc="{[property.default_thumbnail_path]}" class="h-100 w-100 object-fit" alt="" />
+			                    <div class="occupants bg-warning-sec p-2 ">
+			                    		<h6 class="font-12 font-weight-semi-bold text-color mb-0">Occupants, Max:<span class="occupants-counts"> {[property.max_occupants]} </span></h6>
+			                    </div>
+			                 </div>
+			                 <div class="propertyDetail pt-3">
+			                    <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}"><h6  class="mb-0 text-dark f-600 pro-name-heading font-15 text-color font-weight-bold ">{[property.name]}</h6></a>
+			                     
+			                    <!-- <ul class="list-unstyled detailsaboutproperty mt-2 mb-4 d-flex flex-md-wrap flex-sm-nowrap flex-wrap">
+			                       <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2  d-flex flex-wrap align-items-center"><i class="icon icon-bed font-20 mb-xl-0"></i><span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bedrooms_number]} <?php _e( 'Beds', 'streamline-core' ) ?></span></li>
+			                       <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2 d-flex flex-wrap align-items-center"><i class="icon icon-slumber font-20  mb-xl-0"></i><span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.max_occupants]} <?php _e( 'Sleeps', 'streamline-core' ) ?></span></li>
+			                       <li class="list-inline-item d-flex flex-wrap align-items-center"><i class="icon icon-shower font-20  mb-xl-0"></i><span class="text-color font-Nunito font-weight-bold font-13 ml-2 text-text">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?></span></li>
+			                    </ul> -->
 
-                    <ul class="list-unstyled detailsaboutproperty  mb-0 d-flex flex-md-wrap flex-sm-nowrap flex-wrap">
-                       <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2  d-flex flex-wrap align-items-center"><span class="font-Nunito font-weight-bold font-13 text-gray-color">{[property.bedrooms_number]} <?php _e( 'Beds', 'streamline-core' ) ?></span></li>
-                        <li class="list-inline-item d-flex flex-wrap align-items-center"><span class="font-Nunito font-weight-bold font-13 text-gray-color">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?></span></li>
-                       <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2 d-flex flex-wrap align-items-center"><span class="font-Nunito font-weight-bold font-13 text-gray-color">{[property.max_occupants]} <?php _e( 'Sleeps', 'streamline-core' ) ?></span></li>
-                     
-                    </ul>
-
-                  
-                 </div>
-              </div>
-          </div>
-         </div>
-      </div>
-  </div>
-				</div>
+			                    <ul class="list-unstyled detailsaboutproperty  mb-0 d-flex flex-md-wrap flex-sm-nowrap flex-wrap">
+			                       <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2  d-flex flex-wrap align-items-center"><span class="font-Nunito font-weight-bold font-13 text-gray-color">{[property.bedrooms_number]} <?php _e( 'Beds', 'streamline-core' ) ?></span></li>
+			                        <li class="list-inline-item d-flex flex-wrap align-items-center"><span class="font-Nunito font-weight-bold font-13 text-gray-color">{[property.bathrooms_number]} <?php _e( 'Bathrooms', 'streamline-core' ) ?></span></li>
+			                       <li class="list-inline-item mr-xl-4 mr-lg-0 mr-md-2 mr-sm-0 mr-2 d-flex flex-wrap align-items-center"><span class="font-Nunito font-weight-bold font-13 text-gray-color">{[property.max_occupants]} <?php _e( 'Sleeps', 'streamline-core' ) ?></span></li>
+			                     
+			                    </ul> 
+			                 </div>
+			              </div>
+			            </div>
+			         </div>
+			      </div>
+			    </div>
+			  </div>
 			</div>
 
 			<div class="col-12 order-lg-3 order-2  mb-lg-0 mb-5">
@@ -235,10 +233,8 @@
 					'next_text' => '<i class="icon icon-angle-right"></i>'
 	
 				) ); ?>
-              </div>
+                </div>
           	</div>
-
-
 		</div>
 	</div>
 </section>
