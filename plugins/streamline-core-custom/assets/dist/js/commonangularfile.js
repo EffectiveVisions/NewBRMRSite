@@ -4550,11 +4550,16 @@
              jQuery('.checkindate').parent().addClass("d-none");
              jQuery('.checkoutdate').parent().addClass("d-none");
              jQuery('.locationname').parent().addClass("d-none");
+             jQuery(".ui-slider-range").css({"left":"0%","width":"100%"});
+             jQuery(".ui-slider-handle").css("left","100%");
+             jQuery(".ui-slider-handle:first").css("left","0%");
             $scope.loadBtn = true;
             $scope.noResults = false
             $scope.isDataShow = "false";
             $scope.showfilter = false;
             $scope.showclearbtn = false;
+            $scope.minPrice     = 100;
+            $scope.maxPrice     = 1000;
             var params = $scope.getParams();
             var newparams= {};
             newparams["sort_by"] = "random";
