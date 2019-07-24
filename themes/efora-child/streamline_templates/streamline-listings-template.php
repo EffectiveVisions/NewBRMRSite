@@ -107,7 +107,7 @@
 
               <!-- No result message -->
               <div class="row no-message">
-                <div ng-if="loadingShow != 'true'" class="col-lg-12 col-sm-12 p-sm-3 px-3 pt-3">
+                <div ng-if="loadingShow != 'true' && currentView !='mapview'" class="col-lg-12 col-sm-12 p-sm-3 px-3 pt-3">
                     <div class="noresult" ng-if="noResults ||  filteredItems.length==0" ng-cloak>
                       <div class="alert alert-danger">
                         <p><?php echo $noinv_msg ?></p>
@@ -125,7 +125,7 @@
                           <?php include($template); ?>
                       </div>
                    </div>
-                   
+
                 </div>
               </div>
              <!--Grid View End -->
