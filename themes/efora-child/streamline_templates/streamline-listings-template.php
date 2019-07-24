@@ -95,45 +95,44 @@
                     </div>
                     <!-- close here -->
 
+              <!--Loader start -->
+              <div  ng-if="loadingShow == 'true' && enabledlistview == 'true' && loadMoreShow=='false'" class="row loading pt-3">
+                  <?php include('listviewloading.php'); ?>
+              </div>
+              <div ng-if="loadingShow == 'true' && enabledlistview == 'false' && currentView !='mapview' && loadMoreShow=='false'" class="row listings_wrapper_box loading">
+                  <?php include('gridviewloading.php'); ?>
+              </div>
+              <!--Loader end -->
 
-               <div  ng-if="loadingShow == 'true' && enabledlistview == 'true' && loadMoreShow=='false'" class="row loading pt-3">
-                      <?php include('listviewloading.php'); ?>
-                 </div>
-                 <div ng-if="loadingShow == 'true' && enabledlistview == 'false' && currentView !='mapview' && loadMoreShow=='false'" class="row listings_wrapper_box loading">
-                     <?php include('gridviewloading.php'); ?>
-                 </div>
-              <!--Grid View Start -->
-              <div ng-if="isDataShow == 'true' && view == 'gridview'" class="row listings_wrapper_box" ng-init="limit = searchSettings.propertyPagination">
-                   <div ng-if="loadingShow != 'true'" class="col-lg-12 col-sm-12 p-sm-3 px-3 pt-3">
-                      <div class="noresult" ng-if="noResults ||  filteredItems.length==0" ng-cloak>
-                        <div class="alert alert-danger">
-                          <p><?php echo $noinv_msg ?></p>
-                        </div>
-                      </div>
-                   </div>
 
-                   <div ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter  as filteredItems" class="col-lg-4 col-sm-6 p-sm-3 px-3 pt-3 propertydtl" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" >
-                      
-                      <div>
-                          <?php include($template); ?>
-                      </div>
-                      
-                   </div>
-
-             </div>
-            
-             <!--Grid View End -->
-             
-             <!--List View Start -->
-            <?php if($search_layout == 5): ?>
-             <div  class="row list-container-wrapper" ng-init="limit = searchSettings.propertyPagination" style="display:none">
-                  <div ng-if="loadingShow != 'true'" class="col-lg-12 col-sm-12 pt-3 p-sm-3 px-3">
-                    <div class="noresult" ng-if="noResults" ng-cloak>
+              <!-- No result message -->
+              <div class="row no-message">
+                <div ng-if="loadingShow != 'true'" class="col-lg-12 col-sm-12 p-sm-3 px-3 pt-3">
+                    <div class="noresult" ng-if="noResults ||  filteredItems.length==0" ng-cloak>
                       <div class="alert alert-danger">
                         <p><?php echo $noinv_msg ?></p>
                       </div>
                     </div>
-                  </div>
+                </div>
+              </div>
+              <!-- End no result message -->
+
+              <!--Grid View Start -->
+              <div ng-if="isDataShow == 'true' && view == 'gridview'" class="row listings_wrapper_box" ng-init="limit = searchSettings.propertyPagination">
+                 <div ng-if="filteredItems.length!=0" class="row mx-0">
+                   <div ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter  as filteredItems" class="col-lg-4 col-sm-6 p-sm-3 px-3 pt-3 propertydtl" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" >
+                      <div>
+                          <?php include($template); ?>
+                      </div>
+                   </div>
+                   
+                </div>
+              </div>
+             <!--Grid View End -->
+             
+             <!--List View Start -->
+            <?php if($search_layout == 5): ?>
+             <div class="row list-container-wrapper" ng-init="limit = searchSettings.propertyPagination" style="display:none"> 
                   <div class="col-lg-12 col-sm-12 p-sm-3 px-3 pt-3 propertydtl" ng-repeat="property in propertiesObj | orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter as filteredItems "  data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" >
                      <div>
                       <?php
