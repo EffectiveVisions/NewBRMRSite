@@ -6669,7 +6669,6 @@
                 if ($rootScope.bookingSettings.hearedAboutId && $rootScope.bookingSettings.hearedAboutId > 0) {
                     params["hear_about_id"] = $rootScope.bookingSettings.hearedAboutId
                 }
-                run_waitMe("#myModal2 .modal-dialog, #inquiry_box", "", "");
                 rpapi.getWithParams("MakeReservation", params).success(function(obj) {
                     hide_waitMe("#myModal2 .modal-dialog, #inquiry_box");
                     if (obj.status) {
@@ -6680,11 +6679,16 @@
                             $window.location.href = $rootScope.bookingSettings.inquiryThankUrl
                         } else {
                             Alert.add(Alert.successType, $rootScope.bookingSettings.inquiryThankMsg);
-                            alert("Thanks for your enquiry! Your enquiry has been sent");
+                            setTimeout(function(){
+                                alert("Thanks for your enquiry! Your enquiry has been sent");
+                            },500);
+                            
                             jQuery("#resortpro_btn_inquiry").prop("disabled", true);
-                            if (popup) {
-                                jQuery("#myModal2").modal("hide")
-                            }
+                            setTimeout(function(){
+                                if (popup) {
+                                    jQuery("#myModal2").modal("hide")
+                                }
+                            },600);
                         }
                     }
                 })
