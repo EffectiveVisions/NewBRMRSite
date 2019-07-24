@@ -3794,6 +3794,15 @@ body.modal-open,body.menuopened {
     position:relative;
 }
 
+.no-message .noresult .alert.alert-danger {
+    font-weight: 500;
+    font-size: 14px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    color: red;
+}
+
 .listings_wrapper_box .noresult .alert.alert-danger {
     font-weight: 500;
     font-size: 14px;
