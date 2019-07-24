@@ -1,8 +1,8 @@
   <div class="inner-div d-inline-block w-100">
-      <div class="property bg-white d-none">
+      <div class="property bg-white">
          <div class="propertyImage">
             <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}" class="position-absolute h-100 w-100">
-               <img ng-src="{[property.default_thumbnail_path]}" imageonloadsearch class="w-100 h-100 object-fit" alt="{[property.location_name]}" err-src="<?php ResortPro()->assets_url('images/dummy-image.jpg'); ?>">
+               <img imageonloadsearch lazy-load datasrc="{[property.default_thumbnail_path]}" err-src="<?php ResortPro()->assets_url('images/dummy-image.jpg'); ?>">
             </a>
             <a class="petFriendly ng-scope" ng-if="property.max_pets > 0" style="font-size:1.5em" data-toggle="tooltip" data-placement="right" title="" data-original-title="Pet friendly">
                     <i class="fa fa-paw petfriend"></i>

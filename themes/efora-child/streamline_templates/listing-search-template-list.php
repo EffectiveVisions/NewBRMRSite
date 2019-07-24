@@ -1,10 +1,10 @@
 <!-- unit start -->
-<div class="inner-div listing custom_search_results list_view_container test w-100 mx-0 custome-shadow-1 border-0 py-md-3 px-0 pt-3 pb-4 d-none">
+<div class="inner-div listing custom_search_results list_view_container test w-100 mx-0 custome-shadow-1 border-0 py-md-3 px-0 pt-3 pb-4">
         <div class="row mx-0">
             <div class="col-lg-9 col-md-8 col-12">
                     <a ng-href="{[goToProperty(property.seo_page_name, search.start_date, search.end_date, search.occupants, search.occupants_small, search.pets)]}" class="w-100">
                         <figure class="container_list_img overflow-h">
-                            <img imageonloadsearchgrid ng-src="{[property.default_image_path]}" class=" w-100 object-fit h-100" 
+                            <img imageonloadsearchgrid lazy-load datasrc="{[property.default_thumbnail_path]}" class=" w-100 object-fit h-100" 
                          alt="{[property.location_name]}"
                          err-src="<?php ResortPro()->assets_url('images/dummy-image.jpg'); ?>"
                            />
