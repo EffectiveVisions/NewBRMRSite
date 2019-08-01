@@ -118,7 +118,7 @@
               <!-- End no result message -->
 
               <!--Grid View Start -->
-              <div ng-if="isDataShow == 'true' && view == 'gridview'" class="row listings_wrapper_box" ng-init="limit = searchSettings.propertyPagination">
+              <div ng-if="isDataShow == 'true' && view == 'gridview'" class="listings_wrapper_box" ng-init="limit = searchSettings.propertyPagination">
                  <div ng-if="filteredItems.length!=0" class="row mx-0">
                    <div ng-repeat="property in propertiesObj| orderBy: customSorting : sort | filter: priceRange | filter: amenityFilter | filter: amenityFilterOr | filter: bedroomFilter | filter: locationFilter | filter: neighborhoodFilter | filter: viewNameFilter  as filteredItems" class="col-lg-4 col-sm-6 p-sm-3 px-3 pt-3 propertydtl" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" >
                       <div>
